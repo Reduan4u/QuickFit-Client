@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RouteHeading = () => {
+const Route1Heading = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const RouteHeading = () => {
     );
 };
 
-export default RouteHeading;
+export default Route1Heading;
