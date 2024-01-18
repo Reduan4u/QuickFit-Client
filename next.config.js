@@ -2,7 +2,6 @@
 
 module.exports = {
     images: {
-      domains: ['images.unsplash.com',"img.freepik.com"],
+      domains: ["img.freepik.com",'i.pinimg.com','img.livestrong.com','images.pexels.com','media.discordapp.net'],
     },
   };
-  
