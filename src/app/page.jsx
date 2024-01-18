@@ -11,6 +11,7 @@ export default function Home() {
       </Link>
       <Link href="/contact">      <button className="btn-secondary">Contact</button>
       </Link>
+      <Banner></Banner>
 
     </div>
   );
