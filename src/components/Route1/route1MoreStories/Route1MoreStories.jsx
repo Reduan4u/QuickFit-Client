@@ -1,10 +1,10 @@
 
-const MoreDetails = () => {
+const Route1MoreStories = () => {
     return (
         <div>
-
+            <h1>this is more stories</h1>
         </div>
     );
 };
 
-export default MoreDetails;
+export default Route1MoreStories;

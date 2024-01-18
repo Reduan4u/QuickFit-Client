@@ -1,11 +1,11 @@
 import React from 'react';
 
-const RouteHeading = () => {
+const Route1Heading = () => {
     return (
         <div>
-
+            
         </div>
     );
 };
 
-export default RouteHeading;
+export default Route1Heading;
