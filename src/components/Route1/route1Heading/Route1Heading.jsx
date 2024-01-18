@@ -3,7 +3,7 @@ import React from 'react';
 const Route1Heading = () => {
     return (
         <div>
-
+            
         </div>
     );
 };
