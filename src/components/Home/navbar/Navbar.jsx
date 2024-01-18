@@ -11,8 +11,8 @@ const Navbar = () => {
                      
     </>
     return (
-        <nav>
-            <div className="navbar bg-sky-200">
+        <nav className='sticky top-0 z-50 border-b-[1px] border-gray-600'>
+            <div className="navbar bg-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,6 +33,7 @@ const Navbar = () => {
                     <a href='/newsLetter' className="btn">NewsLetter</a>
                 </div>
             </div>
+            
         </nav>
     );
 };
