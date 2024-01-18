@@ -1,10 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// next.config.js
 
 module.exports = {
     images: {
-      domains: ['i.pinimg.com','img.freepik.com','img.livestrong.com','images.pexels.com','media.discordapp.net'], 
+      domains: ["img.freepik.com",'i.pinimg.com','img.livestrong.com','images.pexels.com','media.discordapp.net'],
     },
   };
-
-
