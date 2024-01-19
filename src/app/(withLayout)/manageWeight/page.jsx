@@ -6,7 +6,7 @@ import React from 'react';
 const ManageWeight = () => {
     return (
         <div>
-           <Route2Heading></Route2Heading>
+            <Route2Heading></Route2Heading>
             <Route2SpotLight></Route2SpotLight>
             <Route2MoreStories></Route2MoreStories>
 
