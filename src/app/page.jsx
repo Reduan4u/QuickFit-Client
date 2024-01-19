@@ -1,18 +1,25 @@
+
 import Banner from "@/components/Home/banner/Banner";
+import Counter from "@/components/Home/counter/Counter";
+import FitnessClasses from "@/components/Home/fitnessClasses/FitnessClasses";
 import Footer from "@/components/Home/footer/Footer";
+import HealthAndFitness from "@/components/Home/healthAndFitness/HealthAndFitness";
+import JanuaryPicks from "@/components/Home/januaryPicks/JanuaryPicks";
 import Navbar from "@/components/Home/navbar/Navbar";
-import Link from "next/link";
+import NewStories from "@/components/Home/newStories/NewStories";
+
 
 export default function Home() {
   return (
     <div>
-
-      <Link href="/about">      <button className="btn-primary">About</button>
-      </Link>
-      <Link href="/contact">      <button className="btn-secondary">Contact</button>
-      </Link>
-      <Banner></Banner>
-
+    <Navbar></Navbar>
+    <Banner></Banner>
+    <NewStories></NewStories>
+    <JanuaryPicks></JanuaryPicks>
+    <HealthAndFitness></HealthAndFitness>
+    <FitnessClasses></FitnessClasses>
+    <Counter></Counter>
+    <Footer></Footer>
     </div>
   );
 }
