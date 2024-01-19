@@ -14,7 +14,7 @@ const JanuaryPicks = async () => {
     (picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
   );
   const slicedData = filteredData.slice(0, 4);
-  console.log(slicedData);
+  
 
   return (
     <div className=" mb-32">
