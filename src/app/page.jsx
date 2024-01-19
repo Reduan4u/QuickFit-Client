@@ -12,14 +12,14 @@ import NewStories from "@/components/Home/newStories/NewStories";
 export default function Home() {
   return (
     <div>
-    <Navbar></Navbar>
-    <Banner></Banner>
-    <NewStories></NewStories>
-    <JanuaryPicks></JanuaryPicks>
-    <HealthAndFitness></HealthAndFitness>
-    <FitnessClasses></FitnessClasses>
-    <Counter></Counter>
-    <Footer></Footer>
+      <Navbar></Navbar>
+      <Banner></Banner>
+      <NewStories></NewStories>
+      <JanuaryPicks></JanuaryPicks>
+      <HealthAndFitness></HealthAndFitness>
+      <FitnessClasses></FitnessClasses>
+      <Counter></Counter>
+      <Footer></Footer>
     </div>
   );
 }
