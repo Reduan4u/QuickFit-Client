@@ -1,5 +1,7 @@
+
 import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
+
 
 const NewStories = async () => {
   const res = await fetch("https://quickfit-server.vercel.app/api/v1/news-stories",{
@@ -9,11 +11,13 @@ const NewStories = async () => {
   const slicedData = data.slice(0,5);
  
   return (
-    <div className=" my-2 px-2">
+    <div
+    
+     className=" my-2 px-2">
         <SectionHeading title={"New Stories"}/>
         <div className=" grid md:grid-cols-4 grid-cols-1  md:gap-2 gap-y-2  ">
         {
-            slicedData.map((story,index)=><div className={`${index===0 && "col-span-2 row-span-2 h-full w-full" }`} key={index}>
+            slicedData.map((story,index)=><div  className={`${index===0 && "col-span-2 row-span-2 h-full w-full" }`} key={index}>
                 <div className="relative overflow-hidden image-full rounded-none">
   <figure>
     <img  className={`rounded-none `} src={story.img} alt="Shoes" />
