@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Banner = () => {
     return (
-        <div className="carousel w-full mt-5 rounded-sm">
+        <div className="carousel w-full rounded-sm">
             <div id="slide1" className="carousel-item relative w-full h-[80vh]">
                 <Image
                     width={1000}
