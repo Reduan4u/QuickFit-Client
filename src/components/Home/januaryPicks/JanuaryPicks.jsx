@@ -2,7 +2,7 @@ import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
 
 const JanuaryPicks = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/monthly-piks", {
+  const res = await fetch("https://quickfit-server.vercel.app/api/v1/monthly-piks", {
     cache: "no-store",
   });
   const data = await res.json();
