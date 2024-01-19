@@ -1,4 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// next.config.js
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ["img.freepik.com", 'i.pinimg.com', 'img.livestrong.com', 'images.pexels.com', 'media.discordapp.net', 'images03.nicepage.com'],
+  },
+};
