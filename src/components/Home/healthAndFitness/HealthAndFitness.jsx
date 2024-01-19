@@ -1,11 +1,14 @@
+import SectionHeading from '@/components/Common/SectionHeading';
 import Image from 'next/image';
 import React from 'react';
 
 const HealthAndFitness = () => {
     return (
         <div>
+            <SectionHeading title={"Health and Fitness Category"}></SectionHeading>
         
         <div className="w-[80vw] mx-auto grid h-96 my-20 grid-cols-6 grid-rows-4 gap-3">
+            
             <div className="relative col-start-1 col-end-2  w-full h-full">
                 <Image
                     height={100}
