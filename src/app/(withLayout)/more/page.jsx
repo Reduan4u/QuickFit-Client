@@ -2,9 +2,8 @@ import React from 'react';
 
 const MorePage = () => {
     return (
-        <div>
-            <h1>This more page</h1>
-        </div>
+        <div className='flex justify-center my-52'>
+            <img src="https://i.ibb.co/p67pJwt/images.png" alt="Under Construction" />        </div>
     );
 };
 

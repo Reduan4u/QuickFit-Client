@@ -21,7 +21,7 @@ const FitnessClasses = () => {
                     <div className="flex flex-col justify-center space-y-5">
                         <h1 className="text-center font-medium text-2xl">You will discover how easy it is to stay motivated and fit </h1>
                         <h1 className="text-center font-normal text-lg text-orange-600 underline underline-offset-2">Be Our Premium Member</h1>
-                        <button className="btn bg-white border-orange-600 border-2 rounded-none w-1/3 mx-auto">JOIN NOW</button>
+                        <button className="btn bg-white border-orange-600 border-2 rounded-none w-1/3 mx-auto hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300">JOIN NOW</button>
                     </div>
 
                     <div className="bg-orange-200 dark:text-neutral-50 py-24 px-6">
