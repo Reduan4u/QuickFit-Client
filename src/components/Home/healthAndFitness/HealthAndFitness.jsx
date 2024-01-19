@@ -16,7 +16,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Yoga</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Yoga</p>
                 </div>
             </div>
             <div className="relative col-start-2 col-end-3  w-full h-full">
@@ -29,7 +29,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Strength Training</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Strength Training</p>
                 </div>
             </div>
             <div className="relative col-start-3 col-end-5 row-start-1 row-end-3  w-full h-full">
@@ -42,7 +42,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Nutration</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Nutration</p>
                 </div>
             </div>
             <div className="relative col-start-5 col-end-7 row-start-1 row-end-3  w-full h-full">
@@ -55,7 +55,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Runnung</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Runnung</p>
                 </div>
             </div>
             <div className="relative col-start-1 col-end-3 row-start-2 row-end-4  w-full h-full">
@@ -68,7 +68,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Cycling</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Cycling</p>
                 </div>
             </div>
             <div className="relative col-start-3 col-end-6 row-start-3 row-end-5  w-full h-full">
@@ -81,7 +81,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Swmming</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Swmming</p>
                 </div>
             </div>
             <div className="relative w-full h-full">
@@ -94,7 +94,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Meditation</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Meditation</p>
                 </div>
             </div>
             <div className="relative w-full h-full">
@@ -107,7 +107,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Cardio</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Cardio</p>
                 </div>
             </div>
             <div className="relative w-full h-full">
@@ -120,7 +120,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">pilates</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">pilates</p>
                 </div>
             </div>
             <div className="relative w-full h-full">
@@ -133,7 +133,7 @@ const HealthAndFitness = () => {
                     className="w-full h-full"
                 />
                 <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <p class="text-white text-lg font-bold">Gym</p>
+                    <p class="text-white text-xs md:text-sm lg:text-lg font-bold">Gym</p>
                 </div>
             </div>
         </div>
