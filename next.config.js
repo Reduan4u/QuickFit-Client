@@ -2,6 +2,6 @@
 
 module.exports = {
   images: {
-    domains: ["img.freepik.com", 'i.pinimg.com','i.ibb.co', 'img.livestrong.com', 'images.pexels.com', 'media.discordapp.net', 'images03.nicepage.com'],
+    domains: ['i.postimg.cc','i.ibb.co','img.freepik.com','images03.nicepage.com'],
   },
 };
