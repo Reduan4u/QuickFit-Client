@@ -1,6 +1,7 @@
 
 import Banner from "@/components/Home/banner/Banner";
 import Counter from "@/components/Home/counter/Counter";
+import DietPlan from "@/components/Home/diet-plan/dietPlan";
 import FitnessClasses from "@/components/Home/fitnessClasses/FitnessClasses";
 import Footer from "@/components/Home/footer/Footer";
 import HealthAndFitness from "@/components/Home/healthAndFitness/HealthAndFitness";
@@ -17,6 +18,7 @@ export default function Home() {
       <NewStories></NewStories>
       <JanuaryPicks></JanuaryPicks>
       <HealthAndFitness></HealthAndFitness>
+      <DietPlan></DietPlan>
       <FitnessClasses></FitnessClasses>
       <Counter></Counter>
       <Footer></Footer>
