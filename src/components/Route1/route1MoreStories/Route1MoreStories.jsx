@@ -7,7 +7,7 @@ const Route1MoreStories = async () => {
     const allData = await res.json();
 
     const filterData = allData.filter(data => data.category == "Nutrition" || data.category == "Wellness" || data.category == "Preventive Care")
-    console.log(filterData);
+    //console.log(filterData);
 
     return (
         <div className="w-11/12 mx-auto my-5">
