@@ -7,6 +7,7 @@ import React from 'react';
 import Lottie from 'lottie-react';
 import dietPlan from "../../../../public/dietPlan.json";
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const DietPlan = () => {
@@ -115,9 +116,12 @@ const DietPlan = () => {
                             <h1>Breast Feeding Sessions</h1>
                         </div>
                         <div className='text-center p-6'>
-                            <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                SEE DETAILS
-                            </button>
+                            <Link href={"/diet-plan/post-pregnancy"} >
+                                <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
+                                    SEE DETAILS
+                                </button>
+                            </Link>
+
                         </div>
                     </div>
                 </div>
