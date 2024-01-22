@@ -1,4 +1,5 @@
 "use client"
+
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
@@ -7,6 +8,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import swal from "sweetalert";
 import { FcGoogle } from "react-icons/fc";
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
     
 
@@ -76,10 +78,23 @@ const Registration = () => {
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     <div className="text-center w-[500px] lg:text-left">
-      <h1 className="text-5xl  font-bold">Register now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      {/* <h1 className="text-5xl  font-bold">Register now!</h1>
+      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
+
+  
+<Player
+  autoplay
+  loop
+  src="register.json"
+  style={{ height: '450px', width: '450px' }}
+>
+
+</Player>
+
+
+
     </div>
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card flex-shrink-0 w-full max-w-sm  shadow-orange-800 shadow-2xl bg-base-100">
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -92,28 +107,28 @@ const Registration = () => {
           used react-hook-form
           used react-hook-form
            */}
-          <input type="text" {...register('name',{ required: true })} name="name" placeholder="Name" className="input input-bordered"  />
+          <input type="text" {...register('name',{ required: true })} name="name" placeholder="Name" className="input border-orange-600  input-info "  />
           {errors.name && <span className="text-red-600">This field is </span>}
         </div>
         <div className="form-control">
           <label className="label">
             {/* <span className="label-text">Photo URL</span> */}
           </label>
-          <input type="text" {...register('photoURL',{ required: true })}  placeholder="Photo url" className="input input-bordered"  />
+          <input type="text" {...register('photoURL',{ required: true })}  placeholder="Photo url" className="input border-orange-600  input-info"  />
           {errors.photoURL && <span className="text-red-600">Photo url is required</span>}
         </div>
         <div className="form-control">
           <label className="label">
             {/* <span className="label-text">Email</span> */}
           </label>
-          <input type="email" {...register('email',{ required: true })} name="email" placeholder="email" className="input input-bordered"  />
+          <input type="email" {...register('email',{ required: true })} name="email" placeholder="email" className="input border-orange-600 input-info"  />
           {errors.email && <span className="text-red-600">This field is required</span>}
         </div>
         <div className="form-control">
           <label className="label">
             {/* <span className="label-text">Password</span> */}
           </label>
-          <input type= {showPassword ? "text":"password"} {...register('password',  { required: true ,minLength:6, maxLength:20, pattern:/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/ })} name="password" placeholder="password" className="input input-bordered"  />
+          <input type= {showPassword ? "text":"password"} {...register('password',  { required: true ,minLength:6, maxLength:20, pattern:/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/ })} name="password" placeholder="password" className="input border-orange-600 input-info"  />
           {errors.password?.type === 'required' && <span className="text-red-600">This field is required</span>} 
           {errors.password?.type === 'minLength' && <span className="text-red-600">Password must be 6 character</span>} 
           {errors.password?.type === 'pattern' && <span className="text-red-600">Password must set hard character</span>} 
@@ -132,10 +147,10 @@ const Registration = () => {
         
         <div className="form-control mt-6">
       
-          <input type="submit" className="btn bg-white border-orange-600 border-2 rounded-none  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Register" />
+          <input type="submit" className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Register" />
         </div>
 
-        <div onClick={handleGoogleLogin} className="btn bg-white border-orange-600 border-2 rounded-none  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"> <h1 > <span className='text-center text-4xl'><FcGoogle /></span> </h1> Google </div>
+        <div onClick={handleGoogleLogin} className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"> <h1 > <span className='text-center text-4xl'><FcGoogle /></span> </h1 > Google </div>
 
 
         
