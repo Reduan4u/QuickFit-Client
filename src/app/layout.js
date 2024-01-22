@@ -8,6 +8,8 @@ export const metadata = {
   description: 'Stay Healthy, Stay Fit',
 }
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
@@ -15,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className=''>
           <AuthProvider>
-             {children}
+            {children}
           </AuthProvider>
         </div>
       </body>
