@@ -200,7 +200,7 @@ const RecipesForEatBetter = () => {
 
                             <p className="text-gray-500 text-sm">Published on 23-03-1699</p>
 
-                            <p className="text-gray-700 text-base mb-2">I tried to recreate the best Greek Salad I've ever had.Serve with crusty bread to soak up the wonderful juice at the bottom of the salad bowls. If available please use fresh herbs..</p>
+                            <p className="text-gray-700 text-base mb-2">I tried to recreate the best Greek Salad I have ever had.Serve with crusty bread to soak up the wonderful juice at the bottom of the salad bowls. If available please use fresh herbs..</p>
 
                             {showContent && <div className="text-gray-700">
                                 <div>
