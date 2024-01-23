@@ -5,7 +5,7 @@ import { FaInstagram,FaFacebook,FaTwitter, FaLinkedin } from "react-icons/fa6";
 const AboutUs = () => {
     return (
       <div>
-        <div className="hero min-h-[550px] w-11/12 mx-auto" style={{backgroundImage: 'url(https://img.QuickFit/2880x1100/media-storage/livestrong-data/hub/316dd502-ade0-4123-b5cf-2f3fccb2a8fe-9391c05c79194d83a1fd1047fddc6a34herodesktop.jpg)'}}>
+        <div className="hero min-h-[550px] w-11/12 mx-auto" style={{backgroundImage: 'url(https://img.livestrong.com/2880x1100/media-storage/livestrong-data/hub/316dd502-ade0-4123-b5cf-2f3fccb2a8fe-9391c05c79194d83a1fd1047fddc6a34herodesktop.jpg)'}}>
           <div className="hero-overlay bg-opacity-30"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="">
@@ -40,7 +40,7 @@ const AboutUs = () => {
       <div id="our-editorial-standards" className="m-20 text-center lg:flex gap-20 justify-center items-center">
 
       <Image className="w-[625px] h-[625px]"
-        src="https://img.QuickFit/768x768/media-storage/livestrong-data/hub/5cf4eaee-fca1-4761-821c-28bbe2c6cea3-squaraboutus.jpg?type=webp"
+        src="https://img.livestrong.com/768x768/media-storage/livestrong-data/hub/5cf4eaee-fca1-4761-821c-28bbe2c6cea3-squaraboutus.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -65,7 +65,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2 "
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -86,7 +86,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/1/27/d54988e2cf3240b3a805f145715171aa.jpeg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/1/27/d54988e2cf3240b3a805f145715171aa.jpeg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -107,7 +107,7 @@ const AboutUs = () => {
       
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/9dc1064df9d64868ab35b58581dd1f33.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/9dc1064df9d64868ab35b58581dd1f33.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -128,7 +128,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/9e216e9cf2df48c88baaf7c8e0cd4285.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/9e216e9cf2df48c88baaf7c8e0cd4285.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -149,7 +149,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -170,7 +170,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/1/4f34b1284b514872aba3249d96330124.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/1/4f34b1284b514872aba3249d96330124.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -192,7 +192,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/980d707e2f3c426ebca231489920aaf0.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/980d707e2f3c426ebca231489920aaf0.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -213,7 +213,7 @@ const AboutUs = () => {
       
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/5/18/df5bb97205a24a40ba8478a6c63c58db.png?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/5/18/df5bb97205a24a40ba8478a6c63c58db.png?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -235,7 +235,7 @@ const AboutUs = () => {
 
       <div className="lg:flex gap-8 mb-8">
       <Image className="lg:w-[225px] mb-2"
-        src="https://img.QuickFit/315x315/media-storage/contentlab-data/profile/8/2/856d15c23275454dbd7c741a4078ac88.jpg?type=webp"
+        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/856d15c23275454dbd7c741a4078ac88.jpg?type=webp"
         alt="Alt text for your image"
         width={800} // Set the width of the image
         height={500} // Set the height of the image
@@ -269,7 +269,7 @@ const AboutUs = () => {
 </div>
 
 <Image className="w-[625px] h-[625px]"
-  src="https://img.QuickFit/625x625/media-storage/livestrong-data/hub/4d9e6547-2be3-4d5a-9d62-5ad61f363379-c978133aa457426981b2973026843d40meet_the_experts_hero_mobile.jpg?type=webp"
+  src="https://img.livestrong.com/625x625/media-storage/livestrong-data/hub/4d9e6547-2be3-4d5a-9d62-5ad61f363379-c978133aa457426981b2973026843d40meet_the_experts_hero_mobile.jpg?type=webp"
   alt="Alt text for your image"
   width={800} // Set the width of the image
   height={500} // Set the height of the image
@@ -303,7 +303,7 @@ const AboutUs = () => {
       </div>
 
 
-      <div id="advertise-with-us" className="hero min-h-[550px] mb-20 w-11/12 mx-auto " style={{backgroundImage: 'url(https://img.QuickFit/2880/media-storage/livestrong-data/hub/58748384-2f14-41ea-bc63-b5451cb45764-3e65accd0d2145f9a94fc60e79ee2abfaboutadvertisedesktop.jpg)'}}>
+      <div id="advertise-with-us" className="hero min-h-[550px] mb-20 w-11/12 mx-auto " style={{backgroundImage: 'url(https://img.livestrong.com/2880/media-storage/livestrong-data/hub/58748384-2f14-41ea-bc63-b5451cb45764-3e65accd0d2145f9a94fc60e79ee2abfaboutadvertisedesktop.jpg)'}}>
           <div className="hero-overlay bg-opacity-30"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="">

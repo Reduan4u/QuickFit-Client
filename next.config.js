@@ -2,9 +2,6 @@
 
 module.exports = {
   images: {
-<<<<<<< HEAD
-    domains: ['i.postimg.cc','i.ibb.co','img.freepik.com','images03.nicepage.com','img.livestrong.com'],
-=======
     domains: ["img.freepik.com",
                  "images.unsplash.com",
                   'i.pinimg.com', 
@@ -18,6 +15,5 @@ module.exports = {
                     'i.postimg.cc',
                     'healthflex.plethorathemes.com'
                   ]
->>>>>>> 33efa56fe79ed6f2a62139f3ec6722efa9cac8bc
   },
 };
