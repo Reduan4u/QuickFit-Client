@@ -1,4 +1,5 @@
 import SectionHeading from '@/components/Common/SectionHeading';
+import Link from 'next/link';
 import React from 'react';
 
 const Route2SpotLight = async () => {
@@ -16,6 +17,7 @@ const Route2SpotLight = async () => {
       <div className=" grid grid-cols-1 md:grid-cols-3  my-20 gap-10 ">
         {data.map((story) => (
           <div key={story._id} className="shadow-xl">
+            <Link href={`/spotlight/${story._id}`}> 
             <div>
               <div className="h-52">
                 <img src={story?.img} className="h-full object-cover w-full" />
@@ -30,6 +32,7 @@ const Route2SpotLight = async () => {
                 <p>{story.description}</p>
               </div>
             </div>
+            </Link>
           </div>
         ))}
       </div>
