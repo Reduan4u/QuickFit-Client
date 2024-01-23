@@ -6,6 +6,7 @@ import { FaEyeSlash } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
 import { useForm } from "react-hook-form"
 import { AuthContext } from '@/components/Provider/AuthProvider';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 const Login = () => {
     const {signIn,googleLogin} = useContext(AuthContext)
@@ -33,17 +34,27 @@ const Login = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-[500px] lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti
-              eaque aut repudiandae et a id nisi.
-            </p>
+           
+
+
+              
+<Player
+  autoplay
+  loop
+  src="login.json"
+  style={{ height: '450px', width: '450px' }}
+>
+
+</Player>
+
+
+
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-orange-800 shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label"></label>
-                <input type="email" {...register('email', { required: true })} name="email" placeholder="email" className="input input-bordered" />
+                <input type="email" {...register('email', { required: true })} name="email" placeholder="email" className="input border-orange-600 input-info" />
                 {errors.email && <span className="text-red-600">This field is required</span>}
               </div>
 
@@ -54,7 +65,7 @@ const Login = () => {
                   {...register('password', { required: true, minLength: 6, maxLength: 20, pattern: /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/ })}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input border-orange-600 input-info"
                 />
                 {errors.password?.type === 'required' && <span className="text-red-600">This field is required</span>}
                 {errors.password?.type === 'minLength' && <span className="text-red-600">Password must be 6 characters</span>}
@@ -66,7 +77,7 @@ const Login = () => {
               </span>
 
               <div className="form-control mt-6">
-                <input type="submit" className="btn bg-white border-orange-600 border-2 rounded-none  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
+                <input type="submit" className="btn bg-white  border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
               </div>
             </form>
             <p className="text-center pb-2">

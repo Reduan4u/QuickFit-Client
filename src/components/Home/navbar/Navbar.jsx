@@ -1,26 +1,42 @@
 import Link from 'next/link';
 import React from 'react';
+import { MdForwardToInbox } from "react-icons/md";
 
 const Navbar = () => {
-    const navLink = <>
-        <li className="justify-center text-xl"> <Link href='/'> Home </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/eatBetter'> Eat Better </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/manageWeight'> Get Fit </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/more'> More </Link> </li>
+  const navLinkClass = 'justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ';
+
+  const navLink = (
+    <>
+      <Link href='/'>
+        <li className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>Home</li>
+      </Link>
+      <Link href='/eatBetter'>
+        <li className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>Eat Better</li>
+      </Link>
+      <Link href='/manageWeight'>
+        <li className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>Get Fit</li>
+      </Link>
+      <Link href='/more'>
+        <li className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>More</li>
+      </Link>
     </>
-    return (
-        <nav className='sticky top-0 z-50 border-b-[2px] border-gray-200'>
-            <div className="navbar bg-white px-5">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            {navLink}
-                        </ul>
-                    </div>
-                    <a className="btn btn-ghost text-xl">
+  );
+
+  return (
+    <nav className='sticky top-0 z-50 bg-white'>
+      <div className="navbar  pt-4 pb-4 px-5 bg-white">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52">
+              {navLink}
+            </ul>
+          </div>
+          <a className=" text-xl">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                             width="76.000000pt" height="31.000000pt" viewBox="0 0 276.000000 131.000000"
                             preserveAspectRatio="xMidYMid meet">
@@ -85,19 +101,30 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
                         </svg>
 
                     </a>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {navLink}
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <button href='/newsLetter' className="btn bg-white border-orange-600 border-2 rounded-none  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300">NewsLetter</button>
-                </div>
-            </div>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            {navLink}
+          </ul>
+        </div>
+        <div className="navbar-end">
+          <button href='/newsLetter' className="pb-2">
+             <span className='' >
+                
+                
+                
+                   <p className={`${navLinkClass}  flex items-center justify-center gap-2 font-light italic text-base lowercase hover:delay-200 hover:border-b-slate-500 animate-bounce`}>
+                   Newsletter <MdForwardToInbox /> 
+                    </p> 
+    
 
-        </nav>
-    );
+                
+            </span> 
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
