@@ -20,7 +20,7 @@ const HealthAndFitness = async () => {
                     <Link href={`category/${type.category}`}
                         className={`${index === 2 && "md:col-span-2 md:row-span-2 h-full w-full"} ${index === 2 && "md:col-span-2 md:row-span-2 h-full w-full"
                             } ${index === 3 && "md:col-span-2 md:row-span-2 h-full w-full"} ${index === 4 && "md:col-span-2 md:row-span-2 h-full w-full"
-                            } ${index === 5 && "md:col-span-3 md:row-span-2 h-full w-full"} `}
+                            } ${index === 5 && "md:col-span-3 md:row-span-2 h-full w-full"} hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
                         key={index}
                     >
                         <div className="relative w-full h-full">
