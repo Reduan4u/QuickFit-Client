@@ -44,7 +44,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="">
-          <div className=" w-full h-full bg-blue-950 opacity-75 absolute"></div>
+          <div className=" w-full h-full bg-blue-950 opacity-35 absolute"></div>
           <div className=" md:text-5xl text-3xl font-bold w-full absolute flex flex-col p-6 pb-10 justify-end  text-white text-left h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
@@ -74,7 +74,7 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-75 absolute"></div>
+          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
           <div className=" md:text-5xl text-3xl font-bold w-full text-left  absolute pb-10 text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
@@ -104,7 +104,7 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-75 absolute"></div>
+          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
           <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10  absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
@@ -134,7 +134,7 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-75 absolute"></div>
+          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
           <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
@@ -164,7 +164,7 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-75 absolute"></div>
+          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
           <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
