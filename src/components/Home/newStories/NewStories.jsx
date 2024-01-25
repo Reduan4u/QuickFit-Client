@@ -4,7 +4,6 @@ import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
 import Link from 'next/link';
 
-
 const NewStories = async () => {
   const res = await fetch("https://quickfit-server.vercel.app/api/v1/news-stories", {
     cache: "no-store"
