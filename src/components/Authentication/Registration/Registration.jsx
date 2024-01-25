@@ -6,10 +6,11 @@ import { FaEye } from "react-icons/fa";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
-import swal from "sweetalert";
+
 import { FcGoogle } from "react-icons/fc";
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-
+import { useRouter } from 'next/navigation';
+import Swal from "sweetalert2";
     
 
    
@@ -18,7 +19,7 @@ const Registration = () => {
     const [ showPassword, setShowPassword] = useState(false)
     const {createUser,googleLogin} = useContext(AuthContext)
     const {register, reset, handleSubmit, formState: { errors }} = useForm();
-    
+    const router = useRouter();
     // const navigate = useNavigate();
 
     const onSubmit = data => {
@@ -36,7 +37,15 @@ const Registration = () => {
             // })
         })
         .then(()=>{
-            swal("Good job!", "User created Successfully!", "success");
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "User created Successfully!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+            router.push('/');
+            
         })
 
         .catch((error) => {

@@ -13,7 +13,7 @@ module.exports = {
                     'i.ibb.co', 
                     'images03.nicepage.com', 
                     'i.postimg.cc',
-                    'healthflex.plethorathemes.com'
+                    'healthflex.plethorathemes.com','www.livestrong.com'
                   ]
   },
 };
