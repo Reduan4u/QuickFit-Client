@@ -7,6 +7,7 @@ import HealthAndFitness from "@/components/Home/healthAndFitness/HealthAndFitnes
 import JanuaryPicks from "@/components/Home/januaryPicks/JanuaryPicks";
 import Navbar from "@/components/Home/navbar/Navbar";
 import NewStories from "@/components/Home/newStories/NewStories";
+import Chatbot from "@/components/chatbot/chatbot";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <DietPlan></DietPlan>
       <FitnessClasses></FitnessClasses>
       <Counter></Counter>
+      <Chatbot></Chatbot>
       <Footer></Footer>
     </div>
   );
