@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "./page.css"
 
-const page = () => {
+const Bmi = () => {
     const [heightValue, setHeightValue] = useState('');
     const [weightValue, setWeightValue] = useState('');
     const [bmiValue, setBmiValue] = useState('');
@@ -112,4 +112,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Bmi;

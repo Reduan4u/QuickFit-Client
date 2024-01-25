@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import "./page.css"
 
-const BodyFatCalculator = () => {
+const Fat = () => {
     const initialFormData = {
         weight: '',
         waist: '',
@@ -58,7 +58,7 @@ const BodyFatCalculator = () => {
                             value={formData.weight}
                             onChange={handleInputChange}
                             required />
-                        <label for="weight" className="form__label">Weight (kg):</label>
+                        <label for="weight" className="form__label">BMI:</label>
                     </div>
 
                     <div className="form__group field mb-4">
@@ -70,7 +70,7 @@ const BodyFatCalculator = () => {
                             value={formData.waist}
                             onChange={handleInputChange}
                             required />
-                        <label for="waist" className="form__label">Waist (inches):</label>
+                        <label for="waist" className="form__label">Age:</label>
                     </div>
 
 
@@ -137,4 +137,4 @@ const BodyFatCalculator = () => {
     );
 };
 
-export default BodyFatCalculator;
+export default Fat;

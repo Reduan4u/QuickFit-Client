@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "./page.css"
 
-const page = () => {
+const Diabetes = () => {
     const [glucoseLevelValue, setGlucoseLevelValue] = useState('');
     const [diabetesResult, setDiabetesResult] = useState('');
     const [diabetesFeedback, setDiabetesFeedback] = useState('');
@@ -91,4 +91,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Diabetes;
