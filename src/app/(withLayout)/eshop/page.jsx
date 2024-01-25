@@ -5,11 +5,12 @@ const Eshop = () =>{
 
 
     return (
-        <div className="min-h-screen border border-black">
-          <Ebanner></Ebanner>
-          <Products></Products>
+        <div>
+          <div><Ebanner></Ebanner></div>
+          <div><Products></Products></div>
         </div>
     )
 }
 
 export default Eshop ;
+
