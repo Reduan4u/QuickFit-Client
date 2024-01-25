@@ -83,13 +83,20 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
 
 
       </nav>
+
       <nav>
         <header className="footer-title">Company</header>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <a href='/aboutUs' className="link link-hover">About us</a>
+        <a href='/contactUs' className="link link-hover">Contact</a>
+        <a href='editorial' className="link link-hover">
+Editorial Standard</a>
+        
+        <a href='/aboutUs#advertise-with-us' className="link link-hover">
+Advertise</a>
+<a href='experts' className="link link-hover">
+Meet Our Experts</a>
       </nav>
+
       <nav>
         <header className="footer-title">Legal</header>
         <a className="link link-hover">Terms of use</a>
