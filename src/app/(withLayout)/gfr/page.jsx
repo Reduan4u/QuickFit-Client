@@ -1,12 +1,12 @@
-// pages/BodyFatCalculator.js
+// pages/gfrCalculator.js
 "use client"
 import React, { useState } from 'react';
 import "./page.css"
 
-const BodyFatCalculator = () => {
+const GFRCalculator = () => {
     const initialFormData = {
-        weight: '',
-        waist: '',
+        serumCreatinine: '',
+        age: '',
         gender: 'male', // or 'female'
     };
 
@@ -15,96 +15,71 @@ const BodyFatCalculator = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        const updatedValue = e.target.type === 'radio' ? e.target.id : value;
-        setFormData({ ...formData, [name]: updatedValue });
+        setFormData({ ...formData, [name]: value });
     };
 
-    const calculateBodyFat = () => {
-        const { gender, weight, waist } = formData;
-
-        let bodyFat;
-        if (gender === 'male') {
-            bodyFat = ((1.20 * weight) + (0.23 * waist) - 16.2)
-        }
-        else {
-            bodyFat = ((1.20 * weight) + (0.23 * waist) - 5.4)
-        }
-        const bodyFatPercentage = bodyFat.toFixed(2);
-        setResult(bodyFatPercentage);
+    const calculateGFR = () => {
+        // Implement the GFR calculation logic here based on the MDRD formula
+        // This is a simplified example, and you may need to replace it with a more accurate formula
+        const { serumCreatinine, age, gender } = formData;
+        console.log(gender);
+        const gfr = (186 * (serumCreatinine ** -1.154) * (age ** -0.203) * (gender === 'male' ? 1 : 0.742)).toFixed(2);
+        setResult(gfr);
     };
 
     const resetValues = () => {
-        setFormData({
-            gender: 'male',
-            weight: '',
-            waist: '',
-        });
-        setResult(null);
+        setFormData(initialFormData);
+        setResult(null); // Reset result when clearing the form
+
     };
 
     return (
         <div className='m-5'>
-            <h1 className='mb-2 font-medium text-4xl text-blue-500'>Body Fat Calculator</h1>
+            <h1 className='mb-2 font-medium text-4xl text-blue-500'>GFR Calculator</h1>
             <div className="mt-5 p-5 border-4 border-blue-300">
-                <h1 className='pb-5 font-medium'>Enter your data to find your Body fat.</h1>
+                <h1 className='pb-5 font-medium'>Enter your data to find your GFR.
+                </h1>
                 <form>
-
                     <div className="form__group field mb-4">
                         <input
                             type="number"
-                            name="weight"
+                            name="serumCreatinine"
                             className="form__field"
                             placeholder=""
-                            value={formData.weight}
+                            value={formData.serumCreatinine}
                             onChange={handleInputChange}
                             required />
-                        <label for="weight" className="form__label">BMI:</label>
+                        <label for="serumCreatinine" className="form__label">Serum Creatinine (mg/dL):</label>
                     </div>
-
                     <div className="form__group field mb-4">
                         <input
                             type="number"
-                            name="waist"
+                            name="age"
                             className="form__field"
                             placeholder=""
-                            value={formData.waist}
+                            value={formData.age}
                             onChange={handleInputChange}
                             required />
-                        <label for="waist" className="form__label">Age:</label>
-                    </div>
+                        <label for="age" className="form__label">Age:</label>
 
+                    </div>
 
                     <div className='flex items-center mb-5 gap-5'>
                         <div >
                             <h2 className='font-bold'>Your Gender: </h2>
                         </div>
-                        <div
-                            className="radio-input"
-                            onChange={handleInputChange}>
-                            <input
-                                value="male"
-                                name="gender"
-                                id="male"
-                                type="radio"
-                                checked={formData.gender === 'male'}
-                            />
-                            <label htmlFor="male">Male</label>
-
-                            <input
-                                value="female"
-                                name="gender"
-                                id="female"
-                                type="radio"
-                                checked={formData.gender === 'female'}
-                            />
-                            <label htmlFor="female">Female</label>
+                        <div className="radio-input" name="gender" value={formData.gender} onChange={handleInputChange}>
+                            <input value="male" name="value-radio" id="male" type="radio" />
+                            <label for="male">Male</label>
+                            <input value="female" name="value-radio" id="female" type="radio" />
+                            <label for="female">Female</label>
                         </div>
                     </div>
-                </form>
 
+                </form>
                 <div className='flex gap-10'>
-                    <button className="button" onClick={calculateBodyFat}>
-                        Calculate Body Fat
+                    <button className="button" onClick={calculateGFR}>
+                        Calculate GFR
                         <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
                             <path
                                 clip-rule="evenodd"
@@ -128,13 +103,15 @@ const BodyFatCalculator = () => {
                 {result && (
                     <div className="result">
                         <p>
-                            Your Body Fat: <span className="bmi-value">{result}% </span>
+                            Your GFR: <span className="bmi-value">{result}% </span>
                         </p>
                     </div>
                 )}
             </div>
+
         </div>
+
     );
 };
 
-export default BodyFatCalculator;
+export default GFRCalculator;
