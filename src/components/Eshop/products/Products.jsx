@@ -29,13 +29,13 @@ const Products = () => {
       <SectionHeading title={"Products Category"}></SectionHeading>
 
       {/* product category div  */}
+
       <motion.div
         variants={fadeIn(`right`, 0.2)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.2 }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
         {products.map((item, index) => (
           <div
             key={index}
@@ -54,7 +54,6 @@ const Products = () => {
             </Link>
           </div>
         ))}
-
       </motion.div>
     </div>
   );
