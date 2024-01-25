@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import "./page.css"
 
-const GFRCalculator = () => {
+const Gfr = () => {
     const initialFormData = {
         serumCreatinine: '',
         age: '',
@@ -114,4 +114,4 @@ const GFRCalculator = () => {
     );
 };
 
-export default GFRCalculator;
+export default Gfr;
