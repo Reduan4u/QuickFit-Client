@@ -1,35 +1,103 @@
-import Link from 'next/link';
-import React from 'react';
+import NavLink from "@/components/Common/NavLink";
+import Link from "next/link";
+import React from "react";
+import { MdForwardToInbox } from "react-icons/md";
 
 const Navbar = () => {
-    const navLink = <>
-        <li className="justify-center text-xl"> <Link href='/'> Home </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/eatBetter'> Eat Better </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/manageWeight'> Get Fit </Link> </li>
-        <li className="justify-center text-xl"> <Link href='/more'> More </Link> </li>
+  const navLinkClass =
+    "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
+
+  const navLink = (
+    <>
+      <NavLink
+        href="/"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        href="/eatBetter"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Eat Better
+      </NavLink>
+
+      <NavLink
+        href="/getFit"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Get Fit
+      </NavLink>
+      <NavLink
+        href="/calculator"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Calculator
+      </NavLink>
+      <NavLink
+        href="/eshop"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        E-Shop
+      </NavLink>
+
+      <NavLink
+        href="/more"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        More
+      </NavLink>
     </>
-    return (
-        <nav className='sticky top-0 z-50 border-b-[2px] border-gray-200'>
-            <div className="navbar bg-white px-5">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                        </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            {navLink}
-                        </ul>
-                    </div>
-                    <a className="btn btn-ghost text-xl">
-                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                            width="76.000000pt" height="31.000000pt" viewBox="0 0 276.000000 131.000000"
-                            preserveAspectRatio="xMidYMid meet">
-                            <metadata>
-                                Created by potrace 1.10, written by Peter Selinger 2001-2011
-                            </metadata>
-                            <g transform="translate(0.000000,131.000000) scale(0.050000,-0.050000)"
-                                fill="#000000" stroke="none">
-                                <path d="M2911 2514 c-70 -131 -63 -173 57 -321 l88 -108 -143 -148 c-247
+  );
+
+  return (
+    <nav className="sticky top-0 z-50 bg-white">
+      <div className="navbar  pt-4 pb-4 px-5 bg-white">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
+            >
+              {navLink}
+            </ul>
+          </div>
+          <a className=" text-xl">
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="76.000000pt"
+              height="31.000000pt"
+              viewBox="0 0 276.000000 131.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <metadata>
+                Created by potrace 1.10, written by Peter Selinger 2001-2011
+              </metadata>
+              <g
+                transform="translate(0.000000,131.000000) scale(0.050000,-0.050000)"
+                fill="#000000"
+                stroke="none"
+              >
+                <path
+                  d="M2911 2514 c-70 -131 -63 -173 57 -321 l88 -108 -143 -148 c-247
 -256 -657 -460 -766 -382 -58 41 -98 52 -183 47 -65 -3 -231 -165 -285 -280
 -58 -122 -158 -185 -225 -142 -24 15 -71 41 -104 57 -33 16 -124 91 -203 166
 -369 354 -782 297 -1082 -149 -140 -207 -94 -613 94 -844 18 -22 45 -76 59
@@ -74,30 +142,37 @@ m341 -207 l0 -120 70 0 c68 0 70 -2 70 -80 0 -78 -2 -80 -70 -80 l-70 0 0
 -385 -320 -385 -256 0 -320 79 -320 399 l0 221 100 0 100 0 0 -169z m730 -131
 l0 -300 -105 0 -105 0 0 300 0 300 105 0 105 0 0 -300z m2381 0 l1 -300 -106
 0 -106 0 0 300 0 300 105 0 105 0 1 -300z m720 -89 c88 -88 30 -231 -93 -231
--61 0 -138 80 -138 144 0 51 88 136 140 136 23 0 64 -22 91 -49z"/>
-                                <path d="M3160 1577 c-38 -24 -119 -69 -180 -100 -60 -31 -99 -57 -85 -57 19
+-61 0 -138 80 -138 144 0 51 88 136 140 136 23 0 64 -22 91 -49z"
+                />
+                <path
+                  d="M3160 1577 c-38 -24 -119 -69 -180 -100 -60 -31 -99 -57 -85 -57 19
 0 25 -74 25 -304 l0 -305 106 105 c103 102 108 104 225 105 l119 0 -104 65
 c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
--41 -20 -80 -43z"/>
-                                <path d="M537 1150 c-93 -51 -143 -239 -96 -364 105 -276 459 -188 459 114 0
-228 -178 350 -363 250z"/>
-                            </g>
-                        </svg>
-
-                    </a>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {navLink}
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <button href='/newsLetter' className="btn bg-white border-orange-600 border-2 rounded-none  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300">NewsLetter</button>
-                </div>
-            </div>
-
-        </nav>
-    );
+-41 -20 -80 -43z"
+                />
+                <path
+                  d="M537 1150 c-93 -51 -143 -239 -96 -364 105 -276 459 -188 459 114 0
+228 -178 350 -363 250z"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{navLink}</ul>
+        </div>
+        <div className="navbar-end">
+          <button href="/newsLetter" className="pb-2">
+            <span className="">
+              <NavLink href="/login">
+                <span className=" font-bold">Login</span>
+              </NavLink>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
