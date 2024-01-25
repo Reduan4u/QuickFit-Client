@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 const Tips = async () => {
-    const res = await fetch("http://localhost:3000/api/v1/tips", {
+    const res = await fetch("https://quick-fit-server.vercel.app/api/v1/tips", {
         cache: "no-store",
     });
     const tips = await res.json();
