@@ -7,19 +7,23 @@ import HealthAndFitness from "@/components/Home/healthAndFitness/HealthAndFitnes
 import JanuaryPicks from "@/components/Home/januaryPicks/JanuaryPicks";
 import Navbar from "@/components/Home/navbar/Navbar";
 import NewStories from "@/components/Home/newStories/NewStories";
+import Chatbot from "@/components/chatbot/chatbot";
 
 export default function Home() {
   return (
-    <div>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <NewStories></NewStories>
-      <JanuaryPicks></JanuaryPicks>
-      <HealthAndFitness></HealthAndFitness>
-      <DietPlan></DietPlan>
-      <FitnessClasses></FitnessClasses>
-      <Counter></Counter>
-      <Footer></Footer>
-    </div>
+    <main>
+      <div>
+        <Navbar></Navbar>
+        <Banner></Banner>
+        <NewStories></NewStories>
+        <JanuaryPicks></JanuaryPicks>
+        <HealthAndFitness></HealthAndFitness>
+        <DietPlan></DietPlan>
+        <FitnessClasses></FitnessClasses>
+        <Counter></Counter>
+        <Footer></Footer>
+      </div>
+      <Chatbot></Chatbot>
+    </main>
   );
 }
