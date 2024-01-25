@@ -3,7 +3,7 @@ import React from 'react';
 const page = () => {
     return (
         <div>
-            Category 
+            <h2>Fat</h2>
         </div>
     );
 };
