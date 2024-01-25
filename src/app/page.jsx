@@ -11,19 +11,17 @@ import Chatbot from "@/components/chatbot/chatbot";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <Navbar></Navbar>
-        <Banner></Banner>
-        <NewStories></NewStories>
-        <JanuaryPicks></JanuaryPicks>
-        <HealthAndFitness></HealthAndFitness>
-        <DietPlan></DietPlan>
-        <FitnessClasses></FitnessClasses>
-        <Counter></Counter>
-        <Footer></Footer>
-      </div>
+    <div>
+      <Navbar></Navbar>
+      <Banner></Banner>
+      <NewStories></NewStories>
+      <JanuaryPicks></JanuaryPicks>
+      <HealthAndFitness></HealthAndFitness>
+      <DietPlan></DietPlan>
+      <FitnessClasses></FitnessClasses>
+      <Counter></Counter>
       <Chatbot></Chatbot>
-    </main>
+      <Footer></Footer>
+    </div>
   );
 }
