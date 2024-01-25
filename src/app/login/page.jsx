@@ -1,9 +1,10 @@
-import React from 'react';
+import Login from "@/components/Authentication/Login/Login";
+
 
 const page = () => {
     return (
         <div>
-            <h2>Login</h2>
+            <Login></Login>
         </div>
     );
 };
