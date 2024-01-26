@@ -10,7 +10,6 @@ const page = async({params}) => {
     })
     const data = await res.json();
 
-    console.log(data);
     
     return (
         <div className=' mx-auto container my-4 px-2'>

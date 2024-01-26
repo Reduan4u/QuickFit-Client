@@ -6,7 +6,6 @@ const Tips = async () => {
         cache: "no-store",
     });
     const tips = await res.json();
-    // console.log(tips)
     return (
         <div className="w-full md:w-full mx-auto lg:w-1/2 text-justify px-5 md:px-5 lg:px-0">
             <h1 className="text-3xl md:text-4xl font-bold py-5">15 Natural Health and Nutrition Tips That Are Evidence-Based</h1>

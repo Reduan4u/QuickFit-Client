@@ -1,4 +1,5 @@
 import ProductDetails from "@/components/Eshop/productDetails/ProductDetails";
+import PrivateRoute from "@/components/PrivateRoute/PrivateRoute";
 
 const ProductDetailsPage = async ({ params }) => {
   const res = await fetch(
@@ -8,7 +9,7 @@ const ProductDetailsPage = async ({ params }) => {
   const product = await res.json();
 
   return (
-   <ProductDetails product={product} params={params}></ProductDetails>
+   <PrivateRoute><ProductDetails product={product} params={params}></ProductDetails></PrivateRoute>
   );
 };
 

@@ -10,7 +10,6 @@ const Route2SpotLight = async () => {
     }
   );
   const data = await res.json();
-  //  console.log(data)
   return (
     <div className="w-11/12 mx-auto">
       <SectionHeading title={"Spotlight"} />

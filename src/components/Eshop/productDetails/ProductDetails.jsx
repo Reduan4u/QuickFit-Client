@@ -29,7 +29,6 @@ function ProductDetails({ product, params }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         Swal.fire({
             icon: "success",
             title: `${title}`,
@@ -60,11 +59,11 @@ function ProductDetails({ product, params }) {
             viewport={{ once: false, amount: 0.2 }}
             className="md:w-1/2">
             <Link href={`/eshop/products/${params.id}`}>
-              <button className="mb-2 font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">
+              <button className="mb-5 font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">
                 Back To {params.id} Products
               </button>
             </Link>
-            <img src={image} className="w-full h-[70vh] object-cover" />
+            <img src={image} className="w-full h-[50vh] object-cover" />
           </motion.div>
 
           {/* content div  */}

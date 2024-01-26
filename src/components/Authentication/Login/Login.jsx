@@ -28,7 +28,6 @@ const Login = () => {
 
     signIn(email, password)
       .then(result => {
-        console.log(result.user);
         Swal.fire({
           position: "center",
           icon: "success",
