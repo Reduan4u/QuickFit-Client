@@ -6,6 +6,7 @@ import Link from "next/link";
 
 
 const DynamicCategory = async ({ params }) => {
+    console.log(params)
     //Article
     const res = await fetch("https://quick-fit-server.vercel.app/api/v1/articles", {
         cache: "no-store"
@@ -29,54 +30,46 @@ const DynamicCategory = async ({ params }) => {
 
     return (
         <div>
-            <div
-                className="w-full mx-auto h-64 duration-500 group overflow-hidden relative rounded  text-neutral-50 p-4 flex flex-col justify-evenly"
-            >
-                <div
-                    className="absolute blur duration-500 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-green-900 right-1 -bottom-24"
-                ></div>
-                <div
-                    className="absolute blur duration-500 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-green-700 right-12 bottom-12"
-                ></div>
-                <div
-                    className="absolute blur duration-500 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-green-800 right-1 -top-12"
-                ></div>
-                <div
-                    className="absolute blur duration-500 group-hover:blur-none w-24 h-24 bg-green-700 rounded-full group-hover:-translate-x-12"
-                ></div>
-                <div className="z-10 flex flex-col justify-evenly w-full h-full">
-                    <span className="text-orange-400 text-4xl md:text-6xl font-extrabold flex py-10 my-10 justify-center items-center">{params.id}</span>
+            <div className="relative w-full h-[70vh]">
+                <Image
+                    height={1080}
+                    width={1920}
+                    alt='types'
+                    src={cat.image}
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+                    <p className="text-white text-4xl md:text-6xl font-extrabold flex py-10 my-10 justify-center items-center">{params.id}</p>
                 </div>
             </div>
-
             {/* Recent Article */}
-            <h1 className="bg-green-800 text-yellow-400 text-center font-semibold py-1">Recent Articles</h1>
-            <div>
+            <h1 className="bg-orange-400 text-white text-center font-semibold py-1">Recent Articles</h1>
+            <div className="py-5">
                 {/* <SectionHeading title={"Recent Articles"} /> */}
-                <div className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4  mb-20 gap-10 border-b-4 border-green-800">
-
+                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mb-20 gap-5 border-b-4 border-orange-400">
 
                     {article.map((articles) => (
                         <Link key={articles._id} href={`/category/article/${articles._id}`}>
 
-                            <div className="shadow-2xl m-5 hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer">
-                                <div className="flex justify-between h-36">
-                                    <div className="relative overflow-hidden image-full rounded-none">
-                                        <Image
-                                            height={500}
-                                            width={500}
-                                            alt='types'
-                                            objectFit="cover"
-                                            src={articles.image}
-                                            className="w-full h-full"
-                                        />
-                                    </div>
-                                    <div className="my-4 mx-4">
-                                        <h1 className="text-left pt-1 text-base md:text-base lg:text-base font-semibold">{articles?.title}</h1>
-                                        <h1 className="text-basefont-medium text-right text-orange-400">{articles?.Category}</h1>
-                                    </div>
+                            <div
+                                className=" cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2 w-full h-28 bg-neutral-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly gap-2 p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-orange-400"
+                            >
+                                <Image
+                                    height={500}
+                                    width={500}
+                                    alt='types'
+                                    objectFit="cover"
+                                    src={articles.image}
+                                    className="w-1/4 h-full"
+                                />
+                                <div className="w-3/4">
+                                    <span className="font-semibold">{articles?.title.slice(0,30)}</span>
+                                    <p className="line-clamp-3 text-base text-orange-400">
+                                        {articles?.Category}
+                                    </p>
                                 </div>
                             </div>
+
 
                         </Link>
                     ))}
@@ -85,8 +78,8 @@ const DynamicCategory = async ({ params }) => {
             </div>
             {/* {Category shortDescription} */}
             <div className="pb-20">
-                <div className="bg-green-800 h-[70vh] w-[75vw] px-10 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="" data-aos="fade-up">
-                    <h1 className='w-2/3 text-sm md:text-base text-yellow-400 lg:text-4xl font-semibold' >{cat.category}</h1>
+                <div className="bg-orange-400 h-[70vh] w-[75vw] px-10 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="" data-aos="fade-up">
+                    <h1 className='w-2/3 text-sm md:text-base text-white lg:text-4xl font-semibold' >{cat.category}</h1>
                     <p className='py-10 text-white text-justify w-2/3 text-xs md:text-sm lg:text-xl'>{cat.shortDescription}</p>
                 </div>
                 <Image
@@ -94,7 +87,7 @@ const DynamicCategory = async ({ params }) => {
                     width={500}
                     alt='types'
                     objectFit="cover"
-                    className='bg-fixed lg:visible mr-0 -mt-96 h-[65vh] w-2/5 mx-auto' src={cat.image} data-aos="fade-down" />
+                    className='bg-fixed lg:visible mr-0 -mt-60 h-[65vh] w-2/5 mx-auto' src={cat.image} data-aos="fade-down" />
             </div>
             {/* Quesyions */}
             <div>

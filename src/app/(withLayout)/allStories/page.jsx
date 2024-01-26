@@ -9,7 +9,6 @@ const page = async() => {
     cache: "no-store"
   });
   const data = await res.json();
-  console.log(data);
     return (
         <div>
             <div  className=' text-center my-9'>

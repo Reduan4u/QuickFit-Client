@@ -23,10 +23,8 @@ const Registration = () => {
     // const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data)
         createUser(data.email,data.password)
         .then(result =>{
-            console.log(result.user)
             //  return updateUserProfile(data.name, data.photoURL)
             // .then(() => {
             //   //create user entry in the database//
@@ -64,7 +62,6 @@ const Registration = () => {
     googleLogin()
     
       .then(res => {
-        // console.log(res.data)
         swal("Good job!", "Login Successfully!", "success");
       
       })
