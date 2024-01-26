@@ -30,10 +30,10 @@ function ProductDetails({ product, params }) {
       .then((response) => response.json())
       .then((data) => {
         Swal.fire({
-            icon: "success",
-            title: `${title}`,
-            text: "Added to the cart!",
-            footer: `<a href="/eshop/cart/${email}" target="blank" class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+          icon: "success",
+          title: `${title}`,
+          text: "Added to the cart!",
+          footer: `<a href="/eshop/cart/${email}" target="blank" class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
         });
       });
   };
@@ -81,7 +81,7 @@ function ProductDetails({ product, params }) {
 
             <div className="mb-2">
               {features.map((item) => (
-                <p className="font-medium py-1">| {item}</p>
+                <p key={_id} className="font-medium py-1">| {item}</p>
               ))}
             </div>
             <h2 className="text-2xl font-semibold text-neutral-800 mb-5">

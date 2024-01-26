@@ -2,6 +2,7 @@ import SectionHeading from "@/components/Common/SectionHeading";
 import Link from "next/link";
 import React from "react";
 import moment from 'moment';
+// import "../route1SpotLight/route1SpotLight.css"
 
 const Route1SpotLight = async () => {
     const res = await fetch(
@@ -14,32 +15,28 @@ const Route1SpotLight = async () => {
     return (
         <div className="w-11/12 mx-auto">
             <SectionHeading title={"Spotlight"} />
-            <div className=" grid grid-cols-1 md:grid-cols-3  my-20 gap-10 ">
+            <div className=" grid grid-cols-1 md:grid-cols-3 gap-5">
                 {data.map((story) => (
 
+                    <div key={story._id} className="">
 
-                    
-                    <div key={story._id} className="shadow-xl">
+
                         <Link href={`/spotlight/${story._id}`}>
-                        <div>
-                            <div className="h-52">
-                                <img src={story?.img} className="h-full object-cover w-full" />
-                            </div>
+                        <div className="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-lg mb-4 transition duration-300 ease-in-out transform hover:scale-105">
+      <img className="w-full h-48 object-cover" src={story?.img} alt={story?.title} />
+      <div className="p-4">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">{story?.title}</h2>
+        <p className="text-gray-600 mb-2">{story?.author}</p>
+        <p className="text-gray-600">{story?.date}</p>
+      </div>
+    </div>
 
-                            <div className="space-y-5 my-4 mx-4">
 
-                     
-                                <div className="flex items-center my-2 justify-between">
-                                    <p className='text-gray-600 text-base font-semibold'>{moment(story?.date).format('MMMM YYYY')}</p>
-                                    <p className='border border-gray-300 bg-blue-300 rounded-sm px-1 py-1 text-center'>{story?.category}</p>
-                                </div>
-                                <h1 className="text-2xl font-semibold">{story?.title}</h1>
-                                <p>{story.description}</p>
-                            </div>
-                        </div>
                         </Link>
+
+
                     </div>
-                    
+
                 ))}
             </div>
         </div>
