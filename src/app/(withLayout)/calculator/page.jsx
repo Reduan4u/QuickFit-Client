@@ -1,9 +1,12 @@
+"use client"
+import Lottie from 'lottie-react';
 import React from 'react';
+import calculator from "../../../../public/calculator.json";
 
 const page = () => {
     return (
-        <div>
-            <h2> Welcole Calculator</h2>
+        <div className='w-2/3'>
+            <Lottie animationData={calculator} loop={true} />
         </div>
     );
 };

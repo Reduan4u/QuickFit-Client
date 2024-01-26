@@ -1,3 +1,4 @@
+import ChatBot from "@/components/ChatBot/ChatBot";
 import Banner from "@/components/Home/banner/Banner";
 import Counter from "@/components/Home/counter/Counter";
 import DietPlan from "@/components/Home/diet-plan/dietPlan";
@@ -19,6 +20,7 @@ export default function Home() {
       <DietPlan></DietPlan>
       <FitnessClasses></FitnessClasses>
       <Counter></Counter>
+      <ChatBot></ChatBot>
       <Footer></Footer>
     </div>
   );
