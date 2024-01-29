@@ -5,11 +5,28 @@ import Link from "next/link";
 import { fadeIn } from "@/components/Common/Animation1";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "@/components/Provider/AuthProvider";
 
 function ProductDetails({ product, params }) {
-  const email = "abc@gmail.com";
-
+  const {user} = useContext(AuthContext);
+  const email = user?.email;
+//  console.log(user?.email)
   const { _id, category, title, subTitle, image, price, features } = product;
+
+
+  const handleOrder = () =>{
+    
+    const productId = _id;
+    const userEmail =  email
+    const data = {productId,userEmail}
+    console.log(data)
+    fetch("http://localhost:3001/order",{
+      method: "POST",
+      headers: {"content-type" : "application/json"},
+      body:JSON.stringify(data)
+    })
+  }
 
   const handleAddToCart = () => {
     const obj = {
@@ -87,12 +104,23 @@ function ProductDetails({ product, params }) {
             <h2 className="text-2xl font-semibold text-neutral-800 mb-5">
               {price}$
             </h2>
-
+                <div className="flex gap-4">
+                  
             <button
               onClick={handleAddToCart}
               className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
               Add To Cart
             </button>
+
+            
+            <button
+              onClick={handleOrder}
+              className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+             Pay
+
+            </button>
+
+                </div>
           </motion.div>
           {/* all content end  */}
         </div>

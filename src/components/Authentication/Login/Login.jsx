@@ -12,13 +12,40 @@ import { AuthContext } from '@/components/Provider/AuthProvider';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
+import { FcGoogle } from 'react-icons/fc';
+
 
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn,googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const { register, reset, formState: { errors } } = useForm();
   const router = useRouter(); // Initialize the useRouter hook
+
+
+  const handleGoogleLogin = () =>{
+  
+    googleLogin()
+    
+      .then(res => {
+        // console.log(res.data)
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "login Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      
+        router.push('/');
+      })
+
+      
+    
+    .catch(error => console.error(error))
+   }
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,7 +109,9 @@ const Login = () => {
               </span>
 
               <div className="form-control mt-6">
-                <input type="submit" className="btn bg-white  border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
+                <input type="submit" className="btn text-2xl bg-white  border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
+                <p className='text-center'> or </p>
+                <div onClick={handleGoogleLogin} className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"> <h1 > <span className='text-center text-4xl'><FcGoogle /></span> </h1 > Google </div>
               </div>
             </form>
             <p className="text-center pb-2">
