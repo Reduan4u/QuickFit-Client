@@ -15,6 +15,7 @@ import Swal from 'sweetalert2';
 import { FcGoogle } from 'react-icons/fc';
 
 
+
 const Login = () => {
   const { signIn,googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -35,9 +36,10 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        
       
+        router.push('/');
       })
+
       
     
     .catch(error => console.error(error))
@@ -53,7 +55,6 @@ const Login = () => {
 
     signIn(email, password)
       .then(result => {
-        console.log(result.user);
         Swal.fire({
           position: "center",
           icon: "success",

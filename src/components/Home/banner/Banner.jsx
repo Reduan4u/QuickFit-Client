@@ -182,7 +182,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className=""
             >
-              Eat to live , Don't live to eat{" "}
+              Eat to live , Do not live to eat{" "}
             </motion.h2>
           </div>
           <Image

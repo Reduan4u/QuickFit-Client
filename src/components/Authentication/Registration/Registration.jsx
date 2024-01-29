@@ -24,7 +24,6 @@ const Registration = () => {
    
 
     const onSubmit = data => {
-        console.log(data)
         createUser(data.email,data.password)
         .then(result =>{
             console.log(result.user)
@@ -75,7 +74,7 @@ const Registration = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        
+        router.push('/');
       
       })
       
