@@ -1,9 +1,15 @@
-import React from 'react';
+"use client"
+
+import Loading from "../../public/loadingAni.json";
+import Lottie from 'lottie-react';
+
 
 function loading(props) {
     return (
         <div>
-            <h1 className='text-5xl font-bold text-center mt-40'>Loading...</h1>
+            <div className='h-[100vh] flex justify-center item-center'>
+              <Lottie animationData={Loading} loop={true} className="h-[40vh] w-[40vw] mt-20" />
+            </div>
         </div>
     );
 }
