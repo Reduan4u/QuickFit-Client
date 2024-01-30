@@ -3,11 +3,6 @@ import AllProducts from "@/components/Eshop/allProducts/AllProducts";
 
 
 const DynamicProducts = async ({ params }) => {
-  const res = await fetch(
-    `https://quick-fit-server.vercel.app/api/v1/eshop/${params.id}`,  {cache:"no-store"}
-  );
-  const products = await res.json();
-
   const imgFood =
     "https://images.pexels.com/photos/5692230/pexels-photo-5692230.jpeg?auto=compress&cs=tinysrgb&w=600";
   const imgSkincare =
@@ -38,7 +33,7 @@ const DynamicProducts = async ({ params }) => {
 
       {/*==== product list card here ===== */}
       <div className="w-10/12 mx-auto">
-         <AllProducts products={products}></AllProducts>
+         <AllProducts params={params}></AllProducts>
       </div>
     </div>
   );
