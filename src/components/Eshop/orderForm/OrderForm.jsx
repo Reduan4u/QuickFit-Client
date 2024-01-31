@@ -1,7 +1,13 @@
 "use client";
 import { useForm } from "react-hook-form";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useRouter } from 'next/navigation';
+
 
 function OrderForm({ params }) {
+  const axiosPublic = useAxiosPublic();
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -10,9 +16,15 @@ function OrderForm({ params }) {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-    reset()
-    
+    data.productId = params.id
+
+    axiosPublic.post("/order", data)
+      .then(result => {
+        router.push(result.data.url);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
   return (
