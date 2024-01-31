@@ -27,7 +27,8 @@ function ProductDetails({ product, params }) {
       price,
     };
 
-    axiosPublic.post("/cart", obj).then((data) => {
+    axiosPublic.post("/cart", obj)
+    .then((data) => {
       // console.log(data.data)
       Swal.fire({
         icon: "success",
