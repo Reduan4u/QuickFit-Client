@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const ArticleDetailsPage = async ({ params }) => {
+    console.log(params)
     //Article
     const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/articles/${params.article}`, {
         cache: "no-store"
