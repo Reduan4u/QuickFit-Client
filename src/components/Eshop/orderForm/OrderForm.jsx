@@ -12,6 +12,7 @@ function OrderForm({ params }) {
   const onSubmit = (data) => {
     console.log(data)
     reset()
+    
   };
 
   return (
