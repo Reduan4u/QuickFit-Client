@@ -4,7 +4,12 @@ import { fadeIn } from "@/components/Common/Animation1";
 import { motion } from "framer-motion";
 import ProductCard from "@/components/cards/ProductCard/ProductCard";
 
-function AllProducts({ products }) {
+const AllProducts = async ({params}) => {
+    const res = await fetch(
+    `https://quick-fit-server.vercel.app/api/v1/eshop/${params.id}`,  {cache:"no-store"}
+  );
+  const products = await res.json();
+
   return (
     <motion.div
       variants={fadeIn(`right`, 0.2)}

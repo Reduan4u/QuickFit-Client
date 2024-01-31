@@ -11,22 +11,23 @@ import { FcGoogle } from "react-icons/fc";
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { useRouter } from 'next/navigation';
 import Swal from "sweetalert2";
+
     
 
    
 
 const Registration = () => {
     const [ showPassword, setShowPassword] = useState(false)
-    const {createUser,googleLogin} = useContext(AuthContext)
+    const {createUser,googleLogin,} = useContext(AuthContext)
     const {register, reset, handleSubmit, formState: { errors }} = useForm();
     const router = useRouter();
-    // const navigate = useNavigate();
+   
 
     const onSubmit = data => {
-        console.log(data)
         createUser(data.email,data.password)
         .then(result =>{
             console.log(result.user)
+            
             //  return updateUserProfile(data.name, data.photoURL)
             // .then(() => {
             //   //create user entry in the database//
@@ -37,6 +38,7 @@ const Registration = () => {
             // })
         })
         .then(()=>{
+          
           Swal.fire({
             position: "center",
             icon: "success",
@@ -44,7 +46,7 @@ const Registration = () => {
             showConfirmButton: false,
             timer: 1500
           });
-            router.push('/');
+          router.push('/');
             
         })
 
@@ -52,7 +54,7 @@ const Registration = () => {
             // Handle any errors that occurred during the process
             console.error("Error:", error.message);
             // You might want to show an error message to the user
-            swal("Oops!", "Something went wrong", "error");
+            
         });
     }
 
@@ -65,7 +67,14 @@ const Registration = () => {
     
       .then(res => {
         // console.log(res.data)
-        swal("Good job!", "Login Successfully!", "success");
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "login Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        router.push('/');
       
       })
       

@@ -4,8 +4,6 @@ const page = async ({params}) => {
    
         const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/spotlight/${params.id}`);
         const data = await res.json();
-        console.log(data);
-        console.log(params.id);
     
 
 

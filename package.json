@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@tanstack/react-query": "^5.17.19",
     "aos": "^2.3.4",
+    "axios": "^1.6.7",
     "firebase": "^10.7.2",
     "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.0",
@@ -24,6 +26,7 @@
     "react-hook-form": "^7.49.3",
     "react-icons": "^5.0.1",
     "react-lottie-player": "^1.5.6",
+    "react-router-dom": "^6.21.3",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5"
