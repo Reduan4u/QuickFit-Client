@@ -27,15 +27,24 @@ function ProductDetails({ product, params }) {
       price,
     };
 
-    axiosPublic.post("/cart", obj)
-    .then((data) => {
-      // console.log(data.data)
-      Swal.fire({
-        icon: "success",
-        title: `${title}`,
-        text: "Added to the cart!",
-        footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
-      });
+    axiosPublic.post("/cart", obj).then((data) => {
+      console.log(data.data)
+      if (data.data.message) {
+        Swal.fire({
+          icon: "error",
+          title: `${title}`,
+          text: `${data.data.message}`,
+          // footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+        });
+      }
+      if (data.data.ProductID) {
+        Swal.fire({
+          icon: "success",
+          title: `${title}`,
+          text: "Added to the cart!",
+          footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+        });
+      }
     });
   };
 
@@ -91,18 +100,18 @@ function ProductDetails({ product, params }) {
               {price}$
             </h2>
 
-         <div className="flex flex-col md:flex-row gap-5">
-         <button
-              onClick={handleAddToCart}
-              className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
-              Add To Cart
-            </button>
-            <Link href={`/eshop/orderForm/${_id}`}>
-              <button className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
-                Order Now
+            <div className="flex flex-col md:flex-row gap-5">
+              <button
+                onClick={handleAddToCart}
+                className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+                Add To Cart
               </button>
-            </Link>
-         </div>
+              <Link href={`/eshop/orderForm/${_id}`}>
+                <button className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+                  Order Now
+                </button>
+              </Link>
+            </div>
           </motion.div>
           {/* all content end  */}
         </div>

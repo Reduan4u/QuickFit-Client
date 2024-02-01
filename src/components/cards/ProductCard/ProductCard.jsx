@@ -1,12 +1,18 @@
 "use client"
 
+import { fadeIn } from "@/components/Common/Animation1";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import "./product.css"
 
 function ProductCard({ product }) {
   return (
     <div>
-      <div>
+      <motion.div
+      variants={fadeIn(`right`, 0.2)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}>
 
         {/* image div  */}
         <div className="zoom-img relative w-full h-72">
@@ -29,7 +35,7 @@ function ProductCard({ product }) {
             </button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

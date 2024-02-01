@@ -16,12 +16,11 @@ import { FcGoogle } from 'react-icons/fc';
 
 
 
-const Login = () => {
+const Login = ({path}) => {
   const { signIn,googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const { register, reset, formState: { errors } } = useForm();
-  const router = useRouter(); // Initialize the useRouter hook
-
+  const router = useRouter(); 
 
   const handleGoogleLogin = () =>{
   
@@ -37,7 +36,7 @@ const Login = () => {
           timer: 1500
         });
       
-        router.push('/');
+        router.push(path || "/");
       })
 
       
@@ -62,7 +61,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500
         });
-        router.push('/'); // Navigate to the home page after successful login
+        router.push(path || "/"); // Navigate to the home page after successful login
       })
       .catch(error => {
         console.error("Login Error: ", error.message);

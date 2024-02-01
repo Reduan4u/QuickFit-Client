@@ -2,13 +2,24 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+import Login from "../Authentication/Login/Login";
+import Loading1 from "../Loading/Loading1";
+
 
 function PrivateRoute({children}) {
-    const {user} = useContext(AuthContext)
-    // const router = useRouter();    
+    const {user, loading} = useContext(AuthContext)
+    const pathname = usePathname()
 
-    return children
+    if(loading){
+        return <Loading1></Loading1>
+    }
+
+    if(user){
+        return children
+    }
+
+    return <Login path={pathname}></Login>
 }
 
 export default PrivateRoute;
