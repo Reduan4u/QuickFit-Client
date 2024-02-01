@@ -1,14 +1,28 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+
 
 const page = async ({ params }) => {
-    console.log(params.bookDetails)
-    //Article
+
+    let selectedPrice = 30;
+    const handleRadioChange = (price) => {
+        selectedPrice = price;
+        console.log( selectedPrice)
+    }
+
+
+
+    console.log(params)
+    //Book
     const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/books/${params.id}`, {
         cache: "no-store"
     });
     const data = await res.json();
+    const bookdata = data._id;
+    console.log(bookdata)
+
+
 
     return (
         <div>
@@ -33,7 +47,13 @@ const page = async ({ params }) => {
                         <div className='py-5'>
                             <div className='flex justify-between items-center border-t-2 border-black'>
                                 <div className='flex gap-2  py-2'>
-                                    <input className='' type="radio" name='Print' value='Print' />Print
+                                    <input className=''
+                                        type="radio"
+                                        name='Hard Copy'
+                                        value='Hard Copy'
+                                        onChange={() => handleRadioChange(data.FirstPrice)}
+                                        checked={selectedPrice === data.FirstPrice}
+                                    />Hard Copy
                                 </div>
                                 <div>
                                     <p>{data.FirstPrice}$</p>
@@ -41,7 +61,13 @@ const page = async ({ params }) => {
                             </div>
                             <div className='flex justify-between items-center border-y-2 border-black'>
                                 <div className='flex gap-2  py-2'>
-                                    <input className='' type="radio" name='eBook Download (PDF/EPUB)' value='eBook Download (PDF/EPUB)' />eBook Download (PDF/EPUB)
+                                    <input className=''
+                                        type="radio"
+                                        name='eBook Download (PDF/EPUB)'
+                                        value='eBook Download (PDF/EPUB)'
+                                        onChange={() => handleRadioChange(data.SecondPrice)}
+                                        checked={selectedPrice === data.SecondPrice}
+                                    />eBook Download (PDF/EPUB)
                                 </div>
                                 <div>
                                     <p>{data.SecondPrice}$</p>
@@ -49,7 +75,13 @@ const page = async ({ params }) => {
                             </div>
                             <div className='flex justify-between items-center border-b-2  border-black'>
                                 <div className='flex gap-2  py-2'>
-                                    <input className='' type="radio" name='Print & eBook Download' value='Print & eBook Download' />Print & eBook Download
+                                    <input className=''
+                                        type="radio"
+                                        name='Print & eBook Download'
+                                        value='Print & eBook Download'
+                                        onChange={() => handleRadioChange(data.ThirdPrice)}
+                                        checked={selectedPrice === data.ThirdPrice}
+                                    />Print & eBook Download
                                 </div>
                                 <div>
                                     <p>{data.ThirdPrice}$</p>
@@ -57,6 +89,9 @@ const page = async ({ params }) => {
                             </div>
                         </div>
                         <button className="btn bg-red-800 text-white rounded-none uppercase">Add To Cart </button>
+                        <Link href={`/category/bookOrderForm/${bookdata}?selectedPrice=${selectedPrice}`}>
+                            <button className='btn bg-red-800 text-white rounded-none uppercase'>Order Now</button>
+                        </Link>
                     </div>
                 </div>
             </div>

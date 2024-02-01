@@ -1,6 +1,7 @@
 
 import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
+import AllArticle from "@/components/Home/healthAndFitness/AllArticle/AllArticle";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
@@ -9,12 +10,22 @@ import { FaArrowRight } from "react-icons/fa6";
 const DynamicCategory = async ({ params }) => {
     console.log(params)
     //Article
+    // const res = await fetch("https://quick-fit-server.vercel.app/api/v1/articles", {
+    //     cache: "no-store"
+    // });
+    // const data = await res.json();
+    // const filterData = data.filter(item => item.Category === params.id);
+    // const article = filterData.slice(0, 4);
+    // console.log(data)
+
+
+    //Article
     const res = await fetch("https://quick-fit-server.vercel.app/api/v1/articles", {
         cache: "no-store"
     });
     const data = await res.json();
     const filterData = data.filter(item => item.Category === params.id);
-    const article = filterData.slice(0, 4);
+    console.log(filterData)
 
     // Category
     const result = await fetch(`https://quick-fit-server.vercel.app/api/v1/category/${params.id}`, {
@@ -44,9 +55,9 @@ const DynamicCategory = async ({ params }) => {
                 </div>
             </div>
             {/* Recent Article */}
-            <h1 className="bg-orange-400 text-white text-center font-semibold py-1">Recent Articles</h1>
-            <div className="py-5">
-                {/* <SectionHeading title={"Recent Articles"} /> */}
+            <SectionHeading title='Recent Articles'></SectionHeading>
+            {/* <div className="py-5">
+               
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mb-20 gap-5 border-b-4 border-orange-400">
 
                     {article.map((articles) => (
@@ -76,7 +87,17 @@ const DynamicCategory = async ({ params }) => {
                     ))}
                 </div>
 
+                <Link href="/category"><Button1 title={"See All"}/></Link>
+
+            </div> */}
+
+            <div className=" mb-20 border-y-4 border-orange-400">
+                <AllArticle params={params}></AllArticle>
             </div>
+
+
+
+
             {/* {Category shortDescription} */}
             <div className="pb-20">
                 <div className="bg-orange-400 h-[70vh] w-[75vw] px-10 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="" data-aos="fade-up">
