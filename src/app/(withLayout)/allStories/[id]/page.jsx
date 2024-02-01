@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Button1 from '@/components/Common/Button1';
 import Image from 'next/image';
+import Comment from '@/components/Comment/Comment';
 
 const page = async({params}) => {
 
@@ -43,6 +44,9 @@ const page = async({params}) => {
                 
                 <Link href="/allStories"><Button1 title={"More Stories"}/></Link>
             </div>
+
+            <Comment></Comment>
+
         </div>
     );
 };

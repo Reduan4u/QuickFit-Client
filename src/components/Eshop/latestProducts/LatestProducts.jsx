@@ -6,7 +6,7 @@ import "swiper/swiper-bundle.css";
 
 const LatestProducts = async (props) => {
   const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/eshop`, {
-    cache: "no-store",
+    cache: "no-store"
   });
   const products = await res.json();
 

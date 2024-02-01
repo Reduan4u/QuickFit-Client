@@ -1,19 +1,31 @@
 
 import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
+import AllArticle from "@/components/Home/healthAndFitness/AllArticle/AllArticle";
 import Image from "next/image";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa6";
 
 
 const DynamicCategory = async ({ params }) => {
     console.log(params)
+    //Article
+    // const res = await fetch("https://quick-fit-server.vercel.app/api/v1/articles", {
+    //     cache: "no-store"
+    // });
+    // const data = await res.json();
+    // const filterData = data.filter(item => item.Category === params.id);
+    // const article = filterData.slice(0, 4);
+    // console.log(data)
+
+
     //Article
     const res = await fetch("https://quick-fit-server.vercel.app/api/v1/articles", {
         cache: "no-store"
     });
     const data = await res.json();
     const filterData = data.filter(item => item.Category === params.id);
-    const article = filterData.slice(0, 4);
+    console.log(filterData)
 
     // Category
     const result = await fetch(`https://quick-fit-server.vercel.app/api/v1/category/${params.id}`, {
@@ -43,9 +55,9 @@ const DynamicCategory = async ({ params }) => {
                 </div>
             </div>
             {/* Recent Article */}
-            <h1 className="bg-orange-400 text-white text-center font-semibold py-1">Recent Articles</h1>
-            <div className="py-5">
-                {/* <SectionHeading title={"Recent Articles"} /> */}
+            <SectionHeading title='Recent Articles'></SectionHeading>
+            {/* <div className="py-5">
+               
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mb-20 gap-5 border-b-4 border-orange-400">
 
                     {article.map((articles) => (
@@ -63,7 +75,7 @@ const DynamicCategory = async ({ params }) => {
                                     className="w-1/4 h-full"
                                 />
                                 <div className="w-3/4">
-                                    <span className="font-semibold">{articles?.title.slice(0,30)}</span>
+                                    <span className="font-semibold">{articles?.title.slice(0, 30)}</span>
                                     <p className="line-clamp-3 text-base text-orange-400">
                                         {articles?.Category}
                                     </p>
@@ -75,7 +87,17 @@ const DynamicCategory = async ({ params }) => {
                     ))}
                 </div>
 
+                <Link href="/category"><Button1 title={"See All"}/></Link>
+
+            </div> */}
+
+            <div className=" mb-20 border-y-4 border-orange-400">
+                <AllArticle params={params}></AllArticle>
             </div>
+
+
+
+
             {/* {Category shortDescription} */}
             <div className="pb-20">
                 <div className="bg-orange-400 h-[70vh] w-[75vw] px-10 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="" data-aos="fade-up">
@@ -112,7 +134,7 @@ const DynamicCategory = async ({ params }) => {
 
             </div>
             {/* Book */}
-            <div class="flex flex-col justify-center items-center w-auto h-auto gap-5 p-5 bg-gray-800 rounded-none md:flex-row">
+            {/* <div class="flex flex-col justify-center items-center w-auto h-auto gap-5 p-5 bg-gray-800 rounded-none md:flex-row">
                 <div class="flex justify-center items-center w-28 h-full   rounded-lg hover:-translate-y-10 duration-700 hover:scale-125">
                     <Image
                         height={500}
@@ -132,6 +154,30 @@ const DynamicCategory = async ({ params }) => {
                     <div className="flex gap-6 items-center justify-center">
                     </div>
                     <Button1 title='Read More'></Button1>
+                </div>
+            </div> */}
+
+            {/* Book2 */}
+            <div>
+                <div className="hero min-h-full border border-y-2">
+                    <div className="hero-content flex-col md:flex-row gap-20">
+                        <div className="rounded-lg">
+                            <h1 className=" py-5 text-xl font-bold">You might also be interested in...</h1>
+                            <Image
+                                height={500}
+                                width={500}
+                                alt='types'
+                                objectFit="cover"
+                                src={book.image}
+                                className="w-full h-96"
+                            />
+                        </div>
+                        <div className="w-full md:w-1/2">
+                            <h1 className="text-2xl md:text-4xl font-bold">{book.BookName}</h1>
+                            <p className="py-6 text-base">{book.description}</p>
+                            <Link href={`/category/${params.id}/${book._id}`}><button className="btn bg-red-800 text-white rounded-none uppercase">Read More <FaArrowRight></FaArrowRight></button></Link>
+                        </div>
+                    </div>
                 </div>
             </div>
 
