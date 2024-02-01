@@ -6,16 +6,9 @@ import { useEffect, useState } from 'react';
 const BookDetails =  ({params}) => {
 
   // State to keep track of the selected radio button value
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState(null);
   const [bookData, setBookData] = useState(null);
   console.log(selectedValue)
-
-    // const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/books/${params.id}`, {
-    //     cache: "no-store"
-    // });
-    // const data = await res.json();
-    // const bookdata = data._id;
-    // console.log(data)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,7 +27,7 @@ const BookDetails =  ({params}) => {
       }, [params.id]);
 
 
-
+console.log(bookData?._id)
     const handleOrder = (e) =>{
         e.preventDefault()
         console.log("heloo")
@@ -125,12 +118,14 @@ const BookDetails =  ({params}) => {
               <button className="btn bg-red-800 text-white rounded-none uppercase">
                 Add To Cart
               </button>
+              <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
               <button
-                className="btn bg-red-800 text-white rounded-none uppercase"
-                type="submit"
+                className=" btn bg-red-800 text-white rounded-none uppercase"
+                disabled={!selectedValue}
               >
                 Order Now
               </button>
+              </Link>
             </form>
           </div>
           {/* content div for order a book ends */}

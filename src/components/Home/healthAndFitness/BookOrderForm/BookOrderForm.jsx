@@ -3,10 +3,14 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
-const BookOrderForm = ({ params }) => {
-    console.log(params.id)
+const BookOrderForm = ({ bookId,price }) => {
+    // console.log(bookId,price)
     const axiosPublic = useAxiosPublic();
     const router = useRouter();
+
+    const id=bookId;
+    const bookPrice=price;
+    //console.log(id,bookPrice)
 
  
     const {
@@ -18,8 +22,10 @@ const BookOrderForm = ({ params }) => {
 
 
     const onSubmit = (data) => {
-        console.log(data)
-        data.productId = params.id
+        //console.log(data)
+        data.productId = id
+        data.price=bookPrice
+        // console.log(id,bookPrice)
 
         axiosPublic.post("/order3", data)
             .then(result => {
