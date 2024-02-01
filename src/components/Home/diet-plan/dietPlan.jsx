@@ -1,5 +1,4 @@
 "use client"
-
 import SectionHeading from '@/components/Common/SectionHeading';
 import { motion } from "framer-motion";
 import { fadeIn } from "../../Common/Animation1";
@@ -32,8 +31,6 @@ const DietPlan = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.2 }}
-
-
                 className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
 
                 {/* 1st div */}
@@ -76,9 +73,11 @@ const DietPlan = () => {
                                 <h1>1 Follow up</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                    SEE DETAILS
-                                </button>
+                                <Link href={"/Diet-Plan"} >
+                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
+                                        SEE DETAILS
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -116,7 +115,7 @@ const DietPlan = () => {
                             <h1>Breast Feeding Sessions</h1>
                         </div>
                         <div className='text-center p-6'>
-                            <Link href={"/diet-plan/post-pregnancy"} >
+                            <Link href={"/Diet-Plan"} >
                                 <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                     SEE DETAILS
                                 </button>
@@ -153,9 +152,9 @@ const DietPlan = () => {
                         <div>
                             <div className="p-6 bg-red-500 text-white opacity-95 text-center">
                                 <h4 className="font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
-                                    WEIGHT LOSS
+                                    FITNESS
                                 </h4>
-                                <h6>7 DAYS DIET PLAN</h6>
+                                <h6>FOUR WEEKS MEAL & RUNNING PLAN</h6>
                             </div>
                             <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
                                 <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$350 <span className='text-xl font-medium'>/Month</span>
@@ -168,9 +167,11 @@ const DietPlan = () => {
                                 <h1>Skilled Nursing Care</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                    SEE DETAILS
-                                </button>
+                                <Link href={"/Diet-Plan"} >
+                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
+                                        SEE DETAILS
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

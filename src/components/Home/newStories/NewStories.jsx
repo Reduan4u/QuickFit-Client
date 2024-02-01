@@ -1,5 +1,6 @@
 import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
+import Image from "next/image";
 import Link from "next/link";
 
 const NewStories = async () => {

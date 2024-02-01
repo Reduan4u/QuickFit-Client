@@ -1,9 +1,10 @@
+import Tips from '@/components/Tips/Tips';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <h2>Calorie</h2>
+            <Tips></Tips>
         </div>
     );
 };

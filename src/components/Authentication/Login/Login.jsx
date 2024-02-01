@@ -1,54 +1,86 @@
 "use client"
 
-import { useContext, useState } from 'react'; // Import useState to use state in your functional component
+
+
+
+import { useContext, useState } from 'react';
 import Link from 'next/link';
 import { FaEyeSlash } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import { AuthContext } from '@/components/Provider/AuthProvider';
 import { Player } from '@lottiefiles/react-lottie-player';
+import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
+import { FcGoogle } from 'react-icons/fc';
+
+
 
 const Login = () => {
-    const {signIn,googleLogin} = useContext(AuthContext)
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
-  const {register, reset, formState: { errors }} = useForm();
-  // Add the missing handleSubmit and onSubmit functions
-  const handleSubmit = (e) =>{
+  const { signIn,googleLogin } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const { register, reset, formState: { errors } } = useForm();
+  const router = useRouter(); // Initialize the useRouter hook
+
+
+  const handleGoogleLogin = () =>{
+  
+    googleLogin()
+    
+      .then(res => {
+        // console.log(res.data)
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "login Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      
+        router.push('/');
+      })
+
+      
+    
+    .catch(error => console.error(error))
+   }
+
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form =  e.target;
+    const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password)
 
-     signIn(email,password)
-    .then(result => {
-      console.log(result.user)
-      swal("Good job!", "Login Successfully!", "success");
-    //   navigate(from, {replace:true});
-    })
-    
-}
+    signIn(email, password)
+      .then(result => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "User login Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        router.push('/'); // Navigate to the home page after successful login
+      })
+      .catch(error => {
+        console.error("Login Error: ", error.message);
+        // Handle login error here
+      });
+  }
 
   return (
     <>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-[500px] lg:text-left">
-           
-
-
-              
-<Player
-  autoplay
-  loop
-  src="login.json"
-  style={{ height: '450px', width: '450px' }}
->
-
-</Player>
-
-
-
+            <Player
+              autoplay
+              loop
+              src="login.json"
+              style={{ height: '450px', width: '450px' }}
+            />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-orange-800 shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit} className="card-body">
@@ -77,11 +109,13 @@ const Login = () => {
               </span>
 
               <div className="form-control mt-6">
-                <input type="submit" className="btn bg-white  border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
+                <input type="submit" className="btn text-2xl bg-white  border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300" value="Login" />
+                <p className='text-center'> or </p>
+                <div onClick={handleGoogleLogin} className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"> <h1 > <span className='text-center text-4xl'><FcGoogle /></span> </h1 > Google </div>
               </div>
             </form>
             <p className="text-center pb-2">
-              Register Now <Link className="text-indigo-700" href="/register">Register</Link>
+              Register Now <Link href="/register"><span className="text-indigo-700">Register</span></Link>
             </p>
           </div>
         </div>

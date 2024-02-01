@@ -3,6 +3,7 @@ import Button1 from "@/components/Common/Button1";
 import Image from "next/image";
 import { FaBookmark } from "react-icons/fa";
 import FavButton from "@/components/FavouriteButton/FavButton";
+import LikeFunction from "@/components/LikeFunction/LikeFunction";
 
 const page = async ({ params }) => {
   const res = await fetch(
@@ -45,7 +46,8 @@ const page = async ({ params }) => {
         </div>
       </div>
 
-      <div className=" my-9 flex justify-end items-center">
+      <div className=" my-9 flex justify-between items-center">
+        <LikeFunction data={data} />
         <Link href="/allStories">
           <Button1 title={"More Stories"} />
         </Link>

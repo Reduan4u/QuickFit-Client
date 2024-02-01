@@ -1,58 +1,120 @@
+
+"use client"
+
 import NavLink from "@/components/Common/NavLink";
+import { AuthContext } from "@/components/Provider/AuthProvider";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useContext } from "react";
+// import React, { useContext } from "react";
 import { MdForwardToInbox } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const {user,logOut} = useContext(AuthContext)
   const navLinkClass =
     "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
 
+    
+    
+    const handleSingOut = () =>{
+      logOut()
+      .then(Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "User logOut Successfully!",
+        showConfirmButton: false,
+        timer: 1500
+      }));
+    }
+
   const navLink = (
     <>
-      <NavLink
-        href="/"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Home
-      </NavLink>
+      <div className="capitalize">
+        <NavLink
+          href="/"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        >
+          Home
+        </NavLink>
 
-      <NavLink
-        href="/eatBetter"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Eat Better
-      </NavLink>
+        <NavLink
+          href="/eatBetter"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        >
+          Eat Better
+        </NavLink>
 
-      <NavLink
-        href="/getFit"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Get Fit
-      </NavLink>
-      <NavLink
-        href="/calculator"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Calculator
-      </NavLink>
-      <NavLink
-        href="/eshop"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        E-Shop
-      </NavLink>
+        <NavLink
+          href="/getFit"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        >
+          Get Fit
+        </NavLink>
+        <NavLink
+          href="/calculator"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        >
+          Calculator
+        </NavLink>
+        <NavLink
+          href="/eshop"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        >
+          E-Shop
+        </NavLink>
 
-      <NavLink
+        <div className="dropdown dropdown-hover m-0 capitalize">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+            <NavLink
+              href="/more"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+            >
+              More
+            </NavLink>
+          </div>
+          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
+            <NavLink
+              href="/tips"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+            >
+              Tips
+            </NavLink>
+            <NavLink
+              href="/contactUs"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+            >
+              Contact
+            </NavLink>
+            <NavLink
+              href="/aboutUs"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              About Us
+            </NavLink>
+            <NavLink
+              href="/experts"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Our Expert
+            </NavLink>
+          </ul>
+        </div>
+
+        {/* <NavLink
         href="/more"
         className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
       >
         More
-      </NavLink>
+      </NavLink> */}
+
+      </div>
     </>
+
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-white">
+    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200">
       <div className="navbar  pt-4 pb-4 px-5 bg-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -162,13 +224,11 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          <button href="/newsLetter" className="pb-2">
-            <span className="">
-              <NavLink href="/login">
-                <span className=" font-bold">Login</span>
-              </NavLink>
-            </span>
-          </button>
+          {
+            user ?  <div className="flex gap-2 items-center justify-center ">   <p className="  text-orange-500 font-bold">{user?.email
+            } </p>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div> : <Link href="/login" className=" font-bold">Login</Link>
+          }
+        
         </div>
       </div>
     </nav>
