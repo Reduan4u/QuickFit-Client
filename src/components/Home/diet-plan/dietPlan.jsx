@@ -73,7 +73,7 @@ const DietPlan = () => {
                                 <h1>1 Follow up</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <Link href={"/Diet-Plan"} >
+                                <Link href={"/Diet-Plans/Weight-Loss"} >
                                     <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                         SEE DETAILS
                                     </button>
@@ -115,7 +115,7 @@ const DietPlan = () => {
                             <h1>Breast Feeding Sessions</h1>
                         </div>
                         <div className='text-center p-6'>
-                            <Link href={"/Diet-Plan"} >
+                            <Link href={"/Diet-Plans/Post-Pregnancy"} >
                                 <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                     SEE DETAILS
                                 </button>
@@ -167,7 +167,7 @@ const DietPlan = () => {
                                 <h1>Skilled Nursing Care</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <Link href={"/Diet-Plan"} >
+                                <Link href={"/Diet-Plans/Fitness"} >
                                     <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                         SEE DETAILS
                                     </button>
