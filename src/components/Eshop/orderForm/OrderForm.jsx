@@ -26,11 +26,6 @@ function OrderForm({ params }) {
         console.error('Error:', error);
       });
 
-
-
-
-
-
   };
 
   return (
