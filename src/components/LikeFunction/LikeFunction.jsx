@@ -11,7 +11,7 @@ const LikeFunction = (data) => {
   const [like, setLike] = useState(false);
   const handleLike = () => {
     axios
-      .patch(`http://localhost:4000/api/v1/likes/${user.email}`)
+      .patch(`https://quick-fit-server.vercel.app/api/v1/likes/${user.email}`)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           toast.success("Liked");
