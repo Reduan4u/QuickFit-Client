@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type="radio"]:checked {
+    outline: none; /* Removes the default focus border */
+    /* border-color: blue; Change border color when checked */
+    color: blue; /* Change background color when checked */ /* Change text color when checked */
+  }
