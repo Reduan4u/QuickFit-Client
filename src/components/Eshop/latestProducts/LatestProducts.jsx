@@ -14,9 +14,9 @@ const LatestProducts = async (props) => {
   return (
     <div className="w-10/12 mx-auto my-20">
 
-<SectionHeading title={"New Arrivals"}></SectionHeading>
+      <SectionHeading title={"New Arrivals"}></SectionHeading>
 
-    
+
       {/* swiper for medium and large device */}
       <div className="hidden md:block">
         <Swiper
@@ -25,8 +25,8 @@ const LatestProducts = async (props) => {
           freeMode={true}
           initialSlide={3}
           pagination={{ clickable: true }}
-          navigation ={{clickable:true}}
-          >
+          navigation={{ clickable: true }}
+        >
           {products.slice(0, 7).map((item) => (
             <div>
               {" "}
