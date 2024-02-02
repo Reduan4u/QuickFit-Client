@@ -32,7 +32,7 @@ const FavButton = ({ data }) => {
     };
 
     axios
-      .post("http://localhost:4000/api/v1/favourites", favData)
+      .post("https://quick-fit-server.vercel.app/api/v1/favourites", favData)
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Successfully Added to Favourite");
