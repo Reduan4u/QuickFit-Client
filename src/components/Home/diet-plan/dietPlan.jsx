@@ -21,7 +21,7 @@ const DietPlan = () => {
                     variants={fadeIn("right", 0.4)}
                     initial="hidden"
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.7 }}
+                    viewport={{ once: false, amount: 0.2 }}
                     className='w-36'>
                     <Lottie animationData={dietPlan} loop={true} />
                 </motion.div>
@@ -38,7 +38,7 @@ const DietPlan = () => {
                     variants={fadeIn("right", 0.2)}
                     initial="hidden"
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0 }}
 
                 >
                     <div
@@ -73,7 +73,7 @@ const DietPlan = () => {
                                 <h1>1 Follow up</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <Link href={"/Diet-Plan"} >
+                                <Link href={"/Diet-Plans/Weight-Loss"} >
                                     <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                         SEE DETAILS
                                     </button>
@@ -84,54 +84,60 @@ const DietPlan = () => {
                 </motion.div>
 
                 {/* 2nd div */}
-                <div
+                <motion.div
+                    variants={fadeIn("right", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0 }}
+
+                ><div
                     className="relative flex max-w-[24rem] flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-2xl transform hover:scale-105 transition-all duration-200">
-                    <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
-                        <Image
-                            height={500}
-                            width={500}
-                            alt='types'
-                            objectFit="cover"
-                            src={"https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            }
-                            className="w-full h-full"
-                        />
-                    </div>
-                    <div>
-                        <div className="p-6 bg-red-500 text-white opacity-95 text-center">
-                            <h4 className="font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
-                                POST PREGNANCY
+                        <div className="relative m-0 overflow-hidden text-gray-700 bg-transparent rounded-none shadow-none bg-clip-border">
+                            <Image
+                                height={500}
+                                width={500}
+                                alt='types'
+                                objectFit="cover"
+                                src={"https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                }
+                                className="w-full h-full"
+                            />
+                        </div>
+                        <div>
+                            <div className="p-6 bg-red-500 text-white opacity-95 text-center">
+                                <h4 className="font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
+                                    POST PREGNANCY
 
-                            </h4>
-                            <h6>SIX MONTHS DIET & EXERCISE PLAN</h6>
-                        </div>
-                        <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
-                            <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$250 <span className='text-xl font-medium'>/Week</span></h2>
-                        </div>
-                        <div className='text-center p-6 text-gray-600'>
-                            <h1>Special Diet</h1>
-                            <h1>Excercise Yoga Plan</h1>
-                            <h1>Weekly meetings</h1>
-                            <h1>Breast Feeding Sessions</h1>
-                        </div>
-                        <div className='text-center p-6'>
-                            <Link href={"/Diet-Plan"} >
-                                <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                    SEE DETAILS
-                                </button>
-                            </Link>
+                                </h4>
+                                <h6>SIX MONTHS DIET & EXERCISE PLAN</h6>
+                            </div>
+                            <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
+                                <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$250 <span className='text-xl font-medium'>/Week</span></h2>
+                            </div>
+                            <div className='text-center p-6 text-gray-600'>
+                                <h1>Special Diet</h1>
+                                <h1>Excercise Yoga Plan</h1>
+                                <h1>Weekly meetings</h1>
+                                <h1>Breast Feeding Sessions</h1>
+                            </div>
+                            <div className='text-center p-6'>
+                                <Link href={"/Diet-Plans/Post-Pregnancy"} >
+                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
+                                        SEE DETAILS
+                                    </button>
+                                </Link>
 
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div></motion.div>
 
 
                 {/* 3rd div */}
                 <motion.div
-                    variants={fadeIn("left", 0.2)}
+                    variants={fadeIn("right", 0.2)}
                     initial="hidden"
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0 }}
 
                 >
                     <div
@@ -167,7 +173,7 @@ const DietPlan = () => {
                                 <h1>Skilled Nursing Care</h1>
                             </div>
                             <div className='text-center p-6'>
-                                <Link href={"/Diet-Plan"} >
+                                <Link href={"/Diet-Plans/Fitness"} >
                                     <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
                                         SEE DETAILS
                                     </button>

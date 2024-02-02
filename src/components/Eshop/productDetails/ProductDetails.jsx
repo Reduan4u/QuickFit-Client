@@ -5,13 +5,18 @@ import Link from "next/link";
 import { fadeIn } from "@/components/Common/Animation1";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
+import { useContext } from "react";
+import { AuthContext } from "@/components/Provider/AuthProvider";
 
 function ProductDetails({ product, params }) {
-  const email = "abc@gmail.com";
+  const axiosPublic = useAxiosPublic();
+  const { user } = useContext(AuthContext);
+  const email = user?.email;
 
   const { _id, category, title, subTitle, image, price, features } = product;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     const obj = {
       ProductID: _id,
       email,
@@ -22,20 +27,25 @@ function ProductDetails({ product, params }) {
       price,
     };
 
-    fetch("https://quick-fit-server.vercel.app/api/v1/cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(obj),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    axiosPublic.post("/cart", obj).then((data) => {
+      console.log(data.data)
+      if (data.data.message) {
+        Swal.fire({
+          icon: "error",
+          title: `${title}`,
+          text: `${data.data.message}`,
+          // footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+        });
+      }
+      if (data.data.ProductID) {
         Swal.fire({
           icon: "success",
           title: `${title}`,
           text: "Added to the cart!",
-          footer: `<a href="/eshop/cart/${email}" target="blank" class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+          footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
         });
-      });
+      }
+    });
   };
 
   return (
@@ -81,18 +91,27 @@ function ProductDetails({ product, params }) {
 
             <div className="mb-2">
               {features.map((item) => (
-                <p key={_id} className="font-medium py-1">| {item}</p>
+                <p key={_id} className="font-medium py-1">
+                  | {item}
+                </p>
               ))}
             </div>
             <h2 className="text-2xl font-semibold text-neutral-800 mb-5">
               {price}$
             </h2>
 
-            <button
-              onClick={handleAddToCart}
-              className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
-              Add To Cart
-            </button>
+            <div className="flex flex-col md:flex-row gap-5">
+              <button
+                onClick={handleAddToCart}
+                className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+                Add To Cart
+              </button>
+              <Link href={`/eshop/orderForm/${_id}`}>
+                <button className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+                  Order Now
+                </button>
+              </Link>
+            </div>
           </motion.div>
           {/* all content end  */}
         </div>

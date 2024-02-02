@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/components/Common/Animation1";
 
 const Products = () => {
-  const products = [
+  const products = [ 
     {
       category: "Food",
       image:
