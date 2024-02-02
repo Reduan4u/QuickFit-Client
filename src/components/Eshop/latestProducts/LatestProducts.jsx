@@ -1,7 +1,7 @@
 "use client";
 import SectionHeading from "@/components/Common/SectionHeading";
 import ProductCard from "@/components/cards/ProductCard/ProductCard";
-import { Swiper, SwiperSlide, Pagination } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 const LatestProducts = async (props) => {
@@ -24,7 +24,6 @@ const LatestProducts = async (props) => {
           slidesPerView={3}
           freeMode={true}
           initialSlide={3}
-          pagination={{ clickable: true }}
           navigation={{ clickable: true }}
         >
           {products.slice(0, 7).map((item) => (
@@ -33,7 +32,6 @@ const LatestProducts = async (props) => {
               <SwiperSlide className="border border-black border-b-0 border-t-0">
                 <ProductCard product={item}></ProductCard>
               </SwiperSlide>
-              <Pagination />
             </div>
           ))}
         </Swiper>

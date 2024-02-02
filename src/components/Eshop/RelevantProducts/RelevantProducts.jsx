@@ -1,16 +1,16 @@
 "use client";
 import SectionHeading from "@/components/Common/SectionHeading";
 import ProductCard from "@/components/cards/ProductCard/ProductCard";
-import { Swiper, SwiperSlide, Pagination } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-const RelevantProducts = async ({product}) => {
-    const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/eshop`, {
-        cache: "no-store",
-      });
-      const products = await res.json();
+const RelevantProducts = async ({ product }) => {
+  const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/eshop`, {
+    cache: "no-store",
+  });
+  const products = await res.json();
 
-      const relevantProducts = products.filter(item=>item.category == product.category)
+  const relevantProducts = products.filter(item => item.category == product.category)
 
   return (
     <div className="w-10/12 mx-auto my-20">
@@ -24,7 +24,6 @@ const RelevantProducts = async ({product}) => {
             slidesPerView={3}
             freeMode={true}
             initialSlide={3}
-            pagination={{ clickable: true }}
             navigation={{ clickable: true }}>
             {relevantProducts.map((item) => (
               <div>
@@ -32,7 +31,6 @@ const RelevantProducts = async ({product}) => {
                 <SwiperSlide className="border border-black border-b-0 border-t-0">
                   <ProductCard product={item}></ProductCard>
                 </SwiperSlide>
-                <Pagination />
               </div>
             ))}
           </Swiper>
