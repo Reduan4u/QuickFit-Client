@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram,FaFacebook,FaTwitter, FaLinkedin } from "react-icons/fa6";
 
-const AboutUs = () => {
+const AboutUs = async () => {
+  const res = await fetch("http://localhost:3001/api/v1/teams", {
+    cache: "no-store"
+  });
+  const data = await res.json();
+ 
     return (
       <div>
         <div className="hero min-h-[550px] w-11/12 mx-auto" style={{backgroundImage: 'url(https://img.livestrong.com/2880x1100/media-storage/livestrong-data/hub/316dd502-ade0-4123-b5cf-2f3fccb2a8fe-9391c05c79194d83a1fd1047fddc6a34herodesktop.jpg)'}}>
@@ -63,200 +68,39 @@ const AboutUs = () => {
         <p className="leading-8 mb-8">The QuickFit team is passionate about good health and good information. We are a team of experienced journalists, certified personal trainers, foodies, yogis, coffee fanatics, dog lovers, cat lovers and data geeks.</p>
       </div>
 
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2 "
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Kaitlin Ahern </h1>
-        <p className="text-gray-400 py-2"> Health Director  she/her/hers </p>
-        <p className="text-lg loading-8">Kaitlin Ahern is QuickFit Health Director. She is a New Jersey-based writer and editor who has been covering health and wellness for more than 10 years. She is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where she earned a degree in magazine journalism.  </p>
-        <div className="text-2xl py-2 flex gap-4"> 
-          
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
+    
+    <div >
+      {
+        data.map(item => <div key={item._id} className="lg:flex gap-8 mb-16">
+        <Image className="lg:w-[225px] lg:h-[250px] mb-2"
+          src= {item.img}
+          alt="Alt text for your image"
+          width={800} // Set the width of the image
+          height={500} // Set the height of the image
+        />
+        <div>
+          <h1 className="text-2xl font-bold">{item.name}</h1>
+          <p className="text-gray-400 py-2">{item.jobTitle}</p>
+          <p className="text-lg loading-8">{item.description}   </p>
+
+          <div className="text-2xl py-2 flex gap-3">
+          {item.social_media?.linkedin ?  <Link href="https://www.linkedin.com" >   <FaLinkedin> {item.social_media?.linkedin} </FaLinkedin>  </Link> : <></>
+          }
+          {item.social_media?.instagram ?  <Link href="https://www.instagram.com" >   <FaInstagram> {item.social_media?.instagram} </FaInstagram>  </Link> : <></>
+          }
+          {item.social_media?.facebook ?  <Link href="https://www.facebook.com" >   <FaFacebook> {item.social_media?.facebook} </FaFacebook>  </Link> :<></>
+          }
+          {item.social_media?.twitter ?  <Link href="https://www.twitter.com" >   <FaTwitter> {item.social_media?.twitter} </FaTwitter>  </Link> : <></>
+          }
+          </div>
         </div>
-      </div>
-
-      </div>
-
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/1/27/d54988e2cf3240b3a805f145715171aa.jpeg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Jessica Campbell-Salley </h1>
-        <p className="text-gray-400 py-2"> Senior Fitness Editor  she/her/hers</p>
-        <p className="text-lg loading-8">Jessica Campbell-Salley is Senior Fitness Editor for QuickFit. She has a journalism degree from the University of Tennessee and is based in Colorado, where she spends as much time as possible getting outside. She previously worked as Managing Editor for Women is Running magazine.</p>
-        <div className="text-2xl py-2 flex gap-4"> 
-           <Link href="https://www.facebook.com" > <FaFacebook />  </Link>
-           <Link href="https://www.instagram.com" > <FaInstagram /> </Link>
-           
+  
         </div>
-      </div>
+  )
+      }
+    </div>
 
-      </div>
-
-      
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/9dc1064df9d64868ab35b58581dd1f33.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Allison Forsyth </h1>
-        <p className="text-gray-400 py-2">Associate Health Editor  she/her/hers</p>
-        <p className="text-lg loading-8">Allison Forsyth is QuickFit associate health editor. She is a Sarasota, Florida-based writer, editor and ballet teacher. She has previously worked at Sarasota Magazine. She is a graduate of Southeastern University is Digital Media & Design program.</p>
-        <div className="text-2xl py-2 flex gap-4"> 
-           <Link href="https://www.facebook.com" > <FaFacebook />  </Link>
-           
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/9e216e9cf2df48c88baaf7c8e0cd4285.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Rachel Grice </h1>
-        <p className="text-gray-400 py-2">CPT, RYT-200  Contributing Editor  she/her/hers </p>
-        <p className="text-lg loading-8">Rachel Grice is a contributing fitness editor for QuickFit, an ACE-certified personal trainer and registered yoga instructor (RYT-200). She completed her undergraduate education at the University of Southern California and has worked for Men is Health, FitPregnancy and People magazines.</p>
-        <div className="text-2xl py-2 flex gap-4"> 
-         
-           <Link href="https://www.instagram.com" > <FaInstagram /> </Link>
-           
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/b76613a7d8904284b2f51a9b371d8f57.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Kaitlin Ahern </h1>
-        <p className="text-gray-400 py-2"> Health Director  she/her/hers </p>
-        <p className="text-lg loading-8">Kaitlin Ahern is QuickFit Health Director. She is a New Jersey-based writer and editor who has been covering health and wellness for more than 10 years. She is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where she earned a degree in magazine journalism.  </p>
-        <div className="text-2xl py-2 flex gap-4"> 
-           
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/1/4f34b1284b514872aba3249d96330124.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Sarah Klein </h1>
-        <p className="text-gray-400 py-2">CPT  Former Senior Director of Content + Editor in Chief  she/her/hers </p>
-        <p className="text-lg loading-8">Sarah Klein is QuickFit senior director of content and editor in chief. She is a Boston-based writer, editor, and certified personal trainer. She has previously worked at Health.com, Prevention magazine, and The Huffington Post. She is a graduate of the Arthur L. Carter Journalism Institute at New York University, a SXSW 2022 panel moderator, a National Press Foundation vaccine boot camp fellow, and a 2019 Mayo Clinic resident journalist. </p>
-        <div className="text-2xl py-2 flex gap-4"> 
-           <Link href="https://www.facebook.com" > <FaFacebook />  </Link>
-           <Link href="https://www.instagram.com" > <FaInstagram /> </Link>
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           
-        </div>
-      </div>
-
-      </div>
-
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/980d707e2f3c426ebca231489920aaf0.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Ciara Lucas </h1>
-        <p className="text-gray-400 py-2"> RRCA, CPT  Health Writer  she/her/hers</p>
-        <p className="text-lg loading-8">Ciara Lucas is QuickFit’s health writer. She is a Philadelphia-based journalist, certified personal trainer, marathoner, and indoor cycling instructor. She has previously worked at HealthDigest.com and ABC/FOX News affiliates. Ciara is a graduate of the Park School of Communications at Ithaca College.  </p>
-        <div className="text-2xl py-2 flex gap-4"> 
-         
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-      
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/5/18/df5bb97205a24a40ba8478a6c63c58db.png?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold"> Dayan Marquina</h1>
-        <p className="text-gray-400 py-2"> Director  she/her/hers </p>
-        <p className="text-lg loading-8">Dayan is a Peruvian digital designer based in Brooklyn, New York and a graduate of graphic design programs at Central Piedmont Community College in North Carolina and The New School. She has been helping companies conceptualize their ideas into  nearly a decade through web and editorial design, illustration and branding. She truly enjoys designing for LIVESTRONG.</p>
-        <div className="text-2xl py-2 flex gap-4"> 
-      
-           <Link href="https://www.instagram.com" > <FaInstagram /> </Link>
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-
-      <div className="lg:flex gap-8 mb-8">
-      <Image className="lg:w-[225px] mb-2"
-        src="https://img.livestrong.com/315x315/media-storage/contentlab-data/profile/8/2/856d15c23275454dbd7c741a4078ac88.jpg?type=webp"
-        alt="Alt text for your image"
-        width={800} // Set the width of the image
-        height={500} // Set the height of the image
-      />
-      <div>
-        <h1 className="text-2xl font-bold">Sarah McNaughton</h1>
-        <p className="text-gray-400 py-2">VP, Content  she/her/hers</p>
-        <p className="text-lg loading-8">Sarah McNaughton is QuickFit Vice President of Content. She previously worked for Bauer Xcel Media, Hearst and Everyday Health. Sarah received her master is degree in magazine journalism from Columbia University Graduate School of Journalism, as well as dual bachelor is degrees in news/editorial and magazine journalism from the University of Oregon School of Journalism and Communication.   </p>
-        <div className="text-2xl py-2 flex gap-4"> 
-           <Link href="https://www.facebook.com" > <FaFacebook />  </Link>
-           <Link href="https://www.instagram.com" > <FaInstagram /> </Link>
-           <Link href="https://www.twitter.com" > <FaTwitter /> </Link>
-           <Link href="https://www.linkedin.com" >   <FaLinkedin />  </Link>
-        </div>
-      </div>
-
-      </div>
-
-     
-      
-
+  
      </div>
 
      <div id="our-experts" className="m-20 text-center lg:flex gap-20 justify-center items-center">
@@ -274,14 +118,12 @@ const AboutUs = () => {
   width={800} // Set the width of the image
   height={500} // Set the height of the image
 />
-
-
 </div>
 
 
 <div id="contact-us" className="mx-auto text-center w-7/12">
         <h1 className="text-4xl font-bold mb-4"> We would Like to Hear From You</h1>
-        <p className="leading-8 text-lg"> Got something to share or see something that doesn’t adhere to our standards? We want to know! We’re always working to improve our site and appreciate feedback.</p>
+        <p className="leading-8 text-lg"> Got something to share or see something that does adhere to our standards? We want to know! We’re always working to improve our site and appreciate feedback.</p>
 
        <p className="underline cursor-pointer my-8 text-blue-500"> editorial@QuickFit </p>
 

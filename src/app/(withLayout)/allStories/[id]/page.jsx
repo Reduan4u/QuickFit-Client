@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaBookmark } from "react-icons/fa";
 import FavButton from "@/components/FavouriteButton/FavButton";
 import LikeFunction from "@/components/LikeFunction/LikeFunction";
+import Comment from "@/components/Comment/Comment";
 
 const page = async ({ params }) => {
   const res = await fetch(
@@ -52,6 +53,7 @@ const page = async ({ params }) => {
           <Button1 title={"More Stories"} />
         </Link>
       </div>
+      <Comment data={data} />
     </div>
   );
 };

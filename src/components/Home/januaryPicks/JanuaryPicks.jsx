@@ -23,7 +23,11 @@ const JanuaryPicks = async () => {
   return (
     <div className="w-11/12 mx-auto my-2 px-2">
       <div className=" ">
-        <SectionHeading title={"February Picks"} />
+        <SectionHeading
+          title={`${new Date().toLocaleDateString("default", {
+            month: "long",
+          })} Picks`}
+        />
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-2">
         {slicedData.map((monthsPicks, index) => (
