@@ -39,7 +39,7 @@ const Bmi = () => {
 
     return (
         <div className='m-5 '>
-            <h1 className='mb-2 font-medium text-4xl text-blue-500'>Body Mass Index (BMI) Calculator</h1>
+            <h1 className='mb-2 font-medium text-4xl text-primary'>Body Mass Index (BMI) Calculator</h1>
             <hr />
             <div className="mt-5 p-5 border-4 border-blue-300">
                 <h1 className='pb-5 font-medium'>Enter your WEIGHT and HEIGHT below to find your BMI.

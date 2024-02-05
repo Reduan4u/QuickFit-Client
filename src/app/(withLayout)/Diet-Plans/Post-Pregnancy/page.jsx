@@ -25,27 +25,30 @@ const page = () => {
                         variants={fadeIn("right", 0.1)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.1 }}>                        <h1 className="w-2/3 mx-auto text-white md:text-5xl text-2xl font-bold">Work With Me
+                        viewport={{ once: false, amount: 0 }}>
+                        <h1 className="w-2/3 mx-auto text-white md:text-5xl text-xl font-bold">Work With Me
                         </h1>
-                        <h1 className="w-2/3 mx-auto px-5 text-white text-xl">Achieve your health and fitness goals through individually tailored expert guidance</h1>
+                        <h1 className="w-2/3 mx-auto px-5 text-white md:text-xl text-base">Achieve your health and fitness goals through individually tailored expert guidance</h1>
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-2 w-2/3 mx-auto gap-10 my-10">
+                <div className="grid md:grid-cols-2 grid-cols-1  md:10/12 lg:4/6 w-10/12  mx-auto gap-10 my-10">
                     <motion.div
                         variants={fadeIn("right", 0.1)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.1 }}>                        <h1 className="text-4xl">Personal Session</h1>
-                        <h1 className="text-lg">Overall Wellness Coaching</h1>
+                        viewport={{ once: false, amount: 0 }}>
+                        <h1 className="text-4xl">Personal Session</h1>
+                        <h1 className="text-lg text-gray-700">Overall Wellness Coaching</h1>
                         <p className="mt-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
                         <button className="more-btn mt-10">LEARN MORE...</button>
                     </motion.div>
                     <motion.div
-                        variants={fadeIn("left", 0.1)}
+                        variants={fadeIn("up", 0.1)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.1 }}>                        <Image
+                        viewport={{ once: false, amount: 0 }}>
+                        <Image
                             height={5000}
                             width={5000}
                             alt='types'
@@ -57,12 +60,12 @@ const page = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-2 w-2/3 mx-auto gap-10 my-10">
+                <div className="grid md:grid-cols-2 grid-cols-1 md:10/12 lg:4/6 w-10/12  mx-auto gap-10 my-10">
                     <motion.div
-                        variants={fadeIn("right", 0.1)}
+                        variants={fadeIn("up", 0.1)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.1 }}>
+                        viewport={{ once: false, amount: 0 }}>
                         <Image
                             height={5000}
                             width={5000}
@@ -74,10 +77,10 @@ const page = () => {
                         />
                     </motion.div>
                     <motion.div
-                        variants={fadeIn("left", 0.1)}
+                        variants={fadeIn("right", 0.1)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.1 }}>
+                        viewport={{ once: false, amount: 0 }}>
                         <h1 className="text-4xl">Group Session</h1>
                         <h1 className="text-lg text-gray-700">Get each other motivated</h1>
                         <p className="mt-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
@@ -98,24 +101,25 @@ const page = () => {
                             </svg>
                         </button>
                     </Link>
+
                 </div>
 
                 <motion.div
                     variants={fadeIn("up", 0.2)}
                     initial="hidden"
                     whileInView={"show"}
-                    viewport={{ once: false, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0 }}
                     className="mt-20 mb-10">
                     <Title heading={"You will also participate in several activities…"} subHeading={"...to get each other motivated!"} ></Title>
                 </motion.div>
 
 
-                <div className="grid grid-cols-2 mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:w-full w-10/12 m-auto mt-10">
                     <motion.div
-                        variants={fadeIn("right", 0.2)}
+                        variants={fadeIn("down", 0.2)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: false, amount: 0 }}
                     >
                         <Image
                             height={5000}
@@ -128,15 +132,15 @@ const page = () => {
                         />
                     </motion.div>
                     <motion.div
-                        variants={fadeIn("left", 0.2)}
+                        variants={fadeIn("up", 0.2)}
                         initial="hidden"
                         whileInView={"show"}
-                        viewport={{ once: false, amount: 0.2 }}
-                        className=" flex flex-col justify-center px-10 bg-pink-800 text-white">
+                        viewport={{ once: false, amount: 0 }}
+                        className=" flex flex-col justify-center px-10 py-5 bg-pink-800 text-white">
                         <h1 className="text-4xl">Wellness Events</h1>
                         <h1 className="text-lg ">Dig deeper and learn</h1>
                         <p className="mt-10 text-justify ">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
-                        <button className="btn btn-warning mt-10 w-1/4">LEARN MORE</button>
+                        <button className="btn btn-warning mt-10 md:w-1/4 w-1/2">LEARN MORE</button>
                     </motion.div>
                 </div>
 

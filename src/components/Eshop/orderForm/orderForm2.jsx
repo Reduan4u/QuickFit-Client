@@ -20,7 +20,7 @@ function OrderForm2({ params }) {
 
     const onSubmit = (data) => {
         data.productId = params.id
-
+        console.log(data);
         axiosPublic.post("/order2", data)
             .then(result => {
                 router.push(result.data.url);
