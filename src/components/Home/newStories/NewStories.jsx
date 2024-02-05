@@ -1,6 +1,5 @@
 import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
-import Image from "next/image";
 import Link from "next/link";
 
 const NewStories = async () => {
@@ -41,9 +40,9 @@ const NewStories = async () => {
                 </figure>
                 <div className="absolute inset-0 flex flex-col items-start justify-end px-6 py-4 bg-black bg-opacity-60 text-white">
                   <h2 className="text-2xl font-bold">{story.title}</h2>
-                  <p className=" text-white/80 text-sm">{story.description}</p>
-                  <p className=" text-orange-400">
-                    <span className="  font-bold">|</span> {story.category}
+                  <p className=" text-sm text-tertiary/80">{story.description}</p>
+                  <p className=" text-primary">
+                    <span className="font-bold">|</span> {story.category}
                   </p>
                 </div>
               </div>

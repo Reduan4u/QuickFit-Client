@@ -1,19 +1,15 @@
-
 "use client"
 
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
-import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-// import React, { useContext } from "react";
-import { MdForwardToInbox } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext)
   const navLinkClass =
-    "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
+    "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
 
 
 
@@ -33,42 +29,42 @@ const Navbar = () => {
       <div className="capitalize">
         <NavLink
           href="/"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Home
         </NavLink>
 
         <NavLink
           href="/eatBetter"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Eat Better
         </NavLink>
 
         <NavLink
           href="/getFit"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Get Fit
         </NavLink>
         <NavLink
           href="/calculator"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Calculator
         </NavLink>
         <NavLink
           href="/eshop"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           E-Shop
         </NavLink>
 
-        <div className="dropdown dropdown-hover m-0 capitalize">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+        <div className="dropdown dropdown-hover m-0">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
             <NavLink
               href="/more"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               More
             </NavLink>
@@ -76,31 +72,31 @@ const Navbar = () => {
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
             <NavLink
               href="/tips"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               Tips
             </NavLink>
             <NavLink
               href="/contactUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               Contact
             </NavLink>
             <NavLink
               href="/aboutUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              className={`${navLinkClass} `}
             >
               About Us
             </NavLink>
             <NavLink
               href="/experts"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              className={`${navLinkClass} `}
             >
               Our Expert
             </NavLink>
             <NavLink
               href="/bookmarks"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               Bookmarks
             </NavLink>
@@ -109,7 +105,7 @@ const Navbar = () => {
 
         {/* <NavLink
         href="/more"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        className={`${navLinkClass} `}
       >
         More
       </NavLink> */}
@@ -120,8 +116,8 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200">
-      <div className="navbar  pt-4 pb-4 px-5 bg-white">
+    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200 ">
+      <div className="navbar  pt-4 pb-4 bg-white w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

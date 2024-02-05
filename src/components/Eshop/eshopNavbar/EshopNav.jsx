@@ -1,21 +1,21 @@
 "use client"
 
-import { AuthContext } from "@/components/Provider/AuthProvider";
 import { useContext } from "react";
+import { AuthContext } from "@/components/Provider/AuthProvider";
+import Link from "next/link";
 
 function EshopNav(props) {
-  const {user} = useContext(AuthContext)
-
+  const { user } = useContext(AuthContext);
 
   return (
     <div>
      {
-      user && <div className="navbar w-10/12 mx-auto border-b-2 border-gray-400">
+      user && <div className={`navbar w-10/12 mx-auto border-b-2 border-gray-400`}>
       {/* navbar start or left side  */}
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">QuickFit</a>
+        <p className="text-2xl hidden md:block pr-2">Search Product</p>
+        <input type="text" className="border-2 border-black w-full md:w-1/3 p-2 rounded" placeholder="Search Product"></input>
       </div>
-
       {/* navbar end or right side  */}
       <div className="flex-none">
         <div className="dropdown dropdown-end">
@@ -47,9 +47,12 @@ function EshopNav(props) {
               <span className="font-bold text-lg">8 Items</span>
               <span className="text-info">Subtotal: $999</span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">
+
+                <Link href={`/eshop/cart/${user?.email}`}><button className="btn btn-primary btn-block">
                   View cart
-                </button>
+                </button></Link>
+          
+                
               </div>
             </div>
           </div>
