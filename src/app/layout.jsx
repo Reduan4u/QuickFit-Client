@@ -1,8 +1,14 @@
-import { Inter } from "next/font/google";
+import { Roboto, } from 'next/font/google'
 import "./globals.css";
 import AuthProvider from "@/components/Provider/AuthProvider";
 import { Bounce, Flip, Slide, ToastContainer } from "react-toastify";
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ['400','500',  '700',  '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
@@ -13,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <div className="">
           <AuthProvider>{children}</AuthProvider>
           <ToastContainer
