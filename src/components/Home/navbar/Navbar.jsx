@@ -64,42 +64,92 @@ const Navbar = () => {
           E-Shop
         </NavLink>
 
-        <div className="dropdown dropdown-hover m-0 capitalize">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
-            <NavLink
-              href="/more"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-            >
-              More
-            </NavLink>
-          </div>
-          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
-            <NavLink
-              href="/tips"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-            >
-              Tips
-            </NavLink>
-            <NavLink
-              href="/contactUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-            >
-              Contact
-            </NavLink>
-            <NavLink
-              href="/aboutUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              About Us
-            </NavLink>
-            <NavLink
-              href="/experts"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Our Expert
-            </NavLink>
-          </ul>
-        </div>
+
+
+       <div className="relative inline-block text-left">
+  <div className="m-0 capitalize">
+    <div tabIndex={0} role="button" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
+      <NavLink href="/more" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
+        More
+      </NavLink>
+    </div>
+
+    {/* Responsive Dropdown */}
+    <div className="lg:absolute lg:left-0 lg:mt-2 lg:transform lg:translate-x-0 lg:origin-top-right">
+      <div className="hidden lg:block">
+        <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
+          <NavLink
+            href="/tips"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          >
+            Tips
+          </NavLink>
+          <NavLink
+            href="/contactUs"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            href="/aboutUs"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          >
+            About Us
+          </NavLink>
+          <NavLink
+            href="/experts"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          >
+            Our Expert
+          </NavLink>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* Responsive Dropdown Icon */}
+  <div className="lg:hidden">
+    <div tabIndex={0} role="button" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </div>
+    <div className="hidden dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box mt-2 space-y-2">
+      <NavLink
+        href="/tips"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Tips
+      </NavLink>
+      <NavLink
+        href="/contactUs"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Contact
+      </NavLink>
+      <NavLink
+        href="/aboutUs"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        About Us
+      </NavLink>
+      <NavLink
+        href="/experts"
+        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+      >
+        Our Expert
+      </NavLink>
+    </div>
+  </div>
+</div>
 
         {/* <NavLink
         href="/more"
