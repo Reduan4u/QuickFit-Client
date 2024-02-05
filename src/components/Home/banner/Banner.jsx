@@ -27,7 +27,7 @@ const Banner = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className=" h-[70vh]">
+    <div className=" h-[70vh] w-full m-auto">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -39,19 +39,19 @@ const Banner = () => {
           clickable: true,
         }}
         effect={EffectCube}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Pagination, Navigation, EffectCube]}
         className="mySwiper"
       >
         <SwiperSlide className="">
-          <div className=" w-full h-full bg-blue-950 opacity-35 absolute"></div>
-          <div className=" md:text-5xl text-3xl font-bold w-full absolute flex flex-col p-6 pb-10 justify-end  text-white text-left h-full">
+          <div className=" w-full h-full bg-black opacity-60 absolute"></div>
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  absolute flex flex-col p-6 pb-10 justify-end  text-white text-left h-full ">
             <motion.h2
               variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" md:text-3xl text-3xl font-light"
+              className=" text-3xl text-primary font-bold"
             >
               Welcome to Quick Fit
             </motion.h2>{" "}
@@ -75,13 +75,13 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl font-bold w-full text-left  absolute pb-10 text-white flex flex-col p-6 justify-end h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute pb-10 text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" md:text-3xl text-3xl font-light"
+              className=" text-3xl text-primary font-bold"
             >
               Fell the nature
             </motion.h2>{" "}
@@ -105,13 +105,13 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10  absolute text-white flex flex-col p-6 justify-end h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10  absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl font-light"
+              className=" text-3xl text-primary font-bold"
             >
               Eat Healthy, Stay Healthy
             </motion.h2>{" "}
@@ -135,13 +135,13 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl font-light"
+              className=" text-3xl text-primary font-bold"
             >
               Industry is the Key
             </motion.h2>{" "}
@@ -165,13 +165,13 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl font-bold w-full text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
             <motion.h2
               variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl font-light"
+              className=" text-3xl text-primary font-bold"
             >
               Control your Hunger
             </motion.h2>{" "}

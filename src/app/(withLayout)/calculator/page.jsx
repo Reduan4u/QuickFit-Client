@@ -5,7 +5,7 @@ import calculator from "../../../../public/calculator.json";
 
 const page = () => {
     return (
-        <div className='w-2/3'>
+        <div className='w-2/3 m-auto'>
             <Lottie animationData={calculator} loop={true} />
         </div>
     );
