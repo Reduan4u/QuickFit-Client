@@ -18,7 +18,7 @@ import Swal from "sweetalert2";
 
 const Registration = () => {
     const [ showPassword, setShowPassword] = useState(false)
-    const {createUser,googleLogin,} = useContext(AuthContext)
+    const {createUser,googleLogin,updateUserProfile} = useContext(AuthContext)
     const {register, reset, handleSubmit, formState: { errors }} = useForm();
     const router = useRouter();
    
@@ -27,35 +27,29 @@ const Registration = () => {
         createUser(data.email,data.password)
         .then(result =>{
             console.log(result.user)
-            
-            //  return updateUserProfile(data.name, data.photoURL)
-            // .then(() => {
-            //   //create user entry in the database//
-            //   const userInfo = {
-            //     name:data.name,
-            //     email:data.email
-            //   }
-            // })
+            updateUserProfile(data.name, data.photoURL)
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "User created Successfully!",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            router.push('/');
         })
-        .then(()=>{
+      
+        
           
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "User created Successfully!",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          router.push('/');
-            
-        })
-
+           
+          
+        
         .catch((error) => {
-            // Handle any errors that occurred during the process
-            console.error("Error:", error.message);
-            // You might want to show an error message to the user
-            
-        });
+          // Handle any errors that occurred during the process
+          console.error("Error:", error.message);
+          // You might want to show an error message to the user
+      });
+        
+        
     }
 
 
@@ -132,7 +126,7 @@ const Registration = () => {
           <label className="label">
             {/* <span className="label-text">Photo URL</span> */}
           </label>
-          <input type="text" {...register('photoURL',{ required: true })}  placeholder="Photo url" className="input border-orange-600  input-info"  />
+          <input type="text" {...register('photo',{ required: true })} name="photo"  placeholder="Photo url" className="input border-orange-600  input-info"  />
           {errors.photoURL && <span className="text-red-600">Photo url is required</span>}
         </div>
         <div className="form-control">

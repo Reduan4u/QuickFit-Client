@@ -14,7 +14,7 @@ const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
   const navLinkClass =
     "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
-
+console.log(user)
     
     
     const handleSingOut = () =>{
@@ -51,6 +51,57 @@ const Navbar = () => {
         >
           Get Fit
         </NavLink>
+
+        <div className="dropdown dropdown-hover m-0 capitalize">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+            <NavLink
+              href="/services"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+            >
+              Services
+            </NavLink>
+          </div>
+          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 ">
+  <NavLink
+    href="/services/nutrition"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+    Nutrition Plan
+  </NavLink>
+  <NavLink
+    href="/contactUs"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+   Fitness & Performance
+  </NavLink>
+  <NavLink
+    href="/aboutUs"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+    Balance Body & Mind
+  </NavLink>
+  <NavLink
+    href="/aboutUs"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+    Female Fat Loss Program
+  </NavLink>
+  <NavLink
+    href="/aboutUs"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+     12 Week Muscle Building
+  </NavLink>
+  <NavLink
+    href="/experts"
+    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+  >
+    Cardio Exercise Program
+  </NavLink>
+</ul>
+
+        </div>
+
         <NavLink
           href="/calculator"
           className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
@@ -225,8 +276,9 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
         </div>
         <div className="navbar-end">
           {
-            user ?  <div className="flex gap-2 items-center justify-center ">   <p className="  text-orange-500 font-bold">{user?.email
-            } </p>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div> : <Link href="/login" className=" font-bold">Login</Link>
+            user ?  <div className="flex gap-2 items-center justify-center ">   <div> <img className="w-10 h-10 rounded-full mx-auto " src={user.photoURL
+            } alt="" /> <p className="  text-orange-500 font-bold">{user.displayName
+            } </p> </div>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div> : <Link href="/login" className=" font-bold">Login</Link>
           }
         
         </div>
