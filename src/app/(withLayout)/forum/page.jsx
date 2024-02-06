@@ -1,5 +1,6 @@
 import ForumComponents from "@/components/ForumComponents/ForumComponents";
 import RightSideBar from "@/components/ForumComponents/rightSideBar/rightSideBar";
+// import { FaSearch } from 'react-icons/fa';
 
 const Forum = () => {
 
@@ -18,20 +19,18 @@ const Forum = () => {
             </div>
 
             <div className="flex items-start justify-between ">
-
+                {/* #### only this  component is being renderd */}
                 <div className="flex">
                     <ForumComponents></ForumComponents>
 
                 </div>
 
                 <div className="flex-1">
-                    <RightSideBar></RightSideBar>
+
+                   <RightSideBar></RightSideBar>
+
 
                 </div>
-
-
-
-
 
             </div>
         </div>
