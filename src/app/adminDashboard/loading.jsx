@@ -3,10 +3,11 @@
 import { useContext } from "react";
 import Loading from "../../../public/loadingAni.json";
 import Lottie from "lottie-react";
-import { AuthContext } from "@/components/Provider/AuthProvider";
+import UseContext from "@/hooks/UseContext";
 
 function loading(props) {
-  const { user } = useContext(AuthContext);
+  const { user } = UseContext();
+
   console.log(user);
   return (
     <div>
