@@ -1,9 +1,16 @@
-import { Inter } from "next/font/google";
+import { Roboto, } from 'next/font/google'
 import "./globals.css";
 import AuthProvider from "@/components/Provider/AuthProvider";
 import { Bounce, Flip, Slide, ToastContainer } from "react-toastify";
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ['400','500',  '700',  '900'],
+  style: ['normal', 'italic'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 import "react-toastify/dist/ReactToastify.css";
+import ReactQueryProvider from './ReactQueryProvider';
 
 export const metadata = {
   title: "QuickFit",
@@ -12,9 +19,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={inter.className}>
-        <div className="">
+   <ReactQueryProvider>
+     <html lang="en" data-theme="light">
+      <body className={roboto.className}>
+        <div className="max-w-[1450px] mx-auto">
           <AuthProvider>{children}</AuthProvider>
           <ToastContainer
             position="top-right"
@@ -32,5 +40,6 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
+   </ReactQueryProvider>
   );
 }

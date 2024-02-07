@@ -15,7 +15,7 @@ const Comment = ({ data }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/comments/${data._id}`)
+      .get(`https://quick-fit-server.vercel.app/api/v1/comments/${data._id}`)
       .then((res) => {
         console.log(res.data);
         setCommentText(res.data);
@@ -44,13 +44,13 @@ const Comment = ({ data }) => {
     setCommentText([...commentText, commentData]);
     e.target.comment.value = "";
     axios
-      .post("http://localhost:4000/api/v1/comments", commentData)
+      .post("https://quick-fit-server.vercel.app/api/v1/comments", commentData)
       .then((res) => {
         if (res.data.blogId) {
           toast.success("Your comment has been posted");
         }
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 
   return (

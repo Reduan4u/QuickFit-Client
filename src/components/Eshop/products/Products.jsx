@@ -30,31 +30,35 @@ const Products = () => {
 
       {/* product category div  */}
 
-      <motion.div
-        variants={fadeIn(`right`, 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.2 }}
+      <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((item, index) => (
-          <div
+          <motion.div
+          variants={fadeIn(`${index==0 ? "right" : index==2 ? "left":"top"}`, 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.2 }}
             key={index}
             style={{
               backgroundImage: `url(${item.image})`,
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            className="hover:scale-105 transition-all duration-500 w-full">
+            className=" w-full relative overflow-hidden">
             <Link href={`/eshop/products/${item.category}`}>
               <div className="flex justify-center items-center p-28 bg-black bg-opacity-45">
                 <h1 className={`text-white font-bold text-3xl`}>
                   {item.category}
                 </h1>
               </div>
+
+              <div className=" flex items-center justify-center text-black font-bold text-3xl absolute w-full h-full bg-primary -bottom-20 opacity-0 hover:bottom-0 hover:opacity-100 transition-all duration-500">
+               {item.category}
+              </div>
             </Link>
-          </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

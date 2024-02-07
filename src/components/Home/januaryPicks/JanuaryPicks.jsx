@@ -1,4 +1,3 @@
-import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
@@ -49,8 +48,8 @@ const JanuaryPicks = async () => {
                   <p className=" px-5 py-2 text-lg font-thin italic">
                     {monthsPicks.description}
                   </p>
-                  <p className=" px-5 py-2 text-orange-400">
-                    |{" "}
+                  <p className=" px-5 py-2 font-semibold text-primary">
+                    |
                     {new Intl.DateTimeFormat("en-US", {
                       month: "long",
                       day: "numeric",

@@ -13,7 +13,7 @@ const Bookmark = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/favourites/${user?.email}`)
+      .get(`https://quick-fit-server.vercel.app/api/v1/favourites/${user?.email}`)
       .then((res) => {
         setData(res.data);
       })
@@ -24,7 +24,7 @@ const Bookmark = () => {
 
   const hanldeDeleteFav = (id) => {
     axios
-      .delete(`http://localhost:4000/api/v1/favourites/${id}`)
+      .delete(`https://quick-fit-server.vercel.app/api/v1/favourites/${id}`)
       .then((res) => {
         if (res.data._id) {
           setData((data) => data.filter((item) => item._id !== id));
