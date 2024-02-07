@@ -10,6 +10,7 @@ const roboto = Roboto({
   display: 'swap',
 })
 import "react-toastify/dist/ReactToastify.css";
+import ReactQueryProvider from './ReactQueryProvider';
 
 export const metadata = {
   title: "QuickFit",
@@ -18,9 +19,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light">
+   <ReactQueryProvider>
+     <html lang="en" data-theme="light">
       <body className={roboto.className}>
-        <div className="">
+        <div className="max-w-[1450px] mx-auto">
           <AuthProvider>{children}</AuthProvider>
           <ToastContainer
             position="top-right"
@@ -38,5 +40,6 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
+   </ReactQueryProvider>
   );
 }
