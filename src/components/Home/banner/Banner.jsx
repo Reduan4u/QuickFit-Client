@@ -54,7 +54,7 @@ const Banner = () => {
               className=" text-3xl text-primary font-bold"
             >
               Welcome to Quick Fit
-            </motion.h2>{" "}
+            </motion.h2>
             <motion.h2
               variants={fadeIn("right", 0.9)}
               initial="hidden"
@@ -84,7 +84,7 @@ const Banner = () => {
               className=" text-3xl text-primary font-bold"
             >
               Fell the nature
-            </motion.h2>{" "}
+            </motion.h2>
             <motion.h2
               variants={fadeIn("right", 0.9)}
               initial="hidden"
@@ -114,7 +114,7 @@ const Banner = () => {
               className=" text-3xl text-primary font-bold"
             >
               Eat Healthy, Stay Healthy
-            </motion.h2>{" "}
+            </motion.h2>
             <motion.h2
               variants={fadeIn("right", 0.9)}
               initial="hidden"
@@ -144,7 +144,7 @@ const Banner = () => {
               className=" text-3xl text-primary font-bold"
             >
               Industry is the Key
-            </motion.h2>{" "}
+            </motion.h2>
             <motion.h2
               variants={fadeIn("right", 0.9)}
               initial="hidden"
@@ -152,7 +152,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className=""
             >
-              The more you embarce pain, the more you will be strong{" "}
+              The more you embarce pain, the more you will be strong
             </motion.h2>
           </div>
           <Image
@@ -174,7 +174,7 @@ const Banner = () => {
               className=" text-3xl text-primary font-bold"
             >
               Control your Hunger
-            </motion.h2>{" "}
+            </motion.h2>
             <motion.h2
               variants={fadeIn("right", 0.9)}
               initial="hidden"
@@ -182,7 +182,7 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className=""
             >
-              Eat to live , Do not live to eat{" "}
+              Eat to live , Do not live to eat
             </motion.h2>
           </div>
           <Image

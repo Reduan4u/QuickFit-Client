@@ -49,7 +49,7 @@ const JanuaryPicks = async () => {
                     {monthsPicks.description}
                   </p>
                   <p className=" px-5 py-2 font-semibold text-primary">
-                    |{" "}
+                    |
                     {new Intl.DateTimeFormat("en-US", {
                       month: "long",
                       day: "numeric",
