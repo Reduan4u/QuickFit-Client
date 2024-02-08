@@ -16,7 +16,8 @@ module.exports = {
       'healthflex.plethorathemes.com',
       'www.livestrong.com',
       'old3.commonsupport.com',
-      'cdn.discordapp.com'
+      'cdn.discordapp.com',
+      'lh3.googleusercontent.com'
     ]
   },
 };
