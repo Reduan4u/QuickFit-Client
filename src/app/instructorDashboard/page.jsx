@@ -1,9 +1,10 @@
+import Main from "@/components/pubDashComponets/Main/Main";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <h2>Instructor Dashboard</h2>
+      <Main />
     </div>
   );
 };
