@@ -4,8 +4,11 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="  border-t-[2px] border-gray-200  footer p-10  text-base-content">
-      <aside>
 
+     
+
+      <div className='flex gap-24 '>
+      <aside>
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
           width="176.000000pt" height="90.000000pt" viewBox="0 0 276.000000 131.000000"
           preserveAspectRatio="xMidYMid meet">
@@ -73,18 +76,18 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
 
         <p>Quick-Fit Company Limited 2024 <br /> A Health & Fitness Knowledge Platform</p>
       </aside>
-      <nav>
+      
+      <nav className='flex mt-12 gap-2 flex-col'>
         <header className="footer-title">Route</header>
         <a href='/' className="link link-hover">  Home  </a>
         <a href='/eatBetter' className="link link-hover">  Eat Better </a>
         <a href='/manageWeight' className="link link-hover">  Manage Weight  </a>
         <a href='/more' className="link link-hover">More  </a>
-
-
-
       </nav>
+      </div>
 
-      <nav>
+     <div className='flex gap-56'>
+     <nav className='flex mt-12 gap-2 flex-col'>
         <header className="footer-title">Company</header>
         <a href='/aboutUs' className="link link-hover">About us</a>
         <a href='/contactUs' className="link link-hover">Contact</a>
@@ -97,12 +100,14 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
           Meet Our Experts</a>
       </nav>
 
-      <nav>
+      <nav className='flex mt-12 gap-2 flex-col'>
         <header className="footer-title">Legal</header>
         <a className="link link-hover">Terms of use</a>
         <a className="link link-hover">Privacy policy</a>
         <a className="link link-hover">Cookie policy</a>
       </nav>
+     </div>
+
     </footer>
   );
 };

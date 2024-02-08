@@ -14,7 +14,10 @@ module.exports = {
       'images03.nicepage.com',
       'i.postimg.cc',
       'healthflex.plethorathemes.com',
-      'www.livestrong.com'
+      'www.livestrong.com',
+      'old3.commonsupport.com',
+      'cdn.discordapp.com',
+      'lh3.googleusercontent.com'
     ]
   },
 };
