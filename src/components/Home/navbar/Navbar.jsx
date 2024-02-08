@@ -11,8 +11,6 @@ const Navbar = () => {
   const navLinkClass =
     "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
 
-
-
   const handleSingOut = () => {
     logOut()
       .then(Swal.fire({

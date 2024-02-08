@@ -4,9 +4,11 @@ import { useContext } from "react";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import Link from "next/link";
 import Ebutton from "@/components/Common/Ebutton";
+import useCart from "@/hooks/useCart";
 
 function EshopNav(props) {
   const { user } = useContext(AuthContext);
+  const {refetch, products} = useCart()
 
   return (
     <div>
@@ -17,7 +19,7 @@ function EshopNav(props) {
             {/* <p className="text-2xl hidden md:block pr-2">Search Product</p> */}
             <input
               type="text"
-              className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-black text-primary text-lg placeholder-tertiary placeholder-opacity-60"
+              className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-black text-primary text-lg placeholder-primary placeholder-opacity-60"
               placeholder="Search Product "></input>
           </div>
           {/* navbar end or right side  */}
@@ -26,11 +28,11 @@ function EshopNav(props) {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle">
+                className="btn btn-ghost bg-black btn-circle">
                 <div className="indicator">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
+                    className="h-7 w-7 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -41,18 +43,18 @@ function EshopNav(props) {
                       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                     />
                   </svg>
-                  <span className="badge badge-sm indicator-item">8</span>
+                  <span className="badge text-lg font-bold badge-sm indicator-item">{products?.length}</span>
                 </div>
               </div>
               <div
                 tabIndex={0}
                 className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
                 <div className="card-body">
-                  <span className="font-bold text-lg">8 Items</span>
-                  <span className="text-info">Subtotal: $999</span>
+                  <span className="font-bold text-lg">{products?.length} Items</span>
+                  {/* <span className="text-info">Subtotal: $999</span> */}
                   <div className="card-actions">
                     <Link href={`/eshop/cart/${user?.email}`}>
-                    <Ebutton>View Cart</Ebutton>
+                      <Ebutton>View Cart</Ebutton>
                     </Link>
                   </div>
                 </div>
@@ -66,7 +68,7 @@ function EshopNav(props) {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    src={user.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
                   />
                 </div>
               </div>
