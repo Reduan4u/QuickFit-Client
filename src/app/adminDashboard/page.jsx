@@ -1,11 +1,11 @@
-import TopSection from "@/components/Dashboard/Home/TopSection/TopSection";
+import AdminMain from "@/components/adminDashboard/AdminMain/AdminMain";
 import React from "react";
 
 const page = () => {
   return (
     <div>
 
-      <TopSection> </TopSection>
+      <AdminMain></AdminMain>
 
     </div>
   );

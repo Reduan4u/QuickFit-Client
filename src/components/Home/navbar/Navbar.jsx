@@ -17,7 +17,7 @@ const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/users/${user?.email}`)
+      .get(`https://quick-fit-server.vercel.app/api/v1/users/${user?.email}`)
       .then((res) => {
         console.log(res.data.role);
         setRole(res.data.role);
@@ -67,7 +67,7 @@ const Navbar = () => {
           E-Shop
         </NavLink>
 
-        
+
         <div className="dropdown dropdown-hover m-0 capitalize">
           <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
             <NavLink
@@ -78,38 +78,38 @@ const Navbar = () => {
             </NavLink>
           </div>
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 ">
-  <NavLink
-    href="/services/nutrition"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-    Nutrition Plan
-  </NavLink>
-  <NavLink
-    href="/services/fitness"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-   Fitness & Performance
-  </NavLink>
-  <NavLink
-    href="/services/balance"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-    Balance Body & Mind
-  </NavLink>
-  
-  <NavLink
-    href="/services/female"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-     Female Fat Loss Program
-  </NavLink>
-  <NavLink
-    href="/services/cardioExercise"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-    Cardio Exercise Program
-  </NavLink>
-</ul>
+            <NavLink
+              href="/services/nutrition"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Nutrition Plan
+            </NavLink>
+            <NavLink
+              href="/services/fitness"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Fitness & Performance
+            </NavLink>
+            <NavLink
+              href="/services/balance"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Balance Body & Mind
+            </NavLink>
+
+            <NavLink
+              href="/services/female"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Female Fat Loss Program
+            </NavLink>
+            <NavLink
+              href="/services/cardioExercise"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Cardio Exercise Program
+            </NavLink>
+          </ul>
 
         </div>
 
