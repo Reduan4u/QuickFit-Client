@@ -1,13 +1,13 @@
 
-import SectionHeading from "@/components/Common/SectionHeading";
 import AllArticle from "@/components/Home/healthAndFitness/AllArticle/AllArticle";
 import Book from "@/components/Home/healthAndFitness/Book/Book";
+import LeftBtn from "@/components/Home/healthAndFitness/Btn/LeftBtn";
 import CategoryHeading from "@/components/Home/healthAndFitness/CategoryHeading/CategoryHeading";
 import Questions from "@/components/Home/healthAndFitness/Questions/Questions";
 import ShortDescription from "@/components/Home/healthAndFitness/shortDescription/ShortDescription";
-import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
+
+
 
 
 const DynamicCategory = async ({ params }) => {
@@ -19,9 +19,10 @@ const DynamicCategory = async ({ params }) => {
             <CategoryHeading params={params}></CategoryHeading>
 
 
-            {/* Recent Article */}
-            <SectionHeading title='Recent Articles'></SectionHeading>
-            <div className=" mb-20 border-y-4 border-orange-400">
+           <div className="">
+             {/* Recent Article */}
+             <div className="bg-primary text-white font-semibold text-center my-8">Recent Articles</div>
+            <div className=" mb-20 border-y-4 border-primary">
                 <AllArticle params={params}></AllArticle>
             </div>
 
@@ -36,6 +37,11 @@ const DynamicCategory = async ({ params }) => {
 
             {/* Book */}
             <Book params={params}></Book>
+
+            <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
+                <Link href='/'><LeftBtn></LeftBtn></Link>
+            </div>
+           </div>
 
 
         </div>

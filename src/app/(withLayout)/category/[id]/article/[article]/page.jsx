@@ -1,6 +1,8 @@
 
+import LeftBtn from '@/components/Home/healthAndFitness/Btn/LeftBtn';
 import RelatedArticle from '@/components/Home/healthAndFitness/RelatedArticle/RelatedArticle';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const ArticleDetailsPage = async ({ params }) => {
@@ -42,6 +44,10 @@ const ArticleDetailsPage = async ({ params }) => {
             </div>
 
             <RelatedArticle params={params}></RelatedArticle>
+            <div className="flex justify-end items-center py-5 w-10/12 mx-auto">
+                <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
+                {/* <RightBtn></RightBtn> */}
+            </div>
         </div>
     );
 };

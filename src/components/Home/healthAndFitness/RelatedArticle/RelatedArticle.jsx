@@ -15,7 +15,7 @@ const RelatedArticle = async ({ params }) => {
     //console.log(remainigArticle)
 
     return (
-        <div>
+        <div className="w-10/12 mx-auto">
             <SectionHeading title='Related Articles' />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 {remainigArticle.map((articles) => (

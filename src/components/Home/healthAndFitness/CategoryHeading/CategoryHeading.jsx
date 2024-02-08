@@ -18,7 +18,7 @@ const CategoryHeading = async ({ params }) => {
                 className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                <p className="text-white text-4xl md:text-6xl font-extrabold flex py-10 my-10 justify-center items-center">{params.id}</p>
+                <p className="text-white text-4xl md:text-6xl font-extrabold flex py-10 my-10 justify-start items-center">{params.id}</p>
             </div>
         </div>
     );

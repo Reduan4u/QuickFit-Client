@@ -29,7 +29,7 @@ const AllArticle = ({ params }) => {
                             <Link key={articles._id} href={`/category/${params.id}/article/${articles._id}`}>
                                     <div className="p-3">
                                     <div
-                                        className=" cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2 w-full h-28 bg-neutral-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-orange-400"
+                                        className=" cursor-pointer overflow-hidden relative transition-all duration-500 hover:translate-y-2 w-full h-28 bg-neutral-50 rounded-lg shadow-xl flex flex-row items-center justify-evenly p-2 before:absolute before:w-full hover:before:top-0 before:duration-500 before:-top-1 before:h-1 before:bg-primary"
                                     >
                                         <Image
                                             height={500}

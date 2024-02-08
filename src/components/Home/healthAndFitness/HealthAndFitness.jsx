@@ -14,7 +14,7 @@ const HealthAndFitness = async () => {
             <SectionHeading title={"Health and Fitness Category"}></SectionHeading>
 
 
-            <div className='grid md:grid-cols-6 grid-cols-1 gap-2'>
+            <div className='grid md:grid-cols-6 grid-cols-1 gap-2 '>
                 {category.map((type, index) => (
 
                     <Link href={`category/${type.category}`}
@@ -23,17 +23,17 @@ const HealthAndFitness = async () => {
                             } ${index === 5 && "md:col-span-3 md:row-span-2 h-full w-full"} hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
                         key={index}
                     >
-                        <div className="relative w-full h-full">
+                        <div className="relative w-full h-full ">
                             <Image
                                 height={500}
                                 width={500}
                                 alt='types'
                                 objectFit="cover"
                                 src={type.image}
-                                className="w-full h-full"
+                                className="w-full h-full "
                             />
                             <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                                <p className="text-white text-xs md:text-sm lg:text-2xl font-bold">{type.category}</p>
+                                <p className="hover:text-primary text-white text-xs md:text-sm lg:text-2xl font-bold">{type.category}</p>
                             </div>
                         </div>
                     </Link>

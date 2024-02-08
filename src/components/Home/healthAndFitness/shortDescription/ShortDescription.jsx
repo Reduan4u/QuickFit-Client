@@ -7,17 +7,18 @@ const ShortDescription = async ({ params }) => {
     });
     const cat = await result.json();
     return (
-        <div className="pb-20">
-            <div className="bg-orange-400 h-[70vh] w-[75vw] px-5 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="">
-                <h1 className='w-2/3 text-base md:text-base text-white lg:text-4xl font-semibold'>{cat.category}</h1>
-                <p className='py-10 text-white text-justify w-2/3 text-xs md:text-sm lg:text-xl'>{cat.shortDescription}</p>
+        <div className="pb-10 md:pb-20 w-10/12 mx-auto">
+            <div className="rounded-lg bg-secondary sm:h-[70vh] md:h-[70vh] lg:h-[60vh] w-[75vw] px-5 pt-10 md:px-20 md:pt-20 lg:px-20 lg:pt-20" alt="">
+                <h1 className='text-2xl md:text-3xl font-bold mb-2 text-white w-1/2'>{cat.category}</h1>
+                <p className='w-2/3 text-justify text-sm md:text-base lg:text-xl text-gray-200 '>{cat.shortDescription}</p>
             </div>
             <Image
                 height={500}
                 width={500}
                 alt='types'
                 objectFit="cover"
-                className='bg-fixed lg:visible mr-0 -mt-80 h-[60vh] w-2/5 mx-auto md:sticky md:top-0' src={cat.image} />
+                className=' rounded-lg bg-fixed lg:visible mr-0 -mt-80 h-[60vh] w-2/5 mx-auto md:sticky md:top-0' src={cat.image} />
+
         </div>
     );
 };
