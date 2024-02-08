@@ -1,9 +1,12 @@
+import AdminMain from "@/components/adminDashboard/AdminMain/AdminMain";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <h2>Dashboard</h2>
+
+      <AdminMain></AdminMain>
+
     </div>
   );
 };

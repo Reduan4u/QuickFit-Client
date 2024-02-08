@@ -31,7 +31,7 @@ const Registration = () => {
         console.log(result.user);
 
         axios
-          .post("http://localhost:4000/api/v1/users", {
+          .post("https://quick-fit-server.vercel.app/api/v1/users", {
             ...data,
             role: "user",
             isBlocked: false,

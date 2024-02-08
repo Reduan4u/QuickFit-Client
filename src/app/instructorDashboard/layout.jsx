@@ -11,9 +11,12 @@ import { IoHome } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Login from "@/components/Authentication/Login/Login";
 
 const Layout = ({ children }) => {
   const { user, loading, logOut } = useContext(AuthContext);
+  console.log(user);
+
   const router = useRouter();
   const handleOut = () => {
     logOut()
@@ -29,7 +32,7 @@ const Layout = ({ children }) => {
   if (loading) {
     return <Loading1></Loading1>;
   } else if (!user) {
-    return <h2>Login First</h2>;
+    return <Login></Login>;
   } else if (user) {
     return (
       <div className=" md:flex bg-[#151c2c] font-roboto md:h-screen   ">
