@@ -1,24 +1,18 @@
-
 "use client"
 
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
-import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
-// import React, { useContext } from "react";
-import { MdForwardToInbox } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext)
   const navLinkClass =
-    "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
-console.log(user)
-    
-    
-    const handleSingOut = () =>{
-      logOut()
+    "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
+
+  const handleSingOut = () => {
+    logOut()
       .then(Swal.fire({
         position: "center",
         icon: "success",
@@ -26,36 +20,51 @@ console.log(user)
         showConfirmButton: false,
         timer: 1500
       }));
-    }
+  }
 
   const navLink = (
     <>
       <div className="capitalize">
         <NavLink
           href="/"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Home
         </NavLink>
 
         <NavLink
           href="/eatBetter"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Eat Better
         </NavLink>
 
         <NavLink
           href="/getFit"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+          className={`${navLinkClass} `}
         >
           Get Fit
         </NavLink>
 
+
+        <NavLink
+          href="/calculator"
+          className={`${navLinkClass} `}
+        >
+          Calculator
+        </NavLink>
+        <NavLink
+          href="/eshop"
+          className={`${navLinkClass} `}
+        >
+          E-Shop
+        </NavLink>
+
+        
         <div className="dropdown dropdown-hover m-0 capitalize">
           <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
             <NavLink
-              href="/services"
+              href="/"
               className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
             >
               Services
@@ -69,31 +78,26 @@ console.log(user)
     Nutrition Plan
   </NavLink>
   <NavLink
-    href="/contactUs"
+    href="/services/fitness"
     className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
   >
    Fitness & Performance
   </NavLink>
   <NavLink
-    href="/aboutUs"
+    href="/services/balance"
     className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
   >
     Balance Body & Mind
   </NavLink>
+  
   <NavLink
-    href="/aboutUs"
+    href="/services/female"
     className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
   >
-    Female Fat Loss Program
+     Female Fat Loss Program
   </NavLink>
   <NavLink
-    href="/aboutUs"
-    className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-  >
-     12 Week Muscle Building
-  </NavLink>
-  <NavLink
-    href="/experts"
+    href="/services/cardioExercise"
     className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
   >
     Cardio Exercise Program
@@ -102,24 +106,11 @@ console.log(user)
 
         </div>
 
-        <NavLink
-          href="/calculator"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
-          Calculator
-        </NavLink>
-        <NavLink
-          href="/eshop"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
-          E-Shop
-        </NavLink>
-
-        <div className="dropdown dropdown-hover m-0 capitalize">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+        <div className="dropdown dropdown-hover m-0">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
             <NavLink
               href="/more"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               More
             </NavLink>
@@ -127,34 +118,40 @@ console.log(user)
           <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
             <NavLink
               href="/tips"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               Tips
             </NavLink>
             <NavLink
               href="/contactUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+              className={`${navLinkClass}  `}
             >
               Contact
             </NavLink>
             <NavLink
               href="/aboutUs"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              className={`${navLinkClass} `}
             >
               About Us
             </NavLink>
             <NavLink
               href="/experts"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              className={`${navLinkClass} `}
             >
               Our Expert
+            </NavLink>
+            <NavLink
+              href="/bookmarks"
+              className={`${navLinkClass}  `}
+            >
+              Bookmarks
             </NavLink>
           </ul>
         </div>
 
         {/* <NavLink
         href="/more"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        className={`${navLinkClass} `}
       >
         More
       </NavLink> */}
@@ -165,8 +162,8 @@ console.log(user)
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200">
-      <div className="navbar  pt-4 pb-4 px-5 bg-white">
+    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200 ">
+      <div className="navbar  pt-4 pb-4 bg-white w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -280,7 +277,7 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
             } alt="" /> <p className="  text-orange-500 font-bold">{user.displayName
             } </p> </div>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div> : <Link href="/login" className=" font-bold">Login</Link>
           }
-        
+
         </div>
       </div>
     </nav>

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const page = () => {
+const page = ({params}) => {
+    console.log(params)
     return (
         <div>
             Category 

@@ -1,5 +1,6 @@
 import Ebanner from "@/components/Eshop/Ebanner/Ebanner";
 import AllProducts from "@/components/Eshop/allProducts/AllProducts";
+import EshopNav from "@/components/Eshop/eshopNavbar/EshopNav";
 
 
 const DynamicProducts = async ({ params }) => {
@@ -30,6 +31,9 @@ const DynamicProducts = async ({ params }) => {
             heading={`QuickFit ${params.id} Products`}></Ebanner>
         )}
       </div>
+
+      {/* navbar  */}
+      <EshopNav></EshopNav>
 
       {/*==== product list card here ===== */}
       <div className="w-10/12 mx-auto">

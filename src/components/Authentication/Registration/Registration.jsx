@@ -26,8 +26,8 @@ const Registration = () => {
     const onSubmit = data => {
         createUser(data.email,data.password)
         .then(result =>{
-            console.log(result.user)
-            updateUserProfile(data.name, data.photoURL)
+            // console.log(result.user)
+            // updateUserProfile(data.name, data.photoURL)
             Swal.fire({
               position: "center",
               icon: "success",
