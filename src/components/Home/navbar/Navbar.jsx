@@ -96,7 +96,7 @@ const Navbar = () => {
             <NavLink href="/bookmarks" className={`${navLinkClass}  `}>
               Bookmarks
             </NavLink>
-            {role === "admin" && (
+            {role !== "admin" && (
               <NavLink
                 href="/adminDashboard"
                 className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}

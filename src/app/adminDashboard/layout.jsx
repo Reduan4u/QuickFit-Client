@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
           <NavLink href="/adminDashboard/users">User Details</NavLink>
           <NavLink href="/adminDashboard/blogs">Blogs</NavLink>
           <NavLink href="/adminDashboard/analytics">Analytics</NavLink>
-
+          <NavLink href="/adminDashboard/manageProducts">Manage Products</NavLink>
           <hr />
 
           <NavLink href="/">Home</NavLink>

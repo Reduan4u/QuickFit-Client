@@ -17,6 +17,7 @@ import axios from "axios";
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, googleLogin } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic()
   const {
     register,
     reset,
@@ -30,8 +31,8 @@ const Registration = () => {
       .then((result) => {
         console.log(result.user);
 
-        axios
-          .post("http://localhost:4000/api/v1/users", {
+        axiosPublic
+          .post("/users", {
             ...data,
             role: "user",
             isBlocked: false,
