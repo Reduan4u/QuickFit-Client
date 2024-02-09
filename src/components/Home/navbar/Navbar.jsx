@@ -2,7 +2,7 @@
 
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
-import axios from "axios";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
@@ -12,12 +12,14 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [role, setRole] = useState();
+  const axios = useAxiosPublic();
   const { user, logOut } = useContext(AuthContext);
+  console.log(role);
   console.log(user?.email);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/users/${user?.email}`)
+      .get(`/users/${user?.email}`)
       .then((res) => {
         console.log(res.data.role);
         setRole(res.data.role);
