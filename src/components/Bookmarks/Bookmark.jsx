@@ -6,9 +6,11 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import Loading1 from "../Loading/Loading1";
 
 const Bookmark = () => {
   const { user } = useContext(AuthContext);
+  console.log(user?.email)
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -74,9 +76,10 @@ const Bookmark = () => {
         </div>
       ) : (
         <div>
-          <h2 className=" text-5xl text-center h-[60vh] flex justify-center items-center">
+          {/* <h2 className=" text-5xl text-center h-[60vh] flex justify-center items-center">
             Empty......
-          </h2>
+          </h2> */}
+          <Loading1></Loading1>
         </div>
       )}
     </div>

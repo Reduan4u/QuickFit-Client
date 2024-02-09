@@ -14,6 +14,7 @@
     "@mui/x-charts": "^6.19.3",
     "@tanstack/react-query": "^5.17.19",
     "aos": "^2.3.4",
+    "apexcharts": "^3.45.2",
     "axios": "^1.6.7",
     "firebase": "^10.7.2",
     "framer-motion": "^10.18.0",
@@ -21,6 +22,7 @@
     "moment": "^2.30.1",
     "next": "14.0.4",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-awesome-slider": "^4.1.0",
     "react-countup": "^6.5.0",
     "react-dom": "^18",
@@ -44,6 +46,6 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.4.1"
   }
 }

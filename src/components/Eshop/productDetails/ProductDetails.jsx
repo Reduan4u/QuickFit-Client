@@ -42,7 +42,7 @@ function ProductDetails({ product, params }) {
           icon: "success",
           title: `${title}`,
           text: "Added to the cart!",
-          footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+          footer: `<a href="/eshop/cart/${email}"  className="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
         });
       }
     });
