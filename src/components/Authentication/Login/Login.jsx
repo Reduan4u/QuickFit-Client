@@ -11,10 +11,12 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 
 const Login = ({ path }) => {
   const { signIn, googleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const axioPublic = useAxiosPublic()
   const {
     register,
     reset,
@@ -29,8 +31,8 @@ const Login = ({ path }) => {
         const email = await res.user.email;
         console.log(res.user.displayName);
         console.log(res.user.email);
-        axios
-          .post("https://quick-fit-server.vercel.app/api/v1/users", {
+        axioPublic
+          .post("/users", {
             name,
             email,
             role: "user",

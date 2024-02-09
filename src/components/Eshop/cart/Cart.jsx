@@ -138,7 +138,10 @@ return <Loading1></Loading1>
           </p>
 
           <div className="flex justify-between items-center">
-            <Ebutton>Pay</Ebutton>
+            <Ebutton>
+              <Link  href={`/eshop/orderForm/${product._id}/${total.price?total?.price : product?.price}`}>Pay</Link>
+          
+              </Ebutton>
             <button>
               <AiFillDelete  onClick={()=>deleteProduct(product?._id)} className="text-2xl text-black hover:text-primary transition duration-200"></AiFillDelete>
             </button>

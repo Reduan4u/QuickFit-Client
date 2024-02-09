@@ -37,7 +37,7 @@ const JanuaryPicks = async () => {
                   height={200}
                   width={400}
                   className=" w-full h-full"
-                  src={monthsPicks.image}
+                  src={monthsPicks.img}
                   alt=""
                 />
                 <div className=" text-white absolute h-full w-full bg-black/50 flex flex-col items-start justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-700">

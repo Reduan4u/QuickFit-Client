@@ -25,7 +25,7 @@ const page = async({params}) => {
                 <Image 
                 height={1080}
                 width={1920}
-                 src={data.image}
+                 src={data.img}
                  alt='image'/>
             </div>
             <div className=' md:flex md:justify-between md:items-start '>
