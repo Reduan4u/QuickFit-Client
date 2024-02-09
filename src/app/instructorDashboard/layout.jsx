@@ -15,7 +15,6 @@ import Login from "@/components/Authentication/Login/Login";
 
 const Layout = ({ children }) => {
   const { user, loading, logOut } = useContext(AuthContext);
-  console.log(user);
 
   const router = useRouter();
   const handleOut = () => {
@@ -35,7 +34,7 @@ const Layout = ({ children }) => {
     return <Login></Login>;
   } else if (user) {
     return (
-      <div className=" md:flex bg-[#151c2c] font-roboto md:h-screen   ">
+      <div className=" md:flex bg-[#151c2c] font-roboto md:min-h-screen  ">
         <div className=" md:ml-8 md:pl-5  md:w-[20vw] w-full bg-[#182237]  rounded-lg my-4 flex space-y-2 flex-wrap md:flex-col md:pt-20 mt-10 md:space-y-12 md:text-4xl text-xs md:font-thin ">
           <DashLink icon={<MdDashboardCustomize />} href="/instructorDashboard">
             Dashboard

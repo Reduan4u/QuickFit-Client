@@ -12,7 +12,7 @@ import { fadeIn } from "../../Common/Animation1";
 
 const Main = () => {
   return (
-    <div className="grid font-tech rounded-md w-full   h-[65%] text-white  gap-5 grid-cols-3 grid-rows-10 px-3">
+    <div className="grid font-tech rounded-md w-full   h-[65%] text-white  gap-5 grid-cols-1 md:grid-cols-3 grid-rows-10 px-3">
       <motion.div
         variants={fadeIn("down", 0.5)}
         initial="hidden"

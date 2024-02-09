@@ -2,7 +2,7 @@
 
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
-import axios from "axios";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
@@ -12,12 +12,16 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [role, setRole] = useState();
+  const axios = useAxiosPublic();
   const { user, logOut } = useContext(AuthContext);
+  console.log(role);
   console.log(user?.email);
 
   useEffect(() => {
     axios
-      .get(`https://quick-fit-server.vercel.app/api/v1/users/${user?.email}`)
+
+      .get(`/users/${user?.email}`)
+
       .then((res) => {
         console.log(res.data.role);
         setRole(res.data.role);
@@ -67,12 +71,15 @@ const Navbar = () => {
           E-Shop
         </NavLink>
         <NavLink href="/forum" className={`${navLinkClass} `}>
-           Forum
+          Forum
         </NavLink>
 
-
         <div className="dropdown dropdown-hover m-0 capitalize">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+          <div
+            tabIndex={0}
+            role="button"
+            className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}
+          >
             <NavLink
               href="/"
               className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
@@ -80,7 +87,10 @@ const Navbar = () => {
               Services
             </NavLink>
           </div>
-          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 ">
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 "
+          >
             <NavLink
               href="/services/nutrition"
               className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
@@ -113,15 +123,11 @@ const Navbar = () => {
               Cardio Exercise Program
             </NavLink>
           </ul>
-
         </div>
 
         <div className="dropdown dropdown-hover m-0">
           <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
-            <NavLink
-              href="/more"
-              className={`${navLinkClass}  `}
-            >
+            <NavLink href="/more" className={`${navLinkClass}  `}>
               More
             </NavLink>
           </div>
