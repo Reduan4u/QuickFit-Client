@@ -30,7 +30,7 @@ console.log(user?.displayName);
       userEmail: user?.email,
       date: new Date(),
       likes : [],
-      comments: ["ki ki ", "kok "]
+      comments: []
       
     }
 

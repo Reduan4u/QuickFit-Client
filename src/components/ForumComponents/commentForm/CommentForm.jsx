@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 
 import { AuthContext } from '@/components/Provider/AuthProvider';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 const CommentForm = ({ postId }) => {
 
@@ -16,8 +17,20 @@ const CommentForm = ({ postId }) => {
     console.log(comment);
     console.log(postId);
     try {
-      await axiosPublic.post(`/forum/comment/${postId}`, { comment, userEmail, postId });
-      // Optionally, you can update the local state or trigger a re-fetch of the post.
+      await axiosPublic.post(`/forum/comment/${postId}`, { comment, userEmail, postId })
+      .then((data)=>{
+        if (data?.data?._id) {
+          
+          Swal.fire({
+            icon: "success",
+            title: `Comment Posted!!`,
+            text: "Your comment was posted succesfully",
+          });
+
+          setComment('')
+        }
+      })
+      
     } catch (error) {
       console.error('Error adding comment:', error);
     }
@@ -26,18 +39,20 @@ const CommentForm = ({ postId }) => {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
+        className='bg-[#112033] rounded-sm p-2 '
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         placeholder="Add a comment..."
+        rows={5}
+        cols={60}
       />
-      {/* Add input for user email if needed */}
-      {/* <input
-        type="text"
-        value={userEmail}
-        onChange={(e) => setUserEmail(e.target.value)}
-        placeholder="Your Email"
-      /> */}
-      <button type="submit">Submit</button>
+     
+     <div className="flex justify-end">
+  <button className='bg-[#6366F1] py-1 px-2 rounded-3xl text-[#fff] mt-2 mr-4' type="submit">Post Comment</button>
+</div>
+
+   
+      
     </form>
   );
 };

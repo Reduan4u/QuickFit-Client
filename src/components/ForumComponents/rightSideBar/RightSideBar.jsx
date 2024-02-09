@@ -1,7 +1,31 @@
+"use client"
+
+import Loading1 from '@/components/Loading/Loading1';
+import useAxiosPublic from '@/hooks/useAxiosPublic';
+import moment from 'moment';
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 
+
+
 const RightSideBar = () => {
+
+    const axiosPublic = useAxiosPublic();
+    const [newestPost, setNewestPost] = React.useState(null);
+
+     React.useEffect(()=>{
+        const fetchData = async() => {
+            const data = await axiosPublic.get('/forum/find/newestpost')
+        setNewestPost(data?.data)
+        }
+
+        fetchData();
+     },[axiosPublic])
+
+     if (!newestPost) {
+        return <Loading1></Loading1>;
+    }
+     
     return (
       <div className='my-6 mx-auto w-[70%]'>
 
@@ -24,64 +48,30 @@ const RightSideBar = () => {
       <div className="text-[#fff] mt-5">
           <h2 className="text-gray-700 ">NEW DISCUSSIONS</h2>
 
-          <div>
-              <div className='flex items-center justify-start gap-2 mt-4'>
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
+         {
+            newestPost?.map((post, index)=>(
+                <div key={index}>
+            
+                <div className='flex items-center justify-start gap-2 mt-4'>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
+  
+                    <p className="text-[#2a4bf1ee] text-[14px]">{post?.userEmail}</p>
+                </div>
+  
+                <div className="mt-1">
+                    <h2> {post?.title}</h2>
+                </div>
+  
+                <div className='flex items-center justify-start gap-2 mt-1'>
+                    <p className='text-gray-700 text-[14px]'>{moment(post?.date).format("DD MMMM")}</p>
+                    <div className='text-gray-700 text-[15px] pb-1'> . </div>
+                    <p className='text-gray-700 text-[14px]'>{post?.comments?.length} Comments</p>
+                </div>
+  
+            </div>
+            ))
+         }
 
-                  <p className="text-[#2a4bf1ee] text-[14px]">SouravDutta</p>
-              </div>
-
-              <div className="mt-1">
-                  <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </h2>
-              </div>
-
-              <div className='flex items-center justify-start gap-2 mt-1'>
-                  <p className='text-gray-700 text-[14px]'>24 Feb</p>
-                  <div className='text-gray-700 text-[15px] pb-1'> . </div>
-                  <p className='text-gray-700 text-[14px]'>14 Comments</p>
-              </div>
-
-          </div>
-
-
-
-          <div>
-              <div className='flex items-center justify-start gap-2 mt-4'>
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
-
-                  <p className="text-[#2a4bf1ee] text-[14px]">SouravDutta</p>
-              </div>
-
-              <div className="mt-1">
-                  <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </h2>
-              </div>
-
-              <div className='flex items-center justify-start gap-2 mt-1'>
-                  <p className='text-gray-700 text-[14px]'>24 Feb</p>
-                  <div className='text-gray-700 text-[15px] pb-1'> . </div>
-                  <p className='text-gray-700 text-[14px]'>14 Comments</p>
-              </div>
-
-          </div>
-
-          <div>
-              <div className='flex items-center justify-start gap-2 mt-4'>
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
-
-                  <p className="text-[#2a4bf1ee] text-[14px]">SouravDutta</p>
-              </div>
-
-              <div className="mt-1">
-                  <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </h2>
-              </div>
-
-              <div className='flex items-center justify-start gap-2 mt-1'>
-                  <p className='text-gray-700 text-[14px]'>24 Feb</p>
-                  <div className='text-gray-700 text-[15px] pb-1'> . </div>
-                  <p className='text-gray-700 text-[14px]'>14 Comments</p>
-              </div>
-
-          </div>
       </div>
 
 
