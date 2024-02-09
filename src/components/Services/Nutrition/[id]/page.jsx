@@ -1,10 +1,10 @@
 
 
 const page = ({params}) => {
-    console.log(params)
+console.log(params)
     return (
         <div>
-            jjjj
+            
         </div>
     );
 };

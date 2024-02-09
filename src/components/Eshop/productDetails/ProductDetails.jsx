@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "@/components/Provider/AuthProvider";
+import Ebutton from "@/components/Common/Ebutton";
 
 function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
@@ -34,7 +35,6 @@ function ProductDetails({ product, params }) {
           icon: "error",
           title: `${title}`,
           text: `${data.data.message}`,
-          // footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
         });
       }
       if (data.data.ProductID) {
@@ -42,7 +42,7 @@ function ProductDetails({ product, params }) {
           icon: "success",
           title: `${title}`,
           text: "Added to the cart!",
-          footer: `<a href="/eshop/cart/${email}"  class="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
+          footer: `<a href="/eshop/cart/${email}"  className="font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">Click to see your cart</a>`,
         });
       }
     });
@@ -69,7 +69,7 @@ function ProductDetails({ product, params }) {
             viewport={{ once: false, amount: 0.2 }}
             className="md:w-1/2">
             <Link href={`/eshop/products/${params.id}`}>
-              <button className="mb-5 font-semibold hover:text-orange-700 border-b-2 border-black hover:border-orange-700 transition-all duration-300">
+              <button className="mb-5 text-secondary font-semibold hover:text-primary border-b-2 border-primary hover:border-primary transition-all duration-300">
                 Back To {params.id} Products
               </button>
             </Link>
@@ -101,15 +101,13 @@ function ProductDetails({ product, params }) {
             </h2>
 
             <div className="flex flex-col md:flex-row gap-5">
-              <button
-                onClick={handleAddToCart}
-                className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
-                Add To Cart
-              </button>
+              <Ebutton>
+                <span onClick={handleAddToCart}>  Add To Cart</span>
+              </Ebutton>
               <Link href={`/eshop/orderForm/${_id}`}>
-                <button className="px-7 py-2 mt-2 border border-neutral-800 font-medium hover:text-white hover:bg-neutral-800 transition-all duration-300">
+                <Ebutton>
                   Order Now
-                </button>
+                </Ebutton>
               </Link>
             </div>
           </motion.div>

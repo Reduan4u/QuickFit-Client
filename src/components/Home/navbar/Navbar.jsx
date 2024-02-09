@@ -1,171 +1,181 @@
-
-"use client"
+"use client";
 
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 // import React, { useContext } from "react";
 import { MdForwardToInbox } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext)
-  const navLinkClass =
-    "justify-center text-lg mr-6 pb-1 font-light uppercase border-b-2 hover: border-transparent transition-all duration-700 ";
+  const [role, setRole] = useState();
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user?.email);
 
-    
-    
-    const handleSingOut = () =>{
-      logOut()
-      .then(Swal.fire({
+  useEffect(() => {
+    axios
+      .get(`https://quick-fit-server.vercel.app/api/v1/users/${user?.email}`)
+      .then((res) => {
+        console.log(res.data.role);
+        setRole(res.data.role);
+      })
+      .catch((err) => {
+        console.log(err.code);
+      });
+  }, [user?.email]);
+  // const role = "instructor";
+  // const isInstructor = true;
+
+  // fetch("//ad/user.email")
+
+  const navLinkClass =
+    "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
+
+  const handleSingOut = () => {
+    logOut().then(
+      Swal.fire({
         position: "center",
         icon: "success",
         title: "User logOut Successfully!",
         showConfirmButton: false,
-        timer: 1500
-      }));
-    }
+        timer: 1500,
+      })
+    );
+  };
 
   const navLink = (
     <>
       <div className="capitalize">
-        <NavLink
-          href="/"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
+        <NavLink href="/" className={`${navLinkClass} `}>
           Home
         </NavLink>
 
-        <NavLink
-          href="/eatBetter"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
+        <NavLink href="/eatBetter" className={`${navLinkClass} `}>
           Eat Better
         </NavLink>
 
-        <NavLink
-          href="/getFit"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
+        <NavLink href="/getFit" className={`${navLinkClass} `}>
           Get Fit
         </NavLink>
-        <NavLink
-          href="/calculator"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
+        <NavLink href="/calculator" className={`${navLinkClass} `}>
           Calculator
         </NavLink>
-        <NavLink
-          href="/eshop"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-        >
+        <NavLink href="/eshop" className={`${navLinkClass} `}>
           E-Shop
+        </NavLink>
+        <NavLink href="/forum" className={`${navLinkClass} `}>
+           Forum
         </NavLink>
 
 
+        <div className="dropdown dropdown-hover m-0 capitalize">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}>
+            <NavLink
+              href="/"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+            >
+              Services
+            </NavLink>
+          </div>
+          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 ">
+            <NavLink
+              href="/services/nutrition"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Nutrition Plan
+            </NavLink>
+            <NavLink
+              href="/services/fitness"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Fitness & Performance
+            </NavLink>
+            <NavLink
+              href="/services/balance"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Balance Body & Mind
+            </NavLink>
 
-       <div className="relative inline-block text-left">
-  <div className="m-0 capitalize">
-    <div tabIndex={0} role="button" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
-      <NavLink href="/more" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
-        More
-      </NavLink>
-    </div>
+            <NavLink
+              href="/services/female"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Female Fat Loss Program
+            </NavLink>
+            <NavLink
+              href="/services/cardioExercise"
+              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+            >
+              Cardio Exercise Program
+            </NavLink>
+          </ul>
 
-    {/* Responsive Dropdown */}
-    <div className="lg:absolute lg:left-0 lg:mt-2 lg:transform lg:translate-x-0 lg:origin-top-right">
-      <div className="hidden lg:block">
-        <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2">
-          <NavLink
-            href="/tips"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            Tips
-          </NavLink>
-          <NavLink
-            href="/contactUs"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            Contact
-          </NavLink>
-          <NavLink
-            href="/aboutUs"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            About Us
-          </NavLink>
-          <NavLink
-            href="/experts"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            Our Expert
-          </NavLink>
-        </ul>
-      </div>
-    </div>
-  </div>
+        </div>
 
-  {/* Responsive Dropdown Icon */}
-  <div className="lg:hidden">
-    <div tabIndex={0} role="button" className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </div>
-    <div className="hidden dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box mt-2 space-y-2">
-      <NavLink
-        href="/tips"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Tips
-      </NavLink>
-      <NavLink
-        href="/contactUs"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Contact
-      </NavLink>
-      <NavLink
-        href="/aboutUs"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        About Us
-      </NavLink>
-      <NavLink
-        href="/experts"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-      >
-        Our Expert
-      </NavLink>
-    </div>
-  </div>
-</div>
+        <div className="dropdown dropdown-hover m-0">
+          <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
+            <NavLink
+              href="/more"
+              className={`${navLinkClass}  `}
+            >
+              More
+            </NavLink>
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
+          >
+            <NavLink href="/tips" className={`${navLinkClass}  `}>
+              Tips
+            </NavLink>
+            <NavLink href="/contactUs" className={`${navLinkClass}  `}>
+              Contact
+            </NavLink>
+            <NavLink href="/aboutUs" className={`${navLinkClass} `}>
+              About Us
+            </NavLink>
+            <NavLink href="/experts" className={`${navLinkClass} `}>
+              Our Expert
+            </NavLink>
+            <NavLink href="/bookmarks" className={`${navLinkClass}  `}>
+              Bookmarks
+            </NavLink>
+            {role === "admin" && (
+              <NavLink
+                href="/adminDashboard"
+                className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              >
+                Dashboard
+              </NavLink>
+            )}
+            {role === "publisher" && (
+              <NavLink
+                href="/instructorDashboard"
+                className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+              >
+                Dashboard
+              </NavLink>
+            )}
+          </ul>
+        </div>
 
         {/* <NavLink
         href="/more"
-        className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
+        className={`${navLinkClass} `}
       >
         More
       </NavLink> */}
-
       </div>
     </>
-
   );
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200">
-      <div className="navbar  pt-4 pb-4 px-5 bg-white">
+    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200 ">
+      <div className="navbar  pt-4 pb-4 bg-white w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -274,11 +284,18 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          {
-            user ?  <div className="flex gap-2 items-center justify-center ">   <p className="  text-orange-500 font-bold">{user?.email
-            } </p>   <button onClick={handleSingOut} className="btn">Sing Out</button> </div> : <Link href="/login" className=" font-bold">Login</Link>
-          }
-        
+          {user ? (
+            <div className="flex gap-2 items-center justify-center ">
+              <p className="  text-orange-500 font-bold">{user?.email}</p>
+              <button onClick={handleSingOut} className="btn">
+                Sing Out
+              </button>
+            </div>
+          ) : (
+            <Link href="/login" className=" font-bold">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>

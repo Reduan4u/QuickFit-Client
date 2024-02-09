@@ -6,7 +6,7 @@ function useAxiosPublic(props) {
     baseURL: 'http://localhost:3001/api/v1'
   });
 
-  return axiosPublic
+  return axiosPublic;
 }
 
 export default useAxiosPublic;
