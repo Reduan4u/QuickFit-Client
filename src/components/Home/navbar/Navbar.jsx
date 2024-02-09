@@ -66,6 +66,9 @@ const Navbar = () => {
         <NavLink href="/eshop" className={`${navLinkClass} `}>
           E-Shop
         </NavLink>
+        <NavLink href="/forum" className={`${navLinkClass} `}>
+           Forum
+        </NavLink>
 
 
         <div className="dropdown dropdown-hover m-0 capitalize">
