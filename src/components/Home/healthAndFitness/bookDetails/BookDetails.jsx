@@ -1,62 +1,64 @@
 'use client'
+import Button1 from '@/components/Common/Button1';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import LeftBtn from '../Btn/LeftBtn';
 
-const BookDetails =  ({params}) => {
+const BookDetails = ({ params }) => {
 
   // State to keep track of the selected radio button value
   const [selectedValue, setSelectedValue] = useState(null);
   const [bookData, setBookData] = useState(null);
-  console.log(selectedValue)
+ // console.log(selectedValue)
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/books/${params.id}`, {
-              cache: "no-store"
-            });
-            const data = await res.json();
-            setBookData(data);
-          } catch (error) {
-            console.error('Error fetching book data:', error);
-          }
-        };
-    
-        fetchData();
-      }, [params.id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/books/${params.id}`, {
+          cache: "no-store"
+        });
+        const data = await res.json();
+        setBookData(data);
+      } catch (error) {
+        console.error('Error fetching book data:', error);
+      }
+    };
 
-
-console.log(bookData?._id)
-    const handleOrder = (e) =>{
-        e.preventDefault()
-        console.log("heloo")
-    }
+    fetchData();
+  }, [params.id]);
 
 
+  //console.log(bookData?._id)
+  const handleOrder = (e) => {
+    e.preventDefault()
+    //console.log("heloo")
+  }
 
-    return (
-        <div>
-            <h1 className='text-center font-bold text-5xl py-5'>Book Details</h1>
-            <div className="hero min-h-full">
 
-                <div className="hero-content flex-col md:flex-row gap-20">
 
-                    {/* image div  */}
-                    <div className="rounded-lg">
-                        <Link href={`/category/${params.id}`}><button className=" py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
-                        <Image
-                            height={500}
-                            width={500}
-                            alt='types'
-                            objectFit="cover"
-                            src={bookData?.image}
-                            className="w-full h-96"
-                        />
-                    </div>
+  return (
+    <div>
+      <h1 className='text-center font-bold text-5xl py-5'>Book Details</h1>
+      <div className="hero min-h-full">
 
-                    {/* content div for order a book starts */}
-                    <div className="w-full md:w-1/2">
+        <div className="hero-content flex-col md:flex-row gap-20">
+
+          {/* image div  */}
+          <div className="rounded-lg">
+            <Link href={`/category/${params.id}`}><button className=" py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
+            <Image
+              height={500}
+              width={500}
+              alt='types'
+              objectFit="cover"
+              src={bookData?.image}
+              className="w-full h-96"
+            />
+          </div>
+
+          {/* content div for order a book starts */}
+          <div className="w-full md:w-1/2">
             <form onSubmit={handleOrder}>
               <h1 className="text-2xl md:text-4xl font-bold">{bookData?.BookName}</h1>
               <p className="py-5 text-base">{bookData?.description}</p>
@@ -70,7 +72,7 @@ console.log(bookData?._id)
                       name="hard"
                       value={bookData?.FirstPrice}
                       checked={selectedValue === bookData?.FirstPrice}
-                      onChange={()=>setSelectedValue(bookData?.FirstPrice)}
+                      onChange={() => setSelectedValue(bookData?.FirstPrice)}
                     />
                     Hard Copy
                   </div>
@@ -88,7 +90,7 @@ console.log(bookData?._id)
                       name="pdf"
                       value={bookData?.SecondPrice}
                       checked={selectedValue === bookData?.SecondPrice}
-                      onChange={()=>setSelectedValue(bookData?.SecondPrice)}
+                      onChange={() => setSelectedValue(bookData?.SecondPrice)}
                     />
                     eBook Download (PDF/EPUB)
                   </div>
@@ -106,7 +108,7 @@ console.log(bookData?._id)
                       name="print"
                       value={bookData?.ThirdPrice}
                       checked={selectedValue === bookData?.ThirdPrice}
-                      onChange={()=>setSelectedValue(bookData?.ThirdPrice)}
+                      onChange={() => setSelectedValue(bookData?.ThirdPrice)}
                     />
                     Print & eBook Download
                   </div>
@@ -115,22 +117,31 @@ console.log(bookData?._id)
                   </div>
                 </div>
               </div>
-              <button className="btn bg-red-800 text-white rounded-none uppercase">
-                Add To Cart
+              <div className='flex gap-5'>
+              <div>
+              <button className="btn bg-primary text-white rounded-none uppercase">Add To Cart
               </button>
+              </div>
+              <div>
               <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
-              <button
-                className=" btn bg-red-800 text-white rounded-none uppercase"
-                disabled={!selectedValue}
-              >
-                Order Now
-              </button>
+                <button
+                  className=" bg-primary btn text-white rounded-none uppercase"
+                  disabled={!selectedValue}
+                >
+                  Order Now
+                </button>
               </Link>
+              </div>
+              </div>
             </form>
           </div>
           {/* content div for order a book ends */}
         </div>
       </div>
+      <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
+                <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
+                {/* <RightBtn></RightBtn> */}
+            </div>
     </div>
   );
 };

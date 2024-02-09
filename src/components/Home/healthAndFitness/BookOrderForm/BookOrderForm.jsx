@@ -47,12 +47,12 @@ const BookOrderForm = ({ bookId,price }) => {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
                     {/* email field  */}
                     <div className="w-full">
-                        <h2 className="text-lg mb-2 text-gray-800">Enter Your Email:</h2>
+                        <h2 className="font-bold text-lg mb-2 text-gray-800">Enter Your Email:</h2>
                         <input
                             type="text"
                             {...register("email", { required: true })}
                             placeholder="example@gmail.com"
-                            className="border p-2  w-full border-red-500 rounded"
+                            className="border p-2  w-full border-black rounded"
                         />
                         {errors.email && (
                             <span className="text-red-600">email is required</span>
@@ -61,12 +61,12 @@ const BookOrderForm = ({ bookId,price }) => {
 
                     {/* name field  */}
                     <div className="w-full">
-                        <h2 className="text-lg mb-2 text-slate-700">Your Name:</h2>
+                        <h2 className="font-bold text-lg mb-2 text-slate-700">Your Name:</h2>
                         <input
                             type="text"
                             {...register("name", { required: true })}
                             placeholder="type your name "
-                            className="border p-2  w-full border-red-500 rounded"
+                            className="border p-2  w-full border-black rounded"
                         />
                         {errors.name && (
                             <span className="text-red-600">name is required</span>
@@ -75,12 +75,12 @@ const BookOrderForm = ({ bookId,price }) => {
 
                     {/* address field  */}
                     <div className="w-full">
-                        <h2 className="text-lg mb-2 text-slate-700">Address:</h2>
+                        <h2 className="font-bold text-lg mb-2 text-slate-700">Address:</h2>
                         <input
                             type="text"
                             {...register("address", { required: true })}
                             placeholder="type your full address "
-                            className="border p-2  w-full border-red-500 rounded"
+                            className="border p-2  w-full border-black rounded"
                         />
                         {errors.name && (
                             <span className="text-red-600">address is required</span>
@@ -89,12 +89,12 @@ const BookOrderForm = ({ bookId,price }) => {
 
                     {/* address field  */}
                     <div className="w-full">
-                        <h2 className="text-lg mb-2 text-slate-700">Phone Number:</h2>
+                        <h2 className="font-bold text-lg mb-2 text-slate-700">Phone Number:</h2>
                         <input
                             type="text"
                             {...register("phone", { required: true })}
                             placeholder="+88017********"
-                            className="border p-2  w-full border-red-500 rounded"
+                            className="border p-2  w-full border-black rounded"
                         />
                         {errors.name && (
                             <span className="text-red-600">Phone No is required</span>
@@ -102,14 +102,19 @@ const BookOrderForm = ({ bookId,price }) => {
                     </div>
 
                     {/* order button field  */}
-                    <div>
-                        <button type="submit" className="btn btn-accent">
+                    <div className=''>
+                        <button type="submit" className=" btn w-full mx-auto text-white bg-primary">
                             Confirm Order
                         </button>
                     </div>
                 </form>
             </div>
+            
         </div>
+
+
+
+
     );
 };
 
