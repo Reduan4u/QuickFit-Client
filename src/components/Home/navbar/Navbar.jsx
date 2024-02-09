@@ -70,60 +70,33 @@ const Navbar = () => {
         <NavLink href="/eshop" className={`${navLinkClass} `}>
           E-Shop
         </NavLink>
-        <NavLink href="/forum" className={`${navLinkClass} `}>
+        <NavLink href="/forum/health" className={`${navLinkClass} `}>
           Forum
         </NavLink>
 
-        <div className="dropdown dropdown-hover m-0 capitalize">
-          <div
-            tabIndex={0}
-            role="button"
-            className={`${navLinkClass}  hover:delay-200 hover:border-b-slate-500`}
+        <NavLink
+          href="/services/nutrition"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
+        >
+          Services
+        </NavLink>
+        {role == "admin" && (
+          <NavLink
+            href="/adminDashboard"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
           >
-            <NavLink
-              href="/"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-            >
-              Services
-            </NavLink>
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 space-y-2 "
+            Dashboard
+          </NavLink>
+        )}
+        {role === "publisher" && (
+          <NavLink
+            href="/instructorDashboard"
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
           >
-            <NavLink
-              href="/services/nutrition"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Nutrition Plan
-            </NavLink>
-            <NavLink
-              href="/services/fitness"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Fitness & Performance
-            </NavLink>
-            <NavLink
-              href="/services/balance"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Balance Body & Mind
-            </NavLink>
+            Dashboard
+          </NavLink>
+        )}
 
-            <NavLink
-              href="/services/female"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Female Fat Loss Program
-            </NavLink>
-            <NavLink
-              href="/services/cardioExercise"
-              className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-            >
-              Cardio Exercise Program
-            </NavLink>
-          </ul>
-        </div>
 
         <div className="dropdown dropdown-hover m-0">
           <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
@@ -150,22 +123,6 @@ const Navbar = () => {
             <NavLink href="/bookmarks" className={`${navLinkClass}  `}>
               Bookmarks
             </NavLink>
-            {role !== "admin" && (
-              <NavLink
-                href="/adminDashboard"
-                className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-              >
-                Dashboard
-              </NavLink>
-            )}
-            {role === "publisher" && (
-              <NavLink
-                href="/instructorDashboard"
-                className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-              >
-                Dashboard
-              </NavLink>
-            )}
           </ul>
         </div>
 

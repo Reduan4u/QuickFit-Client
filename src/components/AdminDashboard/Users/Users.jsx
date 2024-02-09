@@ -43,7 +43,7 @@ const Users = () => {
 
 
     return (
-        <div className="antialiased font-sans bg-white shadow-xl">
+        <div className="antialiased font-sans bg-white shadow-xl mx-3  rounded-md w-full h-[65%]">
             <div className="container mx-auto px-4 sm:px-8">
                 <div className="py-8">
                     <div>
