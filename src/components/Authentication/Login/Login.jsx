@@ -30,7 +30,7 @@ const Login = ({ path }) => {
         console.log(res.user.displayName);
         console.log(res.user.email);
         axios
-          .post("http://localhost:4000/api/v1/users", {
+          .post("https://quick-fit-server.vercel.app/api/v1/users", {
             name,
             email,
             role: "user",

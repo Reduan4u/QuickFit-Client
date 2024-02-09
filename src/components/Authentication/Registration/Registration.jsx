@@ -14,6 +14,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import axios from "axios";
 
+
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, googleLogin } = useContext(AuthContext);
@@ -31,7 +32,7 @@ const Registration = () => {
         console.log(result.user);
 
         axios
-          .post("http://localhost:4000/api/v1/users", {
+          .post("https://quick-fit-server.vercel.app/api/v1/users", {
             ...data,
             role: "user",
             isBlocked: false,
@@ -87,8 +88,10 @@ const Registration = () => {
       .catch((error) => console.error(error));
   };
 
+
   return (
     <>
+   
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-[500px] lg:text-left">
