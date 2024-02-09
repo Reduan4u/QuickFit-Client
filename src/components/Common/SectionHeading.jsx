@@ -11,7 +11,7 @@ const SectionHeading = ({title,color}) => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
 >
-    <h2 className={` my-10 md:text-5xl text-2xl font-bold mx-5 text-${color}-800`}> <span className=' font-extrabold text-red-800'>|</span> {title}</h2>
+    <h2 className={` my-10 md:text-5xl text-2xl font-bold text-${color}-800`}> <span className=' font-extrabold text-primary'>|</span> {title}</h2>
 </motion.div>
         
            

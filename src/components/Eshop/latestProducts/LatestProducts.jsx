@@ -1,13 +1,16 @@
 "use client";
 import SectionHeading from "@/components/Common/SectionHeading";
+import Loading1 from "@/components/Loading/Loading1";
 import ProductCard from "@/components/cards/ProductCard/ProductCard";
+import useAllProducts from "@/hooks/useAllProducts";
 
 const LatestProducts = async (props) => {
-  const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/eshop`, {
-    cache: "no-store"
-  });
-  const products = await res.json();
 
+  const {products, isPending} = useAllProducts()
+
+  if(isPending){
+    <Loading1></Loading1>
+  }
 
   return (
     <div className="w-10/12 mx-auto my-20">

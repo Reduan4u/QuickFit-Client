@@ -1,12 +1,10 @@
 "use client";
 import SectionHeading from "@/components/Common/SectionHeading";
 import ProductCard from "@/components/cards/ProductCard/ProductCard";
+import useAllProducts from "@/hooks/useAllProducts";
 
 const RelevantProducts = async ({ product }) => {
-  const res = await fetch(`https://quick-fit-server.vercel.app/api/v1/eshop`, {
-    cache: "no-store",
-  });
-  const products = await res.json();
+  const {products} = useAllProducts()
 
   const relevantProducts = products.filter(item => item.category == product.category)
 

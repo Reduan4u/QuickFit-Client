@@ -1,4 +1,3 @@
-import Button1 from "@/components/Common/Button1";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,8 +14,7 @@ const JanuaryPicks = async () => {
   const currentDate = new Date();
   const currentMonthNumber = currentDate.getMonth();
 
-  const filteredData = data.filter(
-    (picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
+  const filteredData = data.filter((picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
   );
   const slicedData = filteredData.slice(0, 4);
 
@@ -39,7 +37,7 @@ const JanuaryPicks = async () => {
                   height={200}
                   width={400}
                   className=" w-full h-full"
-                  src={monthsPicks.image}
+                  src={monthsPicks.img}
                   alt=""
                 />
                 <div className=" text-white absolute h-full w-full bg-black/50 flex flex-col items-start justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
@@ -49,8 +47,8 @@ const JanuaryPicks = async () => {
                   <p className=" px-5 py-2 text-lg font-thin italic">
                     {monthsPicks.description}
                   </p>
-                  <p className=" px-5 py-2 text-orange-400">
-                    |{" "}
+                  <p className=" px-5 py-2 font-semibold text-primary">
+                    |
                     {new Intl.DateTimeFormat("en-US", {
                       month: "long",
                       day: "numeric",
