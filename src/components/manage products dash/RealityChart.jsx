@@ -14,37 +14,37 @@ import {
 function RealityChart(props) {
     const data = [
         {
-          name: 'Page A',
+          name: 'January',
           Target: 590,
           Reality: 800,
           amt: 1400,
         },
         {
-          name: 'Page B',
+          name: 'February',
           Target: 868,
           Reality: 967,
           amt: 1506,
         },
         {
-          name: 'Page C',
+          name: 'March',
           Target: 1397,
           Reality: 1098,
           amt: 989,
         },
         {
-          name: 'Page D',
+          name: 'April',
           Target: 1480,
           Reality: 1200,
           amt: 1228,
         },
         {
-          name: 'Page E',
+          name: 'May',
           Target: 1520,
           Reality: 1108,
           amt: 1100,
         },
         {
-          name: 'Page F',
+          name: 'June',
           Target: 1400,
           Reality: 680,
           amt: 1700,

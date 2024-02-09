@@ -7,9 +7,9 @@ import RevenueChart from "./RevenueChart";
 
 function ManageProducts(props) {
   const cardClasses =
-    "flex items-center p-5 justify-center gap-2 bg-gradient-to-r from-dashPrimary to-dashSecondary shadow-xl rounded";
+    "flex items-center p-5 justify-center gap-2 bg-gradient-to-r from-dashPrimary to-dashSecondary shadow-xl rounded hover:scale-110 transition duration-300";
   return (
-    <div className="bg-gray-300 py-10">
+    <div className="bg-gray-300 py-10 text-white">
       {/*=== sales stats === */}
       <div className="grid grid-cols-4 gap-10 p-5 ">
         {/* 1. order completed  */}
@@ -65,16 +65,15 @@ function ManageProducts(props) {
 
       {/*=== earning and reserves orders stats === */}
       <div className="flex lg:flex-row gap-10 p-5">
-
         {/* line charts */}
-        <div className="w-2/3 bg-white p-5 rounded shadow-xl">
-         <MyLineChart></MyLineChart>
+        <div className="w-2/3 bg-gradient-to-r from-dashPrimary to-dashSecondary p-5 rounded shadow-xl">
+          <MyLineChart></MyLineChart>
         </div>
 
         {/* reserves website and cash orders div  */}
         <div className="w-1/3 flex flex-col items-center justify-center">
           {/* reserves in website */}
-          <div className="bg-white p-5 rounded shadow-xl">
+          <div className="bg-gradient-to-r from-dashPrimary to-dashSecondary p-5 rounded shadow-xl">
             <div className="flex items-center gap-5">
               <img
                 src="https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/browser-64.png"
@@ -82,38 +81,41 @@ function ManageProducts(props) {
               />
 
               <div>
-                <p className="text-xl font-medium text-gray-700">
+                <p className="text-xl font-medium text-dashTertiary">
                   Order Reserved From Website
                 </p>
-                <h1 className="text-3xl tracking-wider font-bold text-dashPrimary">
+                <h1 className="text-3xl tracking-wider font-bold  text-white">
                   $220
                 </h1>
               </div>
             </div>
-            <progress
-              className="progress progress-info w-full h-3 mt-2"
-              value="60"
-              max="100"></progress>
+            {/* progress bar  */}
+            <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700 mt-3">
+              <div class="bg-gray-600 h-2.5 rounded-full dark:bg-gray-300 w-[60%]"></div>
+            </div>
           </div>
 
           {/* reserves in cash  */}
-          <div className="mt-10 bg-white p-5 rounded shadow-xl">
+          <div className="mt-10 bg-gradient-to-r from-dashPrimary to-dashSecondary p-5 rounded shadow-xl">
             <div className="flex items-center gap-5">
               <img
-                src="https://media.istockphoto.com/id/912819716/vector/money-flat-design-e-commerce-icon.jpg?b=1&s=170x170&k=20&c=YFR2BGqlI1doXJeoVCxBZm7K1GVkzvda7L-u2TbxuiM="
+                src="https://cdn4.iconfinder.com/data/icons/office-and-business-conceptual-flat/169/36-64.png"
                 className="w-20 h-20"
               />
 
               <div>
-                <p className="text-xl font-medium text-gray-700">
+                <p className="text-xl font-medium text-dashTertiary">
                   Order Reserved From Cash On Delivery
                 </p>
-                <h1 className="text-3xl tracking-wider font-bold text-dashPrimary">
+                <h1 className="text-3xl tracking-wider font-bold text-dashTertiary">
                   $80
                 </h1>
               </div>
             </div>
-            <progress className="progress progress-success w-full h-3" value="40" max="100"></progress>
+             {/* progress bar  */}
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 my-3">
+              <div class="bg-blue-600 h-2.5 rounded-full w-[40%] "></div>
+            </div>
           </div>
         </div>
       </div>
@@ -125,17 +127,19 @@ function ManageProducts(props) {
 
       {/* ======= total revenue , customer staisfaction and reality ======= */}
       <div className="flex gap-10 p-5 ">
-
-        <div className="w-1/2 bg-white p-5">
-          <h2 className="text-2xl font-semibold tracking-wide text-center mb-5">Offline vs Online Sales</h2>
-          <RevenueChart></RevenueChart></div>
-        <div className="w-1/2 bg-white p-5">
-          <h2 className="text-2xl font-semibold tracking-wide text-center mb-5">Reality vs Target</h2>
-          <RealityChart /></div>
-
+        <div className="w-1/2 bg-gradient-to-r from-dashPrimary to-dashSecondary p-5">
+          <h2 className="text-2xl font-semibold tracking-wide text-center mb-5">
+            Offline vs Online Sales
+          </h2>
+          <RevenueChart></RevenueChart>
+        </div>
+        <div className="w-1/2 bg-gradient-to-r from-dashPrimary to-dashSecondary p-5">
+          <h2 className="text-2xl font-semibold tracking-wide text-center mb-5">
+            Reality vs Target
+          </h2>
+          <RealityChart />
+        </div>
       </div>
-
-
     </div>
   );
 }

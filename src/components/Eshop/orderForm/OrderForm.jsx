@@ -20,6 +20,7 @@ function OrderForm({ params }) {
 
   const onSubmit = (data) => {
     data.productId = params.id
+    data.cartPrice = params?.price 
 
     axiosPublic.post("/order", data)
       .then(result => {
