@@ -15,8 +15,8 @@ module.exports = {
         primary: '#F0A500',
         secondary: '#CF7500',
         tertiary: '#F4F4F4',
-        dashPrimary:'#FF971D',
-        dashSecondary:'#FFE8D6',
+        dashPrimary:'#182237',
+        dashSecondary:'#183237',
         dashTertiary:'#F9F6F7'
       },
       backgroundImage: {
