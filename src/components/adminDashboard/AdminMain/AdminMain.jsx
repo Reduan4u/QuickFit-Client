@@ -5,13 +5,14 @@ import { fadeIn } from "../../Common/Animation1";
 import Image from "next/image";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useUser from "@/hooks/useUser";
+import RealityChart from "@/components/manage products dash/RealityChart";
 
 const AdminMain = () => {
     const { data, role } = useUser();
     const { user } = useContext(AuthContext);
 
     return (
-        <div className="grid font-tech rounded-md w-full   h-[65%] text-white  gap-5 grid-cols-4 grid-rows-10 px-3">
+        <div className="grid font-tech rounded-md w-full h-[65%] text-white  gap-5 grid-cols-4 grid-rows-10 px-3">
 
             {/* Header */}
             <motion.div
@@ -316,6 +317,19 @@ const AdminMain = () => {
             </motion.div>
 
             {/*  */}
+            <motion.div
+                variants={fadeIn("up", 0.5)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="bg-[#182237] row-span-10 rounded-md p-3 col-span-4">
+                <div className="">
+                    <h2 className="text-2xl font-semibold tracking-wide text-center mb-5">
+                        Monthly Reach VS Expectation
+                    </h2>
+                    <RealityChart />
+                </div>
+            </motion.div>
 
 
         </div >
