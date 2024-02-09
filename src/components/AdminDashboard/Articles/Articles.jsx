@@ -7,7 +7,7 @@ import { MdOutlineArticle } from "react-icons/md";
 
 const Articles = () => {
     //Search
-    const [search,setSearch] = useState('');
+    const [search, setSearch] = useState('');
     //console.log(search)
 
     //pagination
@@ -65,7 +65,7 @@ const Articles = () => {
                                     </path>
                                 </svg>
                             </span>
-                            <input onChange={(e)=>setSearch(e.target.value)} placeholder="Search by Category"
+                            <input onChange={(e) => setSearch(e.target.value)} placeholder="Search by Category"
                                 className="appearance-none rounded border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
                         </div>
                     </div>
@@ -98,8 +98,8 @@ const Articles = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        records.filter((article)=>{
-                                          return search.toLocaleLowerCase()==='' ?article:article.Category.toLocaleLowerCase().includes(search) 
+                                        records.filter((article) => {
+                                            return search.toLocaleLowerCase() === '' ? article : article.Category.toLocaleLowerCase().includes(search)
                                         }).map((article, i) => <tr key={i}>
                                             <th>{i + 1}</th>
 
@@ -125,7 +125,7 @@ const Articles = () => {
                             </table>
                             <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
                                 <span className="text-xs xs:text-sm text-gray-900">
-                                Showing 1 to 10 of 40 Entries
+                                    Showing 1 to 10 of 40 Entries
                                 </span>
                                 <div className="inline-flex mt-2 xs:mt-0">
                                     <button className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
