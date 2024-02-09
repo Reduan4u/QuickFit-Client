@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const page = () => {
-  return <div></div>;
+  return (
+    <div>
+      This is Blog page
+    </div>
+  );
 };
 
 export default page;
-blogs;

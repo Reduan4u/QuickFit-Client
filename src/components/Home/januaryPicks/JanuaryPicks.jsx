@@ -14,8 +14,7 @@ const JanuaryPicks = async () => {
   const currentDate = new Date();
   const currentMonthNumber = currentDate.getMonth();
 
-  const filteredData = data.filter(
-    (picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
+  const filteredData = data.filter((picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
   );
   const slicedData = filteredData.slice(0, 4);
 

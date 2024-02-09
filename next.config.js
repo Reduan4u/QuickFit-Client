@@ -15,7 +15,10 @@ module.exports = {
       'i.postimg.cc',
       'healthflex.plethorathemes.com',
       'www.livestrong.com',
-      'daisyui.com'
+      'daisyui.com',
+      'old3.commonsupport.com',
+      'cdn.discordapp.com',
+      'lh3.googleusercontent.com'
     ]
   },
 };
