@@ -31,8 +31,13 @@ const Login = ({ path }) => {
         const email = await res.user.email;
         console.log(res.user.displayName);
         console.log(res.user.email);
+<<<<<<< HEAD
         axioPublic
           .post("/users", {
+=======
+        axios
+          .post("https://quick-fit-server.vercel.app/api/v1/users", {
+>>>>>>> 2cccf3100c1c2ceaabcf986f68a3976fedd6e127
             name,
             email,
             role: "user",
