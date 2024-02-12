@@ -1,9 +1,8 @@
-
 import Users from "@/components/AdminDashboard/Users/Users";
 
 
 const page = () => {
-  return  <div>
+  return <div>
     <Users></Users>
   </div>;
 };
