@@ -30,22 +30,19 @@ const Articles = () => {
     const numbers = [...Array(page + 1).keys()].slice(1)
 
 
-    const nextPage = (e) => {
-        e.preventDefault();
+    const nextPage = () => {
         if (currentPage !== page) {
             setCurrentPage(currentPage + 1);
         }
     };
 
-    const prePage = (e) => {
-        e.preventDefault();
+    const prePage = () => {
         if (currentPage !== 1) {
             setCurrentPage(currentPage - 1);
         }
     };
 
-    const changeCPage = (id, e) => {
-        e.preventDefault();
+    const changeCPage = (id) => {
         setCurrentPage(id);
     };
 
@@ -72,8 +69,8 @@ const Articles = () => {
                     <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                         <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                             <table className="min-w-full table table-zebra leading-normal">
-                                <thead>
-                                    <tr>
+                                <thead className=''>
+                                    <tr className="">
                                         <th
                                             className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                             S.No
@@ -127,14 +124,14 @@ const Articles = () => {
                                 <span className="text-xs xs:text-sm text-gray-900">
                                 Showing 1 to 10 of 40 Entries
                                 </span>
-                                <div className="inline-flex mt-2 xs:mt-0">
+                                <div className="inline-flex mt-2 xs:mt-0 gap-3">
                                     <button className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
                                         <a href="#" onClick={prePage}><GrPrevious></GrPrevious></a>
                                     </button>
                                     {
                                         numbers.map((n, i) =>
                                         (
-                                            <button className={`text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 ${currentPage === n ? 'active' : ''}`} key={i}
+                                            <button className={`text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border${currentPage === n ? 'active' : ''}`} key={i}
                                                 style={{ color: currentPage === n ? 'white' : 'inherit', backgroundColor: currentPage === n ? 'orange' : 'inherit', borderRadius: currentPage === n ? '4px' : 'inherit' }}
 
                                             >

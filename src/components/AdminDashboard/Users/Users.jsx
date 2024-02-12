@@ -1,4 +1,6 @@
 "use client"
+import useAxiosPublic from "@/hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaTrashAlt, FaUserEdit, FaUsers } from "react-icons/fa";
@@ -11,33 +13,42 @@ const Users = () => {
     const firstIndex = lastIndex - recordsPerPage;
 
 
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('https://quick-fit-server.vercel.app/api/v1/Users')
-            .then(res => res.json())
-            .then(users => setUsers(users))
-    }, [])
+    // const [users, setUsers] = useState([]);
+    // useEffect(() => {
+    //     fetch('https://quick-fit-server.vercel.app/api/v1/Users')
+    //         .then(res => res.json())
+    //         .then(users => setUsers(users))
+    // }, [])
+    const axiosSecure = useAxiosPublic();
+    const { data: users = [], refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/Users');
+            return res.data;
+        }
+    })
+    //
+    //console.log(users)
+
+
     const records = users.slice(firstIndex, lastIndex);
     const page = Math.ceil(users.length / recordsPerPage);
     const numbers = [...Array(page + 1).keys()].slice(1)
 
 
-    const nextPage = (e) => {
-        e.preventDefault();
+    const nextPage = () => {
         if (currentPage !== page) {
             setCurrentPage(currentPage + 1);
         }
     };
 
-    const prePage = (e) => {
-        e.preventDefault();
+    const prePage = () => {
         if (currentPage !== 1) {
             setCurrentPage(currentPage - 1);
         }
     };
 
-    const changeCPage = (id, e) => {
-        e.preventDefault();
+    const changeCPage = (id) => {
         setCurrentPage(id);
     };
 
@@ -95,7 +106,7 @@ const Users = () => {
                                                                 width={500}
                                                                 alt='user'
                                                                 objectFit="cover"
-                                                                src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+                                                                src='https://source.unsplash.com/240x320/?portrait?0' />
                                                         </div>
                                                     </div>
 
@@ -107,6 +118,7 @@ const Users = () => {
                                             <td className="">
                                                 <div className="flex justify-start items-center gap-3">
                                                     <button
+                                                    //  onClick={() => handleDeleteUser(d)}
                                                         className="btn btn-ghost btn-sm bg-red-600">
                                                         <FaTrashAlt className="text-white"></FaTrashAlt>
                                                     </button>
@@ -125,14 +137,14 @@ const Users = () => {
                                 <span className="text-xs xs:text-sm text-gray-900">
                                     Showing 1 to 5
                                 </span>
-                                <div className="inline-flex mt-2 xs:mt-0">
+                                <div className="inline-flex mt-2 xs:mt-0 gap-3">
                                     <button className="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
                                         <a href="#" onClick={prePage}><GrPrevious></GrPrevious></a>
                                     </button>
                                     {
                                         numbers.map((n, i) =>
                                         (
-                                            <button className={`text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 ${currentPage === n ? 'active' : ''}`} key={i}
+                                            <button className={`text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 border${currentPage === n ? ' active' : ''}`} key={i}
                                                 style={{ color: currentPage === n ? 'white' : 'inherit', backgroundColor: currentPage === n ? 'orange' : 'inherit', borderRadius: currentPage === n ? '4px' : 'inherit' }}
 
                                             >
