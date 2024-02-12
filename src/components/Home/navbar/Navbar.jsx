@@ -1,5 +1,6 @@
 "use client";
 
+import Button1 from "@/components/Common/Button1";
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
@@ -11,11 +12,19 @@ import { MdForwardToInbox } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const [showOptions, setShowOption] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [role, setRole] = useState();
   const axios = useAxiosPublic();
   const { user, logOut } = useContext(AuthContext);
   console.log(role);
   console.log(user?.email);
+
+  const handleProfileClick = () =>{
+    setShowOption(!showOptions);
+  }
+
+console.log(user)
 
   useEffect(() => {
     axios
@@ -52,7 +61,7 @@ const Navbar = () => {
 
   const navLink = (
     <>
-      <div className="capitalize">
+      <div className="capitalize flex lg:flex-row flex-col gap-2 lg:gap-0 ">
         <NavLink href="/" className={`${navLinkClass} `}>
           Home
         </NavLink>
@@ -97,41 +106,41 @@ const Navbar = () => {
           </NavLink>
         )}
 
-
-        <div className="dropdown dropdown-hover m-0">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
-            <NavLink href="/more" className={`${navLinkClass}  `}>
-              More
-            </NavLink>
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
-          >
-            <NavLink href="/tips" className={`${navLinkClass}  `}>
-              Tips
-            </NavLink>
-            <NavLink href="/contactUs" className={`${navLinkClass}  `}>
-              Contact
-            </NavLink>
-            <NavLink href="/aboutUs" className={`${navLinkClass} `}>
-              About Us
-            </NavLink>
-            <NavLink href="/experts" className={`${navLinkClass} `}>
-              Our Expert
-            </NavLink>
-            <NavLink href="/bookmarks" className={`${navLinkClass}  `}>
-              Bookmarks
-            </NavLink>
-          </ul>
-        </div>
-
-        {/* <NavLink
-        href="/more"
-        className={`${navLinkClass} `}
+        
+<div className="lg:flex lg:items-center lg:justify-end lg:space-x-8">
+  <div className="relative">
+    <div
+      tabIndex={0}
+      role="button"
+      className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? 'text-orange-300' : ''}`}
+      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+      onBlur={() => setIsDropdownOpen(false)}
+    >
+      More
+    </div>
+    {isDropdownOpen && (
+      <ul
+        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12"
       >
-        More
-      </NavLink> */}
+        <NavLink href="/tips" className={`${navLinkClass} `}>
+          Tips
+        </NavLink>
+        <NavLink href="/contactUs" className={`${navLinkClass} `}>
+          Contact
+        </NavLink>
+        <NavLink href="/aboutUs" className={`${navLinkClass} `}>
+          About Us
+        </NavLink>
+        <NavLink href="/experts" className={`${navLinkClass} `}>
+          Our Expert
+        </NavLink>
+        <NavLink href="/bookmarks" className={`${navLinkClass} `}>
+          Bookmarks
+        </NavLink>
+      </ul>
+    )}
+  </div>
+</div>
       </div>
     </>
   );
@@ -247,19 +256,31 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-          {user ? (
-            <div className="flex gap-2 items-center justify-center ">
-              <p className="  text-orange-500 font-bold">{user?.email}</p>
-              <button onClick={handleSingOut} className="btn">
-                Sing Out
-              </button>
-            </div>
-          ) : (
-            <Link href="/login" className=" font-bold">
-              Login
-            </Link>
+      {user ? (
+        <div className="avatar online" onClick={handleProfileClick}>
+          <div className="w-12 rounded-full">
+            <img src={user?.photoURL} alt="profile" />
+          </div>
+          {showOptions && (
+            <ul
+            className="dropdown-content text-md font-bold z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 "
+          >
+             <p>{user.
+displayName}</p>
+              
+             <Link href="/profile">Profile</Link>
+             <Link href="/instructorDashboard">Dashboard</Link>
+             <button className="text-left" onClick={logOut}>Logout</button>
+            
+            </ul>
           )}
         </div>
+      ) : (
+        <Link href="/login" className="font-bold">
+          Login
+        </Link>
+      )}
+    </div>
       </div>
     </nav>
   );
