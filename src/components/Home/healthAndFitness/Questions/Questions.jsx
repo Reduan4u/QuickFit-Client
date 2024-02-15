@@ -2,11 +2,15 @@ import SectionHeading from '@/components/Common/SectionHeading';
 import React from 'react';
 
 const Questions = async ({ params }) => {
+    // console.log(params)
+    // console.log(params.id)
+
     // Category
     const result = await fetch(`https://quick-fit-server.vercel.app/api/v1/category/${params.id}`, {
         cache: "no-store"
     });
     const cat = await result.json();
+    //console.log(cat)
     return (
         <div className='w-10/12 mx-auto'>
             <SectionHeading className='' title={"Explore the Unknown? "} />
