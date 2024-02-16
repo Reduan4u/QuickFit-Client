@@ -20,11 +20,9 @@ const Navbar = () => {
   console.log(role);
   console.log(user?.email);
 
-  const handleProfileClick = () =>{
+  const handleProfileClick = () => {
     setShowOption(!showOptions);
-  }
-
-console.log(user)
+  };
 
   useEffect(() => {
     axios
@@ -32,7 +30,6 @@ console.log(user)
       .get(`/users/${user?.email}`)
 
       .then((res) => {
-        console.log(res.data.role);
         setRole(res.data.role);
       })
       .catch((err) => {
@@ -85,62 +82,60 @@ console.log(user)
 
         <NavLink
           href="/services/nutrition"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-        >
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
           Services
         </NavLink>
         {role == "admin" && (
           <NavLink
             href="/adminDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
             Dashboard
           </NavLink>
         )}
         {role === "publisher" && (
           <NavLink
             href="/instructorDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
+            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
             Dashboard
           </NavLink>
         )}
 
-        
-<div className="lg:flex lg:items-center lg:justify-end lg:space-x-8">
-  <div className="relative">
-    <div
-      tabIndex={0}
-      role="button"
-      className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? 'text-orange-300' : ''}`}
-      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-      onBlur={() => setIsDropdownOpen(false)}
-    >
-      More
-    </div>
-    {isDropdownOpen && (
-      <ul
-        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12"
-      >
-        <NavLink href="/tips" className={`${navLinkClass} `}>
-          Tips
-        </NavLink>
-        <NavLink href="/contactUs" className={`${navLinkClass} `}>
-          Contact
-        </NavLink>
-        <NavLink href="/aboutUs" className={`${navLinkClass} `}>
-          About Us
-        </NavLink>
-        <NavLink href="/experts" className={`${navLinkClass} `}>
-          Our Expert
-        </NavLink>
-        <NavLink href="/bookmarks" className={`${navLinkClass} `}>
-          Bookmarks
-        </NavLink>
-      </ul>
-    )}
-  </div>
-</div>
+        <div className="lg:flex lg:items-center lg:justify-end lg:space-x-8">
+          <div className="relative">
+            <div
+              tabIndex={0}
+              role="button"
+              className={`${navLinkClass} text-xl ml-4 ${
+                isDropdownOpen ? "text-orange-300" : ""
+              }`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              onBlur={() => setIsDropdownOpen(false)}>
+              More
+            </div>
+            {isDropdownOpen && (
+              <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12">
+                <NavLink href="/tracker" className={`${navLinkClass} `}>
+                  Fitness Tracker
+                </NavLink>
+                <NavLink href="/tips" className={`${navLinkClass} `}>
+                  Tips
+                </NavLink>
+                <NavLink href="/contactUs" className={`${navLinkClass} `}>
+                  Contact
+                </NavLink>
+                <NavLink href="/aboutUs" className={`${navLinkClass} `}>
+                  About Us
+                </NavLink>
+                <NavLink href="/experts" className={`${navLinkClass} `}>
+                  Our Expert
+                </NavLink>
+                <NavLink href="/bookmarks" className={`${navLinkClass} `}>
+                  Bookmarks
+                </NavLink>
+              </ul>
+            )}
+          </div>
+        </div>
       </div>
     </>
   );
@@ -156,8 +151,7 @@ console.log(user)
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+                stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -168,8 +162,7 @@ console.log(user)
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
-            >
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52">
               {navLink}
             </ul>
           </div>
@@ -180,16 +173,14 @@ console.log(user)
               width="76.000000pt"
               height="31.000000pt"
               viewBox="0 0 276.000000 131.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
+              preserveAspectRatio="xMidYMid meet">
               <metadata>
                 Created by potrace 1.10, written by Peter Selinger 2001-2011
               </metadata>
               <g
                 transform="translate(0.000000,131.000000) scale(0.050000,-0.050000)"
                 fill="#000000"
-                stroke="none"
-              >
+                stroke="none">
                 <path
                   d="M2911 2514 c-70 -131 -63 -173 57 -321 l88 -108 -143 -148 c-247
 -256 -657 -460 -766 -382 -58 41 -98 52 -183 47 -65 -3 -231 -165 -285 -280
@@ -256,31 +247,29 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
         </div>
         <div className="navbar-end">
-      {user ? (
-        <div className="avatar online" onClick={handleProfileClick}>
-          <div className="w-12 rounded-full">
-            <img src={user?.photoURL} alt="profile" />
-          </div>
-          {showOptions && (
-            <ul
-            className="dropdown-content text-md font-bold z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 "
-          >
-             <p>{user.
-displayName}</p>
-              
-             <Link href="/profile">Profile</Link>
-             <Link href="/instructorDashboard">Dashboard</Link>
-             <button className="text-left" onClick={logOut}>Logout</button>
-            
-            </ul>
+          {user ? (
+            <div className="avatar online" onClick={handleProfileClick}>
+              <div className="w-12 rounded-full">
+                <img src={user?.photoURL} alt="profile" />
+              </div>
+              {showOptions && (
+                <ul className="dropdown-content text-md font-bold z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 ">
+                  <p>{user.displayName}</p>
+
+                  <Link href="/profile">Profile</Link>
+                  <Link href="/instructorDashboard">Dashboard</Link>
+                  <button className="text-left" onClick={logOut}>
+                    Logout
+                  </button>
+                </ul>
+              )}
+            </div>
+          ) : (
+            <Link href="/login" className="font-bold">
+              Login
+            </Link>
           )}
         </div>
-      ) : (
-        <Link href="/login" className="font-bold">
-          Login
-        </Link>
-      )}
-    </div>
       </div>
     </nav>
   );
