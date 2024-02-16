@@ -21,12 +21,15 @@ const Post = () => {
   const { user } = useContext(AuthContext);
 
 console.log(user?.displayName);
+console.log(user?.photoURL);
 
 
 
   const onSubmit = async (data) => {
 
     const additionalData = {
+      userName : user?.displayName,
+      userPhoto: user?.photoURL,
       userEmail: user?.email,
       date: new Date(),
       likes : [],
