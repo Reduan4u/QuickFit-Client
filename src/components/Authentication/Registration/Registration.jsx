@@ -27,63 +27,51 @@ const Registration = () => {
   } = useForm();
   const router = useRouter();
 
-  const onSubmit = (data) => {
-    console.log(data)
-    createUser(data.email, data.password)
-      .then((result) => {
-        console.log(result.user);
-        const formData = new FormData();
-        formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
+  const onSubmit = async (data) => {
+    try {
+      // Create user and get the result
+      const result = await createUser(data.email, data.password);
   
-        // Upload image using fetch
-        fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
-          method: "POST",
-          body: formData,
-        })
-          .then((res) => res.json())
-          .then((response) => {
-            console.log("Success:", response);
-            // After successful image upload, update the user profile
-            console.log(response.data.url)
-            updateUserProfile(data.name, response.data.url)
-              .then(() => {
-                // Once user profile is updated, create user entry in the database
-                axiosPublic
-                  .post("/users", {
-                    ...data,
-                    role: "user",
-                    isBlocked: false,
-                    photoURL: response.data.url // assuming you need to save the image URL in user data
-                  })
-                  .then((res) => {
-                    console.log(res);
-                    // Show success message and redirect
-                    Swal.fire({
-                      position: "center",
-                      icon: "success",
-                      title: "User created Successfully!",
-                      showConfirmButton: false,
-                      timer: 1500,
-                    });
-                    router.push("/");
-                  })
-                  .catch((err) => {
-                    console.log(err.code);
-                  });
-              })
-              .catch((error) => {
-                console.error("Error updating user profile:", error);
-              });
-          })
-          .catch((error) => {
-            console.error("Error uploading image:", error);
-          });
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the process
-        console.error("Error:", error.message);
-        // You might want to show an error message to the user
+      // Upload image using FormData and fetch
+      const formData = new FormData();
+      formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
+  
+      const imageUploadResponse = await fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
+        method: "POST",
+        body: formData,
       });
+  
+      const imageUploadData = await imageUploadResponse.json();
+  
+      // Update user profile with uploaded image URL
+      await updateUserProfile(result.user, {
+        displayName: data.name,
+        photoURL: imageUploadData.data.url,
+      });
+  
+      // Post user data to your server
+      await axiosPublic.post("/users", {
+        ...data,
+        role: "user",
+        isBlocked: false,
+        photoURL: imageUploadData.data.url, // Assuming you need to save the image URL in user data
+      });
+  
+      // Show success message and navigate after successful registration
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "User created Successfully!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+  
+      router.push("/");
+    } catch (error) {
+      // Handle any errors that occurred during the process
+      console.error("Error:", error.message);
+      // You might want to show an error message to the user
+    }
   };
   
 
@@ -145,6 +133,8 @@ const Registration = () => {
   //     });
   // };
 
+  
+
   const handleGoogleLogin = () => {
     googleLogin()
       .then((res) => {
@@ -162,10 +152,8 @@ const Registration = () => {
       .catch((error) => console.error(error));
   };
 
-
   return (
     <>
-   
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-[500px] lg:text-left">
