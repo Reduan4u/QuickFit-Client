@@ -19,8 +19,8 @@ module.exports = {
       'old3.commonsupport.com',
       'cdn.discordapp.com',
       'lh3.googleusercontent.com',
-      "www.freepik.com"
-
+      "www.freepik.com",
+      'source.unsplash.com'
     ]
   },
 };

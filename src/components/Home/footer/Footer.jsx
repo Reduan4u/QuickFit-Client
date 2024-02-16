@@ -7,7 +7,7 @@ const Footer = () => {
 
      
 
-      <div className='flex gap-24 '>
+      <div className='flex md:gap-24 flex-col md:flex-row '>
       <aside>
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
           width="176.000000pt" height="90.000000pt" viewBox="0 0 276.000000 131.000000"
@@ -86,7 +86,7 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
       </nav>
       </div>
 
-     <div className='flex gap-56'>
+     <div className='flex md:gap-56 flex-col md:flex-row'>
      <nav className='flex mt-12 gap-2 flex-col'>
         <header className="footer-title">Company</header>
         <a href='/aboutUs' className="link link-hover">About us</a>

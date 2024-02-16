@@ -8,49 +8,53 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { FcGoogle } from "react-icons/fc";
-import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import axios from "axios";
-import { updateProfile } from "firebase/auth";
+
+
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, googleLogin } = useContext(AuthContext);
-  const axiosPublic = useAxiosPublic();
+  const { createUser, googleLogin,updateUserProfile } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic()
   const {
     register,
-    reset,
+  
     handleSubmit,
     formState: { errors },
   } = useForm();
   const router = useRouter();
 
-  const onSubmit = async(data) => {
-    createUser(data.email, data.password)
-
-    // Updating profile details.
-
-   
-
-
+  const onSubmit = async (data) => {
     try {
+      // Create user and get the result
       const result = await createUser(data.email, data.password);
   
-      // Update user profile
-      await updateProfile(result.user, {
-        photoURL: data?.photoURL,
-        displayName: data?.name,
+      // Upload image using FormData and fetch
+      const formData = new FormData();
+      formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
+  
+      const imageUploadResponse = await fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
+        method: "POST",
+        body: formData,
       });
   
-      console.log(result.user);
+      const imageUploadData = await imageUploadResponse.json();
+  
+      // Update user profile with uploaded image URL
+      await updateUserProfile(result.user, {
+        displayName: data.name,
+        photoURL: imageUploadData.data.url,
+      });
   
       // Post user data to your server
       await axiosPublic.post("/users", {
         ...data,
         role: "user",
         isBlocked: false,
+        photoURL: imageUploadData.data.url, // Assuming you need to save the image URL in user data
       });
   
       // Show success message and navigate after successful registration
@@ -61,6 +65,7 @@ const Registration = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+  
       router.push("/");
     } catch (error) {
       // Handle any errors that occurred during the process
@@ -68,6 +73,65 @@ const Registration = () => {
       // You might want to show an error message to the user
     }
   };
+  
+
+  // const onSubmit = (data) => {
+  //   console.log(data)
+  //   createUser(data.email, data.password)
+  //     .then((result) => {
+  //       console.log(result.user);
+  //       const formData = new FormData();
+  //       formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
+  
+  //       // Upload image using fetch
+  //       fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
+  //         method: "POST",
+  //         body: formData,
+  //       })
+  //         .then((res) => res.json())
+  //         .then((response) => {
+  //           console.log("Success:", response);
+            
+  //         })
+  //         .catch((error) => {
+  //           console.error("Error:", error);
+  //         });
+
+
+
+  //       axiosPublic
+  //         .post("/users", {
+  //           ...data,
+  //           role: "user",
+  //           isBlocked: false,
+  //         })
+  //         .then((res) => {
+  //           console.log(res);
+  //         })
+  //         .catch((err) => {
+  //           console.log(err.code);
+  //         });
+
+       
+        
+  //     })
+  //     .then(() => {
+  //       Swal.fire({
+  //         position: "center",
+  //         icon: "success",
+  //         title: "User created Successfully!",
+  //         showConfirmButton: false,
+  //         timer: 1500,
+  //       });
+  //       router.push("/");
+  //     })
+
+  //     .catch((error) => {
+  //       // Handle any errors that occurred during the process
+  //       console.error("Error:", error.message);
+  //       // You might want to show an error message to the user
+  //     });
+  // };
 
   
 
@@ -107,7 +171,7 @@ const Registration = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  {/* <span className="label-text">Name</span> */}
+                  <span className="label-text">Name</span>
                 </label>
                 {/* 
           used react-hook-form
@@ -129,13 +193,12 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  {/* <span className="label-text">Photo URL</span> */}
+                  <span className="label-text">Photo </span>
                 </label>
                 <input
-                  type="text"
+                  type="file"
                   {...register("photoURL", { required: true })}
-                  placeholder="Photo url"
-                  className="input border-orange-600  input-info"
+                  className="input border-orange-600 py-2 input-info"
                 />
                 {errors.photoURL && (
                   <span className="text-red-600">Photo url is required</span>
@@ -143,7 +206,7 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  {/* <span className="label-text">Email</span> */}
+                  <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
@@ -158,7 +221,7 @@ const Registration = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  {/* <span className="label-text">Password</span> */}
+                  <span className="label-text">Password</span>
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}

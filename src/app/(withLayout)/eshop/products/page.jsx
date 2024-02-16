@@ -1,12 +1,11 @@
+import React from 'react'
 
-const Order = async (props) => {
-    
-
-    return (
-        <div>
-            
-        </div>
-    );
+const ProductsPage  = () => {
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
-export default Order;
+export default ProductsPage 

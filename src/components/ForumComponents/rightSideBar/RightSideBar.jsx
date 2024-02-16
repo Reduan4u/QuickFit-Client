@@ -70,7 +70,7 @@ const RightSideBar = () => {
                             <div className='flex items-center justify-start gap-2 mt-4'>
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
 
-                                <Link href={`userprofile/${post?.userEmail}`} >
+                                <Link href={`/forum/userprofile/${post?.userEmail}`} >
                                 <p className="text-[#2a4bf1ee] text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
                                 </Link>
                             </div>
