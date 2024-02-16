@@ -1,6 +1,7 @@
 "use client"
 import ForumNavLink from "@/components/Common/ForumNavLink";
 import RightSideBar from "@/components/ForumComponents/rightSideBar/RightSideBar";
+import { IoChatbubblesSharp } from "react-icons/io5";
 import React from "react";
 
 const layout = ({ children }) => {
@@ -44,8 +45,11 @@ const layout = ({ children }) => {
             </li>
           </ul>
 
+          <ForumNavLink href="/chat">
+            <button className='bg-green-500 py-2 px-4 rounded-xl text-[#fff] flex justify-center items-center gap-2'>Global Chat <IoChatbubblesSharp /></button>
+          </ForumNavLink>
           <ForumNavLink href="/forum/post">
-            <button className='bg-[#6366F1] py-1 px-2 rounded-3xl text-[#fff]'>Create Post</button>
+            <button className='bg-[#6366F1] py-2 px-4 rounded-xl text-[#fff]'>Create Post</button>
           </ForumNavLink>
 
         </div>

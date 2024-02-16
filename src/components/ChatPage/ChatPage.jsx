@@ -69,10 +69,10 @@ const ChatPage = () => {
     }
   };
   return (
-    <div id="chat" className="w-screen h-screen bg-gray-100 ">
+    <div id="chat" className="w-screen h-screen bg-gray-800 ">
       {chatActive ? (
         <div className=" rounded-md w-full md:w-[80vw]  mx-auto">
-          <h1 className=" text-center text-4xl font-bold py-2">
+          <h1 className=" text-center text-4xl font-bold text-white py-10">
             Community Chat
           </h1>
           <div>
@@ -83,9 +83,8 @@ const ChatPage = () => {
               {messages.map((message, indx) => (
                 <div
                   key={indx}
-                  className={` flex rounded-md shadow-md my-5 w-fit ${
-                    userName === message.user && "ml-auto"
-                  }`}
+                  className={` flex rounded-md shadow-md my-5 w-fit ${userName === message.user && "ml-auto"
+                    }`}
                 >
                   <div className=" bg-green-400 flex justify-center items-center rounded-l-md">
                     <h3 className=" font-bold text-lg px-2">
