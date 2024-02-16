@@ -13,12 +13,12 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import axios from "axios";
-
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, googleLogin } = useContext(AuthContext);
-  const axiosPublic = useAxiosPublic()
+  const axiosPublic = useAxiosPublic();
   const {
     register,
     reset,
@@ -27,50 +27,49 @@ const Registration = () => {
   } = useForm();
   const router = useRouter();
 
-  const onSubmit = (data) => {
+  const onSubmit = async(data) => {
     createUser(data.email, data.password)
-      .then((result) => {
-        console.log(result.user);
 
-        axiosPublic
-          .post("/users", {
-            ...data,
-            role: "user",
-            isBlocked: false,
-          })
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err.code);
-          });
+    // Updating profile details.
 
-        //  return updateUserProfile(data.name, data.photoURL)
-        // .then(() => {
-        //   //create user entry in the database//
-        //   const userInfo = {
-        //     name:data.name,
-        //     email:data.email
-        //   }
-        // })
-      })
-      .then(() => {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "User created Successfully!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        router.push("/");
-      })
+   
 
-      .catch((error) => {
-        // Handle any errors that occurred during the process
-        console.error("Error:", error.message);
-        // You might want to show an error message to the user
+
+    try {
+      const result = await createUser(data.email, data.password);
+  
+      // Update user profile
+      await updateProfile(result.user, {
+        photoURL: data?.photoURL,
+        displayName: data?.name,
       });
+  
+      console.log(result.user);
+  
+      // Post user data to your server
+      await axiosPublic.post("/users", {
+        ...data,
+        role: "user",
+        isBlocked: false,
+      });
+  
+      // Show success message and navigate after successful registration
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "User created Successfully!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      router.push("/");
+    } catch (error) {
+      // Handle any errors that occurred during the process
+      console.error("Error:", error.message);
+      // You might want to show an error message to the user
+    }
   };
+
+  
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -89,10 +88,8 @@ const Registration = () => {
       .catch((error) => console.error(error));
   };
 
-
   return (
     <>
-   
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center w-[500px] lg:text-left">
