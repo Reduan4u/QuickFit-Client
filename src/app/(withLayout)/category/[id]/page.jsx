@@ -19,29 +19,29 @@ const DynamicCategory = async ({ params }) => {
             <CategoryHeading params={params}></CategoryHeading>
 
 
-           <div className="">
-             {/* Recent Article */}
-             <div className="bg-primary text-white font-semibold text-center my-8">Recent Articles</div>
-            <div className=" mb-20 border-y-4 border-primary">
-                <AllArticle params={params}></AllArticle>
+            <div className="">
+                {/* Recent Article */}
+                <div className="bg-primary text-white font-semibold text-center my-8">Recent Articles</div>
+                <div className=" mb-20 border-y-4 border-primary">
+                    <AllArticle params={params}></AllArticle>
+                </div>
+
+
+                {/* {Category shortDescription} */}
+                <ShortDescription params={params}></ShortDescription>
+
+
+                {/* Quesyions */}
+                <Questions params={params}></Questions>
+
+
+                {/* Book */}
+                <Book params={params}></Book>
+
+                <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
+                    <Link href='/'><LeftBtn></LeftBtn></Link>
+                </div>
             </div>
-
-
-            {/* {Category shortDescription} */}
-            <ShortDescription params={params}></ShortDescription>
-
-
-            {/* Quesyions */}
-            <Questions params={params}></Questions>
-
-
-            {/* Book */}
-            <Book params={params}></Book>
-
-            <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
-                <Link href='/'><LeftBtn></LeftBtn></Link>
-            </div>
-           </div>
 
 
         </div>

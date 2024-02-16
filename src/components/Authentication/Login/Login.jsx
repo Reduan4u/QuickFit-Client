@@ -10,7 +10,6 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
-import axios from "axios";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 
 const Login = ({ path }) => {
