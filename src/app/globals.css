@@ -7,29 +7,31 @@
 @tailwind utilities;
 
 input[type="radio"]:checked {
-    outline: none; /* Removes the default focus border */
-    /* border-color: blue; Change border color when checked */
-    color: blue; /* Change background color when checked */ /* Change text color when checked */
-  }
+  outline: none;
+  /* Removes the default focus border */
+  /* border-color: blue; Change border color when checked */
+  color: blue;
+  /* Change background color when checked */
+  /* Change text color when checked */
+}
 
-  *{
-    font-family: "Ubuntu", sans-serif;
-    scroll-behavior: smooth;
-    padding: 0;
-    margin: 0;
-    border: none;
+* {
+  font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+
 }
 
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 30px;
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition-delay: 2ms;
-    background-color: rgb(175, 164, 164);
+  border-radius: 30px;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: 2ms;
+  background-color: rgb(175, 164, 164);
 }
-
