@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@lottiefiles/lottie-player": "^2.0.3",
     "@lottiefiles/react-lottie-player": "^3.5.3",
+    "@mui/material": "^5.15.10",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.16",
     "@mui/x-charts": "^6.19.3",
     "@tanstack/react-query": "^5.17.19",
     "aos": "^2.3.4",
@@ -41,6 +45,7 @@
     "react-tabs": "^6.0.2",
     "react-toastify": "^10.0.4",
     "recharts": "^2.11.0",
+    "styled-components": "^6.1.8",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5"

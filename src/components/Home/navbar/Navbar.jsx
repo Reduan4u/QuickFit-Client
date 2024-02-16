@@ -3,19 +3,23 @@
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-// import React, { useContext } from "react";
-import { MdForwardToInbox } from "react-icons/md";
-import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const [showOptions, setShowOption] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
   const [role, setRole] = useState();
   const axios = useAxiosPublic();
   const { user, logOut } = useContext(AuthContext);
   console.log(role);
   console.log(user?.email);
+
+  const handleProfileClick = () => {
+    setShowOption(!showOptions);
+  };
 
   useEffect(() => {
     axios
@@ -23,7 +27,6 @@ const Navbar = () => {
       .get(`/users/${user?.email}`)
 
       .then((res) => {
-        console.log(res.data.role);
         setRole(res.data.role);
       })
       .catch((err) => {
@@ -38,31 +41,26 @@ const Navbar = () => {
   const navLinkClass =
     "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
 
-  const handleSingOut = () => {
-    logOut().then(
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "User logOut Successfully!",
-        showConfirmButton: false,
-        timer: 1500,
-      })
-    );
-  };
 
   const navLink = (
     <>
-      <div className="capitalize">
+      <div className="capitalize flex lg:flex-row flex-col gap-2 lg:gap-0 ">
         <NavLink href="/" className={`${navLinkClass} `}>
           Home
         </NavLink>
 
-        <NavLink href="/eatBetter" className={`${navLinkClass} `}>
-          Eat Better
-        </NavLink>
-
         <NavLink href="/getFit" className={`${navLinkClass} `}>
           Get Fit
+        </NavLink>
+        <NavLink
+          href="/services/nutrition"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
+          Services
+        </NavLink>
+        <NavLink
+          href="/tracker"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
+          Tracker
         </NavLink>
         <NavLink href="/calculator" className={`${navLinkClass} `}>
           Calculator
@@ -74,65 +72,56 @@ const Navbar = () => {
           Forum
         </NavLink>
 
-        <NavLink
-          href="/services/nutrition"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}
-        >
-          Services
-        </NavLink>
-        {role == "admin" && (
-          <NavLink
-            href="/adminDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            Dashboard
-          </NavLink>
-        )}
-        {role === "publisher" && (
-          <NavLink
-            href="/instructorDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}
-          >
-            Dashboard
-          </NavLink>
-        )}
 
 
-        <div className="dropdown dropdown-hover m-0">
-          <div tabIndex={0} role="button" className={`${navLinkClass}  `}>
-            <NavLink href="/more" className={`${navLinkClass}  `}>
+
+
+        <div className="lg:flex lg:items-center lg:justify-end lg:space-x-8">
+          <div className="relative">
+            <div
+              tabIndex={0}
+              role="button"
+              className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? "text-orange-300" : ""
+                }`}
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            // onBlur={() => setIsDropdownOpen(false)}
+            >
               More
-            </NavLink>
+            </div>
+
+            {isDropdownOpen && (
+              <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12">
+
+                < NavLink href="/tips" className={`${navLinkClass} `}>
+                  Tips
+                </NavLink>
+                <NavLink href="/eatBetter" className={`${navLinkClass} `}>
+                  Eat Better
+                </NavLink>
+                <NavLink href="/contactUs" className={`${navLinkClass} `}>
+                  Contact
+                </NavLink>
+                <NavLink href="/aboutUs" className={`${navLinkClass} `}>
+                  About Us
+                </NavLink>
+                <NavLink href="/experts" className={`${navLinkClass} `}>
+                  Our Expert
+                </NavLink>
+                <NavLink href="/bookmarks" className={`${navLinkClass} `}>
+                  Bookmarks
+                </NavLink>
+              </ul>
+            )}
           </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 space-y-2"
-          >
-            <NavLink href="/tips" className={`${navLinkClass}  `}>
-              Tips
-            </NavLink>
-            <NavLink href="/contactUs" className={`${navLinkClass}  `}>
-              Contact
-            </NavLink>
-            <NavLink href="/aboutUs" className={`${navLinkClass} `}>
-              About Us
-            </NavLink>
-            <NavLink href="/experts" className={`${navLinkClass} `}>
-              Our Expert
-            </NavLink>
-            <NavLink href="/bookmarks" className={`${navLinkClass}  `}>
-              Bookmarks
-            </NavLink>
-          </ul>
         </div>
 
-        {/* <NavLink
-        href="/more"
-        className={`${navLinkClass} `}
-      >
-        More
-      </NavLink> */}
-      </div>
+
+
+
+
+
+
+      </div >
     </>
   );
 
@@ -147,8 +136,7 @@ const Navbar = () => {
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+                stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -159,8 +147,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
-            >
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52">
               {navLink}
             </ul>
           </div>
@@ -171,16 +158,14 @@ const Navbar = () => {
               width="76.000000pt"
               height="31.000000pt"
               viewBox="0 0 276.000000 131.000000"
-              preserveAspectRatio="xMidYMid meet"
-            >
+              preserveAspectRatio="xMidYMid meet">
               <metadata>
                 Created by potrace 1.10, written by Peter Selinger 2001-2011
               </metadata>
               <g
                 transform="translate(0.000000,131.000000) scale(0.050000,-0.050000)"
                 fill="#000000"
-                stroke="none"
-              >
+                stroke="none">
                 <path
                   d="M2911 2514 c-70 -131 -63 -173 57 -321 l88 -108 -143 -148 c-247
 -256 -657 -460 -766 -382 -58 41 -98 52 -183 47 -65 -3 -231 -165 -285 -280
@@ -248,14 +233,49 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="flex gap-2 items-center justify-center ">
-              <p className="  text-orange-500 font-bold">{user?.email}</p>
-              <button onClick={handleSingOut} className="btn">
-                Sing Out
-              </button>
+            <div className="avatar online" onClick={handleProfileClick}>
+              <div className="w-12 rounded-full">
+                <img src={user?.photoURL} alt="profile" />
+              </div>
+              {showOptions && (
+                <ul className="dropdown-content text-md font-semibold  z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 ">
+                  <p className="font-bold italic text-center text-secondary"
+                  >
+                    {user.displayName}</p>
+                  <hr />
+
+                  <Link
+                    href="/profile"
+                    className="text-center hover:border-b-2 py-1 hover:border-secondary w-2/3 m-auto"
+                  >
+                    Profile
+                  </Link>
+                  {role == "admin" && (
+                    <Link
+                      href="/adminDashboard"
+                      className="text-center hover:border-b-2 hover:border-secondary w-2/3 m-auto"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                  {role === "publisher" && (
+                    <Link
+                      href="/instructorDashboard"
+                      className="text-center hover:border-b-2 hover:border-secondary w-2/3 m-auto"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+
+                  <hr />
+                  <button className="text-center btn " onClick={logOut}>
+                    Logout
+                  </button>
+                </ul>
+              )}
             </div>
           ) : (
-            <Link href="/login" className=" font-bold">
+            <Link href="/login" className="font-bold">
               Login
             </Link>
           )}

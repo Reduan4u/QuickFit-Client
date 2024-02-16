@@ -1,4 +1,4 @@
-function Ebutton({ children, hover }) {
+function Ebutton({ children }) {
   return (
     <div>
       <button className="px-8 py-3 mt-2 font-medium text-primary bg-black hover: transition-all duration-300 relative hover:scale-105">
