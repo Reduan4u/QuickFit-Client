@@ -1,5 +1,15 @@
+"use client";
+import useGetTracker from "@/hooks/useGetTracker";
+import EHeading from "../Common/EHeading";
+import AddExerciseForm from "./AddExerciseForm";
+import Loading1 from "../Loading/Loading1";
+import Link from "next/link";
+
 const Tracker = () => {
- const cardClass1 = "flex flex-col justify-center item-center w-36 bg-white text-center px-2 py-4 rounded shadow-md"
+  const { isPending, tracker } = useGetTracker();
+
+  const cardClass1 =
+    "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
 
   const data = [
     {
@@ -9,22 +19,10 @@ const Tracker = () => {
       goal: 10000,
     },
     {
-      name: "Calories Burned",
-      value: 250,
-      unit: "kcal",
-      goal: 500,
-    },
-    {
       name: "Water Intake",
       value: 1500,
       unit: "ml",
       goal: 2000,
-    },
-    {
-      name: "Weight",
-      value: 70,
-      unit: "kg",
-      goal: 65,
     },
     {
       name: "Sleep",
@@ -32,19 +30,44 @@ const Tracker = () => {
       unit: "hours",
       goal: 8,
     },
+    {
+      name: "Push-ups",
+      value: 20,
+      unit: "reps",
+      goal: 30,
+    },
+    {
+      name: "Swimming",
+      value: 1000,
+      unit: "meters",
+      goal: 1500,
+    },
+    {
+      name: "Cycling",
+      value: 15,
+      unit: "km",
+      goal: 20,
+    },
   ];
 
+  if (isPending) {
+    return <Loading1 />;
+  }
+
   return (
-<div className="bg-black">
-<div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center py-10">
-      {data?.length > 0 &&
-        data?.map((item, idx) => (
-          <div key={idx} className="bg-gradient-to-r from-primary to-secondary p-3">
+    <div>
+      <EHeading>Today's Progress</EHeading>
+
+      <div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center ">
+        {tracker?.map((item) => (
+          <div
+            key={item?._id}
+            className="bg-gradient-to-r from-primary to-secondary p-3">
             {/* value and target start */}
             <div className="flex items-center justify-between gap-4">
               {/* 1st card  */}
               <div className={cardClass1}>
-                <h2 className="text-lg font-semibold">{item?.name}</h2>
+                <h2 className="text-lg font-semibold">{item?.exercise}</h2>
                 <p>
                   {item?.value} {item?.unit}
                 </p>
@@ -54,7 +77,7 @@ const Tracker = () => {
               <div className={cardClass1}>
                 <h2 className="text-lg font-semibold">Target</h2>
                 <p>
-                  {item?.goal} {item?.unit}
+                  {item?.target} {item?.unit}
                 </p>
               </div>
             </div>
@@ -62,18 +85,25 @@ const Tracker = () => {
 
             {/* progress bar  */}
             <div className="flex justify-center items-center flex-row mt-4">
-              <div
-                className="radial-progress bg-tertiary"
-                style={{ "--value": (item.value/item.goal)*100 }}
-                role="progressbar">
-                { parseInt((item.value/item.goal)*100) }%
-              </div>
+              <Link href={`/tracker/update/${item?._id}`}>
+                <div
+                  className="radial-progress bg-tertiary hover:scale-105 transition duration-300"
+                  style={{ "--value": (item.value / item?.target) * 100 }}
+                  role="progressbar">
+                  {parseInt((item.value / item?.target) * 100)}%
+                </div>
+              </Link>
             </div>
             {/* progress bar end  */}
           </div>
         ))}
+      </div>
+
+      <div id="exerciseForm" className="mt-12">
+        <EHeading>Add Exercise+</EHeading>
+        <AddExerciseForm />
+      </div>
     </div>
-</div>
   );
 };
 
