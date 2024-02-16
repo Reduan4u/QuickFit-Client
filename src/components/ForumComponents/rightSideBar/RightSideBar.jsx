@@ -53,7 +53,7 @@ const RightSideBar = () => {
                     value={searchTerm}
                 />
 
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch}></button>
               
             </div>
 
