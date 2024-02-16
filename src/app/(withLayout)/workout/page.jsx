@@ -1,9 +1,10 @@
+import PrivateRoute from '@/components/PrivateRoute/PrivateRoute';
 import WBanner from '@/components/WorkOuts/WBanner/WBanner';
 
 const Workout = () => {
     return (
         <div>
-            <WBanner></WBanner>
+            <PrivateRoute><WBanner></WBanner></PrivateRoute>
         </div>
     );
 };

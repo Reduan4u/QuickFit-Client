@@ -53,6 +53,7 @@ const Users = () => {
     };
 
 
+
     return (
         <div className="antialiased font-sans bg-white shadow-xl mx-3  rounded-md w-full h-[65%]">
             <div className="container mx-auto px-4 sm:px-8">
@@ -148,7 +149,8 @@ const Users = () => {
                                                 style={{ color: currentPage === n ? 'white' : 'inherit', backgroundColor: currentPage === n ? 'orange' : 'inherit', borderRadius: currentPage === n ? '4px' : 'inherit' }}
 
                                             >
-                                                <a href="" onClick={() => changeCPage(n)}>{n}</a>
+                                                <a href="" onClick={() => changeCPage(id)}>{n}</a>
+                                                
                                             </button>
                                         ))
                                     }
