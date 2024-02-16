@@ -5,7 +5,7 @@ import io from "socket.io-client";
 import "./style.css";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 
-const socket = io.connect("http://localhost:3001/");
+const socket = io.connect("https://socket-smoky.vercel.app/");
 
 const ChatPage = () => {
   const axios = useAxiosPublic();
@@ -28,6 +28,7 @@ const ChatPage = () => {
 
   useEffect(() => {
     socket.on("received_message", (message) => {
+      console.log(message);
       setMessages([...messages, message]);
     });
   }, [messages]);
@@ -57,6 +58,8 @@ const ChatPage = () => {
         ":" +
         new Date(Date.now()).getMinutes(),
     };
+
+    console.log(messageData);
 
     if (!newMessage == "") {
       socket.emit("send_message", messageData);
