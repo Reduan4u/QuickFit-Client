@@ -1,14 +1,12 @@
-"use client"
+"use client";
 import useGetTracker from "@/hooks/useGetTracker";
 import EHeading from "../Common/EHeading";
 import AddExerciseForm from "./AddExerciseForm";
 import Loading1 from "../Loading/Loading1";
 import Link from "next/link";
 
-
-
 const Tracker = () => {
-  const {isPending, tracker} = useGetTracker()
+  const { isPending, tracker } = useGetTracker();
 
   const cardClass1 =
     "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
@@ -52,68 +50,57 @@ const Tracker = () => {
     },
   ];
 
-  if(isPending){
-    return <Loading1 />
+  if (isPending) {
+    return <Loading1 />;
   }
-
-  console.log(tracker)
-  
 
   return (
     <div>
-      {/* <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between w-10/12 mx-auto"> */}
-        <EHeading>Today's Progress</EHeading>
-        {/* <button>
-          <Ebutton2 bgColor={"bg-tertiary"}>Add Exercise +</Ebutton2>
-        </button> */}
-      {/* </div> */}
-
-      {/* <p className="text-primary">{tracker?.length}</p> */}
+      <EHeading>Today's Progress</EHeading>
 
       <div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center ">
-
-        {
-         tracker?.map((item) => (
-            <div
-              key={item?._id}
-              className="bg-gradient-to-r from-primary to-secondary p-3">
-              {/* value and target start */}
-              <div className="flex items-center justify-between gap-4">
-                {/* 1st card  */}
-                <div className={cardClass1}>
-                  <h2 className="text-lg font-semibold">{item?.exercise}</h2>
-                  <p>
-                    {item?.value} {item?.unit}
-                  </p>
-                </div>
-
-                {/* 2nd card  */}
-                <div className={cardClass1}>
-                  <h2 className="text-lg font-semibold">Target</h2>
-                  <p>
-                    {item?.target} {item?.unit}
-                  </p>
-                </div>
+        {tracker?.map((item) => (
+          <div
+            key={item?._id}
+            className="bg-gradient-to-r from-primary to-secondary p-3">
+            {/* value and target start */}
+            <div className="flex items-center justify-between gap-4">
+              {/* 1st card  */}
+              <div className={cardClass1}>
+                <h2 className="text-lg font-semibold">{item?.exercise}</h2>
+                <p>
+                  {item?.value} {item?.unit}
+                </p>
               </div>
-              {/* value and target end */}
 
-              {/* progress bar  */}
-              <div className="flex justify-center items-center flex-row mt-4">
-               <Link href={`/tracker/update/${item?._id}`}>
-               <div
+              {/* 2nd card  */}
+              <div className={cardClass1}>
+                <h2 className="text-lg font-semibold">Target</h2>
+                <p>
+                  {item?.target} {item?.unit}
+                </p>
+              </div>
+            </div>
+            {/* value and target end */}
+
+            {/* progress bar  */}
+            <div className="flex justify-center items-center flex-row mt-4">
+              <Link href={`/tracker/update/${item?._id}`}>
+                <div
                   className="radial-progress bg-tertiary hover:scale-105 transition duration-300"
                   style={{ "--value": (item.value / item?.target) * 100 }}
                   role="progressbar">
                   {parseInt((item.value / item?.target) * 100)}%
-                </div></Link>
-              </div>
-              {/* progress bar end  */}
+                </div>
+              </Link>
             </div>
-          ))}
+            {/* progress bar end  */}
+          </div>
+        ))}
       </div>
 
       <div id="exerciseForm" className="mt-12">
-      <EHeading>Add Exercise+</EHeading>
+        <EHeading>Add Exercise+</EHeading>
         <AddExerciseForm />
       </div>
     </div>
