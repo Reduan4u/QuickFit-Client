@@ -3,7 +3,6 @@ import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 const MonthlyBlogs = () => {
   const [data, setData] = useState();

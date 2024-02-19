@@ -1,19 +1,16 @@
 "use client";
 
-import Button1 from "@/components/Common/Button1";
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-// import React, { useContext } from "react";
-import { MdForwardToInbox } from "react-icons/md";
-import Swal from "sweetalert2";
 
 const Navbar = () => {
   const [showOptions, setShowOption] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
   const [role, setRole] = useState();
   const axios = useAxiosPublic();
   const { user, logOut } = useContext(AuthContext);
@@ -44,17 +41,6 @@ const Navbar = () => {
   const navLinkClass =
     "justify-center font-medium mr-6 pb-1 font-light border-b-2 hover: border-transparent transition-all duration-700 hover:delay-200";
 
-  const handleSingOut = () => {
-    logOut().then(
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "User logOut Successfully!",
-        showConfirmButton: false,
-        timer: 1500,
-      })
-    );
-  };
 
   const navLink = (
     <>
@@ -63,12 +49,18 @@ const Navbar = () => {
           Home
         </NavLink>
 
-        <NavLink href="/eatBetter" className={`${navLinkClass} `}>
-          Eat Better
-        </NavLink>
-
         <NavLink href="/getFit" className={`${navLinkClass} `}>
           Get Fit
+        </NavLink>
+        <NavLink
+          href="/services/nutrition"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
+          Services
+        </NavLink>
+        <NavLink
+          href="/tracker"
+          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
+          Tracker
         </NavLink>
         <NavLink href="/calculator" className={`${navLinkClass} `}>
           Calculator
@@ -80,45 +72,31 @@ const Navbar = () => {
           Forum
         </NavLink>
 
-        <NavLink
-          href="/services/nutrition"
-          className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500 `}>
-          Services
-        </NavLink>
-        {role == "admin" && (
-          <NavLink
-            href="/adminDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
-            Dashboard
-          </NavLink>
-        )}
-        {role === "publisher" && (
-          <NavLink
-            href="/instructorDashboard"
-            className={`${navLinkClass} hover:delay-200 hover:border-b-slate-500`}>
-            Dashboard
-          </NavLink>
-        )}
+
+
+
 
         <div className="lg:flex lg:items-center lg:justify-end lg:space-x-8">
           <div className="relative">
             <div
               tabIndex={0}
               role="button"
-              className={`${navLinkClass} text-xl ml-4 ${
-                isDropdownOpen ? "text-orange-300" : ""
-              }`}
+              className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? "text-orange-300" : ""
+                }`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              onBlur={() => setIsDropdownOpen(false)}>
+            // onBlur={() => setIsDropdownOpen(false)}
+            >
               More
             </div>
+
             {isDropdownOpen && (
               <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12">
-                <NavLink href="/tracker" className={`${navLinkClass} `}>
-                  Fitness Tracker
-                </NavLink>
-                <NavLink href="/tips" className={`${navLinkClass} `}>
+
+                < NavLink href="/tips" className={`${navLinkClass} `}>
                   Tips
+                </NavLink>
+                <NavLink href="/eatBetter" className={`${navLinkClass} `}>
+                  Eat Better
                 </NavLink>
                 <NavLink href="/contactUs" className={`${navLinkClass} `}>
                   Contact
@@ -136,7 +114,14 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </div>
+
+
+
+
+
+
+
+      </div >
     </>
   );
 
@@ -253,12 +238,37 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
                 <img src={user?.photoURL} alt="profile" />
               </div>
               {showOptions && (
-                <ul className="dropdown-content text-md font-bold z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 ">
-                  <p>{user.displayName}</p>
+                <ul className="dropdown-content text-md font-semibold  z-[1] w-24 lg:w-40  gap-1 menu p-2 shadow bg-base-100 rounded-md my-1 space-y-2 absolute top-12 mt-4 lg:-left-12 -left-6 ">
+                  <p className="font-bold italic text-center text-secondary"
+                  >
+                    {user.displayName}</p>
+                  <hr />
 
-                  <Link href="/profile">Profile</Link>
-                  <Link href="/instructorDashboard">Dashboard</Link>
-                  <button className="text-left" onClick={logOut}>
+                  <Link
+                    href="/profile"
+                    className="text-center hover:border-b-2 py-1 hover:border-secondary w-2/3 m-auto"
+                  >
+                    Profile
+                  </Link>
+                  {role == "admin" && (
+                    <Link
+                      href="/adminDashboard"
+                      className="text-center hover:border-b-2 hover:border-secondary w-2/3 m-auto"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                  {role === "publisher" && (
+                    <Link
+                      href="/instructorDashboard"
+                      className="text-center hover:border-b-2 hover:border-secondary w-2/3 m-auto"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+
+                  <hr />
+                  <button className="text-center btn " onClick={logOut}>
                     Logout
                   </button>
                 </ul>

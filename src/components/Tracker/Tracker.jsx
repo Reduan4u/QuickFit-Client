@@ -56,7 +56,7 @@ const Tracker = () => {
 
   return (
     <div>
-      <EHeading>Today's Progress</EHeading>
+      <EHeading>Todays Progress</EHeading>
 
       <div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center ">
         {tracker?.map((item) => (
