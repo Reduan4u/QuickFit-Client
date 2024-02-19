@@ -4,13 +4,13 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import UseContext from "@/hooks/UseContext";
 import Swal from "sweetalert2";
-import useGetTracker from "@/hooks/useGetTracker";
+import UseTracker from "@/hooks/UseTracker";
 
 
 const AddExerciseForm = () => {
   const axiosPublic = useAxiosPublic()
   const {user} = UseContext()
-  const {refetch} = useGetTracker()
+  const {refetch} = UseTracker()
 
   const buttonClasses =
     "text-xl font-semibold bg-tertiary text-black hover:shadow-xl hover:scale-105 transition-all duration px-3 py-2";
@@ -68,9 +68,9 @@ const AddExerciseForm = () => {
             )}
           </div>
 
-          {/* reps field  */}
+          {/* target field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 font-bold text-black">Targeted Reps</h2>
+            <h2 className="text-lg mb-2 font-bold text-black">Target</h2>
             <input
               type="number"
               {...register("target", { required: true })}

@@ -3,7 +3,7 @@ import TrackerNav from "@/components/Tracker/trackerNav/TrackerNav";
 
 const TrackerPage = () => {
   return (
-    <div className="bg-black pb-10">
+    <div className="bg-tertiary pb-10">
       <TrackerNav />
       <Tracker />
     </div>
