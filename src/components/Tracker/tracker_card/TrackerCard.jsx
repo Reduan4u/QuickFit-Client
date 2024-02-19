@@ -1,13 +1,43 @@
+"use client";
+import UseTracker from "@/hooks/UseTracker";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Link from "next/link";
 import { BsCheck } from "react-icons/bs";
 import { FaTrash } from "react-icons/fa";
-import { IoCheckmarkDoneCircle } from "react-icons/io5";
+import { FaEdit } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const TrackerCard = ({ item }) => {
+  const axiosPublic = useAxiosPublic();
+  const { refetch } = UseTracker();
   const cardClass1 =
     "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
 
   const { value, target, unit, _id, exercise, status } = item;
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosPublic.delete(`/tracker/${id}`).then((res) => {
+          refetch()
+        });
+        Swal.fire({
+          title: "Deleted!",
+          text: `${exercise} has been deleted.`,
+          icon: "success"
+        });
+      }
+    });
+
+  };
 
   return (
     <div className="bg-gradient-to-r from-primary to-secondary p-3">
@@ -34,9 +64,9 @@ const TrackerCard = ({ item }) => {
       {/*== progress bar , edit, delete== */}
       <div className="flex justify-center  items-center flex-row mt-4 mx-2 ">
         {/* progress  */}
-        <div className="flex justify-center items-center w-1/2">
+        <div className="flex justify-end items-center w-2/3">
           <div
-            className="radial-progress bg-white hover:scale-110 text-lg transition duration-300"
+            className="radial-progress bg-white text-lg transition duration-300"
             style={{ "--value": (value / target) * 100 }}
             role="progressbar">
             {parseInt((value / target) * 100) > 99.99 ||
@@ -48,19 +78,18 @@ const TrackerCard = ({ item }) => {
           </div>
         </div>
 
-        {/* edit , delete  */}
-        <div className="w-1/2 flex justify-end items-baseline">
-          <button>
-            <Link
-              href={
-                parseInt((value / target) * 100) > 99.99 || status == "complete"
-                  ? ""
-                  : `/tracker/update/${_id}`
-              }>
-              edit
+        {/*= edit , delete  =*/}
+        <div className="w-1/3 flex justify-end items-baseline gap-5 text-white">
+          {/* edit  */}
+          <button className={`hover:scale-125 transition duration-200 ${parseInt((value / target) * 100) > 99.99 || status == "complete" ? "hidden" : ''}`}>
+            <Link href={`/tracker/update/${_id}`}>
+              <FaEdit />
             </Link>
           </button>
-          <button>
+          {/* delete  */}
+          <button
+            onClick={() => handleDelete(_id)}
+            className="hover:scale-125 transition duration-200">
             <FaTrash />
           </button>
         </div>

@@ -4,7 +4,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='bg-black min-h-screen'>
+    <div className=' min-h-screen'>
        <div className="flex flex-col justify-center items-center">
 <div>
 <TrackerNav />
