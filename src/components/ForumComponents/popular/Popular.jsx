@@ -35,7 +35,7 @@ const Popular = () => {
 
         {
             posts?.map(post=>(
-                <div key={post._id} className='border border-gray-700 my-4 mx-4 text-[#fff] bg-[#102032]'>
+                <div key={post._id} className='border  border-gray-700 my-4 max-w-2xl mx-auto text-[#fff] bg-[#102032]'>
             <div className='mx-8 my-6'>
                 <div>
                     <div className='flex items-center justify-start gap-6'>

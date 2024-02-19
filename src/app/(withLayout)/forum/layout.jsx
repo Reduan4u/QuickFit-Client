@@ -57,14 +57,16 @@ const layout = ({ children }) => {
 
 
 
-      <div className="flex items-start justify-between">
+      <div className="lg:flex items-start justify-between md: mx-auto md:w-auto">
         {/* #### only this  component is being renderd */}
-        <div className="flex w-[70%]">
-          <div className="w-full">{children}</div>
+        <div className="lg:flex w-[70%] mx-auto md:w-[60%] sm:w-full">
+  <div className="w-full">
+    {children}
+  </div>
+</div>
 
-        </div>
 
-        <div className="flex-1 w-[30%]">
+        <div className="lg:flex-1 w-[30%] mx-auto md:w-[60%]">
 
           <RightSideBar></RightSideBar>
 

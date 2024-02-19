@@ -113,10 +113,10 @@ const Navbar = () => {
               More
             </div>
             {isDropdownOpen && (
-              <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12">
+               <ul className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52 my-1 space-y-2 absolute top-12 lg:left-0 left-12">
                 <NavLink href="/tracker" className={`${navLinkClass} `}>
-                  Fitness Tracker
-                </NavLink>
+      Fitness Tracker
+    </NavLink>
                 <NavLink href="/tips" className={`${navLinkClass} `}>
                   Tips
                 </NavLink>
