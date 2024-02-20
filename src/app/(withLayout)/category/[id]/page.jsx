@@ -4,6 +4,7 @@ import Book from "@/components/Home/healthAndFitness/Book/Book";
 import LeftBtn from "@/components/Home/healthAndFitness/Btn/LeftBtn";
 import CategoryHeading from "@/components/Home/healthAndFitness/CategoryHeading/CategoryHeading";
 import Questions from "@/components/Home/healthAndFitness/Questions/Questions";
+import RelatedCategory from "@/components/Home/healthAndFitness/RelatedCategory/RelatedCategory";
 import ShortDescription from "@/components/Home/healthAndFitness/shortDescription/ShortDescription";
 import Link from "next/link";
 
@@ -37,6 +38,9 @@ const DynamicCategory = async ({ params }) => {
 
                 {/* Book */}
                 <Book params={params}></Book>
+
+                {/* Related Category */}
+                <RelatedCategory  params={params}></RelatedCategory>
 
                 <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
                     <Link href='/'><LeftBtn></LeftBtn></Link>

@@ -12,7 +12,7 @@ const Book = async ({ params }) => {
     const book = await bookres.json();
     return (
         <div>
-            <div className="hero min-h-full border-t-2 w-10/12 mx-auto">
+            <div className="hero min-h-full border-y-2 w-10/12 mx-auto">
                 <div className="hero-content flex-col md:flex-row gap-20">
                     <div className="rounded-lg">
                         <h1 className=" py-5 text-xl font-bold">You might also be interested in...</h1>
