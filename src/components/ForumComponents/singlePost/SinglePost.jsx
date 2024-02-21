@@ -9,6 +9,7 @@ import CommentForm from '../commentForm/CommentForm';
 import { AuthContext } from '@/components/Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
+import { AiTwotoneLike } from 'react-icons/ai';
 
 const SinglePost = ({ params }) => {
   const axiosPublic = useAxiosPublic();
@@ -56,22 +57,26 @@ const SinglePost = ({ params }) => {
   };
 
   return (
-    <div className='text-[#f2f2f2] mx-auto max-w-3xl px-4 md:px-8'>
+    <div className='text-[#f2f2f2]  px-4 md:px-8'>
 
-      <div className='flex flex-col md:flex-row items-center justify-between gap-4 md:gap-10 mt-4 md:mt-8'>
+      <div className='flex flex-col md:flex-row items-center justify-start md:gap-4 lg:gap-8  mt-4 md:mt-8'>
 
         <div onClick={postLike} className='border border-gray-700 px-1 py-1 rounded-sm cursor-pointer  hover:bg-[#102032]'>
-          <FaAngleUp className='text-[#818CF8] text-center ' />
-          <div className='text-[#2a4bf1ee] text-[14px] text-center'>{singlePostData?.likes.length}</div>
+       
+        <div className=' flex items-center justify-center gap-2 px-1 py-1 rounded-sm'>
+                        {/* <FaAngleUp className='text-[#818CF8]' /> <span className='text-[#2a4bf1ee] text-[14px]'>{post?.likes.length}</span> */}
+                            <AiTwotoneLike  className='text-[#818CF8]' /> <span className='text-[#2a4bf1ee] text-[18px]'>{singlePostData?.likes.length}</span>
+                        </div>
+
         </div>
 
-        <h1 className='text-2xl md:text-6xl'>{singlePostData?.title}</h1>
+        <h1 className='text-2xl mt-4'>{singlePostData?.title}</h1>
 
       </div>
 
       <div className='mt-6 max-w-xl mx-auto'>
 
-        <div className='flex items-center justify-start gap-2 mt-4 md:mt-6'>
+        <div className='flex items-center justify-start gap-2 mx-auto w-[75%] lg:w-full md:w-full mt-4 md:mt-6'>
           <img src={singlePostData?.userPhoto} alt="avatar image" className='rounded-full h-4 w-4 md:h-8 md:w-8' />
 
           <p className='text-[#2a4bf1ee] text-[14px]'>

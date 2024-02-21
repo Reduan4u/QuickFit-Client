@@ -61,7 +61,7 @@ const layout = ({ children }) => {
 
       <div className="lg:flex items-start justify-between md: mx-auto md:w-auto">
         {/* #### only this  component is being renderd */}
-        <div className="lg:flex w-[70%] mx-auto md:w-[60%] sm:w-full">
+        <div className="lg:flex  mx-auto md:w-[60%] w-full">
   <div className="w-full">
     {children}
   </div>
