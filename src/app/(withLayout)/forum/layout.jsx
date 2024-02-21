@@ -19,37 +19,39 @@ const layout = ({ children }) => {
 
       <div className="">
 
-        <div className='mt-5 pb-5  flex items-center justify-between px-4'>
-          <ul className='flex items-center justify-center gap-8 text-[14px] text-[#97a4af]'>
-            <li className='hover:text-[#f2f2f2] cursor-pointer'>
-              <ForumNavLink href="/forum/announcement">announcement</ForumNavLink>
+      <div className="container">
+  <div className="nav-wrapper mt-5 pb-5">
+    <ul className="nav-list flex items-center justify-center gap-8 text-[14px] text-[#97a4af] lg:flex">
+      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+        <ForumNavLink href="/forum/announcement">announcement</ForumNavLink>
+      </li>
+      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+        <ForumNavLink href="/forum/popular">Popular</ForumNavLink>
+      </li>
+      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+        <ForumNavLink href="/forum/newest">Newest</ForumNavLink>
+      </li>
+      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+        <ForumNavLink href="/forum/health">Health</ForumNavLink>
+      </li>
+      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+        <ForumNavLink href="/forum/fitness">Fitness</ForumNavLink>
+      </li>
+    </ul>
 
-            </li>
+    <div className="  flex items-center justify-center mx-auto lg:w-[10%] mt-8 "> 
+    <ForumNavLink href="/forum/post" >
+      <button className="text-[#fff] bg-[#6366F1] py-1 px-2 rounded-3xl ">
+      Create Post
+      </button>
+      
+      </ForumNavLink>
+    </div>
+  </div>
+</div>
 
-            <li className='hover:text-[#f2f2f2] cursor-pointer'>
-              <ForumNavLink href="/forum/popular">Popular</ForumNavLink>
 
-            </li>
-            <li className='hover:text-[#f2f2f2] cursor-pointer '>
-              <ForumNavLink href="/forum/newest">Newest</ForumNavLink>
-
-            </li>
-            <li className='hover:text-[#f2f2f2] cursor-pointer '>
-              <ForumNavLink href="/forum/health">Health</ForumNavLink>
-
-            </li>
-            <li className='hover:text-[#f2f2f2] cursor-pointer '>
-              <ForumNavLink href="/forum/fitness">Fitness</ForumNavLink>
-
-            </li>
-          </ul>
-
-          <ForumNavLink href="/forum/post">
-            <button className='bg-[#6366F1] py-1 px-2 rounded-3xl text-[#fff]'>Create Post</button>
-          </ForumNavLink>
-
-        </div>
-      </div>
+</div>
 
       <div class="border-t border-gray-700 my-4 mx-4"></div>
 
