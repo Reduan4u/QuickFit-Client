@@ -68,7 +68,7 @@ const layout = ({ children }) => {
 </div>
 
 
-        <div className="lg:flex-1 w-[30%] mx-auto md:w-[60%]">
+        <div className="lg:flex-1 w-[90%] mx-auto md:w-[60%]">
 
           <RightSideBar></RightSideBar>
 
