@@ -1,5 +1,6 @@
 import LeftBtn from "@/components/Home/healthAndFitness/Btn/LeftBtn";
 import Link from "next/link";
+import RelatedWorkoutVideos from "./RelatedWorkoutVideos";
 
 const WorkoutVideos = async ({ params }) => {
 
@@ -49,9 +50,10 @@ const WorkoutVideos = async ({ params }) => {
                     </div>
                 </div>
             ))}
-            <div className="flex justify-end items-center py-5 px-5 w-full mx-auto">
+            <div className="flex justify-end items-center py-5  w-10/12 mx-auto">
                 <Link href={`/workout/${params.id}`}><LeftBtn></LeftBtn></Link>
             </div>
+            <RelatedWorkoutVideos params={params} category={workout}></RelatedWorkoutVideos>
         </div>
     );
 };
