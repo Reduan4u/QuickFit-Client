@@ -103,8 +103,8 @@ const SinglePost = ({ params }) => {
         </div>
 
         {singlePostData?.comments?.map((comment, index) => (
-          <div key={index} className="py-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-2">
+          <div key={index} className="py-4 px-4">
+            <div className="flex items-center justify-between gap-4">
               <div className='flex items-center justify-end gap-4 mb-2'>
                 <p className="text-blue-500 text-sm font-semibold">{comment?.userName ? comment.userName : comment?.userEmail}</p>
                 <p className="text-gray-500 text-sm">{moment(comment?.date).format("DD MMMM")}</p>
@@ -113,7 +113,7 @@ const SinglePost = ({ params }) => {
                 <button >Report</button> <FaBan />
               </div>
             </div>
-            <p className="text-sm text-[#f2f2f2] mt-6">{comment?.text}</p>
+            <p className="text-sm text-[#f2f2f2] mt-2">{comment?.text}</p>
           </div>
         ))}
       </div>
