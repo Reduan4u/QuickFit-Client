@@ -14,7 +14,7 @@ const AboutUs = async () => {
         <div className="hero-overlay bg-opacity-30"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="">
-            <h1 className="mb-5 text-white text-5xl font-bold">About Us</h1>
+            <h1 className="mb-5 text-primary text-5xl font-bold">About Us</h1>
             <p className="mb-5 font-medium text-xl text-white">QuickFit.com helps you live stronger, healthier and happier.</p>
           </div>
         </div>
@@ -22,12 +22,12 @@ const AboutUs = async () => {
 
       <div className="my-16 w-2/4 flex-wrap mx-auto rounded-md py-12 text-lg font-medium border border-red-500 flex gap-2 justify-center">
 
-        <a href="#our-mission" className="text-blue-600 scroll-link">Our Mission -</a>
-        <a href="#our-editorial-standards" className="text-blue-600 scroll-link">Our Editorial Standards -</a>
-        <a href="#our-team" className="text-blue-600 scroll-link">Our Team -</a>
-        <a href="#our-experts" className="text-blue-600 scroll-link">Our Experts -</a>
-        <a href="#contact-us" className="text-blue-600 scroll-link">Contact Us -</a>
-        <a href="#advertise-with-us" className="text-blue-600 scroll-link">Advertise With Us</a>
+        <a href="#our-mission" className=" text-secondary scroll-link">Our Mission -</a>
+        <a href="#our-editorial-standards" className="text-secondary scroll-link">Our Editorial Standards -</a>
+        <a href="#our-team" className="text-secondary scroll-link">Our Team -</a>
+        <a href="#our-experts" className="text-secondary scroll-link">Our Experts -</a>
+        <a href="#contact-us" className="text-secondary scroll-link">Contact Us -</a>
+        <a href="#advertise-with-us" className="text-secondary scroll-link">Advertise With Us</a>
 
 
 
@@ -35,7 +35,7 @@ const AboutUs = async () => {
       </div>
 
       <div id="our-mission" className="mx-auto text-center w-7/12">
-        <h1 className="text-4xl font-bold mb-4"> Our Mission</h1>
+        <h1 className="text-4xl  text-primary  font-bold mb-4"> Our Mission</h1>
         <p className="leading-8"> QuickFit delivers trusted health, nutrition and fitness information. <br /> For all.We strive to give you the tools and knowledge you need to live a happier, healthier life.</p>
 
 
@@ -52,7 +52,7 @@ const AboutUs = async () => {
         />
 
         <div className="lg:w-2/6">
-          <h1 className="text-3xl pb-4 font-bold text-center">Our Editorial Standards</h1>
+          <h1 className="text-3xl pb-4 text-primary  font-bold text-center">Our Editorial Standards</h1>
           <p className="text-lg leading-8 pb-4">We publish hundreds of articles each month. From the early stages of brainstorming all the way to publication, we always have one question in mind: How can this article best serve its readers? We strive to inform and encourage, never assume nor prescribe. Learn more about our editorial standards.</p>
 
           <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300 " > Read More </button>
@@ -64,7 +64,7 @@ const AboutUs = async () => {
 
       <div id="our-team" className="w-7/12 mx-auto  ">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 "> Our Team</h1>
+          <h1 className="text-4xl  text-primary  font-bold mb-4 "> Our Team</h1>
           <p className="leading-8 mb-8">The QuickFit team is passionate about good health and good information. We are a team of experienced journalists, certified personal trainers, foodies, yogis, coffee fanatics, dog lovers, cat lovers and data geeks.</p>
         </div>
 
@@ -79,7 +79,7 @@ const AboutUs = async () => {
                 height={500} // Set the height of the image
               />
               <div>
-                <h1 className="text-2xl font-bold">{item.name}</h1>
+                <h1 className="text-2xl text-secondary font-bold">{item.name}</h1>
                 <p className="text-gray-400 py-2">{item.jobTitle}</p>
                 <p className="text-lg loading-8">{item.description}   </p>
 
@@ -106,7 +106,7 @@ const AboutUs = async () => {
       <div id="our-experts" className="m-20 text-center lg:flex gap-20 justify-center items-center">
 
         <div className="lg:w-2/6 mb-4">
-          <h1 className="text-3xl pb-4 font-bold text-center">Meet Our Experts</h1>
+          <h1 className="text-3xl pb-4  text-primary  font-bold text-center">Meet Our Experts</h1>
           <p className="text-lg leading-8 pb-4">A team of credentialed health experts reviews our articles to ensure they are accurate, thorough and up-to-date. Learn more about our expert reviewing process.</p>
 
           <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300 " > Read More </button>
@@ -122,7 +122,7 @@ const AboutUs = async () => {
 
 
       <div id="contact-us" className="mx-auto text-center w-7/12">
-        <h1 className="text-4xl font-bold mb-4"> We would Like to Hear From You</h1>
+        <h1 className="text-4xl  text-primary  font-bold mb-4"> We would Like to Hear From You</h1>
         <p className="leading-8 text-lg"> Got something to share or see something that does adhere to our standards? We want to know! We’re always working to improve our site and appreciate feedback.</p>
 
         <p className="underline cursor-pointer my-8 text-blue-500"> editorial@QuickFit </p>
@@ -136,7 +136,7 @@ const AboutUs = async () => {
 
 
         <div>
-          <h1 className="text-3xl font-bold ">Careers  </h1>
+          <h1 className="text-3xl  text-primary  font-bold ">Careers  </h1>
           <p className="text-lg my-8">We consider ourselves lucky to be able to help people through our work.</p>
 
           <p className="underline mb-8 text-blue-500 cursor-pointer"> Join our energetic, dedicated team.</p>
@@ -149,7 +149,7 @@ const AboutUs = async () => {
         <div className="hero-overlay bg-opacity-30"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="">
-            <h1 className="mb-5 text-white text-5xl font-bold">Advertise With Us</h1>
+            <h1 className="mb-5  text-5xl  text-primary  font-bold">Advertise With Us</h1>
             <p className="mb-5 font-medium text-xl text-white">Send us a note, and a member of our sales team will be in touch.</p>
 
             <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300">Contact Us</button>
