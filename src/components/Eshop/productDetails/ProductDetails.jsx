@@ -9,6 +9,7 @@ import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import Ebutton from "@/components/Common/Ebutton";
+import EshopNav from "../eshopNavbar/EshopNav";
 
 function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
@@ -50,6 +51,7 @@ function ProductDetails({ product, params }) {
 
   return (
     <div className="w-10/12 lg:w-9/12 mx-auto ">
+      <EshopNav></EshopNav>
       {/* title  */}
       <motion.div
         variants={fadeIn(`bottom`, 0.2)}

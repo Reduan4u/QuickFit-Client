@@ -3,17 +3,21 @@
 import Loading1 from '@/components/Loading/Loading1';
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import moment from 'moment';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaAngleUp, FaBan, FaCross } from 'react-icons/fa';
 import CommentForm from '../commentForm/CommentForm';
+import { AuthContext } from '@/components/Provider/AuthProvider';
+import Swal from 'sweetalert2';
+import Link from 'next/link';
 
 const SinglePost = ({ params }) => {
 
     const axiosPublic = useAxiosPublic();
     const [singlePostData, setSinglePostData] = React.useState(null);
     const { control, register, handleSubmit, reset } = useForm();
-
+    const {user} = useContext(AuthContext);
+    
     React.useEffect(() => {
 
         const fetchData = async () => {
@@ -29,13 +33,38 @@ const SinglePost = ({ params }) => {
         return <Loading1></Loading1>;
     }
 
+    const postLike = async() => {
 
+        console.log("clicked")
+
+        const postId = singlePostData?._id;
+        const likeEmail = user?.email;
+        console.log(likeEmail)
+
+        axiosPublic.put('/forum/like', {postId, likeEmail})
+        .then(data => {
+            if(data?.data === "Liked"){
+                Swal.fire({
+                    icon: "success",
+                    title: `Post Liked!!`,
+                    text: "Keep up the good work!",
+                  });
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: `Unliked!!`,
+                    text: "Please report if the content does not match our treams",
+                  });
+            }
+        })
+
+    }
 
     return (
         <div className='text-[#f2f2f2] mx-auto max-w-3xl'>
             <div className='flex items-center justify-start gap-10'>
 
-                <div className='border border-gray-700 px-1 py-1 rounded-sm'>
+                <div onClick={()=> postLike()} className='border border-gray-700 px-1 py-1 rounded-sm cursor-pointer  hover:bg-[#102032]'>
                     <FaAngleUp className='text-[#818CF8] text-center ' />
 
                     <div className='text-[#2a4bf1ee] text-[14px] text-center'>{singlePostData?.likes.length}</div>
@@ -49,9 +78,15 @@ const SinglePost = ({ params }) => {
                 <div className=' mt-6 max-w-xl mx-auto'>
 
                     <div className='flex items-center justify-start gap-2 '>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
+                        <img src={singlePostData?.userPhoto} alt="avatar image" className='rounded-full h-4 w-4' />
 
-                        <p className='text-[#2a4bf1ee] text-[14px]'>{singlePostData?.userEmail}</p>
+                        
+
+                        <p className='text-[#2a4bf1ee] text-[14px]'> 
+                        <Link href={`userprofile/${singlePostData?.userEmail}`}> {singlePostData?.userName ? singlePostData.userName : singlePostData.userEmail}  </Link>
+                        </p>
+
+
                         <div className='text-gray-700 text-[15px] pb-1'> . </div>
                         {/* <span className='text-gray-700 text-[14px] align-middle'> . </span> */}
                         <p className='text-gray-700 text-[14px]'>{moment(singlePostData?.date).format("DD MMMM")}</p>
@@ -84,7 +119,7 @@ const SinglePost = ({ params }) => {
                                 <div key={index} className="py-4">
                                     <div className="flex items-center justify-between gap-4 mb-2">
                                         <div className='flex items-center justify-end gap-4 mb-2'>
-                                            <p className="text-blue-500 text-sm font-semibold">{comment?.userEmail}</p>
+                                            <p className="text-blue-500 text-sm font-semibold">{comment?.userName ? comment.userName : comment?.userEmail}</p>
                                             <p className="text-gray-500 text-sm">{moment(comment?.date).format("DD MMMM")}</p>
                                         </div>
                                         <div className='flex items-center justify-center gap-2 text-red-500 text-[14px]'>
