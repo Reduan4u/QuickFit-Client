@@ -10,7 +10,9 @@ const RelatedArticle = async ({ params }) => {
         cache: "no-store"
     });
     const data = await result.json();
+    //console.log(data)
     const relatedData = data.filter(item => item.Category == params.id)
+    //console.log(relatedData)
     const remainigArticle = relatedData.filter(item => item._id !== params.article)
     //console.log(remainigArticle)
 
