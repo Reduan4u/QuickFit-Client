@@ -4,7 +4,7 @@ import React from "react";
 const TrackerNav = () => {
   return (
     <div>
-      <div className="navbar text-secondary font-semibold w-10/12 mx-auto border-b border-primary mb-10">
+      <div className="navbar text-primary font-semibold w-10/12 mx-auto border-b border-primary mb-10">
         <div className="flex-1">
           <h1 className="text-xl">
             <Link href='/tracker'>Fitness Tracker</Link>

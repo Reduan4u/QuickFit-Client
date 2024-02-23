@@ -7,9 +7,9 @@ const Eshop = () =>{
 
 
     return (
-        <div>
+        <div className="bg-tertiary">
           <div><Ebanner></Ebanner></div>
-          <div><EshopNav></EshopNav></div>
+          <div className="w-10/12 mx-auto"><EshopNav></EshopNav></div>
           <div><Products></Products></div>
           <div><LatestProducts></LatestProducts></div>
         </div>

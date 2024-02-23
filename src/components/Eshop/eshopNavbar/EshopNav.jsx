@@ -13,14 +13,19 @@ function EshopNav(props) {
   return (
     <div>
       {user && (
-        <div className={`navbar w-10/12 mx-auto border-b-2 border-gray-400`}>
+        <div className={`navbar border-b-2 border-gray-400`}>
           {/* navbar start where search  */}
           <div className="flex-1">
             {/* <p className="text-2xl hidden md:block pr-2">Search Product</p> */}
-            <input
+            {/* <input
               type="text"
               className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-tertiary  text-lg placeholder-secondary placeholder-opacity-60"
-              placeholder="Search Product "></input>
+              placeholder="Search Product "></input> */}
+              <Link href={`/eshop/products`}>
+                <Ebutton>
+                Products
+                </Ebutton>
+              </Link>
           </div>
           {/* navbar end or right side  */}
           <div className="flex-none">
