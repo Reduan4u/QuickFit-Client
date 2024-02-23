@@ -8,10 +8,11 @@ import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/Common/Animation1";
+import Loading1 from "@/components/Loading/Loading1";
 
 const PreviousTrackerCard = ({item}) => {
     const axiosPublic = useAxiosPublic();
-    const { refetch } = UseTracker("history");
+    const { refetch , isPending } = UseTracker("history");
     const cardClass1 =
       "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
   
@@ -40,6 +41,10 @@ const PreviousTrackerCard = ({item}) => {
       });
   
     };
+
+    if(isPending){
+      return <Loading1 />
+    }
   
     return (
       <motion.div
