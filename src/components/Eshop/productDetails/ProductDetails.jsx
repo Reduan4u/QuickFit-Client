@@ -15,6 +15,7 @@ function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
   const email = user?.email;
+ 
 
   const { _id, category, title, subTitle, image, price, features } = product;
 

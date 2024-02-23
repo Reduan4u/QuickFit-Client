@@ -6,7 +6,7 @@ import TrackerCard from "./tracker_card/TrackerCard";
 import UseTracker from "@/hooks/UseTracker";
 
 const Tracker = () => {
-  const { isPending, tracker } = UseTracker();
+  const { isPending, tracker } = UseTracker('date');
 
   if (isPending) {
     return <Loading1 />;

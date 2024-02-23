@@ -1,18 +1,9 @@
-import EHeading from "@/components/Common/EHeading";
-import TrackerNav from "@/components/Tracker/trackerNav/TrackerNav";
-import React from "react";
+import History from "@/components/Tracker/history/History";
+
 
 const page = () => {
-  return (
-    <div className=" min-h-screen">
-      <div className="flex flex-col justify-center items-center">
-        <div>
-          <TrackerNav />
-          <EHeading>{"This page is in progress"}</EHeading>
-        </div>
-      </div>
-    </div>
-  );
+
+  return <History />
 };
 
 export default page;

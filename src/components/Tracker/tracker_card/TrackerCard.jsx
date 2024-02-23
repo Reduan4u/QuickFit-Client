@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 const TrackerCard = ({ item }) => {
   const axiosPublic = useAxiosPublic();
-  const { refetch } = UseTracker();
+  const { refetch } = UseTracker("date");
   const cardClass1 =
     "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
 

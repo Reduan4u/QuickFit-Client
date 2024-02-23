@@ -10,7 +10,7 @@ import UseTracker from "@/hooks/UseTracker";
 const AddExerciseForm = () => {
   const axiosPublic = useAxiosPublic()
   const {user} = UseContext()
-  const {refetch} = UseTracker()
+  const {refetch} = UseTracker("date")
 
   const buttonClasses =
     "text-xl font-semibold bg-tertiary text-black hover:shadow-xl hover:scale-105 transition-all duration px-3 py-2";

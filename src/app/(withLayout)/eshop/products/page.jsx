@@ -12,7 +12,7 @@ const page = async () => {
 
     {/* all the products of all category */}
       <div className='my-20 w-10/12 mx-auto'>
-             <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8">
+             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8">
              {
           products.map(product => <ProductCard key={product?._id} product={product}/>)
         }
