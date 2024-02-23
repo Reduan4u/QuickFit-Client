@@ -6,6 +6,8 @@ import { BsCheck } from "react-icons/bs";
 import { FaTrash } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/components/Common/Animation1";
 
 const PreviousTrackerCard = ({item}) => {
     const axiosPublic = useAxiosPublic();
@@ -40,6 +42,12 @@ const PreviousTrackerCard = ({item}) => {
     };
   
     return (
+      <motion.div
+      variants={fadeIn("left", 0.1)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0 }}
+    >
       <div className="bg-gradient-to-r from-primary to-secondary p-3">
         {/* value and target start */}
         <div className="flex items-center justify-between gap-4">
@@ -96,6 +104,8 @@ const PreviousTrackerCard = ({item}) => {
         </div>
         {/*=== progress bar , edit ,delete end === */}
       </div>
+    </motion.div>
+
     );
   };
 export default PreviousTrackerCard

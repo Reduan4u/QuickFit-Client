@@ -5,6 +5,8 @@ import useAxiosPublic from "@/hooks/useAxiosPublic";
 import UseContext from "@/hooks/UseContext";
 import Swal from "sweetalert2";
 import UseTracker from "@/hooks/UseTracker";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/components/Common/Animation1";
 
 
 const AddExerciseForm = () => {
@@ -51,6 +53,12 @@ const AddExerciseForm = () => {
     "border-primary w-full p-2 border p-2 font-bold rounded bg-tertiary border-primary placeholder-black placeholder-opacity-60";
 
   return (
+    <motion.div
+    variants={fadeIn("left", 0.1)}
+    initial="hidden"
+    whileInView={"show"}
+    viewport={{ once: false, amount: 0 }}
+  >
     <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-primary mt-10 p-2 md:p-5">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div className="md:flex justify-center items-center gap-5">
@@ -114,6 +122,8 @@ const AddExerciseForm = () => {
 
       </form>
     </div>
+  </motion.div>
+
   );
 };
 
