@@ -41,15 +41,59 @@ const Users = () => {
         }
     };
 
-    const changeCPage = (id) => {
-        setCurrentPage(id);
+    const changeCPage = (e, n) => {
+        e.preventDefault();
+        setCurrentPage(n);
     };
 
-    //Make Admin
-    const handleMakeAdmin = user => {
-        //console.log(user)
 
-    }
+    const handleMakeAdmin = user => {
+        axiosSecure.patch(`/users/admin/${user._id}`)
+            .then(res => {
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is an Admin Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.error('Error making user admin:', error);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Failed to make user an admin",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            });
+    };
+
+    const handleMakePublisher = user => {
+        axiosSecure.patch(`/users/publisher/${user._id}`)
+            .then(res => {
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `${user.name} is a Publisher Now!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(error => {
+                console.error('Error making user a publisher:', error);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "error",
+                    title: "Failed to make user a publisher",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            });
+    };
 
 
 
@@ -68,13 +112,13 @@ const Users = () => {
 
                 axiosSecure.delete(`/users/${user._id}`)
                     .then(res => {
-                            refetch();
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "User deleted succesfully.",
-                                icon: "success"
-                            });
-                        
+                        refetch();
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "User deleted succesfully.",
+                            icon: "success"
+                        });
+
                     })
             }
         });
@@ -89,7 +133,7 @@ const Users = () => {
                     <div id="last-users">
                         <h1 className="font-bold py-4 uppercase flex gap-2 items-center">
                             <FaUsers></FaUsers>
-                            Total User ({users.length})
+                            Total  ({users.length})
                         </h1>
                         <div className="overflow-x-scroll">
                             <table className="w-full whitespace-nowrap">
@@ -117,10 +161,18 @@ const Users = () => {
                                             <td className="py-3 px-2">{user.name}</td>
                                             <td className="py-3 px-2">{user.email}</td>
                                             <td className="py-3 px-2">
-                                                <button
-                                                    onClick={() => handleMakeAdmin(user)}
-                                                >{user.role}
-                                                </button>
+                                                <div className="flex items-center gap-2">
+                                                    {user.role === 'admin' ? (
+                                                        <button className="btn w-28 border-none hover:scale-95 transition-all duration-700 btn-sm text-white bg-black/60 rounded-md">Admin</button>
+                                                    ) : user.role === 'publisher' ? (
+                                                        <button className="btn w-28 border-none hover:scale-95 transition-all duration-700 btn-sm text-white bg-black/60 rounded-md">Publisher</button>
+                                                    ) : (
+                                                        <>
+                                                            <button onClick={() => handleMakeAdmin(user)} className="btn w-28  hover:scale-95 transition-all duration-700 btn-sm border-white text-white bg-transparent rounded-md">Make Admin</button>
+                                                            <button onClick={() => handleMakePublisher(user)} className="btn w-28  hover:scale-95 transition-all duration-700 btn-sm border-white text-white bg-transparent rounded-md">Make Publisher</button>
+                                                        </>
+                                                    )}
+                                                </div>
                                             </td>
                                             <td className="py-3 px-2">
                                                 <div className="inline-flex items-center space-x-3">
@@ -155,7 +207,7 @@ const Users = () => {
                                                 style={{ color: currentPage === n ? 'black' : 'inherit', backgroundColor: currentPage === n ? 'white' : 'inherit', borderRadius: currentPage === n ? '0px' : 'inherit' }}
 
                                             >
-                                                <a href="" onClick={() => changeCPage(id)}>{n}</a>
+                                                <a href="" onClick={(e) => changeCPage(e, n)}>{n}</a>
 
                                             </button>
                                         ))
