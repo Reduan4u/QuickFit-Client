@@ -12,7 +12,7 @@ import Loading1 from "@/components/Loading/Loading1";
 
 const TrackerCard = ({ item }) => {
   const axiosPublic = useAxiosPublic();
-  const { refetch, isPending } = UseTracker("date");
+  const { refetch, isPending } = UseTracker();
   const cardClass1 =
     "flex flex-col justify-center item-center p-2 w-28 md:w-32 bg-white text-center  rounded shadow-md";
 
