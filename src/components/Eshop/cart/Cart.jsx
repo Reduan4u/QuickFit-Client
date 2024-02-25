@@ -11,7 +11,7 @@ import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
-const Cart = async ({params}) => {
+const Cart =  ({params}) => {
   const {isPending, refetch, products } = useCart();
   const axiosPublic = useAxiosPublic()
   const [price, setPrice] = useState({})
@@ -25,8 +25,7 @@ const Cart = async ({params}) => {
     price.price = priceNum
 
     setPrice((prevPrice) => ({
-      ...prevPrice,
-      [productId]: priceNum 
+      ...prevPrice
     }));
     
     const totalNum = parseFloat(e.target.value)+0.5
@@ -35,7 +34,7 @@ const Cart = async ({params}) => {
 
     setTotal((prevPrice) => ({
       ...prevPrice,
-      [productId]: totalNum 
+
     }));
 
   }

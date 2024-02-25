@@ -8,19 +8,24 @@ import useCart from "@/hooks/useCart";
 
 function EshopNav(props) {
   const { user } = useContext(AuthContext);
-  const {refetch, products} = useCart()
+  const { refetch, products } = useCart()
 
   return (
     <div>
       {user && (
-        <div className={`navbar w-10/12 mx-auto border-b-2 border-gray-400`}>
+        <div className={`navbar border-b-2 border-gray-400`}>
           {/* navbar start where search  */}
           <div className="flex-1">
             {/* <p className="text-2xl hidden md:block pr-2">Search Product</p> */}
-            <input
+            {/* <input
               type="text"
-              className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-black text-primary text-lg placeholder-primary placeholder-opacity-60"
-              placeholder="Search Product "></input>
+              className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-tertiary  text-lg placeholder-secondary placeholder-opacity-60"
+              placeholder="Search Product "></input> */}
+              <Link href={`/eshop/products`}>
+                <Ebutton>
+                Products
+                </Ebutton>
+              </Link>
           </div>
           {/* navbar end or right side  */}
           <div className="flex-none">
@@ -28,7 +33,7 @@ function EshopNav(props) {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost bg-black btn-circle">
+                className="btn btn-ghost bg-gray-800 btn-circle">
                 <div className="indicator">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -46,12 +51,13 @@ function EshopNav(props) {
                   <span className="badge text-lg font-bold badge-sm indicator-item">{products?.length}</span>
                 </div>
               </div>
+
               <div
                 tabIndex={0}
                 className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
                 <div className="card-body">
                   <span className="font-bold text-lg">{products?.length} Items</span>
-                  {/* <span className="text-info">Subtotal: $999</span> */}
+                  {/* <span className="text-info">Subtotal: $999</span>  */}
                   <div className="card-actions">
                     <Link href={`/eshop/cart/${user?.email}`}>
                       <Ebutton>View Cart</Ebutton>
@@ -59,8 +65,9 @@ function EshopNav(props) {
                   </div>
                 </div>
               </div>
+
             </div>
-            <div className="dropdown dropdown-end">
+            {/* <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -88,7 +95,7 @@ function EshopNav(props) {
                   <a>Logout</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

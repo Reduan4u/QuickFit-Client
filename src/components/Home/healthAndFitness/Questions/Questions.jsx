@@ -15,11 +15,11 @@ const Questions = async ({ params }) => {
         <div className='w-10/12 mx-auto'>
             <SectionHeading className='' title={"Explore the Unknown? "} />
             <div className="">
-                {cat.questions.map((item) => (
+                {cat.questions.map((item,i) => (
                     <div key={item._id} className="">
                         <div className="">
                             <div className="pb-6">
-                                <h1 className="text-2xl font-semibold">{item?.question}</h1>
+                                <h1 className="text-2xl font-semibold">{i + 1}. {item?.question}</h1>
                             </div>
                             <div className="text-justify text-base">
                                 <p>{item?.answer?.details?.para1}</p>
