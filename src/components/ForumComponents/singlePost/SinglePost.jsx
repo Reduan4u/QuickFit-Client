@@ -70,7 +70,7 @@ const SinglePost = ({ params }) => {
 
         </div>
 
-        <h1 className='text-2xl mt-4'>{singlePostData?.title}</h1>
+        <h1 className='text-2xl'>{singlePostData?.title}</h1>
 
       </div>
 
