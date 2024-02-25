@@ -17,7 +17,7 @@ const History = () => {
   
 
   if (isPending) {
-    return <Loading1 />;
+    return <Loading1 />
   }
   return (
     <div className=" min-h-screen bg-black border">
@@ -37,7 +37,7 @@ const History = () => {
                 </div>
               </div>
             ) : 
-              <h1 className="text-2xl md:text-4xl text-tertiary font-bold text-center my-20">You didn't Have Previous Days Exercises</h1>
+              <h1 className="text-2xl md:text-4xl text-tertiary font-bold text-center my-20">You did not Have Previous Days Exercises</h1>
              }
           </div>
         </div>
