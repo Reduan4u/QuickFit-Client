@@ -72,7 +72,7 @@ const user = {
       </div>
 
       {/* Replace with your posts component or API call to fetch posts */}
-      <div className="mb-8 grid grid-cols-2 gap-4">
+      <div className="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
   {userPosts?.map((post, index) => (
     <div key={index} className='border border-gray-700 my-4 text-[#fff] bg-[#102032] '>
       <div className='mx-8 my-6'>

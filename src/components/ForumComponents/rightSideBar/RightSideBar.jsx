@@ -14,17 +14,26 @@ const RightSideBar = () => {
     const axiosPublic = useAxiosPublic();
     const [newestPost, setNewestPost] = React.useState(null);
     const [searchTerm, setSearchTerm] = React.useState('');
+    const [searchResults, setSearchResults] = React.useState([])
     
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
     }
 
-    const handleSearch = async() => {
-
-       await axiosPublic.post('/forum/search', {searchTerm})
-       console.log(searchTerm)
-    }
-
+    const handleSearch = async () => {
+        try {
+        //   await axiosPublic.get(`forum/search?searchTerm=${searchTerm}`)
+        await axiosPublic.get(`/forum/content/search?searchTerm=${searchTerm}`)
+            .then((data)=> {
+                setSearchResults(data?.data)
+            })
+            console.log(searchTerm)
+            console.log(searchResults)
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -44,7 +53,7 @@ const RightSideBar = () => {
 
             {/* Search bar*/}
 
-            <div className=' flex '>
+            <div className=' flex items-center justify-center gap-2'>
                 <input
                     type="text"
                     className='w-64 border-gray-700 rounded-box bg-[#102032] pl-5 text-white py-1'
@@ -53,18 +62,30 @@ const RightSideBar = () => {
                     value={searchTerm}
                 />
 
-            <button onClick={handleSearch}></button>
+            <button onClick={handleSearch}> <FaSearch className='text-[#fff]'> </FaSearch> </button>
               
             </div>
+            
 
+            {/* Searched post rendering */}
 
-            {/* NEW DISCUSSIONS renderding */}
+            {
+                searchTerm && searchResults ? <>
 
-            <div className="text-[#fff] mt-5">
-                <h2 className="text-gray-700 ">NEW DISCUSSIONS</h2>
+                <h2 className="text-gray-700 mt-4 ">Results for {searchTerm}</h2>
+                </> : ''
+            }
+
+            {
+                searchResults ?   
+                
+                <div className="text-[#fff] mt-5">
+                
 
                 {
-                    newestPost?.slice(0, 7).map((post, index) => (
+                    searchResults?.map((post, index) => (
+
+                    
                         <div key={index}>
 
                             <div className='flex items-center justify-start gap-2 mt-4'>
@@ -90,6 +111,44 @@ const RightSideBar = () => {
                     ))
                 }
 
+            </div> :    ''
+
+
+            }
+
+          
+            {/* NEW DISCUSSIONS renderding */}
+
+            <div className="text-[#fff] mt-5">
+                <h2 className="text-gray-700 text-center">NEW DISCUSSIONS</h2>
+
+                {
+                    newestPost?.slice(0, 7).map((post, index) => (
+                        <div key={index} className='lg:mt-2 mt-10'>
+
+                            <div className='flex items-center justify-start gap-2 mt-4'>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
+
+                                <Link href={`/forum/userprofile/${post?.userEmail}`} >
+                                <p className="text-[#2a4bf1ee] text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
+                                </Link>
+                            </div>
+
+                            <div className="mt-1">
+                                <Link href={`/forum/${post?._id}`}>  <h2 className=''> {post?.title}</h2> </Link>
+                               
+                            </div>
+
+                            <div className='flex items-center justify-start gap-2 mt-1'>
+                                <p className='text-gray-700 text-[14px]'>{moment(post?.date).format("DD MMMM")}</p>
+                                <div className='text-gray-700 text-[15px] pb-1'> . </div>
+                                <p className='text-gray-700 text-[14px]'>{post?.comments?.length} Comments</p>
+                            </div>
+
+                        </div>
+                    ))
+                }
+
             </div>
 
 
@@ -97,7 +156,7 @@ const RightSideBar = () => {
             {/* POPULAR POSTS renderding */}
 
             <div className="text-[#fff] mt-10">
-                <h2 className="text-gray-700 ">POPULAR POSTS</h2>
+                <h2 className="text-gray-700 text-center">POPULAR POSTS</h2>
 
                 <div>
                     <div className='flex items-center justify-start gap-2 mt-4'>
