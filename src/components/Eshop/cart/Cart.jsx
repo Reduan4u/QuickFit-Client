@@ -4,15 +4,15 @@ import Ebutton from "@/components/Common/Ebutton";
 import Ebutton2 from "@/components/Common/Ebutton2";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Loading1 from "@/components/Loading/Loading1";
+import UseCartData from "@/hooks/UseCartData";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import useCart from "@/hooks/useCart";
 import Link from "next/link";
 import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 const Cart =  ({params}) => {
-  const {isPending, refetch, products } = useCart();
+  const {isPending, refetch, products } = UseCartData();
   const axiosPublic = useAxiosPublic()
   const [price, setPrice] = useState({})
   const [total, setTotal] = useState({})
