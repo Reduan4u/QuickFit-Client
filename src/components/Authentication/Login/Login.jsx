@@ -26,14 +26,15 @@ const Login = ({ path }) => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then(async (res) => {
-        const name = await res.user.displayName;
-        const email = await res.user.email;
-        console.log(res.user.displayName);
-        console.log(res.user.email);
+        const name = await res.user?.displayName;
+        const email = await res.user?.email;
+        const image = await res.user?.photoURL
+
         axioPublic
           .post("/users", {
             name,
             email,
+            image,
             role: "user",
             isBlocked: false,
           })

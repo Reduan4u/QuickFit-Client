@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import Link from "next/link";
 import Ebutton from "@/components/Common/Ebutton";
-import useCart from "@/hooks/useCart";
+import UseCartData from "@/hooks/UseCartData";
 
 function EshopNav(props) {
   const { user } = useContext(AuthContext);
-  const { refetch, products } = useCart()
+  const { products } = UseCartData()
 
   return (
     <div>
