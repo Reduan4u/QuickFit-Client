@@ -64,7 +64,7 @@ console.log(user?.photoURL);
   };
 
   return (
-    <div className=" mx-auto w-[70%] mt-8 p-4">
+    <div className=" mx-auto lg:w-[70%] mt-8 p-4">
       <h1 className="text-3xl font-bold mb-4">Create a Post</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-4">
@@ -99,7 +99,7 @@ console.log(user?.photoURL);
         </div>
 
         <div className="mb-4">
-          <label htmlFor="content" className="block text-sm font-medium text-gray-600">
+          <label htmlFor="content" className="block text-sm font-medium text-gray-600 ">
             Content
           </label>
           {/* Use Controller from react-hook-form to integrate with ReactQuill */}
@@ -107,6 +107,7 @@ console.log(user?.photoURL);
             name="content"
             control={control}
             defaultValue=""
+           
             render={({ field }) => (
               <ReactQuill
                 value={field.value}
@@ -116,13 +117,15 @@ console.log(user?.photoURL);
             )}
           />
         </div>
-
-        <div className="text-right">
+        <div className="text-right ">
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
             Post
           </button>
         </div>
+        
       </form>
+
+    
     </div>
   );
 };

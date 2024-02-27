@@ -34,7 +34,7 @@ const Products = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((item, index) => (
           <motion.div
-          variants={fadeIn(`${index==0 ? "right" : index==2 ? "left":"top"}`, 0.2)}
+          variants={fadeIn(`right`, 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.2 }}

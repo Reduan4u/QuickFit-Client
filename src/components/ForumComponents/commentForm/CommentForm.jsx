@@ -45,7 +45,7 @@ const CommentForm = ({ postId }) => {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
-        className='bg-[#112033] rounded-sm p-2 '
+        className='bg-[#112033] rounded-sm p-2 w-[98%] '
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         placeholder="Add a comment..."

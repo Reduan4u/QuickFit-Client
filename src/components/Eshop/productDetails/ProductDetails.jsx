@@ -15,6 +15,7 @@ function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
   const email = user?.email;
+ 
 
   const { _id, category, title, subTitle, image, price, features } = product;
 
@@ -80,7 +81,7 @@ function ProductDetails({ product, params }) {
 
           {/* content div  */}
           <motion.div
-            variants={fadeIn(`left`, 0.2)}
+            variants={fadeIn(`right`, 0.2)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.2 }}

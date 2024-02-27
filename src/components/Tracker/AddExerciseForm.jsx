@@ -4,13 +4,15 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import UseContext from "@/hooks/UseContext";
 import Swal from "sweetalert2";
-import useGetTracker from "@/hooks/useGetTracker";
+import UseTracker from "@/hooks/UseTracker";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/components/Common/Animation1";
 
 
 const AddExerciseForm = () => {
   const axiosPublic = useAxiosPublic()
   const {user} = UseContext()
-  const {refetch} = useGetTracker()
+  const {refetch} = UseTracker()
 
   const buttonClasses =
     "text-xl font-semibold bg-tertiary text-black hover:shadow-xl hover:scale-105 transition-all duration px-3 py-2";
@@ -51,6 +53,12 @@ const AddExerciseForm = () => {
     "border-primary w-full p-2 border p-2 font-bold rounded bg-tertiary border-primary placeholder-black placeholder-opacity-60";
 
   return (
+    <motion.div
+    variants={fadeIn("left", 0.1)}
+    initial="hidden"
+    whileInView={"show"}
+    viewport={{ once: false, amount: 0 }}
+  >
     <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-primary mt-10 p-2 md:p-5">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div className="md:flex justify-center items-center gap-5">
@@ -68,9 +76,9 @@ const AddExerciseForm = () => {
             )}
           </div>
 
-          {/* reps field  */}
+          {/* target field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 font-bold text-black">Targeted Reps</h2>
+            <h2 className="text-lg mb-2 font-bold text-black">Target</h2>
             <input
               type="number"
               {...register("target", { required: true })}
@@ -114,6 +122,8 @@ const AddExerciseForm = () => {
 
       </form>
     </div>
+  </motion.div>
+
   );
 };
 

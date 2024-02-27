@@ -33,7 +33,9 @@ const DynamicProducts = async ({ params }) => {
       </div>
 
       {/* navbar  */}
+      <div className="w-10/12 mx-auto">
       <EshopNav></EshopNav>
+      </div>
 
       {/*==== product list card here ===== */}
       <div className="w-10/12 mx-auto">
