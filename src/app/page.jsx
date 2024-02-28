@@ -1,3 +1,4 @@
+import Course from "@/components/Home/Course/Course";
 import FreeChallenges from "@/components/Home/FreeChallenges/FreeChallenges";
 import Banner from "@/components/Home/banner/Banner";
 import Counter from "@/components/Home/counter/Counter";
@@ -17,6 +18,7 @@ export default function Home() {
       <NewStories></NewStories>
       <JanuaryPicks></JanuaryPicks>
       <HealthAndFitness></HealthAndFitness>
+      <Course></Course>
       <DietPlan></DietPlan>
       <FitnessClasses></FitnessClasses>
       <FreeChallenges></FreeChallenges>

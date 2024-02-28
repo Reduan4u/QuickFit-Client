@@ -9,7 +9,7 @@ const CategoryHeading = async ({ params }) => {
     const cat = await result.json();
     //console.log(cat)
     return (
-        <div className="relative w-full h-[60vh]">
+        <div className="relative w-full h-[50vh]">
             <Image
                 height={1080}
                 width={1920}
