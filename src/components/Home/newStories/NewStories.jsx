@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const NewStories = async () => {
   const res = await fetch(
-    "https://quickfit-server.vercel.app/api/v1/news-stories",
+    "https://quick-fit-server.vercel.app/api/v1/newStories",
     {
       cache: "no-store",
     }
