@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FaArrowRight, FaUser } from "react-icons/fa";
 import Link from 'next/link';
 const page = async() => {
-    const res = await fetch("https://quickfit-server.vercel.app/api/v1/news-stories", {
+    const res = await fetch("https://quick-fit-server.vercel.app/api/v1/newStories", {
     cache: "no-store"
   });
   const data = await res.json();

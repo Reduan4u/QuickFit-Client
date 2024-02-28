@@ -12,6 +12,9 @@ const TrackerNav = () => {
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal items-center px-1 md:text-lg">
+          <li className="hover:scale-110 transition-all duration-300">
+              <Link href={`/tracker`}>Add Exercise</Link>
+            </li>
             <li className="hover:scale-110 transition-all duration-300">
               <Link href={`/tracker/history`}>History</Link>
             </li>

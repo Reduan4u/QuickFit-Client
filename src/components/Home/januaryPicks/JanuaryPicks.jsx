@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const JanuaryPicks = async () => {
   const res = await fetch(
-    "https://quickfit-server.vercel.app/api/v1/monthly-piks",
+    'https://quick-fit-server.vercel.app/api/v1/monthlyPicks', 
     {
       cache: "no-store",
     }
