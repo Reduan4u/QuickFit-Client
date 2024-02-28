@@ -1,7 +1,7 @@
 import SectionHeading from "@/components/Common/SectionHeading";
 
 const Route2MoreStories = async () => {
-    const res = await fetch("https://quickfit-server.vercel.app/api/v1/news-stories", {
+    const res = await fetch("https://quick-fit-server.vercel.app/api/v1/newStories", {
         cache: "no-store"
     });
     const allData = await res.json();
