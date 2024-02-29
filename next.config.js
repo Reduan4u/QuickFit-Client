@@ -20,7 +20,10 @@ module.exports = {
       'cdn.discordapp.com',
       'lh3.googleusercontent.com',
       "www.freepik.com",
-      'source.unsplash.com'
+      'source.unsplash.com',
+      'avatars.githubusercontent.com',
+      'placekitten.com',
+      'htmldemo.net'
     ]
   },
 };

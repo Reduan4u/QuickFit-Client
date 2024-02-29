@@ -11,6 +11,7 @@ const NewStories = async () => {
   );
   const data = await res.json();
   const slicedData = data.slice(0, 5);
+  console.log(data);
 
   return (
     <div className="w-11/12 mx-auto my-2 px-2">
