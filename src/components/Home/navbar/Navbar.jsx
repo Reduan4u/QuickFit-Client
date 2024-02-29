@@ -111,8 +111,8 @@ const Navbar = () => {
                 < NavLink href="/tips" className={`${navLinkClass} `}>
                   Tips
                 </NavLink>
-                <NavLink href="/eatBetter" className={`${navLinkClass} `}>
-                  Eat Better
+                <NavLink href="/courses"i className={`${navLinkClass} `}>
+                  Courses
                 </NavLink>
                 <NavLink href="/contactUs" className={`${navLinkClass} `}>
                   Contact
