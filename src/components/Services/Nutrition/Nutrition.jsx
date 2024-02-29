@@ -60,11 +60,15 @@ mb-4'>{item.benefitTitle}</h1>
 
                 <section className='flex gap-10 flex-wrap justify-center'>
 
-                  <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
-                    <h1 className='text-2xl py-2 text-secondary font-bold'>{item.fitnessCardTitle}</h1>
-                    <p>{item.fitnessDescription}</p>
-                    <div className="absolute inset-0 hover:bg-gradient-to-t from-red-500 to-transparent"></div>
-                  </div>
+                
+
+                <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
+    <h1 className='text-2xl py-2 text-secondary   font-bold'>{item.fitnessCardTitle}</h1>
+    <p>{item.fitnessDescription}</p>
+    <div className="absolute inset-0 hover:bg-gradient-to-b  from-transparent to-red-500"></div>
+</div>
+
+
 
                   <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
                     <h1 className='text-2xl py-2 text-secondary font-bold'>{item.nutritionalCardTitle}</h1>
@@ -150,7 +154,7 @@ mb-4'>{item.benefitTitle}</h1>
       <section>
         {
           trainers.filter(trainer => trainer.category === "NUTRITION")
-            .slice(0, 1)
+            .slice(1, 2)
             .map(trainer => (
               <div key={trainer._id}>
                 <h1 className='text-3xl py-8 font-bold'>If you want to <span className='text-primary '>Hire Now</span> </h1>
