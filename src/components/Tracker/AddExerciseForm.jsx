@@ -54,7 +54,7 @@ const AddExerciseForm = () => {
 
   return (
     <motion.div
-    variants={fadeIn("left", 0.1)}
+    variants={fadeIn("right", 0.1)}
     initial="hidden"
     whileInView={"show"}
     viewport={{ once: false, amount: 0 }}
