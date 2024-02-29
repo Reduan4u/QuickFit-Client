@@ -155,7 +155,7 @@ const Users = () => {
                                                         width={500}
                                                         height={500}
                                                         alt="profile"
-                                                        className="rounded-full w-8 h-8" src="https://source.unsplash.com/240x320/?portrait?0" /></span>
+                                                        className="rounded-full w-8 h-8" src={user.image} /></span>
                                                 </div>
                                             </td>
                                             <td className="py-3 px-2">{user.name}</td>

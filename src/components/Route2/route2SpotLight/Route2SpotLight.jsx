@@ -4,7 +4,7 @@ import React from 'react';
 
 const Route2SpotLight = async () => {
   const res = await fetch(
-    "https://quickfit-server.vercel.app/api/v1/spotlight/getFit",
+    "https://quick-fit-server.vercel.app/api/v1/spotlight",
     {
       cache: "no-store",
     }
