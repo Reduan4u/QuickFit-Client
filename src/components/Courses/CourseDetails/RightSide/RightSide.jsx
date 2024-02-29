@@ -49,7 +49,6 @@ const RightSide = () => {
                             src="https://www.youtube.com/embed/J8SFL3Z7zw4?list=PLnZgHKyxHOEAy7MisX6CSMe4JTzkeodmC"
                             title="YouTube Video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            frameBorder="0"
                             allowFullScreen
                         ></iframe>
                         <button
