@@ -96,10 +96,11 @@ const RightSide = () => {
             </div>
             {/* Tab */}
             <Tabs>
-                <TabList>
-                    <Tab>Description</Tab>
-                    <Tab>Quiz</Tab>
-                    <Tab>Reviews</Tab>
+                <TabList className="md:flex items-center justify-center bg-[#F8F6F4] py-2 gap-4 mb-4 border-none">
+                    <Tab className=" w-full md:w-32 text-center rounded-full px-6 py-3 border-none bg-gray-200  transition-colors duration-300 " selectedClassName="border-none bg-primary text-white">Description</Tab>
+                    <Tab className="w-full md:w-32 px-6 py-3 border-none bg-gray-200 rounded-full transition-colors duration-300 text-center" selectedClassName="border-none bg-primary text-white">Quiz</Tab>
+                    <Tab className="w-full md:w-32 text-center px-6 py-3 border-none bg-gray-200 rounded-full transition-colors duration-300 " selectedClassName="border-none bg-primary text-white">Reviews</Tab>
+
                 </TabList>
 
                 <TabPanel>
