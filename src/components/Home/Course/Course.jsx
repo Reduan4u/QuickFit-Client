@@ -18,7 +18,7 @@ const Course = () => {
                             src="https://htmldemo.net/nutras/nutras/assets/images/about.jpg"
                         />
                         <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent flex justify-center items-center  pt-32">
-                            <Link href='courses'><button className="btn rounded-none border-none bg-primary text-white uppercase px-5 hover:bg-black">Start course</button></Link>
+                            <Link href='/courses'><button className="btn rounded-none border-none bg-primary text-white uppercase px-5 hover:bg-black">Start course</button></Link>
                         </div>
                     </div>
                     
