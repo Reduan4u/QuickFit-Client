@@ -1,12 +1,13 @@
-"use client"
-
-import UseCourses from "@/hooks/UseCourses"
+import CourseDetails from '@/components/Courses/CourseDetails/CourseDetails';
+import React from 'react';
 
 const page = ({params}) => {
-    const { courses} = UseCourses()
-  return (
-    <div>details page of course {params.id}</div>
-  )
+    return (
+        <div>
+            <CourseDetails></CourseDetails>
+        </div>
+    );
+  
 }
 
 export default page
