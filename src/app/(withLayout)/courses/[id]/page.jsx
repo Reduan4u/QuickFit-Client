@@ -4,7 +4,7 @@ import React from 'react';
 const page = ({params}) => {
     return (
         <div>
-            <CourseDetails></CourseDetails>
+            <CourseDetails params={params}></CourseDetails>
         </div>
     );
   
