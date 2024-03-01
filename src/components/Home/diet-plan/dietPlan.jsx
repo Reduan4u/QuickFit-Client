@@ -7,6 +7,7 @@ import Lottie from 'lottie-react';
 import dietPlan from "../../../../public/dietPlan.json";
 import Image from 'next/image';
 import Link from 'next/link';
+import Button1 from '@/components/Common/Button1';
 
 
 const DietPlan = () => {
@@ -74,9 +75,7 @@ const DietPlan = () => {
                             </div>
                             <div className='text-center p-6'>
                                 <Link href={"/Diet-Plans/Weight-Loss"} >
-                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                        SEE DETAILS
-                                    </button>
+                                    <Button1 className="" title={"SEE DETAILS..."} />
                                 </Link>
                             </div>
                         </div>
@@ -122,9 +121,7 @@ const DietPlan = () => {
                             </div>
                             <div className='text-center p-6'>
                                 <Link href={"/Diet-Plans/Post-Pregnancy"} >
-                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                        SEE DETAILS
-                                    </button>
+                                    <Button1 className="" title={"SEE DETAILS..."} />
                                 </Link>
 
                             </div>
@@ -174,9 +171,7 @@ const DietPlan = () => {
                             </div>
                             <div className='text-center p-6'>
                                 <Link href={"/Diet-Plans/Fitness"} >
-                                    <button className='btn btn-outline btn-error  bg-white border-2 rounded-none  mx-auto  hover:text-white transform hover:scale-105 transition-all duration-300'>
-                                        SEE DETAILS
-                                    </button>
+                                    <Button1 className="" title={"SEE DETAILS..."} />
                                 </Link>
                             </div>
                         </div>
