@@ -44,7 +44,7 @@ const Experts = async () => {
 
 
       <div>
-        <div className='py-14  text-center   text-primary   w-11/12 mx-auto bg-blue-900'> <h1 className='text-3xl font-bold'> FEATURED EXPERTS </h1> </div>
+        <div className='py-14  text-center   text-primary   w-11/12 mx-auto bg-slate-900'> <h1 className='text-3xl font-bold'> FEATURED EXPERTS </h1> </div>
 
         <div id="featured" className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center my-8 items-center gap-8 w-10/12 mx-auto ">
           <div className="card w-[290px] h-[450px] mx-auto bg-base-100 shadow-xl">
@@ -103,7 +103,7 @@ const Experts = async () => {
       </div>
 
       <div id="fitness">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-red-500'> <h1 className='text-3xl font-bold'> FITNESS EXPERTS </h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-slate-800'> <h1 className='text-3xl font-bold'> FITNESS EXPERTS </h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 
@@ -172,7 +172,7 @@ const Experts = async () => {
       </div>
 
       <div id="nutrition">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-green-900'> <h1 className='text-3xl font-bold'> NUTRITION EXPERTS </h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-gray-800'> <h1 className='text-3xl font-bold'> NUTRITION EXPERTS </h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 
@@ -236,7 +236,7 @@ const Experts = async () => {
       </div>
 
       <div id="health">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-blue-400'> <h1 className='text-3xl font-bold'>HEALTH EXPERTS</h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-slate-800'> <h1 className='text-3xl font-bold'>HEALTH EXPERTS</h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 

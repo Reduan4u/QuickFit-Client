@@ -65,7 +65,7 @@ mb-4'>{item.benefitTitle}</h1>
                 <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
     <h1 className='text-2xl py-2 text-secondary   font-bold'>{item.fitnessCardTitle}</h1>
     <p>{item.fitnessDescription}</p>
-    <div className="absolute inset-0 hover:bg-gradient-to-b  from-transparent to-red-500"></div>
+    <div className="absolute inset-0 hover:bg-gradient-to-t  to-transparent from-primary"></div>
 </div>
 
 
@@ -73,13 +73,13 @@ mb-4'>{item.benefitTitle}</h1>
                   <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
                     <h1 className='text-2xl py-2 text-secondary font-bold'>{item.nutritionalCardTitle}</h1>
                     <p>{item.nutritionalDescription}</p>
-                    <div className="absolute inset-0 hover:bg-gradient-to-t from-red-500 to-transparent"></div>
+                    <div className="absolute inset-0 hover:bg-gradient-to-t from-primary to-transparent"></div>
                   </div>
 
                   <div className='border-2 h-[300px] md:w-[264px]  p-8 relative overflow-hidden mx-4 my-8'>
                     <h1 className='text-2xl py-2 text-secondary font-bold'>{item.getCardTitle}</h1>
                     <p>{item.getDescription}</p>
-                    <div className="absolute inset-0 hover:bg-gradient-to-t from-red-500 to-transparent"></div>
+                    <div className="absolute inset-0 hover:bg-gradient-to-t from-primary to-transparent"></div>
                   </div>
                 </section>
 

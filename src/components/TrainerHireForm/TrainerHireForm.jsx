@@ -15,7 +15,7 @@ const TrainerHireForm = ({params}) => {
   
 
   const expert = experts?.find(item => item._id == params.id)
-  console.log(expert)
+ 
 
   useEffect(() => {
    
@@ -78,8 +78,8 @@ const TrainerHireForm = ({params}) => {
   };
 
   return (
-    <div className="my-20">
-      <h1 className="text-center text-5xl font-bold underline"> Hire Form </h1>
+    <div className="my-20  ">
+      <h1 className="text-center text-5xl  font-bold underline"> Hire Form </h1>
       <form onSubmit={handleAddProduct}>
         <div className="card-body grid md:grid-cols-2 gap-8">
           <div className="form-control">
