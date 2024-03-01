@@ -158,7 +158,99 @@ const Fat = () => {
                                         Ideal
                                     </th>
                                     <th scope="col" className="px-6 py-3">
-                                        Average
+                                        Above Ave.
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Overweight
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody className='text-black font-mono '>
+
+                                <tr className="bg-white border-b border-sky-300 ">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                        20 - 39
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 21%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        21% to 33%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        34% to 39%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 39%
+                                    </th>
+                                </tr>
+
+                                <tr className="bg-white border-b border-sky-300 ">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                        40 - 59
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 23%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        23% to 34%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        35% to 40%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 40%
+                                    </th>
+                                </tr>
+
+                                <tr className="bg-white ">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                        60 - 79
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 24%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        24% to 35%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        36% to 42%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 42%
+                                    </th>
+                                </tr>
+
+
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                {/* Body Fat for Women*/}
+                <div className=' '>
+                    <h1 className='mb-2 font-medium text-4xl text-primary'>Body Fat for <span className='text-red-600 underline underline-offset-4'>Women</span> </h1>
+                    <hr />
+                    <div className="my-5  text relative  overflow-x-auto shadow-md sm:rounded-lg">
+                        <table className="w-full text-sm text-left rtl:text-right ">
+                            <thead className="text-xs font-sans text-white bg-sky-400  uppercase">
+                                <tr>
+                                    <th scope="col" className="px-6 py-3">
+                                        Age
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Athlete
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Ideal
                                     </th>
                                     <th scope="col" className="px-6 py-3">
                                         Above Ave.
@@ -172,105 +264,63 @@ const Fat = () => {
                             </thead>
                             <tbody className='text-black font-mono '>
 
-                                <tr className="  bg-white border-b border-gray-200 ">
+                                <tr className="bg-white border-b border-sky-300 ">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-
+                                        20 - 39
                                     </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 8%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        8% to 19%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        20% to 25%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 25%
+                                    </th>
+                                </tr>
 
-
+                                <tr className="bg-white border-b border-sky-300 ">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                                        40 - 59
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 11%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        11% to 21%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        22% to 28%
+                                    </th>
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 28%
+                                    </th>
                                 </tr>
 
                                 <tr className="bg-white ">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-
+                                        60 - 79
                                     </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-300 whitespace-nowrap ">
+                                        Less Than 13%
                                     </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Less Than 90 cm (men) <br />
-                                        Less Than 80 cm (women)
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-green-200 whitespace-nowrap ">
+                                        13% to 24%
                                     </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        More Than 90 cm (men) <br />
-                                        More Than 80 cm (women)
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-200 whitespace-nowrap ">
+                                        24% to 30%
                                     </th>
-                                </tr>
-
-                                <tr className=" border-b bg-gray-100 ">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Underweight
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Less than 18.5
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Low (Risk Increased)
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Average
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 bg-red-300 whitespace-nowrap ">
+                                        More Than 30%
                                     </th>
                                 </tr>
 
-                                <tr className="bg-green-100   ">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Normal range
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        18.5-22.9
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Average
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Increased
-                                    </th>
-                                </tr>
 
-                                <tr className=" border-b bg-red-100 ">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Overweight
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        23-24.9
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Increased
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Moderate
-                                    </th>
-                                </tr>
 
-                                <tr className="bg-red-200 ">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Obese (Class I)
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        25-29.9
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Moderate
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Severe
-                                    </th>
-                                </tr>
 
-                                <tr className=" border-b  bg-red-300">
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Obese (Class II)
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        30.0-34.9
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Severe
-                                    </th>
-                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                        Very severe
-                                    </th>
-                                </tr>
 
 
 
@@ -278,9 +328,8 @@ const Fat = () => {
                         </table>
                     </div>
                 </div>
-                <div>
 
-                </div>
+
             </div>
 
         </div>

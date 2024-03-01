@@ -5,6 +5,7 @@ import Title from "@/components/Common/Title";
 import Image from "next/image";
 import "./page.css"
 import Link from "next/link";
+import Button1 from "@/components/Common/Button1";
 
 const page = () => {
     return (
@@ -20,7 +21,7 @@ const page = () => {
                 />
             </div>
             <div>
-                <div className="bg-green-800 opacity-95 py-5">
+                <div className="bg-primary opacity-95 py-5">
                     <motion.div
                         variants={fadeIn("right", 0.1)}
                         initial="hidden"
@@ -40,8 +41,8 @@ const page = () => {
                         viewport={{ once: false, amount: 0 }}>
                         <h1 className="text-4xl">Personal Session</h1>
                         <h1 className="text-lg text-gray-700">Overall Wellness Coaching</h1>
-                        <p className="mt-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
-                        <button className="more-btn mt-10">LEARN MORE...</button>
+                        <p className="my-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
+                        <Button1 className="" title={"LEARN MORE..."} />
                     </motion.div>
                     <motion.div
                         variants={fadeIn("up", 0.1)}
@@ -83,8 +84,8 @@ const page = () => {
                         viewport={{ once: false, amount: 0 }}>
                         <h1 className="text-4xl">Group Session</h1>
                         <h1 className="text-lg text-gray-700">Get each other motivated</h1>
-                        <p className="mt-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
-                        <button className="more-btn mt-10">LEARN MORE...</button>
+                        <p className="my-10 text-gray-600 text-justify">Sed lobortis turpis quis ante lacinia faucibus. Ut ullamcorper eu ipsum in porttitor. Aenean aliquam, lorem vitae efficitur maximus, neque turpis tincidunt odio, et fermentum erat erat nec orci. Vivamus hendrerit lorem eu ligula pellentesque, a feugiat nunc tristique. Sed sit amet aliquam lorem, nec tempor diam. Pellentesque eu augue nec metus pharetra pretium sit amet quis magna. Maecenas sed consequat odio. Mauris bibendum nisl sit amet.</p>
+                        <Button1 className="" title={"LEARN MORE..."} />
                     </motion.div>
                 </div>
 
