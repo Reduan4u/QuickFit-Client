@@ -4,10 +4,19 @@ import UseCourses from "@/hooks/UseCourses";
 import { FaBook, FaCertificate, FaLanguage, FaLevelUpAlt, FaUser } from "react-icons/fa";
 import {  FaClock } from "react-icons/fa6";
 import { SiLevelsdotfyi } from "react-icons/si";
+import Swal from "sweetalert2";
 
 const LeftSide = ({params}) => {
     const {refetch, isPending, courses} = UseCourses()
     const course = courses?.find(item => item?.category == params.id)
+
+    const handleCertificate= () => {
+ Swal.fire({
+            icon: "error",
+            title: `Not eligible for the certificate`,
+            text: `Not eligible for the certificate`,
+          })
+    }
 
     return (
         <div className="bg-[#F8F6F4] w-full md:w-2/6 p-8">
@@ -33,7 +42,7 @@ const LeftSide = ({params}) => {
                     <p>Yes</p>
                 </div>
                 <div className="flex justify-center items-center py-5">
-                    <button className="btn rounded-full border-none bg-primary text-white uppercase px-5 hover:bg-black">Enroll Now</button>
+                    <button className="btn rounded-full border-none bg-primary text-white uppercase px-5 hover:bg-black disabled" onClick={handleCertificate}>Certificate</button>
                 </div>
             </div>
     );
