@@ -12,7 +12,7 @@ import { fadeIn } from "@/components/Common/Animation1";
 const AddExerciseForm = () => {
   const axiosPublic = useAxiosPublic()
   const {user} = UseContext()
-  const {refetch} = UseTracker("date")
+  const {refetch} = UseTracker()
 
   const buttonClasses =
     "text-xl font-semibold bg-tertiary text-black hover:shadow-xl hover:scale-105 transition-all duration px-3 py-2";
@@ -54,7 +54,7 @@ const AddExerciseForm = () => {
 
   return (
     <motion.div
-    variants={fadeIn("left", 0.1)}
+    variants={fadeIn("right", 0.1)}
     initial="hidden"
     whileInView={"show"}
     viewport={{ once: false, amount: 0 }}

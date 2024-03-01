@@ -1,12 +1,12 @@
 import Registration from '@/components/Authentication/Registration/Registration';
-import Registration1 from '@/components/Authentication/Registration/Registration1';
+import Registration2 from '@/components/Authentication/Registration/Registration2';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
+            <Registration2 />
             {/* <Registration></Registration> */}
-            <Registration1></Registration1>
         </div>
     );
 };

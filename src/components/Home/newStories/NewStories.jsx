@@ -4,13 +4,14 @@ import Link from "next/link";
 
 const NewStories = async () => {
   const res = await fetch(
-    "https://quickfit-server.vercel.app/api/v1/news-stories",
+    "https://quick-fit-server.vercel.app/api/v1/newStories",
     {
       cache: "no-store",
     }
   );
   const data = await res.json();
   const slicedData = data.slice(0, 5);
+  console.log(data);
 
   return (
     <div className="w-11/12 mx-auto my-2 px-2">

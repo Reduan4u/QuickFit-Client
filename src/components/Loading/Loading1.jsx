@@ -8,8 +8,7 @@ function Loading1(props) {
     return (
         <div>
             <div className='h-[100vh] flex justify-center item-center'>
-              {/* <Lottie animationData={Loading} loop={true} className="h-[40vh] w-[40vw] mt-20" /> */}
-              loading
+              <Lottie animationData={Loading} loop={true} className="h-[40vh] w-[40vw] mt-20" />
             </div>
         </div>
     );
