@@ -7,7 +7,7 @@ const layout = ({ children }) => {
   return (
     <div className=" md:flex w-10/12 gap-4 mt-20 mx-auto ">
       <div className=" ">
-        <div class="w-full md:w-[20vw] sticky top-40 text-white bg-gray-700 px-4 grid gap-4 md:gap-0 rounded-sm py-12 md:space-y-10">
+        <div class="w-full md:w-[20vw] sticky top-40 text-white bg-gray-800 px-4 grid gap-4 md:gap-0 rounded-sm py-12 md:space-y-10">
           <NavLink href="/services/nutrition" class="hover:delay-200 hover:border-b-slate-500">
             Nutrition Plan
           </NavLink>
