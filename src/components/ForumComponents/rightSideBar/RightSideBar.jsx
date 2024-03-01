@@ -120,7 +120,7 @@ const RightSideBar = () => {
             {/* NEW DISCUSSIONS renderding */}
 
             <div className="text-[#fff] mt-5">
-                <h2 className="text-gray-700 text-center">NEW DISCUSSIONS</h2>
+                <h2 className="text-secondary text-center">NEW DISCUSSIONS</h2>
 
                 {
                     newestPost?.slice(0, 7).map((post, index) => (
@@ -130,7 +130,7 @@ const RightSideBar = () => {
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
 
                                 <Link href={`/forum/userprofile/${post?.userEmail}`} >
-                                <p className="text-[#2a4bf1ee] text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
+                                <p className="text-secondary text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
                                 </Link>
                             </div>
 
@@ -156,7 +156,7 @@ const RightSideBar = () => {
             {/* POPULAR POSTS renderding */}
 
             <div className="text-[#fff] mt-10">
-                <h2 className="text-gray-700 text-center">POPULAR POSTS</h2>
+                <h2 className="text-secondary text-center">POPULAR POSTS</h2>
 
                 <div>
                     <div className='flex items-center justify-start gap-2 mt-4'>

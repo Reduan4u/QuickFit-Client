@@ -21,7 +21,7 @@ const Announcement = () => {
                                 <div className='flex items-center justify-start gap-2 mt-2 md:mt-4'> {/* Adjusted margin-top on small screens */}
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4 md:h-8 md:w-8' /> {/* Adjusted image size on small screens */}
 
-                                    <p className='text-[#2a4bf1ee] text-[14px] md:text-[16px]'>SouravDutta</p> {/* Adjusted text size on small screens */}
+                                    <p className='text-secondary text-[14px] md:text-[16px]'>SouravDutta</p> {/* Adjusted text size on small screens */}
                                     <div className='text-gray-700 text-[15px] md:text-[16px] pb-1'> . </div>
                                     <p className='text-gray-700 text-[14px] md:text-[16px]'>24 Feb</p>
                                     <div className='text-gray-700 text-[15px] md:text-[16px] pb-1'> . </div>

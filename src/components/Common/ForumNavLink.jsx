@@ -9,7 +9,7 @@ const ForumNavLink = ({children, href}) => {
     return (
         <Link href={href}>
         <span
-          className={`${isActive && "text-[#2a4bf1ee] border-b-2 pb-2 border-[#2a4bf1ee]"}`}
+          className={`${isActive && "text-secondary border-b-2 pb-2 border-[#CF7500]"}`}
         >
           {children}
         </span>
