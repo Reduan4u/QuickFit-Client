@@ -12,10 +12,10 @@ const TrainerHireForm = ({params}) => {
   const [selectedDays, setSelectedDays] = useState('7day');
   const [experts,setExperts] = useState([])
   
-  console.log(experts)
+  
 
   const expert = experts?.find(item => item._id == params.id)
-  console.log(expert)
+ 
 
   useEffect(() => {
    
@@ -40,8 +40,10 @@ const TrainerHireForm = ({params}) => {
     const specialization = form.specialization.value;
     const days = form.days.value;
     const price = form.price.value;
+    const userEmail = form.userEmail.value;
+    const userName = form.userName.value;
   
-    const product = { name, email, experience, price, days, specialization }; // Include id in the product object
+    const product = { name, email, experience, price, days, specialization,userName,userEmail }; // Include id in the product object
     console.log(product);
     axiosPublic.post("/trainer", product)
       .then(result => {
@@ -76,8 +78,8 @@ const TrainerHireForm = ({params}) => {
   };
 
   return (
-    <div className="my-20">
-      <h1 className="text-center text-5xl font-bold underline"> Hire Form </h1>
+    <div className="my-20  ">
+      <h1 className="text-center text-5xl  font-bold underline"> Hire Form </h1>
       <form onSubmit={handleAddProduct}>
         <div className="card-body grid md:grid-cols-2 gap-8">
           <div className="form-control">
@@ -90,6 +92,7 @@ const TrainerHireForm = ({params}) => {
               placeholder="Name"
               className="input input-bordered"
               required
+              readOnly 
               defaultValue={expert?.name}
               
             />
@@ -104,6 +107,7 @@ const TrainerHireForm = ({params}) => {
               placeholder="Email Address"
               className="input input-bordered"
               required
+              readOnly 
               defaultValue={expert?.email}
               
             />
@@ -119,6 +123,7 @@ const TrainerHireForm = ({params}) => {
               className="input input-bordered"
               defaultValue="4 years"
               required
+              readOnly 
             />
           </div>
           <div className="form-control">
@@ -126,7 +131,7 @@ const TrainerHireForm = ({params}) => {
               <span className="label-text">Specialization</span>
             </label>
             <select name="specialization" className="select select-bordered">
-              <option value="" disabled selected>Select specialization</option>
+              
               <option value="health">Nutrition</option>
               <option value="fitness">Fitness</option>
               <option value="balance">Balance</option>
@@ -163,6 +168,33 @@ const TrainerHireForm = ({params}) => {
               value={calculateDefaultPrice(selectedDays)}
               required
               readOnly
+            />
+          </div>
+
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-secondary">User Name</span>
+            </label>
+            <input
+              type="text"
+              name="userName"
+              placeholder="User Name"
+              className="input input-bordered"
+              required
+              
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-secondary">User Email</span>
+            </label>
+            <input
+              type="email"
+              name="userEmail"
+              placeholder="Enter Email"
+              className="input input-bordered"
+              required
+              
             />
           </div>
         </div>

@@ -6,6 +6,7 @@ import { AuthContext } from "@/components/Provider/AuthProvider";
 import { useRouter } from "next/navigation";
 import { FaUsers } from "react-icons/fa";
 import React, { useContext } from "react";
+import { FaCodePullRequest } from "react-icons/fa6";
 import { CiLogout } from "react-icons/ci";
 import { IoHome } from "react-icons/io5";
 import { GrArticle } from "react-icons/gr";
@@ -61,6 +62,12 @@ const Layout = ({ children }) => {
             href="/adminDashboard/products"
           >
             Products
+          </DashLink>
+          <DashLink
+            icon={<FaCodePullRequest />}
+            href="/adminDashboard/trainerRequest"
+          >
+            Hire Request
           </DashLink>
           <DashLink
             icon={<SiGoogleanalytics />}
