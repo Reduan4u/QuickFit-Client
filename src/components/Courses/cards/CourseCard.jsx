@@ -14,7 +14,7 @@ const CourseCard = ({ course }) => {
     level,
   } = course;
   return (
-    <div className=" max-w-md w-full">
+    <div className=" max-w-md w-full shadow-md">
       <div className="relative">
         <Image
           height={1000}
@@ -38,12 +38,12 @@ const CourseCard = ({ course }) => {
         </Link>
 
         <div className="flex justify-start gap-5 items-center pt-2">
-          <li className="list-inside list-disc text-primary hover:underline">
+          <li className="list-inside list-disc text-secondary hover:underline">
             {" "}
-            {courseDuration}
+            {courseDuration}min
           </li>
           {/* <p className="text-primary">#{category}</p> */}
-          <p className="text-primary">Level: {level}</p>
+          <p className="text-secondary">Level: {level}</p>
         </div>
       </div>
     </div>
