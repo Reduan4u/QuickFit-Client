@@ -54,7 +54,7 @@ const CommentForm = ({ postId }) => {
       />
      
      <div className="flex justify-end">
-  <button className='bg-[#6366F1] py-1 px-2 rounded-3xl text-[#fff] mt-2 mr-4' type="submit">Post Comment</button>
+  <button className='bg-secondary py-1 px-2 rounded-3xl text-[#fff] mt-2 mr-4' type="submit">Post Comment</button>
 </div>
       
     </form>
