@@ -100,15 +100,22 @@ const Registration2 = () => {
     "bg-tertiary text-black w-full p-2 placeholder-secondary placeholder-opacity-80 rounded ";
 
   return (
-    <section id="register" className="py-20 w-10/12 mx-auto">
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center">
+    <div id="register" className="hero min-h-screen bg-tertiary">
+      <div className="hero-content flex flex-col-reverse md:flex-row w-10/12 m-auto pt-20">
         {/* lottie animation  */}
         <div className="flex justify-center items-center md:w-1/2">
-          <Player autoplay loop src="register.json" className="w-full"></Player>
+          <Player
+            autoplay
+            loop
+            src="register.json"
+            className="w-full"
+          ></Player>
         </div>
 
         {/* form div  */}
-        <div className="flex sizing w-full md:1/2 lg:w-2/5 mx-auto flex-col bg-gradient-to-bl from-primary  via-secondary to-primary text-black shadow-2xl shadow-black  p-5  my-5 ">
+        <div className="flex sizing w-full md:1/2 lg:w-2/5 mx-auto flex-col bg-gradient-to-bl from-primary  via-secondary to-primary text-black shadow-2xl shadow-black rounded-xl p-5  my-5 ">
+          <h1 className="text-5xl  font-bold text-center pb-10">Register now!</h1>
+
           {/* google login  */}
           <div
             onClick={handleGoogleLogin}
@@ -128,9 +135,7 @@ const Registration2 = () => {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
             {/* photo field  */}
             <div className="w-full">
-              <h2 className="text-lg mb-2 font-medium text-black">
-                Photo URL:
-              </h2>
+              <h2 className="text-lg mb-2 font-medium text-black">Photo URL:</h2>
               <input
                 type="text"
                 {...register("photo", { required: true })}
@@ -173,9 +178,7 @@ const Registration2 = () => {
             {/* password field  */}
             <div className="w-full">
               <div className="flex justify-between items-center">
-                <h2 className="text-lg mb-2 font-medium text-black">
-                  Password:
-                </h2>
+                <h2 className="text-lg mb-2 font-medium text-black">Password:</h2>
                 <button onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
                 </button>
@@ -207,11 +210,10 @@ const Registration2 = () => {
             </div>
 
             {/* register button field  */}
-            <div
-              type="submit"
-              className="w-full flex justify-center items-center"
-            >
-              <Ebutton>sign up</Ebutton>
+            <div type="submit" className="w-full flex justify-center items-center">
+              <Ebutton>
+                sign up
+              </Ebutton>
             </div>
 
             {/* go to login field  */}
@@ -227,7 +229,7 @@ const Registration2 = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

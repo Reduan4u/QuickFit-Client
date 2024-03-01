@@ -17,11 +17,11 @@ import useAxiosPublic from "@/hooks/useAxiosPublic";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, googleLogin,updateUserProfile } = useContext(AuthContext);
+  const { createUser, googleLogin, updateUserProfile } = useContext(AuthContext);
   const axiosPublic = useAxiosPublic()
   const {
     register,
-  
+
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -31,24 +31,24 @@ const Registration = () => {
     try {
       // Create user and get the result
       const result = await createUser(data.email, data.password);
-  
+
       // Upload image using FormData and fetch
       const formData = new FormData();
       formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
-  
+
       const imageUploadResponse = await fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
         method: "POST",
         body: formData,
       });
-  
+
       const imageUploadData = await imageUploadResponse.json();
-  
+
       // Update user profile with uploaded image URL
       await updateUserProfile(result.user, {
         displayName: data.name,
         photoURL: imageUploadData.data.url,
       });
-  
+
       // Post user data to your server
       await axiosPublic.post("/users", {
         ...data,
@@ -56,7 +56,7 @@ const Registration = () => {
         isBlocked: false,
         photoURL: imageUploadData.data.url, // Assuming you need to save the image URL in user data
       });
-  
+
       // Show success message and navigate after successful registration
       Swal.fire({
         position: "center",
@@ -65,7 +65,7 @@ const Registration = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-  
+
       router.push("/");
     } catch (error) {
       // Handle any errors that occurred during the process
@@ -73,7 +73,7 @@ const Registration = () => {
       // You might want to show an error message to the user
     }
   };
-  
+
 
   // const onSubmit = (data) => {
   //   console.log(data)
@@ -82,7 +82,7 @@ const Registration = () => {
   //       console.log(result.user);
   //       const formData = new FormData();
   //       formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
-  
+
   //       // Upload image using fetch
   //       fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
   //         method: "POST",
@@ -91,7 +91,7 @@ const Registration = () => {
   //         .then((res) => res.json())
   //         .then((response) => {
   //           console.log("Success:", response);
-            
+
   //         })
   //         .catch((error) => {
   //           console.error("Error:", error);
@@ -112,8 +112,8 @@ const Registration = () => {
   //           console.log(err.code);
   //         });
 
-       
-        
+
+
   //     })
   //     .then(() => {
   //       Swal.fire({
@@ -133,7 +133,7 @@ const Registration = () => {
   //     });
   // };
 
-  
+
 
   const handleGoogleLogin = () => {
     googleLogin()
