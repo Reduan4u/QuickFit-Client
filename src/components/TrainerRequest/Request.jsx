@@ -3,7 +3,7 @@ import { FaUsers } from "react-icons/fa";
 
 
 const Request = async () => {
-    const res = await fetch("http://localhost:3001/api/v1/adminDashboard/trainerRequest", {
+    const res = await fetch("https://quick-fit-server.vercel.app/api/v1/adminDashboard/trainerRequest", {
         cache: "no-store"
       });
       const data = await res.json();
