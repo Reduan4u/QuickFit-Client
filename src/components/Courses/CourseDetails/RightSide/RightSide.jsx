@@ -16,8 +16,7 @@ const RightSide = ({params}) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const {isPending, allCourseDetails} = UseCourseDetails()
     const course = allCourseDetails?.find(itm => itm.category == params.id)
-
-
+    
     const handlePlayVideo = () => {
         setIsPlaying(true);
     };
@@ -31,8 +30,7 @@ const RightSide = ({params}) => {
                     height={1000}
                     width={1000}
                     alt="pp"
-                    src={course.courseVideo}
-
+                    src={course?.titleImage}
                 />
                 {!isPlaying && (
                     <button
@@ -50,7 +48,7 @@ const RightSide = ({params}) => {
                         <iframe
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/QK86W8Ls5nY?si=AnmKgt8Hxye1Dfxo"
+                            src={course?.courseVideo}
                             title="YouTube Video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             frameBorder="0"
@@ -78,7 +76,7 @@ const RightSide = ({params}) => {
                     </div>
                 )}
             </div>
-            <h1 className="font-bold text-2xl py-5">Hacking exercise for health new science of fitness.</h1>
+            <h1 className="font-bold text-2xl py-5">{course?.title}</h1>
             <div className="flex justify-between items-center pb-10">
                 <div className="flex justify-start items-center gap-2">
 
@@ -87,8 +85,8 @@ const RightSide = ({params}) => {
                         width={1000}
                         alt="pp"
                         className="h-10 w-10 rounded-full"
-                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    <p>By: Instructor</p>
+                        src={course?.providerImg} />
+                    <p>By: {course?.courseProvider}</p>
                 </div>
                 <p className="flex gap-2 justify-center items-center">Rating <div className="rating">
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" />
@@ -107,13 +105,13 @@ const RightSide = ({params}) => {
                 </TabList>
 
                 <TabPanel>
-                    <Description></Description>
+                    <Description course={course}></Description>
                 </TabPanel>
                 <TabPanel>
-                    <Quiz></Quiz>
+                    <Quiz quiz={course?.quiz}></Quiz>
                 </TabPanel>
                 <TabPanel>
-                    <Reviews></Reviews>
+                    <Reviews course={course}></Reviews>
                 </TabPanel>
             </Tabs>
         </div>
