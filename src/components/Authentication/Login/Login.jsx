@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Ebutton from "@/components/Common/Ebutton";
+import { toast } from "react-toastify";
 
 const Login = ({ path }) => {
   const { signIn, googleLogin } = useContext(AuthContext);
@@ -74,8 +75,7 @@ const Login = ({ path }) => {
         router.push(path || "/");
       })
       .catch((error) => {
-        console.error("Login Error: ", error.message);
-
+        toast.error("Login Error: ", error.message);
       });
   };
 
@@ -128,6 +128,15 @@ const Login = ({ path }) => {
                 <span className="text-red-700">email is required</span>
               )}
             </div>
+            <input
+              type={showPassword ? "text" : "password"}
+              {...register("password", {
+                required: true,
+              })}
+              placeholder="type password "
+              className={inputClass}
+            />
+
 
             {/* password field  */}
             <div className="w-full">

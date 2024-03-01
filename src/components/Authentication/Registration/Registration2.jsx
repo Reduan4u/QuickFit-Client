@@ -27,7 +27,6 @@ const Registration2 = () => {
     formState: { errors },
   } = useForm();
 
-
   const onSubmit = (data) => {
     createUser(data.email, data.password)
       .then((res) => {
@@ -97,7 +96,8 @@ const Registration2 = () => {
       .catch((error) => console.error(error));
   };
 
-  const inputClass = "bg-tertiary text-black w-full p-2 placeholder-secondary placeholder-opacity-80 rounded "
+  const inputClass =
+    "bg-tertiary text-black w-full p-2 placeholder-secondary placeholder-opacity-80 rounded ";
 
   return (
     <div id="register" className="hero min-h-screen bg-tertiary">
