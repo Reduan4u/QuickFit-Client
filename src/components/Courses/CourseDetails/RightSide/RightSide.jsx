@@ -9,10 +9,14 @@ import 'react-tabs/style/react-tabs.css';
 import Description from "./TabContent/Description";
 import Quiz from "./TabContent/Quiz";
 import Reviews from "./TabContent/Reviews";
+import UseCourseDetails from "@/hooks/UseCourseDetails";
 
 
-const RightSide = () => {
+const RightSide = ({params}) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const {isPending, allCourseDetails} = UseCourseDetails()
+    const course = allCourseDetails?.find(itm => itm.category == params.id)
+
 
     const handlePlayVideo = () => {
         setIsPlaying(true);
@@ -27,7 +31,7 @@ const RightSide = () => {
                     height={1000}
                     width={1000}
                     alt="pp"
-                    src="https://htmldemo.net/nutras/nutras/assets/images/courses/courses-details.jpg"
+                    src={course.courseVideo}
 
                 />
                 {!isPlaying && (
@@ -46,9 +50,10 @@ const RightSide = () => {
                         <iframe
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/J8SFL3Z7zw4?list=PLnZgHKyxHOEAy7MisX6CSMe4JTzkeodmC"
+                            src="https://www.youtube.com/embed/QK86W8Ls5nY?si=AnmKgt8Hxye1Dfxo"
                             title="YouTube Video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            frameBorder="0"
                             allowFullScreen
                         ></iframe>
                         <button
@@ -95,11 +100,10 @@ const RightSide = () => {
             </div>
             {/* Tab */}
             <Tabs>
-                <TabList className="md:flex items-center justify-center bg-[#F8F6F4] py-2 gap-4 mb-4 border-none">
-                    <Tab className=" w-full md:w-32 text-center rounded-full px-6 py-3 border-none bg-gray-200  transition-colors duration-300 " selectedClassName="border-none bg-primary text-white">Description</Tab>
-                    <Tab className="w-full md:w-32 px-6 py-3 border-none bg-gray-200 rounded-full transition-colors duration-300 text-center" selectedClassName="border-none bg-primary text-white">Quiz</Tab>
-                    <Tab className="w-full md:w-32 text-center px-6 py-3 border-none bg-gray-200 rounded-full transition-colors duration-300 " selectedClassName="border-none bg-primary text-white">Reviews</Tab>
-
+                <TabList>
+                    <Tab>Description</Tab>
+                    <Tab>Quiz</Tab>
+                    <Tab>Reviews</Tab>
                 </TabList>
 
                 <TabPanel>

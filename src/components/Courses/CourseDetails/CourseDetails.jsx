@@ -4,16 +4,16 @@ import RightSide from "./RightSide/RightSide";
 
 
 
-const CourseDetails = () => {
+const CourseDetails = ({params}) => {
 
 
     return (
         <div className="flex-row md:flex justify-between gap-12 items-start w-[70vw] mx-auto py-10">
             {/* Left Side */}
-            <LeftSide></LeftSide>
+            <LeftSide params={params}></LeftSide>
 
             {/* Right Side */}
-            <RightSide></RightSide>
+            <RightSide params={params}></RightSide>
         </div>
     );
 };

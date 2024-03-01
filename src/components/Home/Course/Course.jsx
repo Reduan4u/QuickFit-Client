@@ -1,4 +1,3 @@
-import Button1 from "@/components/Common/Button1";
 import Image from "next/image";
 import Link from "next/link";
 import './Course.css'

@@ -12,7 +12,7 @@ const Reviews = () => {
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* User Name */}
-                    <div className="form-control w-full my-6">
+                    {/* <div className="form-control w-full my-6">
                         <label className="label">
                             <span className="label-text">User Name</span>
                         </label>
@@ -22,9 +22,9 @@ const Reviews = () => {
                             {...register('name', { required: true })}
                             required
                             className="input input-bordered w-full" />
-                    </div>
+                    </div> */}
                     {/* Designation */}
-                    <div className="form-control w-full my-6">
+                    {/* <div className="form-control w-full my-6">
                         <label className="label">
                             <span className="label-text">Designation</span>
                         </label>
@@ -34,7 +34,7 @@ const Reviews = () => {
                             {...register('designation', { required: true })}
                             required
                             className="input input-bordered w-full" />
-                    </div>
+                    </div> */}
 
 
                     {/* Rating */}

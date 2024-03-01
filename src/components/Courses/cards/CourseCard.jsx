@@ -30,7 +30,7 @@ const CourseCard = ({ course }) => {
 
       <div className="p-5">
         <p className="text-gray-700 mt-5 ">By: {courseProvider}</p>
-        <Link href={`/courses/${_id}`}>
+        <Link href={`/courses/${category}`}>
           <p className="text-2xl font-semibold text-gray-800 mt-3 hover:text-primary">
             {" "}
             {courseTitle}

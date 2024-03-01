@@ -2,7 +2,7 @@ import { FaBook, FaCertificate, FaLanguage, FaLevelUpAlt, FaUser } from "react-i
 import {  FaClock } from "react-icons/fa6";
 import { SiLevelsdotfyi } from "react-icons/si";
 
-const LeftSide = () => {
+const LeftSide = ({params}) => {
     return (
         <div className="bg-[#F8F6F4] w-full md:w-2/6 p-8">
                 <h1 className="font-bold text-3xl text-center py-5">Price</h1>
