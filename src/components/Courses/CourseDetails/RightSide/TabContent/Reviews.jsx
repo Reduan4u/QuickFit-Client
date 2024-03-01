@@ -57,9 +57,9 @@ const Reviews = () => {
                         <textarea {...register('details')} className="textarea textarea-bordered h-24" placeholder="Write a review"></textarea>
                     </div>
                     {/* Image */}
-                    <div className="form-control w-full my-6">
+                    {/* <div className="form-control w-full my-6">
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
-                    </div>
+                    </div> */}
 
                     <div className="flex justify-center items-center"><button className="btn w-32 text-center rounded-full border-none bg-black text-white uppercase px-5 ">Add</button></div>
                 </form>
