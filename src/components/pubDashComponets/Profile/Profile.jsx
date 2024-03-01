@@ -1,12 +1,11 @@
 "use client";
 import useUser from "@/hooks/useUser";
 // import Image from "next/image";
-import React from "react";
+import React, { useContext, useState } from "react";
 
 
 const Profile = () => {
   const { data } = useUser();
-
 
   return (
     <div>
