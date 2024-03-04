@@ -7,6 +7,7 @@ import useAxiosPublic from "@/hooks/useAxiosPublic";
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
+import logo from "../../../../public/logo.png"
 
 const Navbar = () => {
   const [showOptions, setShowOption] = useState(false);
@@ -167,7 +168,8 @@ const Navbar = () => {
               <Image
                 height={200}
                 width={200}
-                src={"https://i.postimg.cc/8cVY4Xw3/2-1-removebg-preview.png"}
+                src={logo}
+                // src='https://res.cloudinary.com/dmiq6scyx/image/upload/v1709571597/2_1_-removebg-preview_yhifxc.png'
                 className=" h-20 w-28 md:w-40 object-cover"
               />
             </Link>
