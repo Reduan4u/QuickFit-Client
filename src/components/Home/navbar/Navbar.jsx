@@ -95,11 +95,10 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className={`${navLinkClass} text-xl ml-4 ${
-                isDropdownOpen ? "text-orange-300" : ""
-              }`}
+              className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? "text-orange-300" : ""
+                }`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              // onBlur={() => setIsDropdownOpen(false)}
+            // onBlur={() => setIsDropdownOpen(false)}
             >
               More
             </div>
@@ -167,6 +166,7 @@ const Navbar = () => {
               <Image
                 height={200}
                 width={200}
+                alt="Banner Image"
                 src={"https://i.postimg.cc/8cVY4Xw3/2-1-removebg-preview.png"}
                 className=" h-20 w-28 md:w-40 object-cover"
               />
