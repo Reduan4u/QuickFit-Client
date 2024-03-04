@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { toast } from "react-toastify";
 import Ebutton from "@/components/Common/Ebutton";
+import LoginButton from "@/components/Common/LoginButton";
 
 const Registration2 = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -97,49 +98,28 @@ const Registration2 = () => {
   };
 
   const inputClass =
-    "bg-tertiary text-black w-full p-2 placeholder-secondary placeholder-opacity-80 rounded ";
-
+    "bg-tertiary border border-gray-400 rounded-xl my-1 text-black w-full p-3 placeholder-black placeholder-opacity-50 rounded text-lg";
   return (
     <div id="register" className="hero min-h-screen bg-tertiary">
       <div className="hero-content flex flex-col-reverse md:flex-row w-10/12 m-auto pt-20">
         {/* lottie animation  */}
         <div className="flex justify-center items-center md:w-1/2">
-          <Player
-            autoplay
-            loop
-            src="register.json"
-            className="w-full"
-          ></Player>
+          <Player autoplay loop src="register.json" className="w-full"></Player>
         </div>
 
         {/* form div  */}
-        <div className="flex sizing w-full md:1/2 lg:w-2/5 mx-auto flex-col bg-gradient-to-bl from-primary  via-secondary to-primary text-black shadow-2xl shadow-black rounded-xl p-5  my-5 ">
-          <h1 className="text-5xl  font-bold text-center pb-10">Register now!</h1>
-
-          {/* google login  */}
-          <div
-            onClick={handleGoogleLogin}
-            className="btn bg-tertiary border-primary border-2 rounded-md text-xl hover:bg-black hover:text-tertiary transform hover:scale-105 transition-all duration-300"
-          >
-            <h1>
-              <span className="text-center text-4xl">
-                <FcGoogle />
-              </span>
-            </h1>
-            Google
-          </div>
-
-          <div className="divider"></div>
+        <div className="flex  w-full md:1/2 lg:w-2/6 mx-auto flex-col bg-gradient-to-b from-white to-four text-black shadow-2xl  rounded-xl p-5  my-5 ">
+        <h1 className="text-2xl md:text-3xl  font-mediumm text-center md:text-start pb-5">Register <span className="text-three">Now</span></h1>
+      
 
           {/* register form starts  */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
             {/* photo field  */}
             <div className="w-full">
-              <h2 className="text-lg mb-2 font-medium text-black">Photo URL:</h2>
               <input
                 type="text"
                 {...register("photo", { required: true })}
-                placeholder="type photo url... "
+                placeholder="Photo URL "
                 className={inputClass}
               />
               {errors.photo && (
@@ -149,11 +129,10 @@ const Registration2 = () => {
 
             {/* name field  */}
             <div className="w-full">
-              <h2 className="text-lg mb-2 font-medium text-black">Name:</h2>
               <input
                 type="text"
                 {...register("name", { required: true })}
-                placeholder="type your name "
+                placeholder="Your Name"
                 className={inputClass}
               />
               {errors.name && (
@@ -163,11 +142,10 @@ const Registration2 = () => {
 
             {/* email field  */}
             <div className="w-full">
-              <h2 className="text-lg mb-2 font-medium text-black">Email:</h2>
               <input
                 type="email"
                 {...register("email", { required: true })}
-                placeholder="type email "
+                placeholder="Email "
                 className={inputClass}
               />
               {errors.email && (
@@ -176,13 +154,7 @@ const Registration2 = () => {
             </div>
 
             {/* password field  */}
-            <div className="w-full">
-              <div className="flex justify-between items-center">
-                <h2 className="text-lg mb-2 font-medium text-black">Password:</h2>
-                <button onClick={() => setShowPassword(!showPassword)}>
-                  {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
-                </button>
-              </div>
+            <div className="w-full relative">
               <input
                 type={showPassword ? "text" : "password"}
                 {...register("password", {
@@ -190,9 +162,14 @@ const Registration2 = () => {
                   minLength: 6,
                   pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
                 })}
-                placeholder="type password "
+                placeholder="Password"
                 className={inputClass}
               />
+              <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+                <button onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaEye /> : <FaEyeSlash />}
+                </button>
+              </div>
               {errors.password?.type == "required" && (
                 <span className="text-red-700">Password field is required</span>
               )}
@@ -210,19 +187,29 @@ const Registration2 = () => {
             </div>
 
             {/* register button field  */}
-            <div type="submit" className="w-full flex justify-center items-center">
-              <Ebutton>
-                sign up
-              </Ebutton>
+            <div
+              type="submit"
+              className="text-xl"
+            >
+              <LoginButton>Create An Account</LoginButton>
+            </div>
+
+            {/* google login  */}
+            <div onClick={handleGoogleLogin} className="text-xl mt-4">
+              <LoginButton>
+                <div className="flex justify-center items-center gap-4">
+                  <span>
+                    <FcGoogle />
+                  </span>
+                  Google
+                </div>
+              </LoginButton>
             </div>
 
             {/* go to login field  */}
-            <div className="flex justify-evenly mb-5 items-center">
-              <p className="inline">Already Registered?</p>
-              <Link
-                href="/login"
-                className="border-b-2  border-black font-semibold text-xl"
-              >
+            <div className=" text-center">
+              <p className="inline">Already Registered? </p>
+              <Link href="/login" className="hover:text-three transition-all">
                 Log In
               </Link>
             </div>

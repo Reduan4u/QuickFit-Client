@@ -1,5 +1,6 @@
 "use client";
 
+import LoginButton from "@/components/Common/LoginButton";
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
@@ -285,7 +286,9 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
             </div>
           ) : (
             <Link href="/login" className="font-bold">
-              Login
+             <div className="md:w-32 text-lg">
+             <LoginButton>Login</LoginButton>
+             </div>
             </Link>
           )}
           <label className="swap swap-rotate ml-2">
