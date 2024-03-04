@@ -12,27 +12,29 @@ import "swiper/css/effect-cube";
 
 // Additional styles if needed
 import "swiper/css/effect-cube";
-
 import "./Banner.css";
-
 // import required modules
 import { Autoplay, Pagination, Navigation, EffectCube } from "swiper/modules";
 import Image from "next/image";
 
 const Banner = () => {
+
+
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+
   return (
-    <div className=" h-[70vh] w-full m-auto">
-      <Swiper
+    <div className="h-[60vh] m-auto">
+
+      {<Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 4000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -43,157 +45,198 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation, EffectCube]}
         className="mySwiper"
       >
-        <SwiperSlide className="">
-          <div className=" w-full h-full bg-black opacity-60 absolute"></div>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  absolute flex flex-col p-6 pb-10 justify-end  text-white text-left h-full ">
+
+        <SwiperSlide>
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
             <motion.h2
-              variants={fadeIn("right", 0.3)}
+              variants={fadeIn("up", 0.2)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl text-primary font-bold"
+              className=" text-7xl  text-primary font-bold"
             >
-              Welcome to Quick Fit
+              <span className="text-9xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
             </motion.h2>
             <motion.h2
-              variants={fadeIn("right", 0.9)}
+              variants={fadeIn("up", 0.9)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=""
+              className="text-black text-2xl pt-4"
             >
-              The Home of Fitness
-            </motion.h2>
+              It has survived not only five Centuries but also Generations           </motion.h2>
           </div>
           <Image
             height={1080}
             width={1920}
-            className=" "
+            className=" -mt-24"
+            src="https://htmldemo.net/nutras/nutras/assets/images/slider/slider-1.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute text-white flex flex-col pl-40 justify-center h-full">
+            <motion.h2
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className=" text-7xl text-primary font-bold"
+            >
+              <span className="text-9xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+            </motion.h2>
+            <motion.h2
+              variants={fadeIn("up", 0.9)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="text-black text-2xl pt-4"
+            >
+              It has survived not only five Centuries but also Generations           </motion.h2>
+          </div>
+          <Image
+            height={1080}
+            width={1920}
+            className=" -mt-24"
+            src="https://htmldemo.net/nutras/nutras/assets/images/slider/slider-2.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute text-white flex flex-col pl-40 justify-center h-full">
+            <motion.h2
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className=" text-7xl text-primary font-bold"
+            >
+              <span className="text-9xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+            </motion.h2>
+            <motion.h2
+              variants={fadeIn("up", 0.9)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="text-black text-2xl pt-4"
+            >
+              It has survived not only five Centuries but also Generations           </motion.h2>
+          </div>
+          <Image
+            height={1080}
+            width={1920}
+            className=" -mt-24"
+            src="https://htmldemo.net/nutras/nutras/assets/images/slider/slider-3.jpg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+            <motion.h2
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className=" text-7xl text-white text-right font-bold"
+            >
+              <span className="text-9xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+            </motion.h2>
+            <motion.h2
+              variants={fadeIn("up", 0.9)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="text-white text-2xl pt-4 text-right"
+            >
+              It has survived not only five Centuries but also Generations           </motion.h2>
+          </div>
+          <Image
+            height={1080}
+            width={1920}
+            className=" -mt-24"
             src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute pb-10 text-white flex flex-col p-6 justify-end h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute text-white flex flex-col pl-40 justify-center h-full">
             <motion.h2
-              variants={fadeIn("right", 0.3)}
+              variants={fadeIn("up", 0.2)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl text-primary font-bold"
+              className=" text-7xl text-white font-bold text-right mt-40"
             >
-              Fell the nature
+              <span className="text-9xl">QuickFit </span> <br />for Your <span className="text-three"> Health,</span><br />Not Only <span className="text-three"> Fitness.</span>
             </motion.h2>
             <motion.h2
-              variants={fadeIn("right", 0.9)}
+              variants={fadeIn("up", 0.9)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=""
+              className="text-white text-2xl pt-4 text-right"
             >
-              Embrace the nature beauty in your heart
-            </motion.h2>
+              It has survived not only five Centuries but also Generations           </motion.h2>
           </div>
           <Image
             height={1080}
             width={1920}
-            className=" "
-            src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10  absolute text-white flex flex-col p-6 justify-end h-full">
-            <motion.h2
-              variants={fadeIn("right", 0.3)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl text-primary font-bold"
-            >
-              Eat Healthy, Stay Healthy
-            </motion.h2>
-            <motion.h2
-              variants={fadeIn("right", 0.9)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=""
-            >
-              We have the best consultant for these
-            </motion.h2>
-          </div>
-          <Image
-            height={1080}
-            width={1920}
-            className=" "
-            src="https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
-            <motion.h2
-              variants={fadeIn("right", 0.3)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl text-primary font-bold"
-            >
-              Industry is the Key
-            </motion.h2>
-            <motion.h2
-              variants={fadeIn("right", 0.9)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=""
-            >
-              The more you embarce pain, the more you will be strong
-            </motion.h2>
-          </div>
-          <Image
-            height={1080}
-            width={1920}
-            className=" "
+            className=" -mt-24"
             src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
           />
         </SwiperSlide>
-        <SwiperSlide>
-          <div className=" w-full h-full bg-blue-950 opacity-55 absolute"></div>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left pb-10 absolute text-white flex flex-col p-6 justify-end h-full">
+
+
+
+
+
+      </Swiper>}
+
+      {/* <AutoplaySlider play={true} cancelOnInteraction={false} interval={100000}>
+
+        <div className="relative" style={{ backgroundImage: 'url(https://htmldemo.net/nutras/nutras/assets/images/slider/slider-1.jpg)', backgroundSize: ' auto' }}>
+          <div className="text-container">
             <motion.h2
-              variants={fadeIn("right", 0.3)}
+              variants={fadeIn("up", 0.1)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=" text-3xl text-primary font-bold"
+              viewport={{ once: false, amount: 0.2 }}
+              className=" text-7xl text-primary font-bold"
             >
-              Control your Hunger
+              Fell the nature
             </motion.h2>
             <motion.h2
-              variants={fadeIn("right", 0.9)}
+              variants={fadeIn("up", 0.9)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className=""
+              viewport={{ once: false, amount: 0.9 }}
+              className=" text-2xl"
             >
-              Eat to live , Do not live to eat
+              Embrace the nature beauty in your heart
             </motion.h2>
           </div>
-          <Image
-            height={1080}
-            width={1920}
-            className=" "
-            src="https://img.freepik.com/free-photo/box-nuts-spices-wood-table_23-2148262109.jpg?w=1380&t=st=1706191626~exp=1706192226~hmac=4a124afa8839f3eefbbe7a64f448a58116018705fd66df9ba7b8f1804e39a68d"
-            alt=""
-          />
-        </SwiperSlide>
-      </Swiper>
+        </div>
+
+
+        <div className="relative" style={{ backgroundImage: 'url(https://htmldemo.net/nutras/nutras/assets/images/slider/slider-2.jpg)', backgroundSize: 'cover' }}>
+          <div className='flex flex-col-reverse lg:flex-row md:flex-row lg:px-24 md:px-20 px-4 my-10'>
+            <div className="lg:flex-1 md:flex-1 flex flex-col justify-center items-center lg:items-start md:items-start text-center lg:text-start md:text-start ">
+              <h1 className="mb-1 md:mb-5 lg:mb-5 text-sm sm:text-2xl md:text-3xl lg:text-5xl font-bold text-black">BBQ Chicken <strong className='text-red-600'>Salad</strong> with Creamy Avocado</h1>
+              <motion.h2
+                variants={fadeIn("right", 0.9)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className=""
+              >
+                BBQ Chicken Salad with Creamy Avocado
+              </motion.h2>
+            </div>
+          </div>
+        </div>
+        <div data-src="/path/to/image-2.jpg" />
+      </AutoplaySlider> */}
     </div>
   );
 };
