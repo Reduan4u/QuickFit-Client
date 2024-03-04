@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.2.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@lottiefiles/lottie-player": "^2.0.3",
@@ -16,6 +17,7 @@
     "@mui/material": "^5.15.10",
     "@mui/styled-engine-sc": "^6.0.0-alpha.16",
     "@mui/x-charts": "^6.19.3",
+    "@react-google-maps/api": "^2.19.3",
     "@smastrom/react-rating": "^1.5.0",
     "@tanstack/react-query": "^5.17.19",
     "aos": "^2.3.4",
@@ -50,7 +52,7 @@
     "socket.io-client": "^4.7.4",
     "styled-components": "^6.1.8",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.10.4",
+    "sweetalert2": "^11.10.5",
     "swiper": "^11.0.5",
     "typewriter-effect": "^2.21.0"
   },
