@@ -34,7 +34,7 @@ function Ebanner({ image, heading }) {
               <Link href="/" className="hover:text-three transition">
                 Home
               </Link>{" "}
-              // <span className="text-three">{heading}</span>
+              <span>//</span> <span className="text-three">{heading}</span>
             </h3>
           </motion.div>
         </div>
