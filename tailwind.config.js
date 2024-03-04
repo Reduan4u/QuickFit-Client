@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#F0A500',
+        primary: '#FFA300',
+        primary2: '#0A4D3C',
         secondary: '#CF7500',
         tertiary: '#F4F4F4',
         dashPrimary:'#182237',

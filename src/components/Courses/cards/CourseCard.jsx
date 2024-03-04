@@ -23,7 +23,7 @@ const CourseCard = ({ course }) => {
           src={image}
           className="w-full rounded-none h-52"
         />
-        <div className="absolute bg-black text-white flex justify-center items-center bottom-0 left-2/4 transform -translate-x-1/2 translate-y-1/2 w-20 h-20 rounded-full border-2 font-bold border-white">
+        <div className="absolute bg-primary2 text-white flex justify-center items-center bottom-0 left-2/4 transform -translate-x-1/2 translate-y-1/2 w-20 h-20 rounded-full border-2 font-bold border-white">
           ${price}
         </div>
       </div>
@@ -38,12 +38,12 @@ const CourseCard = ({ course }) => {
         </Link>
 
         <div className="flex justify-start gap-5 items-center pt-2">
-          <li className="list-inside list-disc text-secondary hover:underline">
+          <li className="list-inside list-disc text-primary hover:underline">
             {" "}
             {courseDuration}min
           </li>
           {/* <p className="text-primary">#{category}</p> */}
-          <p className="text-secondary">Level: {level}</p>
+          <p className="text-primary">Level: {level}</p>
         </div>
       </div>
     </div>

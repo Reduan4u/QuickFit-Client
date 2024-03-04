@@ -15,7 +15,7 @@ const CBanner = ({ image, heading }) => {
                     width={1000}
                     height={500}
                     alt="Banner Image"
-                        src={image ? image : "https://i.postimg.cc/g0w44N8t/top-view-desk-concept-with-tablet.jpg"}
+                        src={image ? image : "https://htmldemo.net/nutras/nutras/assets/images/page-banner.jpg"}
                         className="w-full h-[50vh] object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 flex items-center top-0 ">
