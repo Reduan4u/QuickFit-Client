@@ -4,6 +4,7 @@ import LoginButton from "@/components/Common/LoginButton";
 import NavLink from "@/components/Common/NavLink";
 import { AuthContext } from "@/components/Provider/AuthProvider";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
+import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 
@@ -159,7 +160,7 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className=" text-xl">
+          {/* <a className=" text-xl">
             <svg
               version="1.0"
               xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +237,15 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
                 />
               </g>
             </svg>
-          </a>
+          </a> */}
+          <div>
+            <Image
+            height={200}
+            width={200}
+            src={"https://i.postimg.cc/8cVY4Xw3/2-1-removebg-preview.png"}
+            className=" h-20 w-28 md:w-40 object-cover"
+             />
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
@@ -286,7 +295,7 @@ c-133 82 -136 71 65 259 94 88 166 165 160 170 -11 12 -235 105 -251 105 -5 0
             </div>
           ) : (
             <Link href="/login" className="font-bold">
-             <div className="md:w-32 text-lg">
+             <div className="md:w-32">
              <LoginButton>Login</LoginButton>
              </div>
             </Link>
