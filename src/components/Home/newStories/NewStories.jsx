@@ -20,12 +20,12 @@ const NewStories = async () => {
           <Button1 title={"See All"} />
         </Link> */}
       </div>
+
       <div className=" grid md:grid-cols-4 grid-cols-1  md:gap-2 gap-y-2  ">
         {slicedData.map((story, index) => (
           <Link
-            className={`${
-              index === 0 && "col-span-2 row-span-2 h-full w-full"
-            } hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
+            className={`${index === 0 && "col-span-2 row-span-2 h-full w-full"
+              } hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
             href={`/allStories/${story._id}`}
             key={index}
           >

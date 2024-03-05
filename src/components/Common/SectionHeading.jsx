@@ -17,14 +17,14 @@ const SectionHeading = ({ title, subTitle, color, text1 }) => {
           style={{
             backgroundImage: `url('https://htmldemo.net/nutras/nutras/assets/images/shape/shape-3.png')`,
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center", 
+            backgroundPosition: "center",
             objectFit: "cover",
           }}
         >
           <h3 className="text-one mb-3 font-medium md:text-lg">
             {subTitle ? subTitle : "Grow Your Health"}
           </h3>
-          <h1 className="text-3xl md:text-5xl">{title}</h1>
+          <h1 className="text-3xl font-bold  md:text-5xl">{title}</h1>
         </div>
       </div>
     </motion.div>

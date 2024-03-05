@@ -6,7 +6,7 @@ import LoginButton from "@/components/Common/LoginButton";
 
 const Course = () => {
     return (
-        <div class="relative w-full mx-auto flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
+        <div class="relative w-full mx-auto flex flex-col justify-center overflow-hidden mt-20 py-16 sm:pt-12 bg-tertiary">
             <div class="w-full items-center">
                 <div class="w-full md:w-3/4  mx-auto flex-row md:flex ">
                     <div class="overflow-hidden m-5 md:m-10 w-full md:w-2/5  relative">
@@ -21,10 +21,10 @@ const Course = () => {
                             <Link href='/courses' className="w-3/4"><LoginButton>Start course</LoginButton></Link>
                         </div>
                     </div>
-                    
-                                       
 
-                    <div className=" p-10 bg-white shadow-xl w-full md:w-3/5">
+
+
+                    <div className=" px-10 bg-white shadow-xl w-full md:w-3/5 flex justify-center items-center">
                         <div class="pl-12">
                             <p class="text-base font-semibold leading-7 text-three">25+ YEARS OF EXPERIENCE</p>
                             <h1 class="my-5 text-5xl font-bold tracking-tight text-gray-900">We have expert instructor for help our students.</h1>

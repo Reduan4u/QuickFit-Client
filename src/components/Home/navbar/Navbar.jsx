@@ -99,7 +99,7 @@ const Navbar = () => {
                 isDropdownOpen ? "text-three" : ""
               }`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              // onBlur={() => setIsDropdownOpen(false)}
+            // onBlur={() => setIsDropdownOpen(false)}
             >
               More
             </div>

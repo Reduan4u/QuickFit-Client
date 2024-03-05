@@ -8,6 +8,9 @@ import dietPlan from "../../../../public/dietPlan.json";
 import Image from 'next/image';
 import Link from 'next/link';
 import Button1 from '@/components/Common/Button1';
+import Ebutton from '@/components/Common/Ebutton';
+import Ebutton2 from '@/components/Common/Ebutton2';
+import { Button } from '@mui/material';
 
 
 const DietPlan = () => {
@@ -16,7 +19,7 @@ const DietPlan = () => {
             className="w-3/4 mx-auto my-16 px-2">
             <div>
                 <div>
-                    <SectionHeading title={"Special Diet Plans!"}></SectionHeading>
+                    <SectionHeading title={"Special Diet Plans!"} subTitle={"Work on Yourself by"}></SectionHeading>
                 </div>
                 {/* <motion.div
                     variants={fadeIn("right", 0.4)}
@@ -58,13 +61,13 @@ const DietPlan = () => {
 
                         </div>
                         <div>
-                            <div className="p-6 bg-red-500 text-white opacity-95 text-center">
+                            <div className="p-6 bg-one text-white opacity-95 text-center">
                                 <h4 className="font-extrabold block font-sans  lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
                                     WEIGHT LOSS
                                 </h4>
                                 <h6>7 DAYS DIET PLAN</h6>
                             </div>
-                            <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
+                            <div className='p-6 bg-three opacity-85 text-black  text-center'>
                                 <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$150</h2>
                             </div>
                             <div className='text-center p-6 text-gray-600'>
@@ -103,14 +106,14 @@ const DietPlan = () => {
                             />
                         </div>
                         <div>
-                            <div className="p-6 bg-red-500 text-white opacity-95 text-center">
+                            <div className="p-6 bg-one text-white opacity-95 text-center">
                                 <h4 className="font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
                                     POST PREGNANCY
 
                                 </h4>
                                 <h6>SIX MONTHS DIET & EXERCISE PLAN</h6>
                             </div>
-                            <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
+                            <div className='p-6 bg-three opacity-85 text-black  text-center'>
                                 <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$250 <span className='text-xl font-medium'>/Week</span></h2>
                             </div>
                             <div className='text-center p-6 text-gray-600'>
@@ -153,13 +156,13 @@ const DietPlan = () => {
 
                         </div>
                         <div>
-                            <div className="p-6 bg-red-500 text-white opacity-95 text-center">
+                            <div className="p-6 bg-one text-white opacity-95 text-center">
                                 <h4 className="font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900">
                                     FITNESS
                                 </h4>
                                 <h6>FOUR WEEKS MEAL & RUNNING PLAN</h6>
                             </div>
-                            <div className='p-6 bg-lime-600 opacity-85 text-white  text-center'>
+                            <div className='p-6 bg-three opacity-85 text-black  text-center'>
                                 <h2 className='font-extrabold block font-sans lg:text-4xl md:text-2xl text-xl antialiased leading-snug tracking-normal text-blue-gray-900'>$350 <span className='text-xl font-medium'>/Month</span>
                                 </h2>
                             </div>
