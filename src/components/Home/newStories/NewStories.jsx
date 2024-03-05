@@ -25,7 +25,7 @@ const NewStories = async () => {
         {slicedData.map((story, index) => (
           <Link
             className={`${index === 0 && "col-span-2 row-span-2 h-full w-full"
-              } hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
+              } hover:bg-one transition-all duration-700 hover:border-yellow-300 hover:border-5 hover: cursor-pointer`}
             href={`/allStories/${story._id}`}
             key={index}
           >
@@ -38,7 +38,7 @@ const NewStories = async () => {
                     alt="Shoes"
                   />
                 </figure>
-                <div className="absolute inset-0 flex flex-col items-start justify-end px-6 py-4 bg-black bg-opacity-60 text-white">
+                <div className="absolute inset-0 flex flex-col items-start justify-end px-6 py-4 bg-black bg-opacity-60 text-white hover:bg-one transition-all duration-300">
                   <h2 className="text-2xl font-bold">{story.title}</h2>
                   <p className=" text-sm text-tertiary/80">{story.description}</p>
                   <p className=" text-primary">

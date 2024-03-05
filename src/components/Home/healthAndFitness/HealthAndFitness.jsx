@@ -15,7 +15,7 @@ const HealthAndFitness = async () => {
   );
   const category = await res.json();
   return (
-    <div className="w-11/12 mx-auto my-2 px-2">
+    <div className="w-10/12 mx-auto my-2 px-2">
       <SectionHeading title={"Health and Fitness Category"}></SectionHeading>
 
       <div className="grid md:grid-cols-6 grid-cols-1 gap-2 ">
