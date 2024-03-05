@@ -2,10 +2,12 @@
 
 import Ebutton from "@/components/Common/Ebutton";
 import Ebutton2 from "@/components/Common/Ebutton2";
+import LoginButton from "@/components/Common/LoginButton";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Loading1 from "@/components/Loading/Loading1";
 import UseCartData from "@/hooks/UseCartData";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -84,7 +86,9 @@ return <Loading1></Loading1>
         products?.map(product=><div key={product._id} className=" border-t py-5 border-gray-400 flex gap-10">
         {/* image div  */}
         <div className="w-3/12 h-60 ">
-          <img
+          <Image
+            height={500}
+            width={500}
             src={product?.image}
             className="w-full h-full object-cover"
           />
@@ -111,7 +115,7 @@ return <Loading1></Loading1>
           </p>
           <div>
           <Link href={`/eshop/products/${product?.category}/${product?.ProductID}`}>
-            <Ebutton2>Details</Ebutton2>
+            <LoginButton>Details</LoginButton>
           </Link>
           </div>
         </div>
@@ -137,10 +141,10 @@ return <Loading1></Loading1>
           </p>
 
           <div className="flex justify-between items-center">
-            <Ebutton>
-              <Link  href={`/eshop/orderForm/${product._id}/${total.price?total?.price : product?.price}`}>Pay</Link>
+            
+              <Link className="w-28" href={`/eshop/orderForm/${product._id}/${total.price?total?.price : product?.price}`}><LoginButton>Pay</LoginButton></Link>
           
-              </Ebutton>
+             
             <button>
               <AiFillDelete  onClick={()=>deleteProduct(product?._id)} className="text-2xl text-black hover:text-primary transition duration-200"></AiFillDelete>
             </button>

@@ -12,15 +12,15 @@ import NewStories from "@/components/Home/newStories/NewStories";
 
 export default function Home() {
   return (
-    <div>
+    <div className="space-y-12">
       <Navbar></Navbar>
       <Banner></Banner>
-      <NewStories></NewStories>
-      <JanuaryPicks></JanuaryPicks>
       <HealthAndFitness></HealthAndFitness>
       <Course></Course>
-      <DietPlan></DietPlan>
+      <div><DietPlan></DietPlan></div>
       <FitnessClasses></FitnessClasses>
+      <NewStories></NewStories>
+      <JanuaryPicks></JanuaryPicks>
       <FreeChallenges></FreeChallenges>
       <Counter></Counter>
       <Footer></Footer>

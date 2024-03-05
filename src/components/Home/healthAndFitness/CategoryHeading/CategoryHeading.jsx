@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 const CategoryHeading = async ({ params }) => {
-    //console.log(params)
+    //
     const result = await fetch(`https://quick-fit-server.vercel.app/api/v1/category/${params.id}`, {
         cache: "no-store"
     });

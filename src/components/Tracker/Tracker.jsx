@@ -4,6 +4,7 @@ import AddExerciseForm from "./AddExerciseForm";
 import Loading1 from "../Loading/Loading1";
 import TrackerCard from "./tracker_card/TrackerCard";
 import UseTracker from "@/hooks/UseTracker";
+import SectionHeading from "../Common/SectionHeading";
 
 const Tracker = () => {
   const { isPending, tracker } = UseTracker();
@@ -24,7 +25,7 @@ const Tracker = () => {
     <div>
       {tracker?.length > 0 && (
         <div>
-          <EHeading>Todays Progress</EHeading>
+          <SectionHeading title={'Todays Progress'}></SectionHeading>
           <div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center ">
             {todayTracker?.map((item) => (
               <TrackerCard key={item?._id} item={item}></TrackerCard>
@@ -34,7 +35,7 @@ const Tracker = () => {
       )}
 
       <div id="exerciseForm" className="mt-12">
-        <EHeading>Add Exercise+</EHeading>
+        <SectionHeading title={'Add Exercise'}></SectionHeading>
         <AddExerciseForm />
       </div>
     </div>

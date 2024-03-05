@@ -5,140 +5,97 @@ import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import Link from "next/link";
 import { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
-
+import { Form, useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-
-
+import { toast } from "react-toastify";
+import Ebutton from "@/components/Common/Ebutton";
+import axios from "axios";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, googleLogin,updateUserProfile } = useContext(AuthContext);
-  const axiosPublic = useAxiosPublic()
+  const { createUser, googleLogin, updateUserProfile } =
+    useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const router = useRouter();
   const {
     register,
-  
+
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const router = useRouter();
 
-  const onSubmit = async (data) => {
-    try {
-      // Create user and get the result
-      const result = await createUser(data.email, data.password);
-  
-      // Upload image using FormData and fetch
-      const formData = new FormData();
-      formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
-  
-      const imageUploadResponse = await fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
-        method: "POST",
-        body: formData,
-      });
-  
-      const imageUploadData = await imageUploadResponse.json();
-  
-      // Update user profile with uploaded image URL
-      await updateUserProfile(result.user, {
-        displayName: data.name,
-        photoURL: imageUploadData.data.url,
-      });
-  
-      // Post user data to your server
-      await axiosPublic.post("/users", {
-        ...data,
-        role: "user",
-        isBlocked: false,
-        photoURL: imageUploadData.data.url, // Assuming you need to save the image URL in user data
-      });
-  
-      // Show success message and navigate after successful registration
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "User created Successfully!",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-  
-      router.push("/");
-    } catch (error) {
-      // Handle any errors that occurred during the process
-      console.error("Error:", error.message);
-      // You might want to show an error message to the user
-    }
+  const onSubmit = (data) => {
+  //  console.log(new FormData())
+
+    const  image = data.photo[0]
+    
+    const uploadData = new FormData()
+    uploadData.append("File", image)
+    uploadData.append('upload_preset', "mehedi")
+    uploadData.append("cloud_name", "dmiq6scyx")
+    console.log(uploadData)
+    axios.post("https://api.cloudinary.com/v1_1/dmiq6scyx/image/upload", uploadData)
+    .then(res=>console.log(res.data))
+
+
+    // createUser(data.email, data.password)
+    //   .then((res) => {
+    //     updateUserProfile(data.name, data.photo)
+    //       .then(() => {
+    //         const userInfo = {
+    //           name: data.name,
+    //           email: data.email,
+    //           image: data.photo,
+    //           role: "user",
+    //           isBlocked: false,
+    //         };
+    //         axiosPublic
+    //           .post("/users", userInfo)
+    //           .then((res) => {
+    //             console.log(res.data);
+    //           })
+    //           .catch((err) => {
+    //             
+    //           });
+    //         Swal.fire({
+    //           position: "center",
+    //           icon: "success",
+    //           title: "login Successfully!",
+    //           showConfirmButton: false,
+    //           timer: 1500,
+    //         });
+    //         router.push("/");
+    //       })
+    //       .catch((error) => {
+    //         toast.error(error.message);
+    //       });
+    //   })
+    //   .catch((error) => {
+    //     toast.error(error.message);
+    //   });
   };
-  
-
-  // const onSubmit = (data) => {
-  //   console.log(data)
-  //   createUser(data.email, data.password)
-  //     .then((result) => {
-  //       console.log(result.user);
-  //       const formData = new FormData();
-  //       formData.append('image', data.photoURL[0]); // Assuming photoURL is an array
-  
-  //       // Upload image using fetch
-  //       fetch("https://api.imgbb.com/1/upload?key=548b5a47be9ba5156b008d36058b9a4f", {
-  //         method: "POST",
-  //         body: formData,
-  //       })
-  //         .then((res) => res.json())
-  //         .then((response) => {
-  //           console.log("Success:", response);
-            
-  //         })
-  //         .catch((error) => {
-  //           console.error("Error:", error);
-  //         });
-
-
-
-  //       axiosPublic
-  //         .post("/users", {
-  //           ...data,
-  //           role: "user",
-  //           isBlocked: false,
-  //         })
-  //         .then((res) => {
-  //           console.log(res);
-  //         })
-  //         .catch((err) => {
-  //           console.log(err.code);
-  //         });
-
-       
-        
-  //     })
-  //     .then(() => {
-  //       Swal.fire({
-  //         position: "center",
-  //         icon: "success",
-  //         title: "User created Successfully!",
-  //         showConfirmButton: false,
-  //         timer: 1500,
-  //       });
-  //       router.push("/");
-  //     })
-
-  //     .catch((error) => {
-  //       // Handle any errors that occurred during the process
-  //       console.error("Error:", error.message);
-  //       // You might want to show an error message to the user
-  //     });
-  // };
-
-  
 
   const handleGoogleLogin = () => {
     googleLogin()
-      .then((res) => {
-        // console.log(res.data)
+      .then(async (res) => {
+        const name = await res.user?.displayName;
+        const email = await res.user?.email;
+        const image = await res.user?.photoURL;
+
+        axiosPublic
+          .post("/users", {
+            name,
+            email,
+            image,
+            role: "user",
+            isBlocked: false,
+          })
+          .then((res) => console.log(res.data))
+          .catch((err) => console.log(err.code));
         Swal.fire({
           position: "center",
           icon: "success",
@@ -146,151 +103,165 @@ const Registration = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+
         router.push("/");
       })
 
       .catch((error) => console.error(error));
   };
 
+  const inputClass =
+    "bg-tertiary text-black w-full p-2 placeholder-secondary placeholder-opacity-80 rounded ";
+
   return (
-    <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center w-[500px] lg:text-left">
-            {/* <h1 className="text-5xl  font-bold">Register now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
+    <div id="register" className="hero min-h-screen bg-tertiary">
+      <div className="hero-content flex flex-col-reverse md:flex-row w-10/12 m-auto pt-20">
+        {/* lottie animation  */}
+        <div className="flex justify-center items-center md:w-1/2">
+          <Player
+            autoplay
+            loop
+            src="register.json"
+            className="w-full"
+          ></Player>
+        </div>
 
-            <Player
-              autoplay
-              loop
-              src="register.json"
-              style={{ height: "450px", width: "450px" }}
-            ></Player>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm  shadow-orange-800 shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                {/* 
-          used react-hook-form
-          used react-hook-form
-          used react-hook-form
-          used react-hook-form
-          used react-hook-form
-           */}
-                <input
-                  type="text"
-                  {...register("name", { required: true })}
-                  name="name"
-                  placeholder="Name"
-                  className="input border-orange-600  input-info "
-                />
-                {errors.name && (
-                  <span className="text-red-600">This field is </span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo </span>
-                </label>
-                <input
-                  type="file"
-                  {...register("photoURL", { required: true })}
-                  className="input border-orange-600 py-2 input-info"
-                />
-                {errors.photoURL && (
-                  <span className="text-red-600">Photo url is required</span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  {...register("email", { required: true })}
-                  name="email"
-                  placeholder="email"
-                  className="input border-orange-600 input-info"
-                />
-                {errors.email && (
-                  <span className="text-red-600">This field is required</span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  {...register("password", {
-                    required: true,
-                    minLength: 6,
-                    maxLength: 20,
-                    pattern:
-                      /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/,
-                  })}
-                  name="password"
-                  placeholder="password"
-                  className="input border-orange-600 input-info"
-                />
-                {errors.password?.type === "required" && (
-                  <span className="text-red-600">This field is required</span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <span className="text-red-600">
-                    Password must be 6 character
-                  </span>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <span className="text-red-600">
-                    Password must set hard character
-                  </span>
-                )}
-              </div>
+        {/* form div  */}
+        <div className="flex sizing w-full md:1/2 lg:w-2/5 mx-auto flex-col bg-gradient-to-bl from-primary  via-secondary to-primary text-black shadow-2xl shadow-black rounded-xl p-5  my-5 ">
+          <h1 className="text-5xl  font-bold text-center pb-10">Register now!</h1>
 
-              <span
-                className="relative bottom-[43px] text-2xl left-[285px]"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+          {/* google login  */}
+          <div
+            onClick={handleGoogleLogin}
+            className="btn bg-tertiary border-primary border-2 rounded-md text-xl hover:bg-black hover:text-tertiary transform hover:scale-105 transition-all duration-300"
+          >
+            <h1>
+              <span className="text-center text-4xl">
+                <FcGoogle />
               </span>
-
-              <div className="form-control mt-6">
-                <input
-                  type="submit"
-                  className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"
-                  value="Register"
-                />
-              </div>
-
-              <div
-                onClick={handleGoogleLogin}
-                className="btn bg-white border-orange-600 border-2 rounded-md text-xl hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300"
-              >
-                {" "}
-                <h1>
-                  {" "}
-                  <span className="text-center text-4xl">
-                    <FcGoogle />
-                  </span>{" "}
-                </h1>{" "}
-                Google{" "}
-              </div>
-            </form>
-            <p className="text-center pb-2">
-              {" "}
-              Already register ?{" "}
-              <Link className="text-indigo-700 " href="/login">
-                Login
-              </Link>{" "}
-            </p>
+            </h1>
+            Google
           </div>
+
+          <div className="divider"></div>
+
+          {/* register form starts  */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+            {/* photo field  */}
+            {/* <div className="w-full">
+              <h2 className="text-lg mb-2 font-medium text-black">Photo URL:</h2>
+              <input
+                type="text"
+                {...register("photo", { required: true })}
+                placeholder="type photo url... "
+                className={inputClass}
+              />
+              {errors.photo && (
+                <span className="text-red-700">photo is required</span>
+              )}
+            </div> */}
+
+
+
+            {/* file upload field  */}
+            <div className="w-full">
+              <h2 className="text-lg mb-2 font-medium text-black">Photo URL:</h2>
+              <input
+                type="file"
+                {...register("photo", { required: true })}
+                placeholder="type photo url... "
+                className={inputClass}
+              />
+              {errors.photo && (
+                <span className="text-red-700">photo is required</span>
+              )}
+            </div>
+
+
+
+            {/* name field  */}
+            <div className="w-full">
+              <h2 className="text-lg mb-2 font-medium text-black">Name:</h2>
+              <input
+                type="text"
+                {...register("name", { required: true })}
+                placeholder="type your name "
+                className={inputClass}
+              />
+              {errors.name && (
+                <span className="text-red-700">name is required</span>
+              )}
+            </div>
+
+            {/* email field  */}
+            <div className="w-full">
+              <h2 className="text-lg mb-2 font-medium text-black">Email:</h2>
+              <input
+                type="email"
+                {...register("email", { required: true })}
+                placeholder="type email "
+                className={inputClass}
+              />
+              {errors.email && (
+                <span className="text-red-700">email is required</span>
+              )}
+            </div>
+
+            {/* password field  */}
+            <div className="w-full">
+              <div className="flex justify-between items-center">
+                <h2 className="text-lg mb-2 font-medium text-black">Password:</h2>
+                <button onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                </button>
+              </div>
+              <input
+                type={showPassword ? "text" : "password"}
+                {...register("password", {
+                  required: true,
+                  minLength: 6,
+                  pattern: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/,
+                })}
+                placeholder="type password "
+                className={inputClass}
+              />
+              {errors.password?.type == "required" && (
+                <span className="text-red-700">Password field is required</span>
+              )}
+              {errors.password?.type === "minLength" && (
+                <span className="text-red-700">
+                  Password must be at least 6 characters
+                </span>
+              )}
+              {errors.password?.type === "pattern" && (
+                <span className="text-red-700">
+                  Password must contain at least one lowercase letter, one
+                  uppercase letter, one digit, and one special character.
+                </span>
+              )}
+            </div>
+
+            {/* register button field  */}
+            <div type="submit" className="w-full flex justify-center items-center">
+              <Ebutton>
+                sign up
+              </Ebutton>
+            </div>
+
+            {/* go to login field  */}
+            <div className="flex justify-evenly mb-5 items-center">
+              <p className="inline">Already Registered?</p>
+              <Link
+                href="/login"
+                className="border-b-2  border-black font-semibold text-xl"
+              >
+                Log In
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
