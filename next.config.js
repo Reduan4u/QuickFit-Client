@@ -23,7 +23,8 @@ module.exports = {
       'source.unsplash.com',
       'avatars.githubusercontent.com',
       'placekitten.com',
-      'htmldemo.net'
+      'htmldemo.net',
+      'res.cloudinary.com'
     ]
   },
 };

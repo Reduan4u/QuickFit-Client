@@ -53,7 +53,7 @@ const TrackerCard = ({ item }) => {
     whileInView={"show"}
     viewport={{ once: false, amount: 0 }}
   >
-    <div className="bg-gradient-to-r from-primary to-secondary p-3">
+    <div className="bg-gradient-to-r from-three to-one p-3">
       {/* value and target start */}
       <div className="flex items-center justify-between gap-4">
         {/* 1st card  */}

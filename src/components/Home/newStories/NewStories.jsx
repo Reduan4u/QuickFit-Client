@@ -11,22 +11,21 @@ const NewStories = async () => {
   );
   const data = await res.json();
   const slicedData = data.slice(0, 5);
-  console.log(data);
 
   return (
     <div className="w-11/12 mx-auto my-2 px-2">
-      <div className=" flex justify-between items-center">
+      <div>
         <SectionHeading title={"New Stories"} />
-        <Link href="/allStories">
+        {/* <Link href="/allStories">
           <Button1 title={"See All"} />
-        </Link>
+        </Link> */}
       </div>
+
       <div className=" grid md:grid-cols-4 grid-cols-1  md:gap-2 gap-y-2  ">
         {slicedData.map((story, index) => (
           <Link
-            className={`${
-              index === 0 && "col-span-2 row-span-2 h-full w-full"
-            } hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
+            className={`${index === 0 && "col-span-2 row-span-2 h-full w-full"
+              } hover:scale-95 transition-all duration-700 hover:border-yellow-300 hover:border-5 hover:z-40 cursor-pointer`}
             href={`/allStories/${story._id}`}
             key={index}
           >

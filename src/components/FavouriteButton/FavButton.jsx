@@ -41,7 +41,7 @@ const FavButton = ({ data }) => {
         }
       })
       .catch((err) => {
-        console.log(err.code);
+        
       });
     // console.log(blogId, email);
   };

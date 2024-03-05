@@ -9,6 +9,7 @@ import RealityChart from "@/components/manage products dash/RealityChart";
 
 const AdminMain = () => {
     const { data, role } = useUser();
+    console.log(data);
     const { user } = useContext(AuthContext);
 
     return (
@@ -301,7 +302,7 @@ const AdminMain = () => {
                                 src={user?.photoURL}
                                 alt="user"
                             /> */}
-                            <img src={user?.photoUR ? user?.photoURL : "https://postimg.cc/NL1YD6fn"} className="w-52 h-44 object-cover" />
+                            <img src={data?.image} className="w-52 h-44 object-cover" />
                         </motion.div>
                         <motion.div
                             variants={fadeIn("left", 0.9)}
