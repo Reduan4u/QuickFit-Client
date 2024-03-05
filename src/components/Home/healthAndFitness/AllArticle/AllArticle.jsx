@@ -8,7 +8,7 @@ import Marquee from "react-marquee-slider";
 
 
 const AllArticle = ({ params }) => {
-    //console.log(params)
+    //
     //Article
     const [data, setData] = useState([]);
 

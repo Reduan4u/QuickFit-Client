@@ -18,7 +18,7 @@ const StoriesBlogs = () => {
         setData(res.data);
       })
       .catch((err) => {
-        console.log(err.code);
+        
       });
   }, [user?.displayName]);
 

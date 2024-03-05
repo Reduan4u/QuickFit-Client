@@ -21,7 +21,7 @@ const SectionHeading = ({ title, subTitle, color, text1 }) => {
             objectFit: "cover",
           }}
         >
-          <h3 className="text-one mb-3 font-medium">
+          <h3 className="text-one mb-3 font-medium md:text-lg">
             {subTitle ? subTitle : "Grow Your Health"}
           </h3>
           <h1 className="text-3xl font-bold  md:text-5xl">{title}</h1>

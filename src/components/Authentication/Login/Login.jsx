@@ -45,7 +45,7 @@ const Login = ({ path }) => {
             console.log(res);
           })
           .catch((err) => {
-            console.log(err.code);
+            
           });
         Swal.fire({
           position: "center",

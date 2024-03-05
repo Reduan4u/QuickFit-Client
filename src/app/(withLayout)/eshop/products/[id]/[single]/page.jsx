@@ -1,13 +1,14 @@
+"use client"
 import RelevantProducts from "@/components/Eshop/RelevantProducts/RelevantProducts";
 import ProductDetails from "@/components/Eshop/productDetails/ProductDetails";
 import PrivateRoute from "@/components/PrivateRoute/PrivateRoute";
+import useEshopProducts from "@/hooks/useEshopProducts";
 
 const ProductDetailsPage = async ({ params }) => {
-  const res = await fetch(
-    `https://quick-fit-server.vercel.app/api/v1/eshop/data/${params.single}`,
-    { cache: "no-store" }
-  );
-  const product = await res.json();
+ const {products} = useEshopProducts()
+ const product = products?.find(item => item._id == params.single)
+ 
+
 
   return (
    <PrivateRoute>

@@ -11,12 +11,14 @@ const NewStories = async () => {
   );
   const data = await res.json();
   const slicedData = data.slice(0, 5);
-  console.log(data);
 
   return (
     <div className="w-11/12 mx-auto my-2 px-2">
-      <div className=" ">
-        <SectionHeading title={"New Stories"} subTitle={"Top Expert Verified"} />
+      <div>
+        <SectionHeading title={"New Stories"} />
+        {/* <Link href="/allStories">
+          <Button1 title={"See All"} />
+        </Link> */}
       </div>
 
       <div className=" grid md:grid-cols-4 grid-cols-1  md:gap-2 gap-y-2  ">

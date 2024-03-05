@@ -34,10 +34,10 @@ const Products = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((item, index) => (
           <motion.div
-          variants={fadeIn(`right`, 0.2)}
+          variants={fadeIn(`up`, 0.2)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: false, amount: 0 }}
             key={index}
             style={{
               backgroundImage: `url(${item.image})`,
@@ -52,7 +52,7 @@ const Products = () => {
                 </h1>
               </div>
 
-              <div className=" flex items-center justify-center text-black font-bold text-3xl absolute w-full h-full bg-primary -bottom-20 opacity-0 hover:bottom-0 hover:opacity-100 transition-all duration-500">
+              <div className=" flex items-center justify-center text-one font-bold text-3xl absolute w-full h-full bg-three -bottom-20 opacity-0 hover:bottom-0 hover:opacity-100 transition-all duration-500">
                {item.category}
               </div>
             </Link>

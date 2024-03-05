@@ -12,7 +12,7 @@ import Link from "next/link";
 
 
 const DynamicCategory = async ({ params }) => {
-    //console.log(params)
+    //
 
 
     return (

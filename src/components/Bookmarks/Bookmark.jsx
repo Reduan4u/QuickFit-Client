@@ -10,12 +10,14 @@ import Loading1 from "../Loading/Loading1";
 
 const Bookmark = () => {
   const { user } = useContext(AuthContext);
-  console.log(user?.email)
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`https://quick-fit-server.vercel.app/api/v1/favourites/${user?.email}`)
+      .get(
+        `https://quick-fit-server.vercel.app/api/v1/favourites/${user?.email}`
+      )
       .then((res) => {
         setData(res.data);
       })

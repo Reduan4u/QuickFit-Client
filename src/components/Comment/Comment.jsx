@@ -7,7 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
 
 const Comment = ({ data }) => {
-  console.log(data);
+
   const { user } = useContext(AuthContext);
   console.log(user?.photoURL);
 

@@ -4,12 +4,14 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useRouter } from 'next/navigation';
 import Title from "@/components/Common/Title";
 import Ebutton from "@/components/Common/Ebutton";
+import LoginButton from "@/components/Common/LoginButton";
+import SectionHeading from "@/components/Common/SectionHeading";
 
 
 function OrderForm({ params }) {
   const axiosPublic = useAxiosPublic();
   const router = useRouter();
-  const inputClasses = "border p-2 text-primary w-full border-red-500 rounded bg-black border-primary placeholder-primary placeholder-opacity-60"
+  const inputClasses = "border p-2  w-full border rounded-xl  border-three  placeholder-opacity-70"
 
   const {
     register,
@@ -34,7 +36,7 @@ function OrderForm({ params }) {
   return (
     <div className="w-10/12 mx-auto my-10 bg-tertiary py-10">
       <div className="md:w-1/2 mx-auto">
-        <Title heading={"Order Form"} color={"secondary"}></Title>
+        <SectionHeading title={"Order Form"}></SectionHeading>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           {/* email field  */}
           <div className="w-full">
@@ -93,10 +95,10 @@ function OrderForm({ params }) {
           </div>
 
           {/* order button field  */}
-          <div>
-            <Ebutton type="submit" className="btn btn-accent">
+          <div className="w-1/2 mx-auto pt-4">
+            <LoginButton type="submit" className="btn btn-accent">
               Confirm Order
-            </Ebutton>
+            </LoginButton>
           </div>
         </form>
       </div>

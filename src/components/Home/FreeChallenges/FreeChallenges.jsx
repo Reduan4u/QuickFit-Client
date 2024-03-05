@@ -1,7 +1,4 @@
-
-import Image from 'next/image';
 import './FreeChallenges.css'
-import Button1 from '@/components/Common/Button1';
 import Link from 'next/link';
 const FreeChallenges = () => {
     return (

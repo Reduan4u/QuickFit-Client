@@ -5,7 +5,7 @@ import TrackerNav from "@/components/Tracker/trackerNav/TrackerNav";
 const TrackerPage = () => {
   return (
     <PrivateRoute>
-    <div className="bg-black pb-10">
+    <div className=" pb-10">
       <TrackerNav />
       <Tracker />
     </div>
