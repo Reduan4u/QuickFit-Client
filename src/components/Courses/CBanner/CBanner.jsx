@@ -1,36 +1,11 @@
-"use client"
 
-import { fadeIn } from "@/components/Common/Animation1";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import Ebanner from "@/components/Eshop/Ebanner/Ebanner";
 import React from "react";
 
-const CBanner = ({ image, heading }) => {
+const CBanner = () => {
 
     return (
-        <div>
-            <div className=" w-full">
-                <div className="border relative">
-                    <Image
-                    width={1000}
-                    height={500}
-                    alt="Banner Image"
-                        src={image ? image : "https://htmldemo.net/nutras/nutras/assets/images/page-banner.jpg"}
-                        className="w-full h-[50vh] object-cover"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 flex items-center top-0 ">
-                        <motion.div
-                            variants={fadeIn("right", 0.4)}
-                            initial="hidden"
-                            whileInView={"show"}
-                            viewport={{ once: false, amount: 0.7 }}
-                            className="text-primary text-center text-3xl md:text-5xl font-bold  w-10/12 mx-auto">
-                            {heading ? heading : "All Courses"}
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Ebanner heading={"Courses"} image={'https://i.postimg.cc/bNgKFXK1/desk-workspace-with-various-elements-1.jpg'}></Ebanner>
     );
 };
 

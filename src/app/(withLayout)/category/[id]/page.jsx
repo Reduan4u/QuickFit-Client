@@ -22,10 +22,8 @@ const DynamicCategory = async ({ params }) => {
 
             <div className="">
                 {/* Recent Article */}
-                <div className="bg-primary text-white font-semibold text-center my-8">Recent Articles</div>
-                <div className=" mb-20 border-y-4 border-primary">
                     <AllArticle params={params}></AllArticle>
-                </div>
+
 
 
                 {/* {Category shortDescription} */}

@@ -2,7 +2,7 @@
 import { Rating } from "@smastrom/react-rating";
 import Image from "next/image";
 import { useState } from "react";
-import { FaPlayCircle } from "react-icons/fa";
+import { FaPlay, FaPlayCircle } from "react-icons/fa";
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -10,6 +10,7 @@ import Description from "./TabContent/Description";
 import Quiz from "./TabContent/Quiz";
 import Reviews from "./TabContent/Reviews";
 import UseCourseDetails from "@/hooks/UseCourseDetails";
+import LoginButton from "@/components/Common/LoginButton";
 
 
 const RightSide = ({params}) => {
@@ -37,11 +38,11 @@ const RightSide = ({params}) => {
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                         onClick={handlePlayVideo}
                     >
-                        <FaPlayCircle className="text-primary text-4xl" />
+                        <FaPlay className="text-white rounded-full bg-three p-4 text-6xl" />
                     </button>
                 )}
-                <div className="absolute bottom-5 left-5 rounded-sm p-2 bg-primary text-white">
-                    <span>Category</span>
+                <div className="absolute bottom-5 left-5 rounded-sm p-2 bg-three text-white">
+                    <span>{params.id}</span>
                 </div>
                 {isPlaying && (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -76,7 +77,7 @@ const RightSide = ({params}) => {
                     </div>
                 )}
             </div>
-            <h1 className="font-bold text-2xl py-5">{course?.title}</h1>
+            <h1 className="font-bold text-3xl py-5">{course?.title}</h1>
             <div className="flex justify-between items-center pb-10">
                 <div className="flex justify-start items-center gap-2">
 
@@ -89,16 +90,16 @@ const RightSide = ({params}) => {
                     <p>By: {course?.courseProvider}</p>
                 </div>
                 <p className="flex gap-2 justify-center items-center">Rating <div className="rating">
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" checked />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-primary" />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-three" />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-three" checked />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-three" />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-three" />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-three" />
                 </div></p>
             </div>
             {/* Tab */}
             <Tabs>
-                <TabList>
+                <TabList className="text-center">
                     <Tab>Description</Tab>
                     <Tab>Quiz</Tab>
                     <Tab>Reviews</Tab>

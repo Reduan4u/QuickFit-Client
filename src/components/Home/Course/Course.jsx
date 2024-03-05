@@ -29,11 +29,12 @@ const Course = () => {
                             <p class="text-base font-semibold leading-7 text-one">25+ YEARS OF EXPERIENCE</p>
                             <h1 class="my-5 text-5xl font-bold tracking-tight text-gray-900">We have expert instructor for help our students.</h1>
                             <p class="text-base">
-                                Discover diverse courses spanning technology to arts, tailored for all skill levels with expert instruction and flexible schedules.
+
+                                Discover diverse courses spanning technology to arts, tailored for all skill levels with expert instruction and flexible schedules, empowering you to delve into subjects ranging from computer programming to visual arts with ease and confidence.
                             </p>
                             <p class="my-5 text-one text-2xl font-semibold">100+ Courses</p>
                             <p class="text-base">
-                                Access flexible learning options, including self-paced online courses and interactive live sessions, to accommodate diverse schedules and preferences.
+                                Access flexible learning options, including self-paced online courses and interactive live sessions, to accommodate diverse schedules and preferences, ensuring you can seamlessly integrate learning into your busy lifestyle while receiving personalized guidance from experienced educators.
                             </p>
                         </div>
                     </div>

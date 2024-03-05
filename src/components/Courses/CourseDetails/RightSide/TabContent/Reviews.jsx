@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import UserReviews from "./UserReviews";
+import LoginButton from "@/components/Common/LoginButton";
 
 const Reviews = () => {
 
@@ -13,7 +14,7 @@ const Reviews = () => {
     return (
         <div className="">
            <UserReviews></UserReviews>
-           <h1 className="pt-10 font-semibold text-2xl">Add Reviews :</h1>
+           <h1 className="pt-10 text-2xl font-medium">Add Reviews :</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* User Name */}
                     {/* <div className="form-control w-full my-6">
@@ -65,7 +66,7 @@ const Reviews = () => {
                         <input {...register('image', { required: true })} type="file" className="file-input w-full max-w-xs" />
                     </div> */}
 
-                    <div className="flex justify-center items-center pt-5"><button className="btn w-32 text-center rounded-full border-none bg-black text-white uppercase px-5 ">Submit</button></div>
+                    <div className="flex justify-center items-center pt-5 "><LoginButton>Submit</LoginButton></div>
                 </form>
             </div>
 
