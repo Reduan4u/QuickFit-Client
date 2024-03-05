@@ -8,18 +8,21 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "@/components/Provider/AuthProvider";
-import Ebutton from "@/components/Common/Ebutton";
 import EshopNav from "../eshopNavbar/EshopNav";
+import LoginButton from "@/components/Common/LoginButton";
+import SectionHeading from "@/components/Common/SectionHeading";
+import UseCartData from "@/hooks/UseCartData";
 
 function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
   const email = user?.email;
+  const {refetch } = UseCartData()
  
 
   const { _id, category, title, subTitle, image, price, features } = product;
-
-  const handleAddToCart = async () => {
+  
+  const handleAddToCart =  () => {
     const obj = {
       ProductID: _id,
       email,
@@ -31,7 +34,6 @@ function ProductDetails({ product, params }) {
     };
 
     axiosPublic.post("/cart", obj).then((data) => {
-      console.log(data.data)
       if (data.data.message) {
         Swal.fire({
           icon: "error",
@@ -40,6 +42,7 @@ function ProductDetails({ product, params }) {
         });
       }
       if (data.data.ProductID) {
+        refetch()
         Swal.fire({
           icon: "success",
           title: `${title}`,
@@ -54,14 +57,7 @@ function ProductDetails({ product, params }) {
     <div className="w-10/12 lg:w-9/12 mx-auto ">
       <EshopNav></EshopNav>
       {/* title  */}
-      <motion.div
-        variants={fadeIn(`bottom`, 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.2 }}>
-        <Title heading={"Product Details"}></Title>
-      </motion.div>
-
+        <SectionHeading title={'product details'} subTitle={title}></SectionHeading>
       <div>
         <div className="flex flex-col md:flex-row gap-5 items-center my-10">
           {/* image div  */}
@@ -104,13 +100,13 @@ function ProductDetails({ product, params }) {
             </h2>
 
             <div className="flex flex-col md:flex-row gap-5">
-              <Ebutton>
+              <LoginButton>
                 <span onClick={handleAddToCart}>  Add To Cart</span>
-              </Ebutton>
+              </LoginButton>
               <Link href={`/eshop/orderForm/${_id}`}>
-                <Ebutton>
+                <LoginButton>
                   Order Now
-                </Ebutton>
+                </LoginButton>
               </Link>
             </div>
           </motion.div>

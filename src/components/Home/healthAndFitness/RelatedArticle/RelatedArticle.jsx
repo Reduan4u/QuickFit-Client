@@ -4,7 +4,7 @@ import Link from "next/link";
 
 
 const RelatedArticle = async ({ params }) => {
-    //console.log(params)
+    //
 
     const result = await fetch('https://quick-fit-server.vercel.app/api/v1/articles', {
         cache: "no-store"

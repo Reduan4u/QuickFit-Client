@@ -59,7 +59,7 @@ const AddExerciseForm = () => {
     whileInView={"show"}
     viewport={{ once: false, amount: 0 }}
   >
-    <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-primary mt-10 p-2 md:p-5">
+    <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-gradient-to-r from-three to-one mt-10 p-2 md:p-5">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div className="md:flex justify-center items-center gap-5">
           {/* exercise name field  */}
