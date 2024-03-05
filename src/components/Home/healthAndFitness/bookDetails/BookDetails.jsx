@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LeftBtn from '../Btn/LeftBtn';
+import LoginButton from '@/components/Common/LoginButton';
 
 const BookDetails = ({ params }) => {
 
@@ -119,17 +120,15 @@ const BookDetails = ({ params }) => {
               </div>
               <div className='flex gap-5'>
                 <div>
-                  <button className="btn bg-primary text-white rounded-none uppercase">Add To Cart
-                  </button>
+
+                  <LoginButton>Add To Cart</LoginButton>
+
                 </div>
                 <div>
                   <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
-                    <button
-                      className=" bg-primary btn text-white rounded-none uppercase"
-                      disabled={!selectedValue}
-                    >
-                      Order Now
-                    </button>
+                    <LoginButton disabled={!selectedValue}>                      Order Now
+                    </LoginButton>
+
                   </Link>
                 </div>
               </div>
