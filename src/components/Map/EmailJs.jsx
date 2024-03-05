@@ -63,7 +63,7 @@ export const EmailJs = () => {
       <textarea className='rounded-sm w-[500px] p-2 resize-none border border-gray-300 focus:outline-none'  style={{ maxHeight: 'calc(1.5em * 10)', minHeight: 'calc(1.5em * 10)' }} name="message" placeholder='Message...'
       onFocus={(e) => e.target.style.borderColor = 'green'}
       onBlur={(e) => e.target.style.borderColor = ''}/> <br />
-      <input className='my-4 btn w-[500px] text-xl  font-bold  bg-primary '  type="submit" value="Send" 
+      <input className='my-4 btn w-[500px] text-xl text-white  font-bold bg-one  hover:bg-primary '  type="submit" value="Send" 
        />
       </form>
      </div>
