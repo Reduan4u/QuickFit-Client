@@ -59,7 +59,7 @@ const Registration = () => {
     //             console.log(res.data);
     //           })
     //           .catch((err) => {
-    //             console.log(err.code);
+    //             
     //           });
     //         Swal.fire({
     //           position: "center",

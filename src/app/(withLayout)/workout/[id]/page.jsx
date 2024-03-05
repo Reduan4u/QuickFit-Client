@@ -2,7 +2,7 @@ import Duration from '@/components/WorkOuts/Duration/Duration';
 import React from 'react';
 
 const DynamicType = async({params}) => {
-    //console.log(params)
+    //
 
     return (
         <div>

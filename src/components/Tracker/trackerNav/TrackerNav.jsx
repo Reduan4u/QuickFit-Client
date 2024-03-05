@@ -4,7 +4,7 @@ import React from "react";
 const TrackerNav = () => {
   return (
     <div>
-      <div className="navbar text-primary font-semibold w-10/12 mx-auto border-b border-primary mb-10 flex-col md:flex-row">
+      <div className="navbar text-one font-semibold w-10/12 mx-auto border-b border-three mb-10 flex-col md:flex-row">
  
        {/* left side  */}
         <div className="flex-1">

@@ -22,11 +22,10 @@ const Navbar = () => {
       axios
         .get(`/users/${user?.email}`)
         .then((res) => {
-          console.log(res.data.role);
           setRole(res.data.role);
         })
         .catch((err) => {
-          console.log(err.code);
+          
         });
     }
   }, [user?.email]);
@@ -97,7 +96,7 @@ const Navbar = () => {
               tabIndex={0}
               role="button"
               className={`${navLinkClass} text-xl ml-4 ${
-                isDropdownOpen ? "text-orange-300" : ""
+                isDropdownOpen ? "text-three" : ""
               }`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               // onBlur={() => setIsDropdownOpen(false)}

@@ -2,7 +2,7 @@ import UpdateArticles from "@/components/AdminDashboard/Articles/UpdateArticles/
 
 
 const page = ({params}) => {
-    //console.log(params);
+    //;
     return (
         <div>
             <UpdateArticles params={params}></UpdateArticles>

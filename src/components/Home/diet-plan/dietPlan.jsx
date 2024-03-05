@@ -14,18 +14,18 @@ const DietPlan = () => {
     return (
         <div
             className="w-3/4 mx-auto my-16 px-2">
-            <div className='flex items-center'>
+            <div>
                 <div>
                     <SectionHeading title={"Special Diet Plans!"}></SectionHeading>
                 </div>
-                <motion.div
+                {/* <motion.div
                     variants={fadeIn("right", 0.4)}
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: false, amount: 0.2 }}
                     className='w-36'>
                     <Lottie animationData={dietPlan} loop={true} />
-                </motion.div>
+                </motion.div> */}
             </div>
             <motion.div
                 variants={fadeIn("up", 0.2)}

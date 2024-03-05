@@ -9,8 +9,8 @@ const NavLink = ({ href, children }) => {
     <Link href={href}>
       <span
         className={`${
-          isActive && "text-primary p-2 font-semibold"
-        }  text-xl px-4 hover:border-b-2 hover:text-primary hover:border-primary hover:p-2 hover: transition-all duration-500`}
+          isActive && "text-three  "
+        }  text-xl px-4 hover:border-b-2 hover:text-primary hover:border-primary transition-all duration-500`}
       >
         {children}
       </span>

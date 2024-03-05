@@ -3,7 +3,7 @@ import { SlArrowLeftCircle } from "react-icons/sl";
 
 
 const Duration = async ({ params }) => {
-    //console.log(params);
+    //;
     const result = await fetch(`https://quick-fit-server.vercel.app/api/v1/workout/${params.id}`, {
         cache: "no-store"
     });
