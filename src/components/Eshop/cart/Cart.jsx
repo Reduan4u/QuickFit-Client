@@ -7,6 +7,7 @@ import SectionHeading from "@/components/Common/SectionHeading";
 import Loading1 from "@/components/Loading/Loading1";
 import UseCartData from "@/hooks/UseCartData";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -85,7 +86,9 @@ return <Loading1></Loading1>
         products?.map(product=><div key={product._id} className=" border-t py-5 border-gray-400 flex gap-10">
         {/* image div  */}
         <div className="w-3/12 h-60 ">
-          <img
+          <Image
+            height={500}
+            width={500}
             src={product?.image}
             className="w-full h-full object-cover"
           />
