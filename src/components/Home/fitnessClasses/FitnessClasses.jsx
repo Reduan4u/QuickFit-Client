@@ -31,8 +31,8 @@ const ExerciseTracker = () => {
             <p className="text-base text-center text-gray-600 mb-4">
               Take control of your fitness journey by tracking your exercises,
               setting achievable goals, and monitoring your progress over time.
-              With our exercise tracker, you'll stay motivated and committed to
-              leading a healthier lifestyle. Whether you're aiming to build
+              With our exercise tracker, you will stay motivated and committed to
+              leading a healthier lifestyle. Whether you are aiming to build
               strength, improve endurance, or simply stay active, our tracker
               will help you stay on track and reach your fitness goals.
             </p>
