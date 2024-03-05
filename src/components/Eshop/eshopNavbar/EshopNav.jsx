@@ -5,6 +5,7 @@ import { AuthContext } from "@/components/Provider/AuthProvider";
 import Link from "next/link";
 import Ebutton from "@/components/Common/Ebutton";
 import UseCartData from "@/hooks/UseCartData";
+import LoginButton from "@/components/Common/LoginButton";
 
 function EshopNav(props) {
   const { user } = useContext(AuthContext);
@@ -21,10 +22,10 @@ function EshopNav(props) {
               type="text"
               className="border-2 border-primary w-full md:w-1/3 p-2 rounded bg-tertiary  text-lg placeholder-secondary placeholder-opacity-60"
               placeholder="Search Product "></input> */}
-              <Link href={`/eshop/products`}>
-                <Ebutton>
+              <Link href={`/eshop/products`} >
+                <LoginButton>
                 Products
-                </Ebutton>
+                </LoginButton>
               </Link>
           </div>
           {/* navbar end or right side  */}
@@ -33,11 +34,11 @@ function EshopNav(props) {
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost bg-gray-800 btn-circle">
+                className="btn btn-ghost bg-one btn-circle">
                 <div className="indicator">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7 text-primary"
+                    className="h-7 w-7 text-three"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -60,7 +61,7 @@ function EshopNav(props) {
                   {/* <span className="text-info">Subtotal: $999</span>  */}
                   <div className="card-actions">
                     <Link href={`/eshop/cart/${user?.email}`}>
-                      <Ebutton>View Cart</Ebutton>
+                      <LoginButton>View Cart</LoginButton>
                     </Link>
                   </div>
                 </div>

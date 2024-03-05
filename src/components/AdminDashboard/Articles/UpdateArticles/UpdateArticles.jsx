@@ -16,7 +16,6 @@ const UpdateArticles = ({ params }) => {
             return res.data;
         }
     })
-    //console.log(articles._id);
 
     const handleSubmit = (e) => {
         e.preventDefault();

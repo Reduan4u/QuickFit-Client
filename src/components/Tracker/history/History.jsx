@@ -4,6 +4,7 @@ import UseTracker from "@/hooks/UseTracker";
 import TrackerNav from "../trackerNav/TrackerNav";
 import EHeading from "@/components/Common/EHeading";
 import PreviousTrackerCard from "../tracker_card/PreviousTrackerCard";
+import SectionHeading from "@/components/Common/SectionHeading";
 
 const History = () => {
   const { isPending, tracker } = UseTracker();
@@ -20,15 +21,15 @@ const History = () => {
     return <Loading1 />
   }
   return (
-    <div className=" min-h-screen bg-black border">
+    <div className=" min-h-screen">
       <div>
         <div>
           <TrackerNav />
-          <EHeading>{"Previous Progress"}</EHeading>
+          <SectionHeading title={"Previous Progress"}></SectionHeading>
 
           {/* showing previous progress card  */}
           <div className="my-10">
-            {tracker?.length > 0 ?(
+            {previousTracker?.length ?(
               <div>
                 <div className="w-10/12 mx-auto flex flex-wrap lg:flex-row gap-8 lg:justify-center ">
                   { previousTracker?.map((item) => (
@@ -37,7 +38,7 @@ const History = () => {
                 </div>
               </div>
             ) : 
-              <h1 className="text-2xl md:text-4xl text-tertiary font-bold text-center my-20">You did not Have Previous Days Exercises</h1>
+              <h1 className="text-2xl md:text-4xl font-bold text-center my-20">You did not Have Previous Days Exercises</h1>
              }
           </div>
         </div>

@@ -22,7 +22,7 @@ const Gfr = () => {
         // Implement the GFR calculation logic here based on the MDRD formula
         // This is a simplified example, and you may need to replace it with a more accurate formula
         const { serumCreatinine, age, gender } = formData;
-        console.log(gender);
+
         const gfr = (186 * (serumCreatinine ** -1.154) * (age ** -0.203) * (gender === 'male' ? 1 : 0.742)).toFixed(2);
         setResult(gfr);
     };

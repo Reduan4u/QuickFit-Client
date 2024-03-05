@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
         router.push("/");
       })
       .catch((err) => {
-        console.log(err.code);
+        
       });
   };
 

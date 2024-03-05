@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import "./product.css"
 import Ebutton from "@/components/Common/Ebutton";
+import LoginButton from "@/components/Common/LoginButton";
 
 function ProductCard({ product }) {
   return (
@@ -23,15 +24,17 @@ function ProductCard({ product }) {
             alt={product.title}
             className="w-full h-full object-cover shadow-xl shadow-neutral-400"
           />
-          <p className="absolute bottom-0 left-0 right-0 text-center bg-black bg-opacity-70 text-primary py-3 text-xl font-bold">{product.price}$</p>
+          <p className="absolute bottom-0 left-0 right-0 text-center bg-black bg-opacity-70 text-three py-3 text-2xl font-bold">{product.price}$</p>
         </div>
 
        {/* content div  */}
         <div className="text-center px-2 ">
-          <h1 className="mt-5 text-xl font-bold">{product.title} </h1>
-          <p className="mt-5">{product.subTitle.slice(0, 64)}... </p>
+          <h1 className="mt-5 mb-2 text-2xl font-bold">{product.title} </h1>
+          <p>{product.subTitle.slice(0, 64)}... </p>
           <Link href={`/eshop/products/${product.category}/${product._id}`}>
-           <Ebutton>Product Info</Ebutton>
+           <div className="mt-5">
+           <LoginButton>Product Info</LoginButton>
+           </div>
           </Link>
         </div>
       </motion.div>

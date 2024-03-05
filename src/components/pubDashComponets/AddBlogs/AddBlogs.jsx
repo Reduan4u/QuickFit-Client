@@ -41,7 +41,7 @@ const AddBlogs = () => {
           form.reset();
         })
         .catch((err) => {
-          console.log(err.code);
+          
         });
     } else if (type === "stories") {
       axios
@@ -52,7 +52,7 @@ const AddBlogs = () => {
           form.reset();
         })
         .catch((err) => {
-          console.log(err.code);
+          
         });
     }
   };

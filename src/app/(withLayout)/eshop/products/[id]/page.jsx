@@ -17,18 +17,18 @@ const DynamicProducts = async ({ params }) => {
       <div>
         {params.id == "Food" && (
           <Ebanner
-            image={imgFood}
-            heading={`QuickFit ${params.id} Products`}></Ebanner>
+
+            heading={`${params.id} Products`}></Ebanner>
         )}
         {params.id == "Skincare" && (
           <Ebanner
-            image={imgSkincare}
-            heading={`QuickFit ${params.id} Products`}></Ebanner>
+
+            heading={`${params.id} Products`}></Ebanner>
         )}
         {params.id == "Fitness" && (
           <Ebanner
-            image={imgFitness}
-            heading={`QuickFit ${params.id} Products`}></Ebanner>
+
+            heading={`${params.id} Products`}></Ebanner>
         )}
       </div>
 
