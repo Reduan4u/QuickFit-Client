@@ -6,9 +6,9 @@ import LoginButton from "@/components/Common/LoginButton";
 
 const Course = () => {
     return (
-        <div class="relative w-full mx-auto flex flex-col justify-center overflow-hidden mt-20 py-16 sm:pt-12 bg-tertiary">
+        <div class="relative w-full mx-auto flex flex-col justify-center overflow-hidden mt-20 py-16 sm:pt-12 bg-four ">
             <div class="w-full items-center">
-                <div class="w-full md:w-3/4  mx-auto flex-row md:flex ">
+                <div class="w-full md:w-10/12  mx-auto flex-row md:flex ">
                     <div class="overflow-hidden m-5 md:m-10 w-full md:w-2/5  relative">
                         <Image
                             height={1000}
@@ -24,14 +24,14 @@ const Course = () => {
 
 
 
-                    <div className=" px-10 bg-white shadow-xl w-full md:w-3/5 flex justify-center items-center">
+                    <div className=" w-full md:w-3/5 flex justify-center items-center">
                         <div class="pl-12">
-                            <p class="text-base font-semibold leading-7 text-three">25+ YEARS OF EXPERIENCE</p>
+                            <p class="text-base font-semibold leading-7 text-one">25+ YEARS OF EXPERIENCE</p>
                             <h1 class="my-5 text-5xl font-bold tracking-tight text-gray-900">We have expert instructor for help our students.</h1>
                             <p class="text-base">
                                 Discover diverse courses spanning technology to arts, tailored for all skill levels with expert instruction and flexible schedules.
                             </p>
-                            <p class="my-5 text-three text-2xl font-semibold">100+ Courses</p>
+                            <p class="my-5 text-one text-2xl font-semibold">100+ Courses</p>
                             <p class="text-base">
                                 Access flexible learning options, including self-paced online courses and interactive live sessions, to accommodate diverse schedules and preferences.
                             </p>

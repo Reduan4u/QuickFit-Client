@@ -6,6 +6,7 @@ import Link from "next/link";
 import "./product.css"
 import Ebutton from "@/components/Common/Ebutton";
 import LoginButton from "@/components/Common/LoginButton";
+import Image from "next/image";
 
 function ProductCard({ product }) {
   return (
@@ -19,7 +20,9 @@ function ProductCard({ product }) {
         {/* image div  */}
         <div className="zoom-img relative w-full h-72">
           
-          <img
+          <Image
+            height={500}
+            width={500}
             src={product.image}
             alt={product.title}
             className="w-full h-full object-cover shadow-xl shadow-neutral-400"

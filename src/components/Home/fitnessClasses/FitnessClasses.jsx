@@ -9,11 +9,7 @@ import Link from "next/link";
 const ExerciseTracker = () => {
   return (
     <div>
-      <SectionHeading
-        subTitle={"exercise tracker"}
-        title={"track your progress"}
-      ></SectionHeading>
-      <div className="w-4/5 mx-auto">
+      <div className="w-10/12 mx-auto">
         <div className="flex flex-col md:flex-row justify-center items-center">
           <motion.div
             variants={fadeIn("up", 0.2)}
@@ -22,21 +18,22 @@ const ExerciseTracker = () => {
             viewport={{ once: false, amount: 0 }}
             className="flex flex-col justify-center space-y-8 md:w-1/2 px-8 py-12"
           >
-            <h1 className="text-3xl md:text-5xl font-bold text-center mb-4">
-              Achieve Your Fitness Goals
-            </h1>
-            <h2 className="text-lg font-medium text-center text-primary mb-4">
-              Start Tracking Today
-            </h2>
+            <SectionHeading
+              subTitle={"Start tracking today"}
+              title={"Achive Fitness goal"}
+            ></SectionHeading>
             <p className="text-base text-center text-gray-600 mb-4">
               Take control of your fitness journey by tracking your exercises,
               setting achievable goals, and monitoring your progress over time.
-              With our exercise tracker, you will stay motivated and committed to
-              leading a healthier lifestyle. Whether you are aiming to build
+              With our exercise tracker, you will stay motivated and committed
+              to leading a healthier lifestyle. Whether you are aiming to build
               strength, improve endurance, or simply stay active, our tracker
               will help you stay on track and reach your fitness goals.
             </p>
-           <Link href={'/tracker'} className="w-3/4 mx-auto">  <LoginButton>GET STARTED</LoginButton></Link>
+            <Link href={"/tracker"} className="w-3/4 mx-auto">
+              {" "}
+              <LoginButton>GET STARTED</LoginButton>
+            </Link>
           </motion.div>
 
           <motion.div
