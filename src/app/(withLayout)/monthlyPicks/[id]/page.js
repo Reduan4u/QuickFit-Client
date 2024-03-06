@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Button1 from '@/components/Common/Button1';
 import Image from 'next/image';
 import FavButton from '@/components/FavouriteButton/FavButton';
+import Comment from '@/components/Comment/Comment';
 
 const page = async({params}) => {
 
@@ -13,7 +14,7 @@ const page = async({params}) => {
 
     
     return (
-        <div className=' mx-auto container my-4 px-2'>
+        <div className=' mx-auto max-w-4xl container my-4 px-2'>
             <div className=' md:flex justify-between items-center my-12'>
          
           <h2 className=' md:text-6xl text-3xl font-extrabold'>Monthly Picks .</h2>
@@ -28,7 +29,7 @@ const page = async({params}) => {
                  src={data.img}
                  alt='image'/>
             </div>
-            <div className=' md:flex md:justify-between md:items-start '>
+            <div className=' '>
                 <div className=' my-12 text-orange-500'>
                <div className=' flex justify-center items-center gap-3'>
                <h2 className=' md:text-4xl text-2xl font-extrabold'>{data.title}</h2>
@@ -38,13 +39,16 @@ const page = async({params}) => {
                     <p className=' font-light text-lg mt-2 '>{new Intl.DateTimeFormat('en-US', { month: 'long', day: "numeric" }).format(new Date(data.date)).replace(" ",",")}</p>
                     <p className=' font-light text-lg'>{data.author}</p>
                 </div>
-                <div className=' my-10'>
-                {data.paragraph.map((para,index) => <div className=' my-3' key={index}>
-                        <p className=' md:max-w-[50vw] text-black/50 italic'>{para}</p>
+                <div className='flex items-center justify-center'>
+    <div className=' mx-auto'>
+        {data.paragraph.map((para, index) => 
+            <div className='' key={index}>
+                <p className='md:max-w-[50vw] text-black/50 italic'>{para}</p>
+            </div>
+        )}
+    </div>
+</div>
 
-                    </div>)}
-
-                </div>
             </div>
 
             <div className=' my-9 flex justify-end items-center'>
@@ -52,6 +56,8 @@ const page = async({params}) => {
                 
                 <Link href="/"><Button1 title={"Go Back"}/></Link>
             </div>
+
+            <Comment data={data} />
         </div>
     );
 };

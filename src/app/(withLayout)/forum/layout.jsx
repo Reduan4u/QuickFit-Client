@@ -3,39 +3,45 @@ import ForumNavLink from "@/components/Common/ForumNavLink";
 import RightSideBar from "@/components/ForumComponents/rightSideBar/RightSideBar";
 import { IoChatbubblesSharp } from "react-icons/io5";
 import React from "react";
+import Ebanner from "@/components/Eshop/Ebanner/Ebanner";
 
 const layout = ({ children }) => {
   return (
-    <div className='bg-black'>
+    <div className='bg-[#F0FADB]'>
 
-      <div className='bg-black pt-8 pb-8'>
+      <div className='bg-[#F0FADB] pt-8 pb-8'>
 
-        <h2 className='text-primary text-center  text-4xl uppercase mx-auto w-[50%] font-light'>
+        {/* <h2 className='text-primary text-center  text-4xl uppercase mx-auto w-[50%] font-light'>
           A community of People that grow together
-        </h2>
+        </h2> */}
 
-        <p className='text-secondary text-center mx-auto w-[50%] mt-8'>
+
+<Ebanner image={'https://cdn.discordapp.com/attachments/1195065186080526343/1214890961767764008/IMG-20240306-WA0000.jpg?ex=65fac260&is=65e84d60&hm=d7f82b9dedf6b4c1c7276c1d51025f948990163789498bf9a1d3059f922349fd&'} heading={'Community Forum'} ></Ebanner>
+
+        <p className='text-one text-center mx-auto w-[50%] mt-8'>
           Forums foster community, enabling diverse individuals to connect, share ideas, and collaborate, cultivating a space for meaningful interaction and collective engagement. </p>
       </div>
+
+   
 
       <div className="">
 
       <div className="container">
   <div className="nav-wrapper mt-5 pb-5">
-    <ul className="nav-list flex items-center justify-center gap-8 text-[14px] text-[#97a4af] lg:flex">
-      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
-        <ForumNavLink href="/forum/announcement">announcement</ForumNavLink>
+    <ul className="nav-list flex items-center justify-center gap-8 text-[14px] text-one lg:flex">
+      <li className="nav-item hover:text-three cursor-pointer">
+        <ForumNavLink href="/forum/announcement">Announcement</ForumNavLink>
       </li>
-      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+      <li className="nav-item hover:text-three  cursor-pointer">
         <ForumNavLink href="/forum/popular">Popular</ForumNavLink>
       </li>
-      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+      <li className="nav-item hover:text-three  cursor-pointer">
         <ForumNavLink href="/forum/newest">Newest</ForumNavLink>
       </li>
-      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+      <li className="nav-item hover:text-three  cursor-pointer">
         <ForumNavLink href="/forum/health">Health</ForumNavLink>
       </li>
-      <li className="nav-item hover:text-[#f2f2f2] cursor-pointer">
+      <li className="nav-item hover:text-three  cursor-pointer">
         <ForumNavLink href="/forum/fitness">Fitness</ForumNavLink>
       </li>
     </ul>

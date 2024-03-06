@@ -62,7 +62,7 @@ const RightSideBar = () => {
                     value={searchTerm}
                 />
 
-            <button onClick={handleSearch}> <FaSearch className='text-[#fff]'> </FaSearch> </button>
+            <button onClick={handleSearch}> <FaSearch className='text-[#102032]'> </FaSearch> </button>
               
             </div>
             
@@ -79,7 +79,7 @@ const RightSideBar = () => {
             {
                 searchResults ?   
                 
-                <div className="text-[#fff] mt-5">
+                <div className="mt-5">
                 
 
                 {
@@ -89,8 +89,15 @@ const RightSideBar = () => {
                         <div key={index}>
 
                             <div className='flex items-center justify-start gap-2 mt-4'>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
-
+                            <img
+                        src={
+                          post?.userPhoto
+                            ? post.userPhoto
+                            : `https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707782400&semt=ais`
+                        }
+                        alt="avatar image"
+                        className="rounded-full h-4 w-4  lg:inline md:inline hidden"
+                      />
                                 <Link href={`/forum/userprofile/${post?.userEmail}`} >
                                 <p className="text-[#2a4bf1ee] text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
                                 </Link>
@@ -119,7 +126,7 @@ const RightSideBar = () => {
           
             {/* NEW DISCUSSIONS renderding */}
 
-            <div className="text-[#fff] mt-5">
+            <div className=" mt-5">
                 <h2 className="text-secondary text-center">NEW DISCUSSIONS</h2>
 
                 {
@@ -127,15 +134,23 @@ const RightSideBar = () => {
                         <div key={index} className='lg:mt-2 mt-10'>
 
                             <div className='flex items-center justify-start gap-2 mt-4'>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrgQVEL_0Ulowu6YsjCffVSSFilGxKCAIOvYe2ARAuHYnqaMyvJuluOEiOn2PuRxOEt8&usqp=CAU" alt="avatar image" className='rounded-full h-4 w-4' />
+                            <img
+                        src={
+                          post?.userPhoto
+                            ? post.userPhoto
+                            : `https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707782400&semt=ais`
+                        }
+                        alt="avatar image"
+                        className="rounded-full h-4 w-4  lg:inline md:inline hidden"
+                      />
 
                                 <Link href={`/forum/userprofile/${post?.userEmail}`} >
-                                <p className="text-secondary text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
+                                <p className="text-[#2a4bf1ee] text-[14px]">{post?.userName ? post.userName : post?.userEmail}</p>
                                 </Link>
                             </div>
 
                             <div className="mt-1">
-                                <Link href={`/forum/${post?._id}`}>  <h2 className=''> {post?.title}</h2> </Link>
+                                <Link href={`/forum/${post?._id}`}>  <h2 className='lg:text-[20px] md:text-[20px]'> {post?.title}</h2> </Link>
                                
                             </div>
 
@@ -155,7 +170,7 @@ const RightSideBar = () => {
 
             {/* POPULAR POSTS renderding */}
 
-            <div className="text-[#fff] mt-10">
+            {/* <div className=" mt-10">
                 <h2 className="text-secondary text-center">POPULAR POSTS</h2>
 
                 <div>
@@ -177,7 +192,7 @@ const RightSideBar = () => {
 
                 </div>
 
-            </div>
+            </div> */}
 
         </div>
 

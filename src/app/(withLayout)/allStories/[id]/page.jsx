@@ -16,7 +16,7 @@ const page = async ({ params }) => {
   const data = await res.json();
 
   return (
-    <div className=" mx-auto container my-4">
+    <div className=" mx-auto max-w-4xl container my-4">
       <div className=" flex justify-between items-center my-12">
         <div className=" flex gap-5 items-center ">
           <h2 className=" text-5xl font-extrabold">{data.title}</h2>
@@ -40,7 +40,7 @@ const page = async ({ params }) => {
         </div>
         <div className=" my-4">
           {data.paragraph.map((para, index) => (
-            <div className=" my-3 text-black/60 italic" key={index}>
+            <div className=" my-3" key={index}>
               <p>{para}</p>
             </div>
           ))}

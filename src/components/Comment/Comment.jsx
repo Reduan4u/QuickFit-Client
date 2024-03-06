@@ -56,7 +56,7 @@ const Comment = ({ data }) => {
   return (
     <div>
       <div className="max-w-md bg-white shadow-md p-4 mt-4 left-1 mb-5">
-        <h2 className="text-2xl font-bold mb-4">Comment Box</h2>
+        <h2 className="text-2xl font-bold mb-4">Write a Comment</h2>
         <form onSubmit={handleSubmit}>
           <textarea
             className="w-full p-2 border rounded"
@@ -74,9 +74,9 @@ const Comment = ({ data }) => {
         </form>
       </div>
 
-      <div className="max-w-4xl mx-auto grid grid-cols-3 gap-5">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 gap-5">
         {commentText?.map((item, index) => (
-          <div key={index} className=" bg-white p-4 rounded-lg shadow mb-4">
+          <div key={index} className=" bg-gray-200 p-4 rounded-lg shadow mb-4">
             <div className="flex items-center mb-2">
               <div className="flex-shrink-0">
                 <img
