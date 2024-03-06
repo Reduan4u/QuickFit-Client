@@ -12,7 +12,7 @@ import NewStories from "@/components/Home/newStories/NewStories";
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="">
       <Navbar></Navbar>
       <Banner></Banner>
       <HealthAndFitness></HealthAndFitness>

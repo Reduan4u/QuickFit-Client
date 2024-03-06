@@ -43,7 +43,7 @@ const BookDetails = ({ params }) => {
 
           {/* image div  */}
           <div className="rounded-lg">
-            <Link href={`/category/${params.id}`}><button className=" py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
+            <Link href={`/category/${params.id}`}><button className="text-two py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
             <Image
               height={500}
               width={500}

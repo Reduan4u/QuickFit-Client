@@ -4,30 +4,31 @@
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import LoginButton from '../Common/LoginButton';
 
-const TrainerHireForm = ({params}) => {
+const TrainerHireForm = ({ params }) => {
 
-  
+
   const axiosPublic = useAxiosPublic();
   const [selectedDays, setSelectedDays] = useState('7day');
-  const [experts,setExperts] = useState([])
-  
-  
+  const [experts, setExperts] = useState([])
+
+
 
   const expert = experts?.find(item => item._id == params.id)
- 
+
 
   useEffect(() => {
-   
-    axiosPublic.get("/experts") // Make a GET request to "/experts"
-    .then(response => {
-      setExperts(response.data)
-    })
-    .catch(error => {
-      console.error('Error:', error); // Log any errors that occur during the request
-    });
 
-    
+    axiosPublic.get("/experts") // Make a GET request to "/experts"
+      .then(response => {
+        setExperts(response.data)
+      })
+      .catch(error => {
+        console.error('Error:', error); // Log any errors that occur during the request
+      });
+
+
   }, []);
 
 
@@ -42,8 +43,8 @@ const TrainerHireForm = ({params}) => {
     const price = form.price.value;
     const userEmail = form.userEmail.value;
     const userName = form.userName.value;
-  
-    const product = { name, email, experience, price, days, specialization,userName,userEmail }; // Include id in the product object
+
+    const product = { name, email, experience, price, days, specialization, userName, userEmail }; // Include id in the product object
     console.log(product);
     axiosPublic.post("/trainer", product)
       .then(result => {
@@ -92,9 +93,9 @@ const TrainerHireForm = ({params}) => {
               placeholder="Name"
               className="input input-bordered"
               required
-              readOnly 
+              readOnly
               defaultValue={expert?.name}
-              
+
             />
           </div>
           <div className="form-control">
@@ -107,9 +108,9 @@ const TrainerHireForm = ({params}) => {
               placeholder="Email Address"
               className="input input-bordered"
               required
-              readOnly 
+              readOnly
               defaultValue={expert?.email}
-              
+
             />
           </div>
           <div className="form-control">
@@ -123,7 +124,7 @@ const TrainerHireForm = ({params}) => {
               className="input input-bordered"
               defaultValue="4 years"
               required
-              readOnly 
+              readOnly
             />
           </div>
           <div className="form-control">
@@ -131,7 +132,7 @@ const TrainerHireForm = ({params}) => {
               <span className="label-text">Specialization</span>
             </label>
             <select name="specialization" className="select select-bordered">
-              
+
               <option value="health">Nutrition</option>
               <option value="fitness">Fitness</option>
               <option value="balance">Balance</option>
@@ -181,7 +182,7 @@ const TrainerHireForm = ({params}) => {
               placeholder="User Name"
               className="input input-bordered"
               required
-              
+
             />
           </div>
           <div className="form-control">
@@ -194,11 +195,11 @@ const TrainerHireForm = ({params}) => {
               placeholder="Enter Email"
               className="input input-bordered"
               required
-              
+
             />
           </div>
         </div>
-        <button className="my-12 btn text-white bg-orange-500 flex justify-center w-96 mx-auto"> Hire Request </button>
+        <LoginButton>Hire Request</LoginButton>
       </form>
     </div>
   );

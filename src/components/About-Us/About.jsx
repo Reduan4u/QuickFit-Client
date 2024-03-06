@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa6";
+import Button1 from "../Common/Button1";
 
 const AboutUs = async () => {
   const res = await fetch("https://quick-fit-server.vercel.app/api/v1/teams", {
@@ -55,8 +56,9 @@ const AboutUs = async () => {
           <h1 className="text-3xl pb-4 text-primary  font-bold text-center">Our Editorial Standards</h1>
           <p className="text-lg leading-8 pb-4">We publish hundreds of articles each month. From the early stages of brainstorming all the way to publication, we always have one question in mind: How can this article best serve its readers? We strive to inform and encourage, never assume nor prescribe. Learn more about our editorial standards.</p>
 
-          <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300 " > Read More </button>
-
+          <Link href='/aboutUs' className="mt-10 md:w-1/4 w-1/2">
+            <Button1 className="" title={"Read More..."} />
+          </Link>
         </div>
 
       </div>
@@ -109,8 +111,9 @@ const AboutUs = async () => {
           <h1 className="text-3xl pb-4  text-primary  font-bold text-center">Meet Our Experts</h1>
           <p className="text-lg leading-8 pb-4">A team of credentialed health experts reviews our articles to ensure they are accurate, thorough and up-to-date. Learn more about our expert reviewing process.</p>
 
-          <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300 " > Read More </button>
-        </div>
+          <Link href='/aboutUs' className="mt-10 md:w-1/4 w-1/2">
+            <Button1 className="" title={"Read More..."} />
+          </Link>        </div>
 
         <Image className="w-[625px] h-[625px]"
           src="https://img.livestrong.com/625x625/media-storage/livestrong-data/hub/4d9e6547-2be3-4d5a-9d62-5ad61f363379-c978133aa457426981b2973026843d40meet_the_experts_hero_mobile.jpg?type=webp"
@@ -152,8 +155,9 @@ const AboutUs = async () => {
             <h1 className="mb-5  text-5xl  text-primary  font-bold">Advertise With Us</h1>
             <p className="mb-5 font-medium text-xl text-white">Send us a note, and a member of our sales team will be in touch.</p>
 
-            <button className="btn bg-white border-orange-600 border-2 rounded-md  hover:bg-orange-600 hover:text-white transform hover:scale-105 transition-all duration-300">Contact Us</button>
-          </div>
+            <Link href='/contactUs' className="mt-10 md:w-1/4 w-1/2">
+              <Button1 className="" title={"Contact Us"} />
+            </Link>          </div>
         </div>
       </div>
 
