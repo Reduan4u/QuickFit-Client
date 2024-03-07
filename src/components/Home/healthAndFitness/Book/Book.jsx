@@ -1,4 +1,5 @@
 import Button1 from '@/components/Common/Button1';
+import LoginButton from '@/components/Common/LoginButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -12,7 +13,7 @@ const Book = async ({ params }) => {
     const book = await bookres.json();
     return (
         <div>
-            <div className="hero min-h-full border-y-2 w-10/12 mx-auto">
+            <div className="hero min-h-full w-10/12 mx-auto bg-four">
                 <div className="hero-content flex-col md:flex-row gap-20">
                     <div className="rounded-lg">
                         <h1 className=" py-5 text-xl font-bold">You might also be interested in...</h1>
@@ -21,14 +22,14 @@ const Book = async ({ params }) => {
                             width={500}
                             alt='types'
                             objectFit="cover"
-                            src={book.image}
+                            src={book?.image}
                             className="w-full h-96"
                         />
                     </div>
                     <div className="w-full md:w-1/2">
-                        <h1 className="text-2xl md:text-4xl font-bold">{book.BookName}</h1>
-                        <p className="py-6 text-base">{book.description}</p>
-                        <Link href={`/category/${params.id}/book/${book._id}`}><Button1 title='Read More'className="btn bg-red-800 text-white rounded-none uppercase"> <FaArrowRight></FaArrowRight></Button1></Link>
+                        <h1 className="text-2xl text-one md:text-4xl font-bold">{book?.BookName}</h1>
+                        <p className="py-6 text-justify">{book?.description}</p>
+                        <Link href={`/category/${params.id}/book/${book._id}`}><LoginButton >Read More</LoginButton></Link>
                     </div>
                 </div>
             </div>

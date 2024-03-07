@@ -25,7 +25,7 @@ const Navbar = () => {
           setRole(res.data.role);
         })
         .catch((err) => {
-          
+
         });
     }
   }, [user?.email]);
@@ -95,9 +95,8 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className={`${navLinkClass} text-xl ml-4 ${
-                isDropdownOpen ? "text-three" : ""
-              }`}
+              className={`${navLinkClass} text-xl ml-4 ${isDropdownOpen ? "text-three" : ""
+                }`}
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             // onBlur={() => setIsDropdownOpen(false)}
             >
@@ -214,7 +213,7 @@ const Navbar = () => {
                   )}
 
                   <hr />
-                  <button className="text-center btn " onClick={logOut}>
+                  <button className="text-center btn btn-error hover:bg-three  " onClick={logOut}>
                     Logout
                   </button>
                 </ul>
@@ -227,7 +226,7 @@ const Navbar = () => {
               </div>
             </Link>
           )}
-          <label className="swap swap-rotate ml-2">
+          <label className="swap swap-rotate ml-2 hidden">
             {/* this hidden checkbox controls the state */}
             <input
               type="checkbox"

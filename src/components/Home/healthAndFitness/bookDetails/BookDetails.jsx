@@ -1,16 +1,15 @@
 'use client'
-import Button1 from '@/components/Common/Button1';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LeftBtn from '../Btn/LeftBtn';
+import SectionHeading from '@/components/Common/SectionHeading';
+import LoginButton from '@/components/Common/LoginButton';
+import Ebanner from '@/components/Eshop/Ebanner/Ebanner';
 
 const BookDetails = ({ params }) => {
-
-  // State to keep track of the selected radio button value
   const [selectedValue, setSelectedValue] = useState(null);
   const [bookData, setBookData] = useState(null);
- // console.log(selectedValue)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,26 +26,24 @@ const BookDetails = ({ params }) => {
 
     fetchData();
   }, [params.id]);
-
-
-  //console.log(bookData?._id)
   const handleOrder = (e) => {
     e.preventDefault()
-    //console.log("heloo")
   }
 
 
 
   return (
     <div>
-      <h1 className='text-center font-bold text-5xl py-5'>Book Details</h1>
+      {/* <SectionHeading title={'Book Details'}></SectionHeading> */}
+      <Ebanner heading={'Book Details'} image={'https://i.postimg.cc/1Xj55DnK/notepad-table.jpg'}></Ebanner>
+      <SectionHeading title={'Book Details'}></SectionHeading>
       <div className="hero min-h-full">
 
         <div className="hero-content flex-col md:flex-row gap-20">
 
           {/* image div  */}
           <div className="rounded-lg">
-            <Link href={`/category/${params.id}`}><button className=" py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
+            <Link href={`/category/${params.id}`}><button className="text-two py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
             <Image
               height={500}
               width={500}
@@ -60,8 +57,8 @@ const BookDetails = ({ params }) => {
           {/* content div for order a book starts */}
           <div className="w-full md:w-1/2">
             <form onSubmit={handleOrder}>
-              <h1 className="text-2xl md:text-4xl font-bold">{bookData?.BookName}</h1>
-              <p className="py-5 text-base">{bookData?.description}</p>
+              <h1 className="text-2xl text-one md:text-4xl font-bold">{bookData?.BookName}</h1>
+              <p className="py-5 text-base text-justify">{bookData?.description}</p>
               <div className="py-5">
                 {/* Input for hardcopy */}
                 <div className="flex justify-between items-center border-t-2 border-black">
@@ -118,30 +115,20 @@ const BookDetails = ({ params }) => {
                 </div>
               </div>
               <div className='flex gap-5'>
-              <div>
-              <button className="btn bg-primary text-white rounded-none uppercase">Add To Cart
-              </button>
-              </div>
-              <div>
-              <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
-                <button
-                  className=" bg-primary btn text-white rounded-none uppercase"
-                  disabled={!selectedValue}
-                >
-                  Order Now
-                </button>
-              </Link>
-              </div>
+                <div>
+                  <LoginButton>Add to Cart</LoginButton>
+                </div>
+                <div>
+                  <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
+                    <LoginButton disabled={!selectedValue}>Order Now</LoginButton>
+                  </Link>
+                </div>
               </div>
             </form>
           </div>
           {/* content div for order a book ends */}
         </div>
       </div>
-      <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
-                <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
-                {/* <RightBtn></RightBtn> */}
-            </div>
     </div>
   );
 };
