@@ -16,7 +16,7 @@ import LoginButton from "@/components/Common/LoginButton";
 const RightSide = ({params}) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const {isPending, allCourseDetails} = UseCourseDetails()
-    const course = allCourseDetails?.find(itm => itm.category == params.id)
+    const course = allCourseDetails?.find(itm => itm?.category == params?.id)
     
     const handlePlayVideo = () => {
         setIsPlaying(true);
