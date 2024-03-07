@@ -6,6 +6,7 @@ import SectionHeading from "@/components/Common/SectionHeading";
 import Loading1 from "@/components/Loading/Loading1";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import useCart from "@/hooks/useCart";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -72,7 +73,8 @@ const Cart1 = ({ params }) => {
         >
           {/* image div  */}
           <div className="md:w-6/12 h-48 ">
-            <img src={product?.image} className="w-full h-full object-cover" />
+            <Image   height={500}
+                  width={500}F src={product?.image} className="w-full h-full object-cover" />
           </div>
           {/* product info div  */}
           <div className="md:w-4/12 space-y-3 p-5">

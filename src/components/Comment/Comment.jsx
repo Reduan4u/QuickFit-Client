@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaVolumeHigh } from "react-icons/fa6";
 import { AuthContext } from "../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 const Comment = ({ data }) => {
 
@@ -79,7 +80,9 @@ const Comment = ({ data }) => {
           <div key={index} className=" bg-gray-200 p-4 rounded-lg shadow mb-4">
             <div className="flex items-center mb-2">
               <div className="flex-shrink-0">
-                <img
+                <Image
+                  height={500}
+                  width={500}
                   className="h-8 w-8 rounded-full object-cover"
                   src={item?.img}
                   alt="something"

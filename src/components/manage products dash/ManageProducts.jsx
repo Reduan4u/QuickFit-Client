@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import MyLineChart from "./MyLineChart";
 import ProductStat from "./ProductStat";
 import RealityChart from "./RealityChart";
@@ -14,7 +15,9 @@ function ManageProducts(props) {
       <div className="grid grid-cols-4 gap-10 p-5 ">
         {/* 1. order completed  */}
         <div className={cardClasses}>
-          <img
+          <Image
+            height={500}
+            width={500}
             src="https://cdn1.iconfinder.com/data/icons/basic-22/512/1044_cart11_c-512.png"
             className="w-20 h-20 text-blue-700"
           />
@@ -27,7 +30,9 @@ function ManageProducts(props) {
 
         {/*2. total revenue */}
         <div className={cardClasses}>
-          <img
+          <Image
+            height={500}
+            width={500}
             src="https://cdn3.iconfinder.com/data/icons/business-round-set-1/128/FINANCIAL_GROWTH-512.png"
             className="w-20 h-20 text-sky-400"
           />
@@ -39,7 +44,9 @@ function ManageProducts(props) {
         </div>
         {/* 3. Total Customers */}
         <div className={cardClasses}>
-          <img
+          <Image 
+            height={500}
+            width={500}
             src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/4-64.png"
             className="w-20 h-20 text-purple-600"
           />
@@ -51,7 +58,9 @@ function ManageProducts(props) {
         </div>
         {/* 4. Total Sales  */}
         <div className={cardClasses}>
-          <img
+          <Image 
+            height={500}
+            width={500}
             src="https://cdn3.iconfinder.com/data/icons/vol-5/128/statistic-256.png"
             className="w-20 h-20 "
           />
@@ -75,7 +84,9 @@ function ManageProducts(props) {
           {/* reserves in website */}
           <div className="bg-gradient-to-r from-dashPrimary to-dashSecondary p-5 rounded shadow-xl">
             <div className="flex items-center gap-5">
-              <img
+              <Image 
+                height={500}
+                width={500}
                 src="https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/browser-64.png"
                 className="w-20 h-20"
               />
@@ -98,7 +109,9 @@ function ManageProducts(props) {
           {/* reserves in cash  */}
           <div className="mt-10 bg-gradient-to-r from-dashPrimary to-dashSecondary p-5 rounded shadow-xl">
             <div className="flex items-center gap-5">
-              <img
+              <Image 
+                height={500}
+                width={500}
                 src="https://cdn4.iconfinder.com/data/icons/office-and-business-conceptual-flat/169/36-64.png"
                 className="w-20 h-20"
               />
@@ -112,7 +125,7 @@ function ManageProducts(props) {
                 </h1>
               </div>
             </div>
-             {/* progress bar  */}
+            {/* progress bar  */}
             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 my-3">
               <div class="bg-blue-600 h-2.5 rounded-full w-[40%] "></div>
             </div>
