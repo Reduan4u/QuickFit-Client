@@ -6,6 +6,7 @@ import { FaAngleUp } from 'react-icons/fa';
 import moment from 'moment';
 import Link from 'next/link';
 import { AiTwotoneLike } from 'react-icons/ai';
+import Image from 'next/image';
 
 
 const Newest = () => {
@@ -54,7 +55,9 @@ const Newest = () => {
                             <div className='flex items-center justify-start 
                                             
                                             gap-2 mt-4'>
-                                <img 
+                                <Image 
+                                  height={500}
+                                  width={500}
                                 src={post?.userPhoto ? post.userPhoto : `https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707782400&semt=ais`} 
                                 alt="avatar image" className='rounded-full h-4 w-4  lg:inline md:inline hidden' />
 

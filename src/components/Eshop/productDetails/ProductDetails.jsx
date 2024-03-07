@@ -12,6 +12,7 @@ import EshopNav from "../eshopNavbar/EshopNav";
 import LoginButton from "@/components/Common/LoginButton";
 import SectionHeading from "@/components/Common/SectionHeading";
 import UseCartData from "@/hooks/UseCartData";
+import Image from "next/image";
 
 function ProductDetails({ product, params }) {
   const axiosPublic = useAxiosPublic();
@@ -72,7 +73,10 @@ function ProductDetails({ product, params }) {
                 Back To {params.id} Products
               </button>
             </Link>
-            <img src={image} className="w-full h-[50vh] object-cover" />
+            <Image
+              height={500}
+              width={500}
+             src={image} className="w-full h-[50vh] object-cover" />
           </motion.div>
 
           {/* content div  */}

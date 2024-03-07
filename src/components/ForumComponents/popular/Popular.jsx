@@ -6,6 +6,7 @@ import { FaAngleUp } from "react-icons/fa";
 import moment from "moment";
 import Link from "next/link";
 import { AiTwotoneLike } from "react-icons/ai";
+import Image from "next/image";
 
 const Popular = () => {
   const axiosPublic = useAxiosPublic();
@@ -13,9 +14,11 @@ const Popular = () => {
   const [page, setPage] = useState(1);
 
   const getData = async () => {
-    await axiosPublic.get(`/forum/find/popularpost?page=${page}`).then((data) => {
-      setPosts(data.data);
-    });
+    await axiosPublic
+      .get(`/forum/find/popularpost?page=${page}`)
+      .then((data) => {
+        setPosts(data.data);
+      });
   };
 
   useEffect(() => {
@@ -46,10 +49,10 @@ const Popular = () => {
                       {post?.title}{" "}
                     </h3>
 
-                    <div
-                      className="flex items-center justify-start gap-2 mt-4"
-                    >
-                      <img
+                    <div className="flex items-center justify-start gap-2 mt-4">
+                      <Image
+                        height={500}
+                        width={500}
                         src={
                           post?.userPhoto
                             ? post.userPhoto
@@ -81,18 +84,14 @@ const Popular = () => {
             </div>
           </Link>
         </div>
-
-        
       ))}
 
-<div className="flex justify-center mt-4">
+      <div className="flex justify-center mt-4">
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           Previous
         </button>
         <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
-
-
     </div>
   );
 };
