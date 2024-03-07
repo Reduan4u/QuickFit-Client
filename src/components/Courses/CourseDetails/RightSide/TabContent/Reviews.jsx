@@ -14,6 +14,7 @@ const Reviews = () => {
   const onSubmit = async (data) => {
     const obj = {
       ...data,
+      rating: parseInt(data.rating),
       reviewerName: user?.displayName,
       reviewerImg: user?.photoURL,
     };

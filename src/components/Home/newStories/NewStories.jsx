@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Common/Animation1";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Link from "next/link";
+import Image from "next/image";
 
 const NewStories = async () => {
   const res = await fetch(
@@ -41,7 +42,9 @@ const NewStories = async () => {
             >
               <div className="relative overflow-hidden image-full rounded-none">
                 <figure>
-                  <img
+                  <Image
+                    height={500}
+                    width={500}
                     className={`rounded-none `}
                     src={story.img}
                     alt="Shoes"
