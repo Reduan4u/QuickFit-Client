@@ -9,9 +9,10 @@ import { FaClock } from "react-icons/fa6";
 import { SiLevelsdotfyi } from "react-icons/si";
 import Swal from "sweetalert2";
 
-const LeftSide = ({ params }) => {
+const LeftSide = ({ category }) => {
   const { refetch, isPending, courses } = UseCourses();
-  const course = courses?.find((item) => item?.category == params?.id);
+  // console.log(category)
+  const course = courses?.find((item) => item?.category == category);
 
   const handleCertificate = () => {
     console.log("clicked");

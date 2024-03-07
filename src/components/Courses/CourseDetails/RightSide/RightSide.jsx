@@ -14,10 +14,11 @@ import Reviews from "./TabContent/Reviews";
 import UseCourseDetails from "@/hooks/UseCourseDetails";
 import LoginButton from "@/components/Common/LoginButton";
 
-const RightSide = ({ params }) => {
+const RightSide = ({ category }) => {
+  // console.log(category)
   const [isPlaying, setIsPlaying] = useState(false);
   const { isPending, allCourseDetails } = UseCourseDetails();
-  const course = allCourseDetails?.find((itm) => itm.category == params.id);
+  const course = allCourseDetails?.find((itm) => itm.category == category);
 
   const handlePlayVideo = () => {
     setIsPlaying(true);
@@ -44,7 +45,7 @@ const RightSide = ({ params }) => {
           </button>
         )}
         <div className="absolute bottom-5 left-5 rounded-sm p-2 bg-three text-white">
-          <span>{params.id}</span>
+          <span>{category}</span>
         </div>
         {isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center">
