@@ -16,7 +16,7 @@ function Ebanner({ image, heading }) {
           src={
             image
               ? image
-              : "https://img.freepik.com/premium-vector/aloe-vera-plant-pieces-aloe-pulp-horizontal-bannerposter-label-brochure-template_627372-989.jpg?w=826"
+              : "https://img.freepik.com/premium-vector/white-flower-card-template_1639-6418.jpg?w=740"
           }
           className="w-full h-[60vh] object-cover"
         />
