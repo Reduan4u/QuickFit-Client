@@ -9,7 +9,7 @@ const layout = ({ children }) => {
   return (
     <div className=''>
 
-      <div className=' pt-8 pb-8'>
+      <div className=' pb-8'>
 
         {/* <h2 className='text-primary text-center  text-4xl uppercase mx-auto w-[50%] font-light'>
           A community of People that grow together
