@@ -12,18 +12,20 @@ import NewStories from "@/components/Home/newStories/NewStories";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Navbar></Navbar>
       <Banner></Banner>
-      <HealthAndFitness></HealthAndFitness>
-      <Course></Course>
-      <div><DietPlan></DietPlan></div>
-      <FitnessClasses></FitnessClasses>
-      <NewStories></NewStories>
-      <JanuaryPicks></JanuaryPicks>
-      <FreeChallenges></FreeChallenges>
-      <Counter></Counter>
-      <Footer></Footer>
+      <div className="space-y-12">
+        <HealthAndFitness></HealthAndFitness>
+        <Course></Course>
+        <DietPlan></DietPlan>
+        <FitnessClasses></FitnessClasses>
+        <NewStories></NewStories>
+        <JanuaryPicks></JanuaryPicks>
+        <FreeChallenges></FreeChallenges>
+        <Counter></Counter>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

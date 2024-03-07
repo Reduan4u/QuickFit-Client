@@ -6,7 +6,7 @@ import moment from 'moment';
 
 const Route1SpotLight = async () => {
     const res = await fetch(
-        "https://quic-kfit-server.vercel.app/api/v1/spotlight",
+        "https://quick-fit-server.vercel.app/api/v1/spotlight",
         {
             cache: "no-store",
         }
