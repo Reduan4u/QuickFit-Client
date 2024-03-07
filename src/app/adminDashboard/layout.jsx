@@ -53,9 +53,9 @@ const Layout = ({ children }) => {
           </DashLink>
           <DashLink
             icon={<GrArticle />}
-            href="/adminDashboard/blogs"
+            href="/adminDashboard/articles"
           >
-            Blogs
+            Articles
           </DashLink>
           <DashLink
             icon={<GrArticle />}
