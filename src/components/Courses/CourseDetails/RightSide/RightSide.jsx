@@ -148,7 +148,7 @@ const RightSide = ({ category }) => {
             <Description course={course}></Description>
           </TabPanel>
           <TabPanel>
-            <Quiz quiz={course?.quiz}></Quiz>
+            <Quiz quiz={course?.quiz} category={category}></Quiz>
           </TabPanel>
           <TabPanel>
             <Reviews course={course}></Reviews>
