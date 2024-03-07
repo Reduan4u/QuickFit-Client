@@ -14,7 +14,7 @@ const FreeChallenges = () => {
                </div>
             </div>
         </div>
-    </div>
+        </div>
     );
 };
 
