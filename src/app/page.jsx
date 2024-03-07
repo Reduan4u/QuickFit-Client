@@ -12,12 +12,12 @@ import NewStories from "@/components/Home/newStories/NewStories";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <Navbar></Navbar>
       <Banner></Banner>
       <HealthAndFitness></HealthAndFitness>
       <Course></Course>
-      <div className="mb-20"><DietPlan></DietPlan></div>
+      <div><DietPlan></DietPlan></div>
       <FitnessClasses></FitnessClasses>
       <NewStories></NewStories>
       <JanuaryPicks></JanuaryPicks>

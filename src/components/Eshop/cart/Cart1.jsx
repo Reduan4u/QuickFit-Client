@@ -11,22 +11,22 @@ import { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
-const Cart1 =  ({ params }) => {
+const Cart1 = ({ params }) => {
   const { isPending, refetch, products } = useCart();
   const axiosPublic = useAxiosPublic();
-  const [qty, setQty] = useState({num:1});
+  const [qty, setQty] = useState({ num: 1 });
 
 
-//   increase qty handler 
+  //   increase qty handler 
   const handleQtyInc = () => {
     qyt.num
-    setQty(qty+1)
+    setQty(qty + 1)
   }
 
   //   decrease qty handler 
   const handleQtyDcr = () => {
-    if(qty-1 >= !0)
-    setQty(qty-1)
+    if (qty - 1 >= !0)
+      setQty(qty - 1)
   }
 
   // delete cart product
@@ -53,16 +53,16 @@ const Cart1 =  ({ params }) => {
     });
   };
 
-//   if (isPending) {
-//     return <Loading1></Loading1>;
-//   }
+  //   if (isPending) {
+  //     return <Loading1></Loading1>;
+  //   }
 
   return (
     <div className="mt-10 mb-20 w-10/12 mx-auto ">
       {/* header left side  */}
       <SectionHeading title={"Shopping Cart"}></SectionHeading>
 
-      
+
 
       {/* carts  */}
       {products?.map((product) => (
@@ -93,15 +93,15 @@ const Cart1 =  ({ params }) => {
 
           {/* increase and decrease Quantity  */}
           <div className="md:w-2/12">
-            <button 
-            onClick={handleQtyInc}
-            className="bg-primary text-black hover:shadow-xl hover:text-xl px-4 py-1 font-bold text-lg transition-all duration-200">
+            <button
+              onClick={handleQtyInc}
+              className="bg-primary text-black hover:shadow-xl hover:text-xl px-4 py-1 font-bold text-lg transition-all duration-200">
               +
             </button>
             <span className="text-xl font-semibold px-2">{qty.num}</span>
-            <button 
-            onClick={handleQtyDcr}
-            className="bg-primary text-black hover:shadow-xl hover:text-xl px-4 py-1 font-bold text-lg transition-all duration-200">
+            <button
+              onClick={handleQtyDcr}
+              className="bg-primary text-black hover:shadow-xl hover:text-xl px-4 py-1 font-bold text-lg transition-all duration-200">
               -
             </button>
           </div>

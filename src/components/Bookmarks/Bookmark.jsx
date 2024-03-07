@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-toastify";
 import Loading1 from "../Loading/Loading1";
+import Button1 from "../Common/Button1";
 
 const Bookmark = () => {
   const { user } = useContext(AuthContext);
@@ -68,9 +69,7 @@ const Bookmark = () => {
                 <h2 className="text-xl font-bold mb-2">{item?.title}</h2>
                 <p className="text-gray-600 mb-4">{item?.description}</p>
                 <Link href={`/allStories/${item?.blogId}`}>
-                  <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700">
-                    Read More
-                  </button>
+                  <Button1 className="" title={"Read More..."} />
                 </Link>
               </div>
             </div>

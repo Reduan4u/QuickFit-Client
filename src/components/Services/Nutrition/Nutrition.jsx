@@ -1,5 +1,6 @@
 "use client"
 
+import LoginButton from '@/components/Common/LoginButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
@@ -60,13 +61,13 @@ mb-4'>{item.benefitTitle}</h1>
 
                 <section className='flex gap-10 flex-wrap justify-center'>
 
-                
 
-                <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
-    <h1 className='text-2xl py-2 text-secondary   font-bold'>{item.fitnessCardTitle}</h1>
-    <p>{item.fitnessDescription}</p>
-    <div className="absolute inset-0 hover:bg-gradient-to-t  to-transparent from-one"></div>
-</div>
+
+                  <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
+                    <h1 className='text-2xl py-2 text-secondary   font-bold'>{item.fitnessCardTitle}</h1>
+                    <p>{item.fitnessDescription}</p>
+                    <div className="absolute inset-0 hover:bg-gradient-to-t  to-transparent from-primary"></div>
+                  </div>
 
 
 
@@ -173,7 +174,9 @@ mb-4'>{item.benefitTitle}</h1>
                     <p className="text-lg loading-8">
                       {trainer.description.split(' ').slice(0, 50).join(' ')}...
                     </p>
-                    <div className=" py-4 "> <Link href={`/services/hire-form/${trainer._id}`}><button className="btn w-40 bg-one hover:bg-primary "> Hire Now </button></Link> </div>
+                    <div className=" py-4 "> <Link href={`/services/hire-form/${trainer._id}`}>
+                      <LoginButton>Hire Now</LoginButton>
+                    </Link> </div>
 
                   </div>
 

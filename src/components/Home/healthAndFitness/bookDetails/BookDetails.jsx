@@ -4,13 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import LeftBtn from '../Btn/LeftBtn';
+import LoginButton from '@/components/Common/LoginButton';
 
 const BookDetails = ({ params }) => {
 
   // State to keep track of the selected radio button value
   const [selectedValue, setSelectedValue] = useState(null);
   const [bookData, setBookData] = useState(null);
- // console.log(selectedValue)
+  // console.log(selectedValue)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +47,7 @@ const BookDetails = ({ params }) => {
 
           {/* image div  */}
           <div className="rounded-lg">
-            <Link href={`/category/${params.id}`}><button className=" py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
+            <Link href={`/category/${params.id}`}><button className="text-two py-5 text-xl font-bold underline">Back To The Previous Page ...</button></Link>
             <Image
               height={500}
               width={500}
@@ -118,20 +119,18 @@ const BookDetails = ({ params }) => {
                 </div>
               </div>
               <div className='flex gap-5'>
-              <div>
-              <button className="btn bg-primary text-white rounded-none uppercase">Add To Cart
-              </button>
-              </div>
-              <div>
-              <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
-                <button
-                  className=" bg-primary btn text-white rounded-none uppercase"
-                  disabled={!selectedValue}
-                >
-                  Order Now
-                </button>
-              </Link>
-              </div>
+                <div>
+
+                  <LoginButton>Add To Cart</LoginButton>
+
+                </div>
+                <div>
+                  <Link href={`/category/bookOrderForm/${bookData?._id}/${selectedValue}`}>
+                    <LoginButton disabled={!selectedValue}>                      Order Now
+                    </LoginButton>
+
+                  </Link>
+                </div>
               </div>
             </form>
           </div>
@@ -139,9 +138,9 @@ const BookDetails = ({ params }) => {
         </div>
       </div>
       <div className="flex justify-end items-center py-5 px-5 w-10/12 mx-auto">
-                <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
-                {/* <RightBtn></RightBtn> */}
-            </div>
+        <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
+        {/* <RightBtn></RightBtn> */}
+      </div>
     </div>
   );
 };
