@@ -27,9 +27,8 @@ const NewStories = async () => {
       <div className=" grid md:grid-cols-4 grid-cols-1  md:gap-2 gap-y-2  ">
         {slicedData.map((story, index) => (
           <Link
-            className={`${
-              index === 0 && "col-span-2 row-span-2 h-full w-full"
-            } hover:bg-one transition-all duration-700 hover:border-yellow-300 hover:border-5 hover: cursor-pointer`}
+            className={`${index === 0 && "col-span-2 row-span-2 h-full w-full"
+              } hover:bg-one transition-all duration-700 hover:border-yellow-300 hover:border-5 hover: cursor-pointer`}
             href={`/allStories/${story._id}`}
             key={index}
           >
@@ -42,9 +41,7 @@ const NewStories = async () => {
             >
               <div className="relative overflow-hidden image-full rounded-none">
                 <figure>
-                  <Image
-                    height={500}
-                    width={500}
+                  <img
                     className={`rounded-none `}
                     src={story.img}
                     alt="Shoes"
