@@ -9,7 +9,8 @@ import Swal from "sweetalert2";
 
 const LeftSide = ({params}) => {
     const {refetch, isPending, courses} = UseCourses()
-    const course = courses?.find(item => item?.category == params.id)
+    const course = courses?.find(item => item?.category == params?.id)
+    //console.log(params.id);
 
     const handleCertificate= () => {
  Swal.fire({
