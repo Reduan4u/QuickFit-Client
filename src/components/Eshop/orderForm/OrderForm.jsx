@@ -2,8 +2,6 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useRouter } from 'next/navigation';
-import Title from "@/components/Common/Title";
-import Ebutton from "@/components/Common/Ebutton";
 import LoginButton from "@/components/Common/LoginButton";
 import SectionHeading from "@/components/Common/SectionHeading";
 
@@ -11,7 +9,7 @@ import SectionHeading from "@/components/Common/SectionHeading";
 function OrderForm({ params }) {
   const axiosPublic = useAxiosPublic();
   const router = useRouter();
-  const inputClasses = "border p-2  w-full border rounded-xl  border-three  placeholder-opacity-70"
+  const inputClasses = "border p-2  w-full border rounded-xl text-center border-one  placeholder-opacity-70"
 
   const {
     register,
@@ -34,13 +32,13 @@ function OrderForm({ params }) {
   };
 
   return (
-    <div className="w-10/12 mx-auto my-10 bg-tertiary py-10">
-      <div className="md:w-1/2 mx-auto">
+    <div className="w-10/12 mx-auto my-10 bg-four py-10">
+      <div className="md:w-2/5 mx-auto">
         <SectionHeading title={"Order Form"}></SectionHeading>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           {/* email field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 text-black">Your Email:</h2>
+            <h2 className="text-lg mb-2 text-black text-center">Your Email</h2>
             <input
               type="text"
               {...register("email", { required: true })}
@@ -54,11 +52,11 @@ function OrderForm({ params }) {
 
           {/* name field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 text-black">Your Name:</h2>
+            <h2 className="text-lg mb-2 text-black text-center">Your Name</h2>
             <input
               type="text"
               {...register("name", { required: true })}
-              placeholder="type your name "
+              placeholder="John Due"
               className={inputClasses}
             />
             {errors.name && (
@@ -68,11 +66,11 @@ function OrderForm({ params }) {
 
           {/* address field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 text-black">Address:</h2>
+            <h2 className="text-lg mb-2 text-black text-center">Address</h2>
             <input
               type="text"
               {...register("address", { required: true })}
-              placeholder="type your full address "
+              placeholder="Street, Village, District"
               className={inputClasses}
             />
             {errors.name && (
@@ -82,7 +80,7 @@ function OrderForm({ params }) {
 
           {/* address field  */}
           <div className="w-full">
-            <h2 className="text-lg mb-2 text-black">Phone Number:</h2>
+            <h2 className="text-lg mb-2 text-black text-center">Phone Number</h2>
             <input
               type="text"
               {...register("phone", { required: true })}

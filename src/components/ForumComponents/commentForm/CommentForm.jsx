@@ -45,7 +45,7 @@ const CommentForm = ({ postId }) => {
   return (
     <form onSubmit={handleSubmit}>
       <textarea
-        className='bg-[#112033] rounded-sm p-2 w-[98%] '
+        className='bg-[#f1e9e9] rounded-sm p-2 w-[98%] '
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         placeholder="Add a comment..."
@@ -54,7 +54,7 @@ const CommentForm = ({ postId }) => {
       />
      
      <div className="flex justify-end">
-  <button className='bg-secondary py-1 px-2 rounded-3xl text-[#fff] mt-2 mr-4' type="submit">Post Comment</button>
+  <button className='bg-one py-1 px-2 rounded-3xl mt-2 mr-4 text-[#fff]' type="submit">Post Comment</button>
 </div>
       
     </form>

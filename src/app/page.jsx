@@ -15,15 +15,17 @@ export default function Home() {
     <div>
       <Navbar></Navbar>
       <Banner></Banner>
-      <HealthAndFitness></HealthAndFitness>
-      <Course></Course>
-      <div className="mb-20"><DietPlan></DietPlan></div>
-      <FitnessClasses></FitnessClasses>
-      <NewStories></NewStories>
-      <JanuaryPicks></JanuaryPicks>
-      <FreeChallenges></FreeChallenges>
-      <Counter></Counter>
-      <Footer></Footer>
+      <div className="space-y-12">
+        <HealthAndFitness></HealthAndFitness>
+        <Course></Course>
+        <DietPlan></DietPlan>
+        <FitnessClasses></FitnessClasses>
+        <NewStories></NewStories>
+        <JanuaryPicks></JanuaryPicks>
+        <FreeChallenges></FreeChallenges>
+        <Counter></Counter>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

@@ -47,23 +47,23 @@ const Banner = () => {
       >
 
         <SwiperSlide>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col lg:pl-40 md:pl-24 pl-18  px-10 justify-center h-full">
             <div>
               <motion.h2
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-6xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-8xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className="text-black text-xl pt-4"
+                className="text-black text-lg pt-4"
               >
                 It has survived not only five Centuries but also Generations
               </motion.h2>
@@ -105,23 +105,23 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col lg:pl-40 md:pl-24 pl-18 px-10 justify-center h-full">
             <div>
               <motion.h2
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-6xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-8xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className="text-black text-xl pt-4"
+                className="text-black text-lg pt-4"
               >
                 It has survived not only five Centuries but also Generations
               </motion.h2>
@@ -163,23 +163,23 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col lg:pl-40 md:pl-24 pl-18 px-10 justify-center h-full">
             <div>
               <motion.h2
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-6xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-8xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className="text-black text-xl pt-4"
+                className="text-black text-lg pt-4"
               >
                 It has survived not only five Centuries but also Generations
               </motion.h2>
@@ -224,22 +224,22 @@ const Banner = () => {
 
 
         <SwiperSlide>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col lg:pl-40 md:pl-24 pl-18 px-10 justify-center h-full">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-6xl text-white text-right font-bold"
+              className=" text-4xl text-white text-right font-bold"
             >
-              <span className="text-8xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+              <span className="text-5xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
             </motion.h2>
             <motion.h2
               variants={fadeIn("up", 0.9)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-white text-xl pt-4 text-right"
+              className="text-white text-lg pt-4 text-right"
             >
               It has survived not only five Centuries but also Generations
             </motion.h2>
@@ -279,22 +279,22 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col pl-40 justify-center h-full">
+          <div className=" md:text-5xl text-3xl md:w-11/12 mx-auto font-bold  text-left  absolute  text-white flex flex-col lg:pl-40 md:pl-24 pl-18 px-10 justify-center h-full">
             <motion.h2
               variants={fadeIn("up", 0.2)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-6xl text-white text-right font-bold"
+              className=" text-4xl text-white text-right font-bold"
             >
-              <span className="text-8xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+              <span className="text-5xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
             </motion.h2>
             <motion.h2
               variants={fadeIn("up", 0.9)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-white text-xl pt-4 text-right"
+              className="text-white text-lg pt-4 text-right"
             >
               It has survived not only five Centuries but also Generations
             </motion.h2>

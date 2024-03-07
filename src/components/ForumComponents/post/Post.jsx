@@ -118,7 +118,7 @@ console.log(user?.photoURL);
           />
         </div>
         <div className="text-right ">
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+          <button type="submit" className="font-medium px-5 py-3 rounded-3xl bg-one hover:bg-three text-four  transition-all duration-500">
             Post
           </button>
         </div>

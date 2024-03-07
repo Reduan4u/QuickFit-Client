@@ -32,7 +32,7 @@ const SinglePost = ({ params }) => {
 
   const postLike = async () => {
     console.log("clicked");
-
+console.log(singlePostData)
     const postId = singlePostData?._id;
     const likeEmail = user?.email;
     console.log(likeEmail);
@@ -57,7 +57,7 @@ const SinglePost = ({ params }) => {
   };
 
   return (
-    <div className='text-[#f2f2f2]  px-4 md:px-8'>
+    <div className='px-4 md:px-8'>
 
       <div className='flex flex-col md:flex-row items-center justify-start md:gap-4 lg:gap-8  mt-4 md:mt-8'>
 
@@ -106,14 +106,16 @@ const SinglePost = ({ params }) => {
           <div key={index} className="py-4 px-4">
             <div className="flex items-center justify-between gap-4">
               <div className='flex items-center justify-end gap-4 mb-2'>
-                <p className="text-blue-500 text-sm font-semibold">{comment?.userName ? comment.userName : comment?.userEmail}</p>
+              <Link href={`/forum/userprofile/${comment?.userEmail}`} >
+                                <p className="text-[#2a4bf1ee] text-[14px]">{comment?.userName ? comment.userName : comment?.userEmail}</p>
+                                </Link>
                 <p className="text-gray-500 text-sm">{moment(comment?.date).format("DD MMMM")}</p>
               </div>
               <div className='flex items-center justify-center gap-2 text-red-500 text-[14px]'>
                 <button >Report</button> <FaBan />
               </div>
             </div>
-            <p className="text-sm text-[#f2f2f2] mt-2">{comment?.text}</p>
+            <p className="text-sm  mt-2">{comment?.text}</p>
           </div>
         ))}
       </div>

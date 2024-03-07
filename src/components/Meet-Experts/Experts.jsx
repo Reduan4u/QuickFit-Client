@@ -29,7 +29,7 @@ const Experts = async () => {
           Learn more about our  <span className="text-blue-500 underline">expert reviewing process</span> here.</p>
       </div>
 
-      <div className="my-16 w-2/4 flex-wrap mx-auto  text-primary  rounded-md py-12 text-lg font-medium border border-red-500 flex gap-2 justify-center">
+      <div className="my-16 w-2/4 flex-wrap mx-auto  text-primary  rounded-md py-12 text-lg font-medium border border-one flex gap-2 justify-center">
 
         <a href="#featured" className=" text-secondary  scroll-link">Featured Experts -</a>
         <a href="#fitness" className=" text-secondary scroll-link">Fitness Experts -</a>
@@ -44,57 +44,57 @@ const Experts = async () => {
 
 
       <div>
-        <div className='py-14  text-center   text-primary   w-11/12 mx-auto bg-slate-900'> <h1 className='text-3xl font-bold'> FEATURED EXPERTS </h1> </div>
+        <div className='py-14  text-center   text-primary   w-11/12 mx-auto bg-one'> <h1 className='text-3xl font-bold'> FEATURED EXPERTS </h1> </div>
 
         <div id="featured" className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center my-8 items-center gap-8 w-10/12 mx-auto ">
           <div className="card w-[290px] h-[450px] mx-auto bg-base-100 shadow-xl">
-            <figure><Image className=""
+            <figure><Image className="h-[355px]"
               src="https://img.livestrong.com/368x514/media-storage/livestrong-data/hub/7b260bab-0384-4a11-b241-a041648bfe0e-AngelaHollidayBell.jpg?type=webp"
               alt="Alt text for your image"
               width={500} // Set the width of the image
               height={500} // Set the height of the image
             /></figure>
             <div className="card-body">
-              <h2 className="card-title  text-secondary">Angela Holliday-Bell MD, CCSH</h2>
+              <h2 className="card-title  text-primary">Angela Holliday-Bell MD, CCSH</h2>
 
             </div>
           </div>
 
           <div className="card w-[290px] h-[450px] mx-auto bg-base-100 shadow-xl">
-            <figure><Image className=""
+            <figure><Image className="h-[355px]"
               src="https://img.livestrong.com/368x514/media-storage/livestrong-data/hub/bfe4a990-991a-4a87-b892-dfaf51746e9e-BrookeSchwartz.jpg?type=webp"
               alt="Alt text for your image"
               width={500} // Set the width of the image
               height={500} // Set the height of the image
             /></figure>
             <div className="card-body">
-              <h2 className="  text-secondary card-title">Brooke Schwartz, LCSW</h2>
+              <h2 className="  text-primary card-title">Brooke Schwartz, LCSW</h2>
 
             </div>
           </div>
 
           <div className="card w-[290px] h-[450px] mx-auto  bg-base-100 shadow-xl">
-            <figure><Image className=""
+            <figure><Image className="h-[355px]"
               src="https://img.livestrong.com/368x514/media-storage/livestrong-data/hub/3a6e63ba-e7b7-4cb3-ba1d-7cc3bb767c18-BronteYang.jpg?type=webp"
               alt="Alt text for your image"
               width={500} // Set the width of the image
               height={500} // Set the height of the image
             /></figure>
             <div className="card-body">
-              <h2 className="card-title  text-secondary">Julián Saavedra, MD, FEBO</h2>
+              <h2 className="card-title  text-primary">Julián Saavedra, MD, FEBO</h2>
 
             </div>
           </div>
 
           <div className="card w-[290px] h-[450px] mx-auto bg-base-100 shadow-xl">
-            <figure><Image className="h-[335px]"
+            <figure><Image className="h-[355px]"
               src="https://img.livestrong.com/368x514/media-storage/livestrong-data/hub/acdba984-b9f1-4cfb-a0e8-84e6f3b0eee2-JulianSaavedra.jpg?type=webp"
               alt="Alt text for your image"
               width={500} // Set the width of the image
               height={500} // Set the height of the image
             /></figure>
             <div className="card-body">
-              <h2 className="card-title  text-secondary">Bronte Yang, DO</h2>
+              <h2 className="card-title  text-primary">Bronte Yang, DO</h2>
 
             </div>
           </div>
@@ -103,7 +103,7 @@ const Experts = async () => {
       </div>
 
       <div id="fitness">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-slate-800'> <h1 className='text-3xl font-bold'> FITNESS EXPERTS </h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-one'> <h1 className='text-3xl font-bold'> FITNESS EXPERTS </h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 
@@ -121,7 +121,7 @@ const Experts = async () => {
                     />
                     <div>
                       <h1 className="text-2xl  text-secondary font-bold">{item.name}</h1>
-                      <p className="text-gray-400 py-2">{item.jobTitle}</p>
+                      <p className="text-two py-2">{item.jobTitle}</p>
                       <p className="text-lg loading-8">{item.description}</p>
 
                       <div className="text-2xl py-2 flex gap-3">
@@ -172,7 +172,7 @@ const Experts = async () => {
       </div>
 
       <div id="nutrition">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-gray-800'> <h1 className='text-3xl font-bold'> NUTRITION EXPERTS </h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-one'> <h1 className='text-3xl font-bold'> NUTRITION EXPERTS </h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 
@@ -190,7 +190,7 @@ const Experts = async () => {
                     />
                     <div>
                       <h1 className="text-2xl  text-secondary font-bold">{item.name}</h1>
-                      <p className="text-gray-400 py-2">{item.jobTitle}</p>
+                      <p className="text-two py-2">{item.jobTitle}</p>
                       <p className="text-lg loading-8">{item.description}</p>
 
                       <div className="text-2xl py-2 flex gap-3">
@@ -236,7 +236,7 @@ const Experts = async () => {
       </div>
 
       <div id="health">
-        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-slate-800'> <h1 className='text-3xl font-bold'>HEALTH EXPERTS</h1> </div>
+        <div className='py-14   text-primary   text-center w-11/12 mx-auto mb-16 bg-one'> <h1 className='text-3xl font-bold'>HEALTH EXPERTS</h1> </div>
 
         <div id="our-team" className="w-7/12 mx-auto  ">
 
@@ -255,7 +255,7 @@ const Experts = async () => {
                     />
                     <div>
                       <h1 className="text-2xl  text-secondary font-bold">{item.name}</h1>
-                      <p className="text-gray-400 py-2">{item.jobTitle}</p>
+                      <p className="text-two py-2">{item.jobTitle}</p>
                       <p className="text-lg loading-8">{item.description}</p>
 
                       <div className="text-2xl py-2 flex gap-3">
