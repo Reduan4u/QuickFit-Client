@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Common/Animation1";
 import Image from "next/image";
 import Link from "next/link";
-import "./Course.css";
 import LoginButton from "@/components/Common/LoginButton";
 
 const Course = () => {

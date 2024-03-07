@@ -197,7 +197,7 @@ const AddArticle = () => {
                             onClick={handleAddArtField}
                             className="btn btn-ghost text-white hover:bg-slate-300 hover:text-[#151c2c] border-2 border-white transition-all duration-500 text-lg"
                         >
-                            Add Another Article
+                            Add Another Title and Detail
                         </button>
                     </div>
                     <div className="text-center my-4">
