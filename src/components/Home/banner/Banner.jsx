@@ -54,9 +54,9 @@ const Banner = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-5xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-6xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
@@ -112,9 +112,9 @@ const Banner = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-5xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-6xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
@@ -170,9 +170,9 @@ const Banner = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
-                className=" text-5xl text-primary font-bold"
+                className=" text-4xl text-primary font-bold"
               >
-                <span className="text-6xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+                <span className="text-5xl">QuickFit </span> <br />for Your <span className="text-one"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
               </motion.h2>
               <motion.h2
                 variants={fadeIn("up", 0.9)}
@@ -230,9 +230,9 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-5xl text-white text-right font-bold"
+              className=" text-4xl text-white text-right font-bold"
             >
-              <span className="text-6xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+              <span className="text-5xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
             </motion.h2>
             <motion.h2
               variants={fadeIn("up", 0.9)}
@@ -285,9 +285,9 @@ const Banner = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className=" text-5xl text-white text-right font-bold"
+              className=" text-4xl text-white text-right font-bold"
             >
-              <span className="text-6xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
+              <span className="text-5xl">QuickFit </span> <br />For Your <span className="text-two"> Health,</span><br />Not Only <span className="text-one"> Fitness.</span>
             </motion.h2>
             <motion.h2
               variants={fadeIn("up", 0.9)}
