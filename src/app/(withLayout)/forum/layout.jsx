@@ -7,9 +7,9 @@ import Ebanner from "@/components/Eshop/Ebanner/Ebanner";
 
 const layout = ({ children }) => {
   return (
-    <div className='bg-[#F0FADB]'>
+    <div className=''>
 
-      <div className='bg-[#F0FADB] pt-8 pb-8'>
+      <div className=' pt-8 pb-8'>
 
         {/* <h2 className='text-primary text-center  text-4xl uppercase mx-auto w-[50%] font-light'>
           A community of People that grow together
@@ -46,16 +46,16 @@ const layout = ({ children }) => {
       </li>
     </ul>
 
-    <div className="  flex items-center justify-center mx-auto gap-4 lg:w-[20%] mt-8 "> 
+    <div className="  flex items-center justify-center mx-auto gap-4 lg:w-[30%] mt-8 "> 
     <ForumNavLink href="/forum/post" >
-      <button className="text-[#fff] bg-secondary  py-1 px-2 rounded-xl ">
+      <button className="font-medium   px-5 py-3 rounded-3xl bg-one hover:bg-three text-four  transition-all duration-500 ">
       Create Post
       </button>
       
       </ForumNavLink>
 
       <ForumNavLink href="/chat" >
-      <button className="text-[#fff] bg-green-400  py-1 px-2 rounded-xl ">
+      <button className="font-medium  w-full px-5 py-3 rounded-3xl bg-one hover:bg-three text-four  transition-all duration-500 ">
       Global Chat
       </button>
       

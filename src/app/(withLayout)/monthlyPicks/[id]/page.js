@@ -4,6 +4,7 @@ import Button1 from '@/components/Common/Button1';
 import Image from 'next/image';
 import FavButton from '@/components/FavouriteButton/FavButton';
 import Comment from '@/components/Comment/Comment';
+import LoginButton from '@/components/Common/LoginButton';
 
 const page = async({params}) => {
 
@@ -20,7 +21,7 @@ const page = async({params}) => {
           <h2 className=' md:text-6xl text-3xl font-extrabold'>Monthly Picks .</h2>
          
         
-                <p className=' text-orange-500 font-bold'>#february_picks</p>
+                <p className=' text-orange-500 font-bold'>#march_picks</p>
             </div>
             <div className=' my-4'>
                 <Image 
@@ -54,7 +55,9 @@ const page = async({params}) => {
             <div className=' my-9 flex justify-end items-center'>
                 
                 
-                <Link href="/"><Button1 title={"Go Back"}/></Link>
+                <Link href="/"> 
+                    <LoginButton>Go Back</LoginButton>
+                </Link>
             </div>
 
             <Comment data={data} />

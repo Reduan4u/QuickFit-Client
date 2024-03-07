@@ -56,7 +56,7 @@ const RightSideBar = () => {
             <div className=' flex items-center justify-center gap-2'>
                 <input
                     type="text"
-                    className='w-64 border-gray-700 rounded-box bg-[#102032] pl-5 text-white py-1'
+                    className='w-64 border-gray-700 rounded-box  bg-one font-medium  text-four pl-5 py-1'
                     placeholder='Search...'
                     onChange={handleInputChange}
                     value={searchTerm}

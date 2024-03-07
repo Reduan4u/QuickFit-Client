@@ -10,16 +10,17 @@ import { AiTwotoneLike } from "react-icons/ai";
 const Popular = () => {
   const axiosPublic = useAxiosPublic();
   const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1);
 
   const getData = async () => {
-    await axiosPublic.get(`/forum/find/popularpost`).then((data) => {
+    await axiosPublic.get(`/forum/find/popularpost?page=${page}`).then((data) => {
       setPosts(data.data);
     });
   };
 
   useEffect(() => {
     getData();
-  }, [getData]);
+  }, [page]);
 
   return (
     <div className="pb-10">
@@ -80,7 +81,18 @@ const Popular = () => {
             </div>
           </Link>
         </div>
+
+        
       ))}
+
+<div className="flex justify-center mt-4">
+        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+          Previous
+        </button>
+        <button onClick={() => setPage(page + 1)}>Next</button>
+      </div>
+
+
     </div>
   );
 };

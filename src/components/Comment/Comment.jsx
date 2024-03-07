@@ -66,9 +66,9 @@ const Comment = ({ data }) => {
           />
           <div className="mt-2">
             <input
-              value="Submit Cmment"
+              value="Submit Comment"
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="font-medium  w-full px-5 py-3 rounded-3xl bg-one hover:bg-three text-four  transition-all duration-500"
             />
           </div>
         </form>
