@@ -42,7 +42,7 @@ const NutritionPage = async () => {
 
                 <section className='flex flex-col px-4 lg:flex-row  gap-10 items-center'>
                   <div className='flex-1'>
-                    <h1 className='text-4xl text-primary font-bold my-4'>{item.title}</h1>
+                    <h1 className='text-4xl text-one font-bold my-4'>{item.title}</h1>
                     <p>{item.description1} <br /> <br />
 
                       {item.description2}</p>
@@ -54,7 +54,7 @@ const NutritionPage = async () => {
                 </section>
 
                 <section className='my-8 px-4'>
-                  <h1 className='text-4xl text-primary font-bold 
+                  <h1 className='text-4xl text-one font-bold 
 mb-4'>{item.benefitTitle}</h1>
                   <p>{item.benefitDescription}</p>
                 </section>
@@ -74,13 +74,13 @@ mb-4'>{item.benefitTitle}</h1>
                   <div className='border-2 h-[300px] md:w-[264px] p-8 relative overflow-hidden mx-4 my-8'>
                     <h1 className='text-2xl py-2 text-secondary font-bold'>{item.nutritionalCardTitle}</h1>
                     <p>{item.nutritionalDescription}</p>
-                    <div className="absolute inset-0 hover:bg-gradient-to-t from-primary to-transparent"></div>
+                    <div className="absolute inset-0 hover:bg-gradient-to-t from-one to-transparent"></div>
                   </div>
 
                   <div className='border-2 h-[300px] md:w-[264px]  p-8 relative overflow-hidden mx-4 my-8'>
                     <h1 className='text-2xl py-2 text-secondary font-bold'>{item.getCardTitle}</h1>
                     <p>{item.getDescription}</p>
-                    <div className="absolute inset-0 hover:bg-gradient-to-t from-primary to-transparent"></div>
+                    <div className="absolute inset-0 hover:bg-gradient-to-t from-one to-transparent"></div>
                   </div>
                 </section>
 
@@ -94,7 +94,7 @@ mb-4'>{item.benefitTitle}</h1>
                   />
 
                   <div className='flex-1'>
-                    <h1 className='text-4xl text-primary font-bold'>{item.resultTitle}</h1>
+                    <h1 className='text-4xl text-one font-bold'>{item.resultTitle}</h1>
                     <p className="loading-[5px]  p-4">
                       {item.resultdes[0]}  <br />
                       {item.resultdes[2]}  <br />
@@ -111,7 +111,7 @@ mb-4'>{item.benefitTitle}</h1>
                 </section>
 
                 <section className='mb-16 px-4'>
-                  <h1 className='text-4xl text-primary font-bold mb-8'>{item.trainingProgramTitle}</h1>
+                  <h1 className='text-4xl text-one font-bold mb-8'>{item.trainingProgramTitle}</h1>
 
                   <Tabs>
                     <TabList >
@@ -158,7 +158,7 @@ mb-4'>{item.benefitTitle}</h1>
             .slice(1, 2)
             .map(trainer => (
               <div key={trainer._id}>
-                <h1 className='text-3xl py-8 font-bold'>If you want to <span className='text-primary '>Hire Now</span> </h1>
+                <h1 className='text-3xl py-8 font-bold'>If you want to <span className='text-one '>Hire Now</span> </h1>
                 <div className='flex gap-8 flex-col lg:flex-row'>
                   <Image
                     className="lg:w-[225px] w-full lg:h-[250px] mb-2"
@@ -170,7 +170,7 @@ mb-4'>{item.benefitTitle}</h1>
 
                   <div>
                     <h1 className="text-2xl text-primary font-bold">{trainer.name}</h1>
-                    <p className="text-gray-400  py-2">{trainer.jobTitle}</p>
+                    <p className="text-two  py-2">{trainer.jobTitle}</p>
                     <p className="text-lg loading-8">
                       {trainer.description.split(' ').slice(0, 50).join(' ')}...
                     </p>
