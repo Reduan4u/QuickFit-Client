@@ -6,6 +6,7 @@ import React, { useContext, useState } from "react";
 
 const Profile = () => {
   const { data } = useUser();
+  console.log(data)
 
   return (
     <div>

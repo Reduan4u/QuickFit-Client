@@ -5,6 +5,7 @@ import { FaBookmark } from "react-icons/fa";
 import FavButton from "@/components/FavouriteButton/FavButton";
 import LikeFunction from "@/components/LikeFunction/LikeFunction";
 import Comment from "@/components/Comment/Comment";
+import LoginButton from "@/components/Common/LoginButton";
 
 const page = async ({ params }) => {
   const res = await fetch(
@@ -16,7 +17,7 @@ const page = async ({ params }) => {
   const data = await res.json();
 
   return (
-    <div className=" mx-auto container my-4">
+    <div className=" mx-auto max-w-4xl container my-4">
       <div className=" flex justify-between items-center my-12">
         <div className=" flex gap-5 items-center ">
           <h2 className=" text-5xl font-extrabold">{data.title}</h2>
@@ -40,7 +41,7 @@ const page = async ({ params }) => {
         </div>
         <div className=" my-4">
           {data.paragraph.map((para, index) => (
-            <div className=" my-3 text-black/60 italic" key={index}>
+            <div className=" my-3" key={index}>
               <p>{para}</p>
             </div>
           ))}
@@ -50,7 +51,7 @@ const page = async ({ params }) => {
       <div className=" my-9 flex justify-between items-center">
         <LikeFunction data={data} />
         <Link href="/allStories">
-          <Button1 title={"More Stories"} />
+        <LoginButton>Read More</LoginButton>
         </Link>
       </div>
       <Comment data={data} />
