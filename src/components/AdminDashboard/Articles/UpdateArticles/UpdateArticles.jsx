@@ -1,4 +1,5 @@
 "use client"
+import UseContext from "@/hooks/UseContext";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
@@ -7,6 +8,7 @@ import Swal from "sweetalert2";
 
 const UpdateArticles = ({ params }) => {
     const axiosSecure = useAxiosPublic();
+    const { user } = UseContext();
 
 
     const { data: articles = [], refetch } = useQuery({
@@ -25,13 +27,18 @@ const UpdateArticles = ({ params }) => {
         const image = form.image.value;
         const Category = form.Category.value;
         const reviewer = form.reviewer.value;
+        const publisher = user.displayName;
+        const publishDate = form.publishDate.value;
         const data = {
             title,
             subTitle,
             image,
             Category,
             reviewer,
+            publisher,
+            publishDate,
         };
+        //console.log(data);
 
         axiosSecure.patch(`/api/v1/articles/${articles._id}`, data)
             .then(res => {
@@ -119,7 +126,7 @@ const UpdateArticles = ({ params }) => {
                             
                         </select>
                     </div>
-                    {/* <div className="flex-1 w-full border-slate-300 text-[#151c2c] rounded-sm">
+                    <div className="flex-1 w-full border-slate-300 text-[#151c2c] rounded-sm">
                         <label className="pb-2 text-slate-300 text-lg" htmlFor="publishDate">
                             Publish Date
                         </label>
@@ -131,19 +138,19 @@ const UpdateArticles = ({ params }) => {
                             className="p-1 w-full border-slate-300 text-[#151c2c] rounded-sm"
                             type="date"
                         />
-                    </div> */}
+                    </div> 
                 </div>
-                {/* <div className=" flex flex-col items-start">
+                <div className=" flex flex-col items-start">
                     <label className="pb-2 text-slate-300 text-lg" htmlFor="publisher">
                         Publisher
                     </label>
                     <input
                         name="publisher"
-                        defaultValue={articles.publisher}
+                        defaultValue={user.displayName}
                         className="p-1 w-full border-slate-300 text-[#151c2c] rounded-sm"
                         type="text"
                     />
-                </div> */}
+                </div>
                 <div className=" flex flex-col items-start">
                     <label className="pb-2 text-slate-300 text-lg" htmlFor="reviewer">
                         Reviewer

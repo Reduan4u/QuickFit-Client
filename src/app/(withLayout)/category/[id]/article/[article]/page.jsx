@@ -15,13 +15,13 @@ const ArticleDetailsPage = async ({ params }) => {
     return (
         <div>
             <div key={data._id} className='w-full md:w-full lg:w-1/2 mx-auto py-5 px-5 md:px-5 lg:px-0'>
-                <p className='text-lg text-orange-400 font-bold'>#{data.Category}</p>
+                <p className='text-lg text-three font-bold'>#{data.Category}</p>
                 <h1 className='text-2xl md:text-4xl font-bold py-5'>{data.title}</h1>
                 <p className='text-xl md:text-2xl font-medium'>{data.subTitle}</p>
                 <p className='text-base py-5'>{data.publishDate}</p>
                 <p className='text-base italic'>{data.publisher}</p>
                 <p className='text-base py-5'>{data.reviewer}</p>
-                <div className='w-full h-[65vh] border-t-4 border-orange-400 pt-5 '>
+                <div className='w-full h-[65vh] border-t-4 border-one pt-5 '>
                     <Image
                         height={500}
                         width={500}
@@ -46,7 +46,6 @@ const ArticleDetailsPage = async ({ params }) => {
             <RelatedArticle params={params}></RelatedArticle>
             <div className="flex justify-end items-center py-5 w-10/12 mx-auto">
                 <Link href={`/category/${params.id}`}><LeftBtn></LeftBtn></Link>
-                {/* <RightBtn></RightBtn> */}
             </div>
         </div>
     );

@@ -27,7 +27,7 @@ const UserReviews = () => {
     
     return (
         <div>
-            <h1 className="py-5 font-semibold text-2xl">User Reviews :</h1>
+            <h1 className="text-2xl font-medium py-4">User Reviews :</h1>
             <div className=" flex justify-center items-center">
                 <Marquee direction="left" speed={70} pauseOnHover={true} gradient={true} >
                   
@@ -53,7 +53,7 @@ const UserReviews = () => {
                                 </div>
                             </div>
                         </div>
-                        <BiSolidQuoteLeft className="text-primary w-10 h-10 rounded-full " />
+                        <BiSolidQuoteLeft className="text-three w-10 h-10 rounded-full " />
                         <div class="italic mt-2 text-[18px] text-[#4b587c] font-normal text-justify">
 
                             Comprehensive health and fitness website offering expert advice, workout routines, nutritional guidance, and motivational content.

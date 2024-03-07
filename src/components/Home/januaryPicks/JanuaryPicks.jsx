@@ -1,10 +1,13 @@
+"use client";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../Common/Animation1";
 import SectionHeading from "@/components/Common/SectionHeading";
 import Image from "next/image";
 import Link from "next/link";
 
 const JanuaryPicks = async () => {
   const res = await fetch(
-    'https://quick-fit-server.vercel.app/api/v1/monthlyPicks', 
+    "https://quick-fit-server.vercel.app/api/v1/monthlyPicks",
     {
       cache: "no-store",
     }
@@ -14,12 +17,13 @@ const JanuaryPicks = async () => {
   const currentDate = new Date();
   const currentMonthNumber = currentDate.getMonth();
 
-  const filteredData = data.filter((picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
+  const filteredData = data.filter(
+    (picks) => Number(picks.date.split("-")[1]) === currentMonthNumber + 1
   );
   const slicedData = filteredData.slice(0, 4);
 
   return (
-    <div className="w-11/12 mx-auto my-2 px-2">
+    <div className="w-10/12 mx-auto my-2 px-2">
       <div className=" ">
         <SectionHeading
           title={`${new Date().toLocaleDateString("default", {
@@ -30,7 +34,13 @@ const JanuaryPicks = async () => {
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-2">
         {slicedData.map((monthsPicks, index) => (
           <Link href={`/monthlyPicks/${monthsPicks._id}`} key={index}>
-            <div className=" h-fit group cursor-pointer" key={index}>
+            <motion.div
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0 }}
+              className=" h-fit group cursor-pointer"
+            >
               <div className=" h-80 relative overflow-hidden">
                 <Image
                   objectFit="cover"
@@ -47,7 +57,7 @@ const JanuaryPicks = async () => {
                   <p className=" px-5 py-2 text-lg font-thin italic">
                     {monthsPicks.description}
                   </p>
-                  <p className=" px-5 py-2 font-semibold text-primary">
+                  <p className=" px-5 py-2 font-semibold text-three">
                     |
                     {new Intl.DateTimeFormat("en-US", {
                       month: "long",
@@ -56,7 +66,7 @@ const JanuaryPicks = async () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </Link>
         ))}
       </div>
