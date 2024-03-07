@@ -40,10 +40,8 @@ const Course = () => {
                 We have expert instructor for help our students.
               </h1>
               <p class="text-base">
-                Discover diverse courses spanning technology to arts, tailored
-                for all skill levels with expert instruction and flexible
-                schedules, empowering you to delve into subjects ranging from
-                computer programming to visual arts with ease and confidence.
+                Embark on a boundless journey of exploration with our expansive selection of courses, thoughtfully curated to accommodate learners of every proficiency level. Delve into the dynamic landscape of technology or immerse yourself in the captivating world of the arts—our expert instructors and adaptable schedules provide the perfect environment for your educational pursuits. Whether you are navigating the complexities of computer programming or unleashing your creativity in the visual arts, our tailored approach ensures that you can learn with confidence and flexibility, empowering you to pursue your passions with ease.
+
               </p>
               <p class="my-5 text-one text-2xl font-semibold">100+ Courses</p>
               <p class="text-base">
