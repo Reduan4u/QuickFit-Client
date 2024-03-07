@@ -6,7 +6,7 @@ import RightSide from "./RightSide/RightSide";
 
 
 const CourseDetails = ({ params }) => {
-
+  console.log(params?.id)
 
     return (
         <div>
