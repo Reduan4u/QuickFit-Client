@@ -127,7 +127,7 @@ const RightSideBar = () => {
             {/* NEW DISCUSSIONS renderding */}
 
             <div className=" mt-5">
-                <h2 className="text-secondary text-center">NEW DISCUSSIONS</h2>
+                <h2 className="text-one text-center">NEW DISCUSSIONS</h2>
 
                 {
                     newestPost?.slice(0, 7).map((post, index) => (
