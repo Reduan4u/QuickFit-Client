@@ -1,9 +1,17 @@
+"use client";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../Common/Animation1";
 import LoginButton from '@/components/Common/LoginButton';
 import './FreeChallenges.css'
 import Link from 'next/link';
 const FreeChallenges = () => {
     return (
-        <div className="featured-item bg-fixed text-white my-20">
+        <motion.div 
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0 }}
+        className="featured-item bg-fixed text-white my-20">
         <div className="flex justify-center items-center gap-2 bg-black bg-opacity-60 pb-20 pt-12 px-5 md:px-10 lg:px-36 ">
             <div className="md:ml-10">
                 <p className="uppercase text-2xl text-center">Free Workout Videos</p>
@@ -14,7 +22,7 @@ const FreeChallenges = () => {
                </div>
             </div>
         </div>
-        </div>
+        </motion.div>
     );
 };
 

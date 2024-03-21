@@ -12,10 +12,9 @@ import Description from "./TabContent/Description";
 import Quiz from "./TabContent/Quiz";
 import Reviews from "./TabContent/Reviews";
 import UseCourseDetails from "@/hooks/UseCourseDetails";
-import LoginButton from "@/components/Common/LoginButton";
 
 const RightSide = ({ category }) => {
-  // console.log(category)
+  const [tabIndex, setTabIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const { isPending, allCourseDetails } = UseCourseDetails();
   const course = allCourseDetails?.find((itm) => itm.category == category);
@@ -26,6 +25,10 @@ const RightSide = ({ category }) => {
   const handleStopVideo = () => {
     setIsPlaying(false);
   };
+
+  const tabClass = 'font-medium bg-one rounded-3xl px-6 py-3 hover:bg-three hover:text-black text-four focus:rounded-3xl transition-all duration-500 focus:bg-three  focus:text-black focus:border-three cursor-pointer'
+
+
   return (
     <div className=" w-full md:w-8/12">
       <motion.div
@@ -137,18 +140,18 @@ const RightSide = ({ category }) => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0 }}
       >
-        <Tabs>
-          <TabList className="text-center">
-            <Tab>Description</Tab>
-            <Tab>Quiz</Tab>
-            <Tab>Reviews</Tab>
+        <Tabs  selectedTabClassName={tabClass}>
+          <TabList className='text-center flex flex-wrap justify-center items-center gap-5 lg:gap-10'>
+            <Tab className={tabClass} >Description</Tab>
+            <Tab className={tabClass} >Quiz</Tab>
+            <Tab className={tabClass} >Reviews</Tab>
           </TabList>
 
           <TabPanel>
             <Description course={course}></Description>
           </TabPanel>
           <TabPanel>
-            <Quiz quiz={course?.quiz} category={category}></Quiz>
+            <Quiz course={course}></Quiz>
           </TabPanel>
           <TabPanel>
             <Reviews course={course}></Reviews>

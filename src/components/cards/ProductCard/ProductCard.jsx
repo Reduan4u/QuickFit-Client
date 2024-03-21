@@ -4,7 +4,6 @@ import { fadeIn } from "@/components/Common/Animation1";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import "./product.css"
-import Ebutton from "@/components/Common/Ebutton";
 import LoginButton from "@/components/Common/LoginButton";
 import Image from "next/image";
 

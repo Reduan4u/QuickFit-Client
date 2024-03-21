@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/Common/Animation1";
 import LoginButton from "@/components/Common/LoginButton";
@@ -8,20 +7,37 @@ import { FaBook, FaCertificate, FaUser } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { SiLevelsdotfyi } from "react-icons/si";
 import Swal from "sweetalert2";
+import UseCourseDetails from "@/hooks/UseCourseDetails";
+import UseContext from "@/hooks/UseContext";
+import CertificateDocument from "./CertificateDocument";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+
 
 const LeftSide = ({ category }) => {
+  const { user } = UseContext();
   const { refetch, isPending, courses } = UseCourses();
-  // console.log(category)
-  const course = courses?.find((item) => item?.category == category);
+  const course = courses?.find((item) => item?.category === category);
+  const { allCourseDetails } = UseCourseDetails();
+  const certificateCourse = allCourseDetails?.find(
+    (i) => i?.category === category
+  );
+
+  const isCertified = certificateCourse?.certification.includes(user?.email);
 
   const handleCertificate = () => {
-    console.log("clicked");
     Swal.fire({
       icon: "error",
       title: `Not eligible for the certificate`,
-      text: `Not eligible for the certificate`,
+      text: `${category} Certificate`,
+      customClass: {
+        title: "text-one font-bold text-2xl",
+        confirm: "bg-one text-white",
+      },
     });
   };
+
+  const buttonClass =
+    "font-medium px-5 py-3 rounded-3xl bg-one hover:bg-three hover:text-black text-four transition-all duration-500";
 
   return (
     <motion.div
@@ -67,10 +83,25 @@ const LeftSide = ({ category }) => {
           <FaCertificate className="text-three" />
           Certificate
         </p>
-        <p>Yes</p>
+        <p>{isCertified ? "Yes" : "No"}</p>
       </div>
-      <div onClick={handleCertificate} >
-        <LoginButton>Certificate</LoginButton>
+
+      {/* Certificate button */}
+      <div className="flex justify-center pt-5">
+        {isCertified ? (
+          <PDFDownloadLink
+            className={buttonClass}
+            document={<CertificateDocument course={certificateCourse} user={user} />}
+            fileName="Certificate.pdf"
+          >
+            {({ loading }) => (loading ? "Loading..." : "Download Certificate")}
+          </PDFDownloadLink>
+        ) : (
+          <div onClick={handleCertificate}>
+            {" "}
+            <LoginButton>Certificate</LoginButton>{" "}
+          </div>
+        )}
       </div>
     </motion.div>
   );
