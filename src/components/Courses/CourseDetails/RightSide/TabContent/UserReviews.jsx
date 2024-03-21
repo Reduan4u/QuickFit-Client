@@ -7,8 +7,8 @@ const UserReviews = async () => {
   const { reviews } = UseCourseReviews();
   return (
     <div>
-      <h1 className="text-2xl font-medium py-4">User Reviews :</h1>
-      <div className=" flex justify-center items-center">
+      {/* <h1 className="text-2xl font-medium py-4">User Reviews :</h1> */}
+      <div className=" flex justify-center items-center ">
         <Marquee
           direction="left"
           speed={70}

@@ -49,7 +49,7 @@ const Reviews = ({ course }) => {
       whileInView={"show"}
       viewport={{ once: false, amount: 0 }}
     >
-      {/* <UserReviews></UserReviews> */}
+      <UserReviews></UserReviews>
       <h1 className="pt-10 text-2xl font-medium text-center">Add Reviews :</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="lg:w-1/2 mx-auto">
         {/* profession */}
