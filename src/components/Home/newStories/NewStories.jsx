@@ -39,7 +39,7 @@ const NewStories = async () => {
               viewport={{ once: false, amount: 0 }}
               key={index}
             >
-              <div className="relative overflow-hidden image-full rounded-none">
+              <div className="relative overflow-hidden rounded-none">
                 <figure>
                   <img
                     className={`rounded-none `}
@@ -48,11 +48,11 @@ const NewStories = async () => {
                   />
                 </figure>
                 <div className="absolute inset-0 flex flex-col items-start justify-end px-6 py-4 bg-black bg-opacity-60 text-white hover:bg-one transition-all duration-300">
-                  <h2 className="text-2xl font-bold">{story.title}</h2>
-                  <p className=" text-sm text-tertiary/80">
+                  <h2 className="text-2xl font-semibold">{story.title}</h2>
+                  <p className=" text-sm text-four">
                     {story.description}
                   </p>
-                  <p className=" text-primary">
+                  <p className=" text-three">
                     <span className="font-bold">|</span> {story.category}
                   </p>
                 </div>

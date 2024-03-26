@@ -69,7 +69,7 @@ function ProductDetails({ product, params }) {
             viewport={{ once: false, amount: 0.2 }}
             className="md:w-1/2">
             <Link href={`/eshop/products/${params.id}`}>
-              <button className="mb-5 text-secondary font-semibold hover:text-primary border-b-2 border-primary hover:border-primary transition-all duration-300">
+              <button className="mb-5 text-one font-semibold hover:text-three border-b-2 border-one hover:border-three transition-all duration-300">
                 Back To {params.id} Products
               </button>
             </Link>

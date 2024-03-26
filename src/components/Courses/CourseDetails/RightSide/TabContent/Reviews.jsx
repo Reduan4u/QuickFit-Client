@@ -7,27 +7,39 @@ import UserReviews from "./UserReviews";
 import LoginButton from "@/components/Common/LoginButton";
 import UseContext from "@/hooks/UseContext";
 import Swal from "sweetalert2";
+import useAxiosPublic from "@/hooks/useAxiosPublic";
+import UseCourseReviews from "@/hooks/UseCourseReviews";
 
-const Reviews = () => {
+const Reviews = ({ course }) => {
+  const axiosPublic = useAxiosPublic();
+  const {refetch} = UseCourseReviews()
   const { user } = UseContext();
-  const { register, handleSubmit, reset } = useForm();
-  const onSubmit = async (data) => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit =  (data) => {
     const obj = {
       ...data,
       rating: parseInt(data.rating),
       reviewerName: user?.displayName,
       reviewerImg: user?.photoURL,
+      category: course?.category,
     };
-    console.log(obj);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your review has will be added',
-      showConfirmButton: false,
-      timer: 1500,
-  });
-  reset()
 
+    axiosPublic.post("/reviews", obj).then((res) => {
+      refetch()
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your review has will be added",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      reset();
+    });
   };
 
   return (
@@ -63,6 +75,15 @@ const Reviews = () => {
             {...register("rating", { required: true, min: 1, max: 5 })}
             className="input input-bordered w-full border-one"
           />
+          {/* {errors.rating?.type == "required" && (
+            <span className="text-red-700">Rating is required</span>
+          )}
+          {errors.rating?.type === "min" && (
+            <span className="text-red-700">Rating should be 1 to 5</span>
+          )}
+          {errors.rating?.type === "max" && (
+            <span className="text-red-700">Rating should be 1 to 5</span>
+          )} */}
         </div>
 
         {/*review */}

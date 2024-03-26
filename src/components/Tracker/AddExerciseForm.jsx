@@ -7,15 +7,13 @@ import Swal from "sweetalert2";
 import UseTracker from "@/hooks/UseTracker";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/Common/Animation1";
+import LoginButton from "../Common/LoginButton";
 
 
 const AddExerciseForm = () => {
   const axiosPublic = useAxiosPublic()
   const {user} = UseContext()
   const {refetch} = UseTracker()
-
-  const buttonClasses =
-    "text-xl font-semibold bg-tertiary text-black hover:shadow-xl hover:scale-105 transition-all duration px-3 py-2";
 
   const {
     register,
@@ -59,7 +57,7 @@ const AddExerciseForm = () => {
     whileInView={"show"}
     viewport={{ once: false, amount: 0 }}
   >
-    <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-gradient-to-r from-three to-one mt-10 p-2 md:p-5">
+    <div className=" w-10/12 md:w-1/2 max-w-2xl mx-auto bg-gradient-to-r from-three to-one mt-10 p-2 md:p-5 rounded-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
         <div className="md:flex justify-center items-center gap-5">
           {/* exercise name field  */}
@@ -115,9 +113,9 @@ const AddExerciseForm = () => {
         </div>
 
         {/* exercise add button */}
-        <div className=" mt-5 flex flex-col md:flex-row justify-center gap-5">
-          <button type="submit" className={buttonClasses}>Add Exercise </button>
-          {/* <button className={buttonClasses}>Add Workout</button> */}
+        <div type="submit" className="pt-5 w-52 mx-auto">
+          <LoginButton>Add Exercise </LoginButton>
+
         </div>
 
       </form>
