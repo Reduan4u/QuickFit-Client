@@ -24,7 +24,8 @@ module.exports = {
       'avatars.githubusercontent.com',
       'placekitten.com',
       'htmldemo.net',
-      'res.cloudinary.com'
+      'res.cloudinary.com',
+      'cdn.pixabay.com'
     ]
   },
 };

@@ -109,8 +109,9 @@ const Registration2 = () => {
 
         {/* form div  */}
         <div className="flex  w-full md:1/2 lg:w-2/6 mx-auto flex-col bg-gradient-to-b from-white to-four text-black shadow-2xl  rounded-xl p-5  my-5 ">
-        <h1 className="text-2xl md:text-3xl  font-mediumm text-center md:text-start pb-5">Register <span className="text-three">Now</span></h1>
-      
+          <h1 className="text-2xl md:text-3xl  font-mediumm text-center md:text-start pb-5">
+            Register <span className="text-three">Now</span>
+          </h1>
 
           {/* register form starts  */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
@@ -187,10 +188,7 @@ const Registration2 = () => {
             </div>
 
             {/* register button field  */}
-            <div
-              type="submit"
-              className="text-xl"
-            >
+            <div type="submit" className="text-xl">
               <LoginButton>Create An Account</LoginButton>
             </div>
 
